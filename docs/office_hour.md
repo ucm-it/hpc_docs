@@ -1,5 +1,5 @@
 ## First-time user log in to HPC tutorial <!-- {docsify-ignore} -->
-Below is a tutorial for first-time users on how to log in to HPC cluster. The tutorial used Pinnacles as an example. If users still cannot login after watching the tutorial, feel free to open a a general consultationt ticket - Follow the steps below. 
+Below is a tutorial for first-time users on how to log in to HPC cluster. The tutorial used Pinnacles as an example. If users still cannot login after watching the tutorial, feel free to open a a general consultation ticket - Follow the steps below. 
 
 Steps on requesting support with resetting password if users still having issues logging in after following tutorial video:
 1. Go to CyberInfrastrucre & Research Technologies Service Now page. [Click Here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
@@ -22,7 +22,22 @@ Reset Password & Login Video Below!
 
 ## HPC Office Hour Q/A <!-- {docsify-ignore} -->
 Got A Question? Feel Free to attend HPC Office Hours! Office Hours is held In-Person and via Zoom!
- 
+
+
+### 3/11/23
+>Q: I am new to High-Performance Computing, where do I begin?
+>
+>A: It is highly recommended that all HPC users have knowledge of basic linux commands and understanding of how a command line interface works. If users need to brush up on basic linux commands then it is highly recommended that they view the Linux(Unix) carpentry workshops [Here!](software_carpentry.md)   
+>
+>Once user is comfortable with using linux commands then it is highly recommended to look over sample job scripts to understand what a job is and what does a job hold. Users can view a sample job script [Here!](running_jobs.md)
+
+>Q: Does Pinnacles have STATA?
+>
+>A: Yes, Pinnacles has STATA 17 installed.
+>1. Users can see all available software on pinnacles via the command "module avail"
+>2. To load a software into the enviroment "module load softare_name"
+>3. To unload a module from the enviroment it is "module unload softare_name". 
+
 ### 2/24/23
 >Q: How to intialzie Conda Enviroment?
 >
