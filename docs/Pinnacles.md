@@ -58,6 +58,7 @@ Pinnacles Private Queue Information:
 | dept.physics | Infinite Time |
 | dept.appliedmath | Infinite Time |
 | dept.cogsci | Infinite Time |
+| dept.les | 7 Days |
 
 
 
@@ -66,7 +67,7 @@ Pinnacles Private Queue Information:
 The following detail consists of how to request Pinnacles cluster access. If you have questions or concerns, do not hesitate to:
 * Schedule a Pinnacles consultation [here](https://arrangr.com/sarvani/facultyconsult). 
 
-!> Who can request access for Pinnacles cluster?
+!> Who can request access for the Pinnacles cluster?
 * UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs.
 
 !> How to request for Pinnacles cluster access?

@@ -1,8 +1,8 @@
 <!-- docs/_sidebar.md -->
 
 - [HPC resources](README.md)
-  - [User policy](policy.md)
-  - [Get help](get_help.md)
+  - [User Policy](policy.md)
+  - [Get Help](get_help.md)
 
 - On-campus cluster
   - [How to connect](central_login.md)
@@ -12,7 +12,7 @@
   - [HPC FAQ](hpc_FAQ.md)
   - [Borgstore](borgstore.md)
   - [News](news.md)
-  - [Faculty communications](commun.md)
+  - [Faculty Communications](commun.md)
 
 - Running jobs
   - [Submit a Job ](running_jobs.md)
@@ -24,12 +24,13 @@
   - [Running Quantum ESPRESSO](running_qr.md)
   - [Running Matlab](running_matlab.md)
   - [Interactive Jupyter Notebook](running_jupyter.md)
-  - [Install conda environment](conda_env.md)
+  - [Install Conda Environment](conda_env.md)
+  - [Building GPU Based Software](gpu.md)
   - [Running Singularity](Singularity.md)
   - [Running Interactive Jobs](interact_job.md)
 
 - Off-Campus Cluster
-  - [External Computation resources](additional.md)
+  - [External Computation Resources](additional.md)
 
 - JupyterHub
   - [UCMerced JupyterHub](jupyterhub.md)
@@ -37,8 +38,8 @@
 - Additional resources
   - [HPC Vocabulary](hpc_vocab.md)
   - [Workshops](software_carpentry.md)
-  - [HPC training material](hpc_training.md)
-  - [Slurm](slurm.md)
+  - [HPC Training Material](hpc_training.md)
+  - [SLURM](slurm.md)
   - [Office hour Q/A](office_hour.md)
-  - [Cloud resource](cloud.md)
+  - [Cloud Resource](cloud.md)
   - [💜 Suggestions?](contribute.md)

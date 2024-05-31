@@ -89,70 +89,104 @@ Also you can see by using `ls` to see when the `.stdout` file is placed in the d
 ### MPI Tutorial <!-- {docsify-ignore} -->
 
 Under the `MPI` folder there are two files:
-1. `mpi_ex.cpp`: A C++ MPI Sample Script that demonstrates the Allreduce operation.
+1. `mpi_ex.cpp`: A C++ MPI Sample Script that demonstrates the effeciency of parallelization using MPI. 
+
+It makes use of the MPI to partition a long vector(array) full of random numbers. Using MPI we can make use of the scatter, and reduce operations to send each process a unique partition or portion of the array to compute the sum of their portion of the array. Then when all processes are done computing their local sum, we use reduce to gather all of the local sums and add them all together to get the global sum. 
 
 2. `parallel_mpi.bash` A SLURM submission script that executes the selected MPI example. It also includes dependencies and loads the neccessary modules to run the MPI script successfully. 
 
 
-#### Python MPI Script Walkthrough <!-- {docsify-ignore} -->
-``` python 
-#Import the package mpi4py 
-from mpi4py import MPI
 
-#Identifies and groups all the processes to form the communicator
-comm = MPI.COMM_WORLD
 
-#Identify and each process with a unique rank ID 
-rank = comm.Get_rank()
-
-#The local value to be held at each rank is the rank itself. 
-local_val = rank
-
-#Perform Allreduce which groups and summates all the local values from all the ranks in the group and stores the total in total_sum
-total_sum = comm.allreduce(local_val, op=MPI.SUM) 
-
-# Have rank 0 output the total_sum
-if rank == 0:   
-        print(f"The total is {total_sum}")
-
-```
-
-#### C++ MPI Script Walkthrough 
+#### C++ MPI Script Walkthrough <!-- {docsify-ignore} -->
 
 ``` cpp
-#include <iostream>
-#include <mpi.h>
-#include <cmath>
+#include <mpi.h> // MPI header file to support MPI operations
+#include <iostream> // Input/output stream package
+#include <vector> // Package that supports linear storage of elements such as storage with other builtin functions
+#include <cstdlib> // Used for random number generation
+#include <numeric> // Package used for math functions such as accumulate
 
+
+//Using the standard namespace to avoid having to use std:: before standard functions
 using namespace std;
-int main(int argc, char** argv){
-        //Process Identity is represented as an integer identifier starting at 0.
-        int rank;
 
-        //Hold the size of the group for this task
-        int size;
-        MPI_Init(&argc, &argv);
-        //Here we identify the individual ranks and the overall size(process count)
-        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-        MPI_Comm_size(MPI_COMM_WORLD, &size);
+int main(int argc, char** argv) {
+    //Initialize the MPI execution environment
+    MPI_Init(&argc, &argv);
 
-        //local rank will be the local value that each worker will start with.
-        int local_val = rank;
 
-        //total summation value that will be calculated via Allreduce
-        int total_sum;
-        MPI_Allreduce(&local_val, &total_sum,1,  MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+    //rank will hold the rank or process ID given out by the MPI_Comm_rank. Each process gets unique rank.
+    int rank; // Rank of the process
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Get the rank of the process and store it in the variable - rank
 
-        //Print out the overall total sum once from worker 0.
-        if(rank == 0){
-                cout << "The overall sum from all ranks is: " << total_sum << endl;
+    int processes; // Total number of processes
+    MPI_Comm_size(MPI_COMM_WORLD, &processes); // Get the total number of processes and store it in the variable - processes
+
+
+    int vecSize = 10; //holds the length of the vector
+
+    int local_sum; // local_sum holds the sum in each process locally
+
+    int global_sum;  //global_sum holds the sum that will computed in the end from all the local_sum among the process
+
+    vector<int> global_data(vecSize); // Vector to hold the global data of size vecSize
+
+    // Calculate the size of each partition of the array that will be distributed to each process
+    int partition_size = vecSize / processes;
+
+     // Declare a vector to hold the local data for each process
+    vector<int> local_data(partition_size);
+
+    // The root process(rank 0) initializes the global_data vector with random integers
+    if (rank == 0) {
+        for (int i = 0; i < vecSize; i++) {
+            // Generate random integers between 0 and 99
+            global_data[i] = rand() % 100;
         }
+    }
 
-        //Clean up all the states that are related to MPI
-        MPI_Finalize();
-        return 0;
-}
+    // Scatter the global_data vector to all processes
+    MPI_Scatter(global_data.data(), // Send buffer (data to be scattered)
+     partition_size, // Send count (number of elements to send to each process)
+     MPI_INT, // Send type (type of data being sent)
+     local_data.data(),// Receive buffer (where the data will be received) 
+     partition_size, // Receive count (number of elements to receive)
+      MPI_INT, // Receive type (type of data being received)
+       0, // Root process (process that is sending the data)
+       MPI_COMM_WORLD); // Communicator (group of processes that can communicate)
 
+
+
+    local_sum = std::accumulate(local_data.begin(), local_data.end(), 0); // Calculate the sum of the local data using 
+    //the accumulate function imported from the numeric library
+
+    MPI_Barrier(MPI_COMM_WORLD); // Synchronize all processes before proceeding
+    //(i.e. wait for all processes to reach this point)
+
+    // Reduce the local sums to the global sum in the root process
+    MPI_Reduce(&local_sum, // Local data to be reduced
+    &global_sum, // global_sum will hold the reduced data
+    1, // Number of elements to reduce(in this case, it is just one integer value)
+    MPI_INT, // Data type of the elements
+    MPI_SUM, // reduction operation will be a summation operation
+    0, // Root process that will receive the reduced data
+    MPI_COMM_WORLD); // Communicator (group of processes that can communicate)
+
+    // Output the global sum in the root process(rank 0)
+    if (rank == 0) {
+        cout << "The overall Sum is " << global_sum << endl;
+       // for(int i = 0; i < vecSize; i++){
+        //        cout << "At index "<< i << "The value is " <<  global_data[i] << endl;
+        //}
+    }
+    // Finalize the MPI execution environment
+    MPI_Finalize();
+    return 0;
+
+    //Final Note: This MPI script may complete extremely fast even with greater vector sizes 
+    //however the conceptual demonstration of the advantages of MPI is universal as the use of parallelization
+    //can drasticaly improve the running time when having to compute or work with other data types such as in machine learning. 
 ```
 
 
@@ -164,7 +198,7 @@ int main(int argc, char** argv){
 
 #!/bin/bash
 #SBATCH --nodes=1  #asked for 1 node
-#SBATCH --ntasks=36 #asked for 20 cores
+#SBATCH --ntasks=20 #asked for 20 cores
 #SBATCH --partition test  #this job will submit to test partition
 #SBATCH --mem=96G  #Asks for 96G of total memory
 #SBATCH --time=0-00:15:00 # 15 minutes
@@ -173,18 +207,16 @@ int main(int argc, char** argv){
 #SBATCH --export=ALL
 
 whoami
-#module load  Anaconda3 and a global version of MPI
-module load anaconda3
-module load openmpi/4.1.4-gcc-12.2.0+cuda
-
-# Ensures we start in our home directory
-cd ~
+module load openmpi
 
 
-#For the CPP version we first begin with compiling the cpp binary where mpic++ is our compiler
+
+#We first begin with compiling the mpi_ex.cpp file using the mpic++ compiler 
+#and using -o we explicitly state our output, executable name as ccexample
 mpic++ -o ccexample mpi_ex.cpp
 
-#Then we execute the binary using mpirun and using 20 workers or processes. 
+#Then we execute the binary using mpiexec allowing for  the launching of multiple instances of the program across different processes.
+# We are stating how many processes by -np
 # each worker will be a CPU core
 mpiexec -n 20 ./ccexample
 
@@ -197,9 +229,10 @@ Once the job has been submitted and successful, you should recieve a output in `
 
 ``` bash
 avilla49
-The overall sum from all ranks is 190
+The overall Sum is 567
 
 ```
+!> The number outputted as the sum may vary as we use random numbers!
 This concludes the MPI Script and Job Tutorial!
 ### Java Tutorial <!-- {docsify-ignore} --> 
 
