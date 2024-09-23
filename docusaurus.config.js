@@ -8,9 +8,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'UC Merced HPC clusters',
+  tagline: 'CIRT team',
+  favicon: 'img/cirt.png',
 
   // Set the production url of your site here
   url: 'https://amirayuyue.github.io',
@@ -67,17 +67,28 @@ const config = {
       }),
     ],
   ],
-
+  plugins:[
+   [
+    require.resolve("@easyops-cn/docusaurus-search-local"),
+   
+    ({
+      
+      hashed: true,
+      
+    }),
+  ],
+  ],
+  
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Home',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'CIRT Logo',
+          src: 'img/CIRT.png',
         },
         items: [
           {
