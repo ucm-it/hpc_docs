@@ -15,8 +15,12 @@ import TabItem from '@theme/TabItem';
   
   <TabItem value="MERCED" label="MERCED" default>
      :::note
-      MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872 core Linux based high performance computing cluster. MERCED cluster running on <Tag color="#3399ff">Recharge</Tag> model which means users need to pay per core-hour usage. More details on the recharge information can be found below. 
+      MThe MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
      :::
+     
+     __Facility Statement__
+      
+      MERCED is a general-purpose computing cluster located in the server facility (see Research Facility below). The cluster consists of a login node, 65 compute nodes, and 15 high memory nodes. Total CPU-core counts is 1872.
 
   <details>
 
@@ -39,16 +43,36 @@ import TabItem from '@theme/TabItem';
       - 🟡 All recharge funds will go toward cluster maintenance, including network switch replacements and hardware upkeep. The CIRT team will not profit from these contributions.
 
   </details>
+
+  <details>
+     <summary>
+      Research Facility
+      </summary>
+     The Research Computing Facility, named the Borg Cube, is a 1,448 square foot pre-manufactured, self-contained, fully serviceable data center-style building comprised of two (2) transportable modular containers, one section for electrical distribution and the other to house research computing machines. The design includes three (3) 60-ton Indirect Evaporative Cooling (IEC) mechanical units to be located outside, adjacent to the structure. The Borg Cube houses twenty (20) 19"-24" racks with 51U per rack, totaling 1020U and provides 400kW of N+1 redundant power capacity at the rack bus, providing the ability to provide individual racks with either redundant or non-redundant power supply units. The design includes two (2) 500kVA PDU's each fed from separate sources backed up from dedicated 500kVA UPS which are connected to two (2) 800A rated Starline bus to account for single or dual corded customer connections. An N+1 UPS system will consist of two (2) 500kVA UPS units, each to be equipped with batteries to support its full load for 15 minutes. The mechanical design includes three (3) 60-ton IEC units totaling 633kW of cooling available. This design accounts for an additional unit (N+1), in the case of maintenance or failure of an operating unit. The design technical requirements do not list the requirement for an N+1 mechanical system as this building can be fully supported by two (2) 60-ton units; however, due to the importance of this facility, the third unit exists for operations and maintenance purposes. This approach gives the facility engineers the ability to provide maintenance on a given unit without shutting down the facility and limiting unnecessary down time. A self-contained FM-200 style suppression system along with the required detection devices are provided for fire protection and detection systems. One (1) FM-200 tank is provided for each individual module. A VESDA system is present to detect smoke at its earliest stage and to send a signal to the clean agent suppression panel. Two (2) 1500kva substations based on an N+1 design, are provided to accept separate services. Each substation is provided with a 2000A main breaker, a 1000A breaker for the current facility, and an open space for a future circuit breaker to be used to support a potential future expansion. One of the substations is provided with a 100A breaker for the electrical equipment serving the site loads.
+  </details>
   
   </TabItem>
   
   <TabItem value="Pinnacles" label="Pinnacles">
     :::note 
-    The NSF-MRI funded Pinnacles cluster is available for all faculty projects at no cost! Pinnacles cluster features newer generation of Intel Xeon Gold 6330 CPU processors and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. The Pinnacles cluster runs with the RedHat operating system.
+    The NSF-MRI funded Pinnacles cluster is available for all faculty projects at <Tag color="#fa9911">NO COST</Tag>! The Pinnacles cluster is equipped with the latest generation Intel Xeon Gold 6330 CPUs and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. It operates on the RedHat operating system.
     :::
+    __Facility Statement__
+    
+    The NSF-MRI grant number #2019144 funded Pinnacles cluster has the following compute node configurations:
+
+    - 40 regular Compute nodes with 2XIntel-28-Core Xeon Gold 6330 2.0GHz - 205W, each with 256GB RAM.
+    - 4 High Memory nodes with 2x Intel 28-Core Xeon Gold 6330 2.0GHz CPUs and 1TB RAM for large memory calculations.
+    - 8 GPU nodes, and each one of the nodes has 2X NVIDIA Tesla A100 PCIe v4 40GB HBM2 Passive Single GPU. 
+    
+    Pinnacles also has ~92TB NFS Fast Scratch Storage space for accessing large data with low latency and 1.5PB of usable long-term storage.
+    
+    Relative proximity and extent of availability: The Pinnacles cluster is managed by the Office of Information Technology at UC Merced and technical support and training opportunities are available. It is available for all faculty projects at no cost. All above nodes are interconnected via HDR InfiniBand w/ RDMA for fast (100Gbits/s) and low latency (sub ms) data transfer.
   </TabItem>
+
  
 </Tabs>
+
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
