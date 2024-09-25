@@ -91,25 +91,37 @@ import TabItem from '@theme/TabItem';
   
 
 ## Centralized login
+### Login nodes
+The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Starting from 02/01/2023, we will implement a <Tag color="#0F2D52">centralized login</Tag> system. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
 
+Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
 
-
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
-
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
-
-
-
-## Create your first Markdown Page
-
-Create a file at `src/pages/my-markdown-page.md`:
-
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
-
-This is a Markdown page
+### Connect to the clusters
+On Mac and Linux you can use the built-in terminal application; on Windows you can use [MobaXterm](https://mobaxterm.mobatek.net/) to open a terminal, and type the following command, but replace `<username>` to your UCMID.
+```shell
+ssh <username>@login.rc.ucmerced.edu
 ```
 
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+### X11 forwarding
+
+:::tip
+__Mac OS:__ 
+
+Prerequisite: Install [XQuartz](https://www.xquartz.org/)
+Then open XQuartz through `open -a XQuartz` in the terminal or other CLI. Then type the following command.
+```shell
+ssh -X <username>@login.rc.ucmerced.edu
+```
+- `-X`: Enables X11 forwarding.
+:::
+__Windows users__
+
+MobaXterm includes an integrated X11 server, so no additional installation of X11 software is needed.
+- Start a New SSH Session with X11 Forwarding
+  - In the top-left corner, click on the "Session" button.
+  - Choose "SSH" from the available options
+- Configure the SSH Session
+  - In the Remote Host field, enter the address of the remote server (e.g., remote.server.com)
+  - Ensure the "Specify username" box is checked, then enter your username for the remote server
+  - Check the box that says "X11-forwarding". This option enables X11 forwarding for your session
+
