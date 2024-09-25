@@ -6,7 +6,8 @@ sidebar_position: 1
 import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-# Campus clusters
+
+
 > Currently, UC, Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
@@ -16,8 +17,7 @@ import TabItem from '@theme/TabItem';
      :::note
       The MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
      :::
-     
-     __Facility Statement__
+    __Facility Statement__
       
       MERCED is a general-purpose computing cluster located in the server facility (see Research Facility below). The cluster consists of a login node, 65 compute nodes, and 15 high memory nodes. Total CPU-core counts is 1872.
 
@@ -125,3 +125,74 @@ MobaXterm includes an integrated X11 server, so no additional installation of X1
   - Ensure the "Specify username" box is checked, then enter your username for the remote server
   - Check the box that says "X11-forwarding". This option enables X11 forwarding for your session
 
+## File systems and storage
+There are 2 folders (`data` and `scratch`) locate in `HOME` that users will start with.
+
+:::note
+MERCED and Pinnacles have now been merged into a centralized system, allowing them to share the same file systems. We have also increased the quota for the `data`, `scratch`, and `HOME` directories. Please note that there is a 7-day grace period once the soft quota limit is reached.
+:::
+
+| Folder       | soft quota  | hard quota     |
+|------------|------|----------------|
+| `HOME`   | 70G   | 75G      |
+| `data` | 500G   | 512G         |
+| `scratch`  | 500G   | 512G         |
+
+### Checking disk quota and usage
+To look at your current usage amounts of `HOME`, `data` or `scratch` use the following command
+```shell
+quota -vs 
+```
+This will output, in sections, the filesystem, current space usage, quota, hard limit, and other relevant information in a more readable format.
+
+:::tip
+To convert the outputted megabytes to gigabytes = space(MB) divided by 1024
+:::
+
+### Checking the size of directories and content
+To chek the size of the current directory or any directories in it use the `du` command.
+:::note
+`du` command alone will output all directories, hidden as well, in real time so it will take a few momments to finish. It is recommended to execute the command with some of the following options to make the process more clear and consice.
+:::
+
+| Option           |Description                                                                               |
+|------------------|------------------------------------------------------------------------------------------|
+| `-h`             | Displays storage values in human-readable format (e.g., KB, MB, GB)                      |
+| `-s`             | Summarizes the size of the whole current directory                                        |
+| `-sh`            | Shows the size of the specified sub-directory                                             |
+| `--max-depth=N`  | Shows the sub-directories up to depth N, where N is a number representing the max depth   |
+| `--all`          | Writes counts for all files, not just directories                                         |
+| `--help`         | Displays all other options for the `du` command                                           |
+
+Example usage of `du` command:
+
+<Tabs>
+<TabItem value="du example" label="example">
+
+```
+du -h -s <directory name>
+```
+</TabItem>
+
+<TabItem value="du output" label="output">
+
+```
+35G     <directory name>
+```
+</TabItem>
+</Tabs>
+
+:::warning
+Users who submit jobs to MERCED and use the unified storage are expecting slower network communications. 
+- Home - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles. 
+- Data - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles. 
+- Scratch - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles
+
+The `scratch` folder is purged periodically when the overall system storage reaches 85% of capacity or higher. Please back-up your data to somewhere safe frequently.
+
+Please avoid writing files directly to `/tmp` on the head node, as this can fill up disk space and cause issues for all users. Instead, use your personal scratch directory for temporary files. Some programs may default to using `/tmp`, so ensure that the appropriate scratch directory is properly configured for your code.
+:::
+
+:::note
+Disclaimer: Users are responsible for backing up all data stored on the clusters and are fully accountable for its availability. CIRT is not liable for any data loss in the event of accidents
+:::
