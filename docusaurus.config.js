@@ -118,19 +118,19 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Support',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'ServiceNow Hub',
+                href: 'https://ucmerced.service-now.com/servicehub',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Zoom Office Hours (Every Friday 11:3pm-1pm PT',
+                href: 'https://ucmerced.zoom.us/j/89487493900',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'CIRT UC Merced Home Page',
+                href: 'https://it.ucmerced.edu/CIRT',
               },
             ],
           },
@@ -148,7 +148,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} University of California, Merced HPC & JupyterHub Documentation, Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
