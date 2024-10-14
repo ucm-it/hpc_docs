@@ -1,0 +1,8 @@
+{
+  "label": "Additional HPC Resources",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Here will be home to various HPC related tutorials."
+  }
+}

@@ -28,3 +28,8 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+/* Ensure that long doc titles wrap down instead of cutting off */
+.docItemContainer h1 {
+  white-space: normal;
+  word-wrap: break-word;
+}
