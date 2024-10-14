@@ -148,7 +148,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} University of California, Merced HPC & JupyterHub Documentation, Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} University of California, Merced HPC & JupyterHub Documentation, built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
