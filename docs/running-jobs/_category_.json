@@ -1,0 +1,8 @@
+{
+  "label": "Running Jobs",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Here will be multiple guides and material of how to run different jobs and applications on the cluster"
+  }
+}
