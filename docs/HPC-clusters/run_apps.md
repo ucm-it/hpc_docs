@@ -1,6 +1,6 @@
 ---
 title: Running Common Applications
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Tag from '@site/src/components/Tag';

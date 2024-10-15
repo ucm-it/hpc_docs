@@ -1,6 +1,7 @@
 ---
-title: Introduction to Running Jobs
-sidebar_position: 1
+title: Running Jobs
+hide_title: true
+sidebar_position: 2
 ---
 
 import Tag from '@site/src/components/Tag';
