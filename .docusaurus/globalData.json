@@ -1,0 +1,143 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/hpc_doc_new/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/hpc_doc_new/docs",
+          "mainDocId": "HPC-clusters/campus-clusters",
+          "docs": [
+            {
+              "id": "HPC-clusters/campus-clusters",
+              "path": "/hpc_doc_new/docs/HPC-clusters/campus-clusters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/data",
+              "path": "/hpc_doc_new/docs/HPC-clusters/data",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/get_help",
+              "path": "/hpc_doc_new/docs/HPC-clusters/get_help",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/hpc_news",
+              "path": "/hpc_doc_new/docs/HPC-clusters/hpc_news",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/job_manage",
+              "path": "/hpc_doc_new/docs/HPC-clusters/job_manage",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/jobs",
+              "path": "/hpc_doc_new/docs/HPC-clusters/jobs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/markdown-features",
+              "path": "/hpc_doc_new/docs/HPC-clusters/markdown-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "HPC-clusters/run_apps",
+              "path": "/hpc_doc_new/docs/HPC-clusters/run_apps",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "hpc-tutorials/hpc_vocab",
+              "path": "/hpc_doc_new/docs/hpc-tutorials/hpc_vocab",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "hpc-tutorials/OH",
+              "path": "/hpc_doc_new/docs/hpc-tutorials/OH",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "hpc-tutorials/slurm",
+              "path": "/hpc_doc_new/docs/hpc-tutorials/slurm",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "offcampus_resources/access",
+              "path": "/hpc_doc_new/docs/offcampus_resources/access",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "running-jobs/build_gpu_apps",
+              "path": "/hpc_doc_new/docs/running-jobs/build_gpu_apps",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "running-jobs/interact_job",
+              "path": "/hpc_doc_new/docs/running-jobs/interact_job",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "running-jobs/run_jupyter",
+              "path": "/hpc_doc_new/docs/running-jobs/run_jupyter",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "running-jobs/running_matlab",
+              "path": "/hpc_doc_new/docs/running-jobs/running_matlab",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-extras/manage-docs-versions",
+              "path": "/hpc_doc_new/docs/tutorial-extras/manage-docs-versions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-extras/translate-your-site",
+              "path": "/hpc_doc_new/docs/tutorial-extras/translate-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/hpc-clusters",
+              "path": "/hpc_doc_new/docs/category/hpc-clusters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/additional-hpc-resources",
+              "path": "/hpc_doc_new/docs/category/additional-hpc-resources",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/off-campus-high-performance-computing-resources",
+              "path": "/hpc_doc_new/docs/category/off-campus-high-performance-computing-resources",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/running-jobs",
+              "path": "/hpc_doc_new/docs/category/running-jobs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/tutorial---extras",
+              "path": "/hpc_doc_new/docs/category/tutorial---extras",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/hpc_doc_new/docs/category/hpc-clusters",
+                "label": "HPC Clusters"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

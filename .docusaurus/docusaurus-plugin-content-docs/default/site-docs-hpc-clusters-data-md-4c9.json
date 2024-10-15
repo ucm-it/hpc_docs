@@ -1,0 +1,28 @@
+{
+  "id": "HPC-clusters/data",
+  "title": "Data Management and Data Sharing",
+  "description": "This page presents ways to transfer and share data with other users on the HPC clusters. Note that the word \"group\" on this page always refers to Unix groups.",
+  "source": "@site/docs/HPC-clusters/data.md",
+  "sourceDirName": "HPC-clusters",
+  "slug": "/HPC-clusters/data",
+  "permalink": "/hpc_doc_new/docs/HPC-clusters/data",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/HPC-clusters/data.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Data Management and Data Sharing",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Campus Clusters",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/campus-clusters"
+  },
+  "next": {
+    "title": "Running Jobs",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/jobs"
+  }
+}

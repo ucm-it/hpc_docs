@@ -1,0 +1,28 @@
+{
+  "id": "hpc-tutorials/slurm",
+  "title": "SLURM",
+  "description": "This page serves as point of introduction to understanding and understanding the best use of Slurm.",
+  "source": "@site/docs/hpc-tutorials/slurm.md",
+  "sourceDirName": "hpc-tutorials",
+  "slug": "/hpc-tutorials/slurm",
+  "permalink": "/hpc_doc_new/docs/hpc-tutorials/slurm",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/hpc-tutorials/slurm.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "SLURM",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "HPC Vocabulary and Terminology",
+    "permalink": "/hpc_doc_new/docs/hpc-tutorials/hpc_vocab"
+  },
+  "next": {
+    "title": "Off Campus High Performance Computing Resources",
+    "permalink": "/hpc_doc_new/docs/category/off-campus-high-performance-computing-resources"
+  }
+}

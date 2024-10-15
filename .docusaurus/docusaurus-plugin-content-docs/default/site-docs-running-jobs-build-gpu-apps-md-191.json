@@ -1,0 +1,28 @@
+{
+  "id": "running-jobs/build_gpu_apps",
+  "title": "Building and Compiling GPU based Softwares and Applications",
+  "description": "Many applications require to be built with GPU support, such as Kokkos, LAMMPS, deep learning frameworks, etc. This page will showcase how to install and build GPU-supported softwares/applications.",
+  "source": "@site/docs/running-jobs/build_gpu_apps.md",
+  "sourceDirName": "running-jobs",
+  "slug": "/running-jobs/build_gpu_apps",
+  "permalink": "/hpc_doc_new/docs/running-jobs/build_gpu_apps",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/running-jobs/build_gpu_apps.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Building and Compiling GPU based Softwares and Applications",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Running Jobs",
+    "permalink": "/hpc_doc_new/docs/category/running-jobs"
+  },
+  "next": {
+    "title": "Running Interactive Jobs",
+    "permalink": "/hpc_doc_new/docs/running-jobs/interact_job"
+  }
+}

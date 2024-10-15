@@ -1,0 +1,28 @@
+{
+  "id": "HPC-clusters/job_manage",
+  "title": "Job Management",
+  "description": "Presented here are helpful tools and methods to manage  Slurm jobs, find detailed information of a job like memory usage, CPUs, and how to use job statistics/information to troubleshoot any job failure.",
+  "source": "@site/docs/HPC-clusters/job_manage.md",
+  "sourceDirName": "HPC-clusters",
+  "slug": "/HPC-clusters/job_manage",
+  "permalink": "/hpc_doc_new/docs/HPC-clusters/job_manage",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/HPC-clusters/job_manage.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Job Management",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Running Jobs",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/jobs"
+  },
+  "next": {
+    "title": "Running Common Applications",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/run_apps"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "HPC-clusters/get_help",
+  "title": "HPC Support",
+  "description": "When requesting support or seeking assistance there are two main forms of request, attending office hours or submitting a ticket.",
+  "source": "@site/docs/HPC-clusters/get_help.md",
+  "sourceDirName": "HPC-clusters",
+  "slug": "/HPC-clusters/get_help",
+  "permalink": "/hpc_doc_new/docs/HPC-clusters/get_help",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/HPC-clusters/get_help.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "title": "HPC Support",
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Running Common Applications",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/run_apps"
+  },
+  "next": {
+    "title": "HPC Cluster News",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/hpc_news"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "offcampus_resources/access",
+  "title": "Additional Computational Resources",
+  "description": "Some researchers may have needs that exceed our campus computing capabilities. They may need more machines to complete a task quickly or they may need more specialized types of computing nodes (e.g. GPU nodes). We have access to both the San Diego Supercomputing Center (SDSC) and the national-level computing resources known as XSEDE now ACCESS. SDSC and ACCESS offer significant amounts of compute time to researchers interested in trying HPC at large-scales.",
+  "source": "@site/docs/offcampus_resources/access.md",
+  "sourceDirName": "offcampus_resources",
+  "slug": "/offcampus_resources/access",
+  "permalink": "/hpc_doc_new/docs/offcampus_resources/access",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/offcampus_resources/access.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Additional Computational Resources",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Off Campus High Performance Computing Resources",
+    "permalink": "/hpc_doc_new/docs/category/off-campus-high-performance-computing-resources"
+  },
+  "next": {
+    "title": "Running Jobs",
+    "permalink": "/hpc_doc_new/docs/category/running-jobs"
+  }
+}

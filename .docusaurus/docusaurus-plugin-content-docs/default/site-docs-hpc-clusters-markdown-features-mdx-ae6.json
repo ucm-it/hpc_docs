@@ -1,0 +1,27 @@
+{
+  "id": "HPC-clusters/markdown-features",
+  "title": "Markdown Features",
+  "description": "Docusaurus supports Markdown and a few additional features.",
+  "source": "@site/docs/HPC-clusters/markdown-features.mdx",
+  "sourceDirName": "HPC-clusters",
+  "slug": "/HPC-clusters/markdown-features",
+  "permalink": "/hpc_doc_new/docs/HPC-clusters/markdown-features",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/HPC-clusters/markdown-features.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "HPC Cluster News",
+    "permalink": "/hpc_doc_new/docs/HPC-clusters/hpc_news"
+  },
+  "next": {
+    "title": "Additional HPC Resources",
+    "permalink": "/hpc_doc_new/docs/category/additional-hpc-resources"
+  }
+}

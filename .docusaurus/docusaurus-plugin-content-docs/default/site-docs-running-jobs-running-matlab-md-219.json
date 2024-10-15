@@ -1,0 +1,28 @@
+{
+  "id": "running-jobs/running_matlab",
+  "title": "Running Matlab",
+  "description": "Running Matlab on the clusters",
+  "source": "@site/docs/running-jobs/running_matlab.md",
+  "sourceDirName": "running-jobs",
+  "slug": "/running-jobs/running_matlab",
+  "permalink": "/hpc_doc_new/docs/running-jobs/running_matlab",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/running-jobs/running_matlab.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Running Matlab",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Running Jupyter on Pinnacles",
+    "permalink": "/hpc_doc_new/docs/running-jobs/run_jupyter"
+  },
+  "next": {
+    "title": "Tutorial - Extras",
+    "permalink": "/hpc_doc_new/docs/category/tutorial---extras"
+  }
+}

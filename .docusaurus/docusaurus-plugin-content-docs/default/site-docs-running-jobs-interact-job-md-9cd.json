@@ -1,0 +1,28 @@
+{
+  "id": "running-jobs/interact_job",
+  "title": "Running Interactive Jobs",
+  "description": "Interactive jobs are a useful way to debug and test code with small sample inputs before submitting a scaled up input in a batch job. Interactive jobs allows users to allocate resources and work on a node directly, seeing any errors or outputs in real-time as the program builds, compiles and executes.",
+  "source": "@site/docs/running-jobs/interact_job.md",
+  "sourceDirName": "running-jobs",
+  "slug": "/running-jobs/interact_job",
+  "permalink": "/hpc_doc_new/docs/running-jobs/interact_job",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/amirayuyue/hpc_doc_new/docs/running-jobs/interact_job.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Running Interactive Jobs",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Building and Compiling GPU based Softwares and Applications",
+    "permalink": "/hpc_doc_new/docs/running-jobs/build_gpu_apps"
+  },
+  "next": {
+    "title": "Running Jupyter on Pinnacles",
+    "permalink": "/hpc_doc_new/docs/running-jobs/run_jupyter"
+  }
+}
