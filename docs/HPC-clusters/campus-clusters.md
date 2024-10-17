@@ -91,6 +91,147 @@ import TabItem from '@theme/TabItem';
   </details>
   
 
+## Cluster Hardware Configuration
+
+<Tabs>
+
+  <TabItem value="Pinnacles Hardware" label="Pinnacles Hardware Overview">
+    
+  Compute nodes: Compute nodes are where actual jobs run. There are three types of compute nodes on Pinnacles.
+  * 48 Regular memory (RM) CPU nodes with 256GB RAM
+  * 8 Big memory CPU nodes (bigmem) with 1TB RAM
+  * 16 GPU Nodes 
+    - 8 GPU nodes with NVIDIA A100 GPUs
+    - 8 GPU nodes with NVIDIA L40S GPUs
+
+  |     CPU node            | RM node                        | bigmem node            |
+  |:----------------|:-------------------------------|:-------------------------------| 
+  | Number of nodes | 40                             | 4                              | 
+  | CPU             | 2 Intel 28 core Xeon Gold 6330 | 2 Intel 28 core Xeon Gold 6330 | 
+  | RAM             | 256GB | 1TB| 
+  | Node-local storage             | 1TB NVMe Data Center Solid State Drive (SSD) | 1TB NVMe Data Center Solid State Drive (SSD)|
+  | Network             | ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot| ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+
+  |     `cenvalarc` CPU node           | `cenvalarc.compute` - CPU Node| `cenvalarc.bigmem` - bigmem node | 
+  |:----------------| :---------------- |:----------------- |
+  | Number of nodes | 8 | 4 |
+  | CPU             |  2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W |
+  | RAM             |  256GB | 1TB | 
+  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
+  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+
+  | `gpu` GPU node     |                                                           |
+  |:-------------|:----------------------------------------------------------|
+  | Number       | 8                                                         |
+  | GPU per node | 2x NVIDIA Tesla A100 PCIe v4 40GB HBM2 Passive Single GPU |
+  | CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
+  | RAM          | 256GB                                                     |
+  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
+  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+
+  | `cenvalarc.gpu` GPU node     |                                                           |
+  |:-------------|:----------------------------------------------------------|
+  | Number       | 8                                                         |
+  | GPU per node | 2x NVIDIA L40S GPUs per node (48GB GDDR6 Passive Dual Slot GPU) |
+  | CPU          | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W             |
+  | RAM          | 256GB                                                     |
+  | Node-local storage          | 1TB M.2 NVMe Data Center Solid State Drive (110mm) |
+  | Network        | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot |
+
+  </TabItem>
+
+  
+  <TabItem value="MERCED Hardware" label="Merced Hardware" default>
+  
+  MERCED hosts 66 CPU compute nodes including 25 high memory nodes. Please be aware that
+  the nodes among MERCED cluster are multigenerational, meaning that the CPU
+  processors from different nodes are having different features, the table shows below
+  listed detailed node information. Users may experience relative big
+  performance variations when running the same jobs on different nodes.
+
+  The table below listed all MERCED cluster CPU compute nodes features, and their
+  processors generations.
+
+  | Nodes        | feature                                                    | RAM   | Total cores per nodes | InfiniBand (IB) |
+  |--------------|------------------------------------------------------------|-------|-----------------------|----------------|
+  | 33-43        | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 128GB | 24                    | yes            |
+  | 44           | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 112GB | 24                    | yes            |
+  | 45-60        | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 257GB | 24                    | yes            |
+  | 61-72        | Broadwell,avx2,E5-2650_v4,local scratch 447GB              | 257GB | 24                    | yes            |
+  | 73-76, 79-88 | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 128GB | 24                    | yes            |
+  | 77           | Broadwell,avx2,E5-2650_v4,no local scratch                 | 128GB | 24                    | yes            |
+  | 89-104       | Skylake,sse4.2,avx,avx2,avx512,Gold_6130, no local scratch | 191GB | 32                    | yes            |
+  | 105-114       | cascadelake,sse4.2,avx,avx2,avx512,Gold_6230, no local scratch | 191GB | 40                    | yes            |  
+  </TabItem>
+  
+</Tabs>
+
+## How to Request an Account 
+
+<Tabs>
+  <TabItem value="Pinnacles Account Process" label="Pinnacles Account Process">
+  UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs. 
+
+    UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+  <details>
+
+  <summary>Click Here to View a Visual Guide for Creating an Account for Pinnacles</summary>
+
+
+
+  __Requesting Access to Pinnacles Process.__
+
+  1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+      1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
+      2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
+  2. Click `Request Service`
+  ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
+  3. Begin to populate all the required information. 
+      1. At the question regardig PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+      ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
+  4. For selecting the system, from the drop-down, click `pinnacles.ucmerced.edu (Free Cluster)`
+  ![Image of Pinnacles Selection](imgs/RequestAccountPinnacles.png "Selecting Pinnacles")
+  5. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
+  6. Click `Request Service`
+  ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
+</details>
+</TabItem>
+
+  <TabItem value="MERCED Account Process" label="MERCED Account Process">
+
+  UC Merced Faculty Principal Investigators (PIs) can request access to MERCED cluster. All student user accounts on MERCED cluster must associate with UC Merced PIs.   UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+
+  :::note
+  MERCED is a recharge cluster, and will require all accounts to have an associated COA Number submitted at time of account request. 
+  :::
+
+  <details>
+
+  <summary>Click Here to View a Visual Guide for Creating an Account for MERCED</summary>
+
+
+  __Requesting Access to MERCED Process.__
+  1. UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+      1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
+      2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
+  2. Click `Request Service`
+  ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
+  3. Begin to populate all the required information. 
+      1. At the question regardig PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+      ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
+  4. For selecting the system, from the drop-down, click `merced.ucmerced.edu (Recharge Cluster)`
+  ![Image of MERCED Selection](imgs/RequestAccountMERCED.png "Selecting MERCED")
+  5. Because MERCED is a Recharge Cluster, please attach a valid COA number. Without a COA number, the account request will be denied. 
+  ![Image of COA Input](imgs/RequestAccountMERCEDCOA.png "COA Input")
+  6. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
+  7. Click `Request Service`
+  ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
+  
+  </details>
+  </TabItem>
+
+</Tabs>
+
 ## Centralized login
 ### Login nodes
 The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Starting from 02/01/2023, we will implement a <Tag color="#0F2D52">centralized login</Tag> system. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
@@ -138,6 +279,68 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
 | `HOME`   | 70G   | 75G      |
 | `data` | 500G   | 512G         |
 | `scratch`  | 500G   | 512G         |
+
+
+## Queue Information
+
+<Tabs>
+  
+  <TabItem value="Pinnacles Queue Information" label="Pinnacles Queue Information" default>
+    
+
+  Pinnacles Cluster is the default cluster that is free and accessible to all users and has 6 public queues. 
+
+  | Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
+  | -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
+  | ^test | 1 hour | 5 min. | 2 nodes | 1 |
+  | bigmem | 3 days | 1 hrs | 2 nodes | 2 | 
+  | gpu | 3 days | 1 hrs | 2 nodes | 4 | 
+  | *short | 6 hours | 1 hrs | 4 nodes | 12 |
+  | medium | 1 day | 6 hrs | 4 nodes | 6 |
+  | long | 3 days | 1 day |  4 nodes | 3 | 
+  |cenvalarc.compute|3 day| 1 day| 4 nodes| 3|
+  |cenvalarc.bigmem|3 day| 1 day| 2 nodes| 2|
+  |cenvalarc.gpu|3 day| 1 day| 2 nodes| 4|
+
+  :::tip
+  `short` queue is the default queue for all jobs submitted without specifiying which queue job must run on
+
+  ^test queue has access to all node types use constraints to test on specific types. Ex:
+  ```bash
+   #SBATCH --constraint=gpu,bigmem
+  ```
+  Access to GPUs also requires 
+  ```bash
+  #SBATCH --gres=gpu:X
+  ```
+  :::
+  
+  </TabItem>
+  
+  <TabItem value="MERCED Queue Information" label="MERCED Queue Information">
+   MERCED is the **Recharge** Cluster.
+  | Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
+  | -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
+  | bigmem | 5 days | 1 hr | 2 nodes | 6 | 
+  | test^ | 1 hour | 5 min. | 2 nodes | 1 |
+  | *compute | 5 days | 1 hr | 2 nodes | 6 | 
+
+
+    :::tip
+      `#SBATCH -M merced ` must always be used to submit a job to MERCED cluster
+
+      ^ `test` queue has access to all node types use constraints to test on specific types.
+
+      `compute` queue is the default queue for all jobs submitted
+    :::
+
+  </TabItem>
+
+
+ 
+</Tabs>
+
+
 
 ### Checking disk quota and usage
 To look at your current usage amounts of `HOME`, `data` or `scratch` use the following command

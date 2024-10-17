@@ -5,9 +5,9 @@ sidebar_position: 1
 
 In this section users can find important and technical vocabulary or "jargon" related to High-Performance Computing. This page will contain the term and it's definition.
 
-:: Note
+:::note
 It is highly recommended that new HPC users familiarize themselves with the terminology as it will be vital for properly understanding computing resources.
-::
+:::
 
 
 
