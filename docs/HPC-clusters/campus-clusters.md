@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
   
   <TabItem value="MERCED" label="MERCED" default>
      :::note
-      The MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
+      The MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. The MERCED cluster runs with the [Rocky (8.10)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
      :::
     __Facility Statement__
       
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
   
   <TabItem value="Pinnacles" label="Pinnacles">
     :::note 
-    The NSF-MRI funded Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster is equipped with the latest generation Intel Xeon Gold 6330 CPUs and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. It operates on the RedHat operating system.
+    The NSF-MRI funded Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster runs with the [RedHat](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs.The Pinnacles cluster is equipped with the latest generation Intel Xeon Gold 6330 CPUs and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. It operates on the RedHat operating system.
     :::
     __Facility Statement__
     
@@ -197,3 +197,27 @@ Please avoid writing files directly to `/tmp` on the head node, as this can fill
 :::note
 Disclaimer: Users are responsible for backing up all data stored on the clusters and are fully accountable for its availability. CIRT is not liable for any data loss in the event of accidents
 :::
+
+## Borgstore (BeeGFS)
+
+Borgstore is UC Merced's on campus data-storage center and is available for research PI to purchase. Borgstore is used for store active,research-related data and has the use capacity of 480 terrabytes.
+
+Borgstore is also made up of a metadata server with a `1U dual Xeon Skylake SP`, `8x 2.5" Hotswap`, `24 DIMM Sockets`, `IPMI`, `dual 10GbE-T base system` and `8x 3.2TB Endurance Data Center PCIe NVMe 2.5`.Solid State Drive metadata storage
+
+Borgstore is now accessible on all nodes (MERCED and Pinnacles) with Infiniband (IB), all of the partitions contain a mixture of nodes of InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the slurm option of #SBATCH --constraint=ib should be added to the job script. Example job script can be found here. More information pertaining to Borgstore can be found here
+
+:::warning
+Borgstore does not do data backups. Users are responsible for ensuring they have backups of thier data and work.
+:::
+### Request Borgstore
+Borgstore is a purchasable service that can be requested [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). Cost for active data storage is shown below. More information can be found [here](https://it.ucmerced.edu/Research-Computing-Services).
+| Startup funds           |Non-startup funds                                                                               |
+|------------------|------------------|
+| $0.05/GB/year       |   $0.06/GB/year   |
+
+### Accessing Data from Borgstore for a job
+To access data that is located in Borgstore the user must be in the Borgstore folder/directory and must the submit job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the slurm option of `#SBATCH --constraint=ib` should be added to the job script. 
+
+To run an interactive job, the job must also be ran from the borgstore directory.
+
+### Common questions about Borgstore
