@@ -340,8 +340,108 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
  
 </Tabs>
 
+## Global Modules on Pinnacles and MERCED
+
+Pinnacles and MERCED already come with a collection of global modules or softwares that do not need to be individually installed by the user. The modele system allows for the *loading* and *unloading* of a specific module. Users will make use of `avail`, `load`, `list`, `unload`, and `swap`. A table describing each of these Modules options is given below.
+
+:::tip
+A complete guide to using modules can be found via `man module`. 
+:::
+
+| Command                       | Description                                                                            |
+|:------------------------------|:---------------------------------------------------------------------------------------|
+| `module avail`                | This command lists all available modules                                               |
+| `module load <mod_name>`      | This command loads the environment corresponding to \<mod_name>                        |
+| `module list`                 | This command provides a list of all modules currently loaded into the user environment |
+| `module unload <mod_name>`    | This command unloads  the environment corresponding to \<mod_name>                     |
+| `module swap <mod_1> <mod_2>` | This command unloads the environment corresponding to \<mod_1> and loads to \<mod_2>   |
 
 
+
+<Tabs>
+  
+  <TabItem value="Pinnacles and MERCED Global Modules" label="Pinnacles and MERCED Global Modules" default>
+  <details>
+  <summary> Click Here to Expand to View the List. </summary>
+    ```bash
+       admin/0.0.1                            gaussian/gdv-20170407-i10+             mpfr/4.2.0                               r-biobase/2.50.0
+   amber/20-devel                         gaussian/gdv-20210302-j15       (D)    mpich/3.4.2-gcc-8.4.1                    r-ctc/1.64.0
+   amber/20                        (D)    gcc/8.5.0                              mpich/3.4.2-intel-2021.4.0               r-deseq2/1.30.0
+   anaconda3/2021.05                      gcc/11.2.0                             mpich/3.4.2-nvidiahpc-21.9-0      (D)    r-edger/3.32.1
+   anaconda3/2023.09-0             (D)    gcc/12.2.0                      (D)    multiqc/1.7                              r-fastcluster/1.1.25
+   angsd/0.940                            git/2.37.0                             multiwfn/3.8                             r-glimma/2.0.0
+   apbs/3.4.1                             glpk/4.65                              mvapich2/2.3.6-gcc-8.4.1                 r-goplot/1.0.2
+   awscli/1.16.308                        gmp/6.2.1                              mvapich2/2.3.6-intel-2021.4.0     (D)    r-goseq/1.42.0
+   bamtools/2.5.1                         gnuplot/5.4.2                          ncbi-blast+/2.12.0                       r-gplots/3.1.1
+   bamutil/1.0.15                         grace/5.1.25                           netlib-lapack/3.9.1                      r-qvalue/2.22.0
+   bbmap/39.06                            gromacs/2021.3                         netlib-xblas/1.0.248                     r-rots/1.18.0
+   bcftools/1.12                          gromacs/2022.3                         nvidiahpc/21.9-0                         r-sm/2.2-5.6
+   bcftools/1.14                   (D)    gromacs/2023.1                  (D)    octopus/13.0                             r-tidyverse/1.3.0
+   bcl2fastq2/2.20.0.422                  gsl/2.7                                octopus/14.1                      (D)    r/4.1.1
+   beast/1.10.4                           gurobi/9.5.0                           onnx/1.10.1                              r/4.2.2                          (D)
+   beast2/2.6.4                           hdf5/1.10.7-intel-2021.4.0             openbabel/3.0.0                          raxml-ng/1.2.0
+   bedtools2/2.30.0                       hdf5/1.14.1-2                   (D)    openblas/0.3.18                          rclone/1.59.1
+   berkeleygw/3.0.1-intel-mvapich2        ibamr/0.8.0-testing                    openblas/0.3.21                   (D)    repeatmodeler/1.0.11
+   berkeleygw/3.0.1-intel-2021.4.0        ibamr/0.12.0-debug                     opencarp/8.1                             rsem/1.3.1
+   berkeleygw/3.0.1                       ibamr/0.12.0-opt                       openjdk/1.8.0_265-b01                    salmon/1.4.0
+   berkeleygw/4.0-mvapich2-oneapi  (D)    ibamr/0.13.0-debug                     openjdk/11.0.20                          samtools/1.13
+   blast-plus/2.12.0                      ibamr/0.13.0-opt                (D)    openjdk/17.0.5_8                  (D)    scalapack/2.1.0
+   bowtie/1.3.0                           intel/oneapi                           openmpi/3.1.3-gcc                        schrodinger/2022-1
+   bowtie2/2.4.2                          interproscan/5.55-88.0                 openmpi/3.1.6-gcc-8.4.1                  schrodinger/2022-3               (D)
+   braker/2.1.6                           ior/3.3.0                              openmpi/3.1.6-intel-2021.4.0             sickle/1.33
+   butterflypack/2.0.0                    iq-tree/2.1.3                          openmpi/3.1.6-nvidiahpc-21.9-0           singularity/3.8.3
+   bwa-mem2/2.2.1                         jellyfish/2.2.7                        openmpi/4.0-merced-test                  smalt/0.7.6
+   bwa/0.7.17                             julia/1.7.3                            openmpi/4.0.6-gcc-8.4.1                  sombrero/2021-08-16
+   casacore/3.4.0                         julia/10.1.1                    (D)    openmpi/4.0.6-intel-2021.4.0             spiral/8.2.0
+   cgal/5.0.3                             kallisto/0.46.2                        openmpi/4.0.6-nvidiahpc-21.9-0           srilm/1.7.3
+   cmake/3.21.4                           lammps/20210310+kokkos+cuda            openmpi/4.1.1-gcc-8.4.1                  stacks/2.53
+   cmaq/5.3.1                             lammps/20210310+user-omp+kokkos        openmpi/4.1.1-intel-2021.4.0             star/2.7.11b
+   collier/1.2.5                          lammps/20210310                        openmpi/4.1.4-gcc-12.2.0+cuda            stata/17
+   cuda/10.2.89                           lammps/20220107+ml-quip                openmpi/4.1.4-gcc-12.2.0          (D)    stata/18                         (D)
+   cuda/11.0.3                            lammps/20220107                        orca/5.0.1                               stringtie/2.2.3
+   cuda/11.4.0                            lammps/20230208                 (D)    orthofinder/2.5.2                        subversion/1.14.1
+   cuda/11.5.0                            latte/1.2.2                            perl-db-file/1.840                       suite-sparse/5.13.0
+   cuda/11.8.0                            lftp/4.9.2                             perl-uri/1.72                            tcl/8.5.19-gcc-8.5.0
+   cuda/12.3.0                     (D)    libraries                              perl/5.34.0                              terachem/1.95
+   dakota/6.12                            libtirpc/1.1.4                         phyluce/1.6.7                            tk/8.5.19-gcc-8.5.0
+   dalton/2020.0                          libxc/5.2.3-gcc-12.2.0                 picard/2.26.2                            toolchain/scientificstack-11.2.0
+   elpa/2021.11.001                       likwid/5.2.2+cuda                      pigz/2.7                                 transdecoder/5.5.0
+   emacs/27.2                             likwid/5.2.2                    (D)    plink/1.90-beta-7.1                      trimmomatic/0.39
+   express/1.5.2                          localcolabfold/1.5.1                   protobuf/3.18.0                          trinity/2.12.0
+   fastqc/0.11.9                          mathematica/12.3.1                     py-numpy/1.21.4                          trinity/2.15.1                   (D)
+   ffmpeg/4.3.2                           mathematica/14.0.0              (D)    python/3.8.12                            user-modules
+   fftw/3.3.10-gcc-8.5.0                  matlab/r2021b                          python/3.11.0                     (D)    vcftools/0.1.14
+   fftw/3.3.10-intel-2021.4.0      (D)    matlab/r2023a                          quantum-espresso/6.7-intel-test          vmd/1.9.1
+   gate/9.0                               matlab/r2024a                   (D)    quantum-espresso/7.1                     vmd/1.9.3                        (D)
+   gatk/4.2.6                             metis/5.1.0                            quantum-espresso/7.2-gcc-openblas (D)    wannier90/3.1.0
+   gaussian/g09-d01                       minimap2/2.14                          r-ape/5.4-1                              xcrysden/1.6.2
+   gaussian/g16-b01                       molden/6.7                             r-argparse/2.0.3
+
+  Where:
+   D:  Default Module
+
+
+
+    ```
+
+  </details>
+  </TabItem>
+  
+  <TabItem value="MERCED Only Modules" label="MERCED Only Modules">
+    ```bash
+       berkeleygw/3.0.1-intel-mvapich2    berkeleygw/4.0-mvapich2-oneapi (D)    
+       bwa-mem2/2.2.1    openmpi/4.0-merced-test   
+      user-modules
+
+      Where:
+      D:  Default Module
+    ```
+
+  </TabItem>
+
+
+ 
+</Tabs>
 ### Checking disk quota and usage
 To look at your current usage amounts of `HOME`, `data` or `scratch` use the following command
 ```shell
