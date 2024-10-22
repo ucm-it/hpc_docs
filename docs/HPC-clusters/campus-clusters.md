@@ -524,3 +524,26 @@ To access data that is located in Borgstore the user must be in the Borgstore fo
 To run an interactive job, the job must also be ran from the borgstore directory.
 
 ### Common questions about Borgstore
+
+<details>
+
+<summary>How to check my current occupied space on Borgstore? </summary>
+
+Users can not check a detailed-breakdown of a group's users and their respective useage of the Borgstore storage. However, users can check thier Groups storage usage/total using the command `beegfs-ctl --getquota --gid`. And users can check their ID number and Group ID via the command `id`
+
+</details>
+
+<details>
+
+<summary>When should I use Borgstore? </summary>
+
+Borgstore is a great for users who must readily access exceedingly large quantities of data that can not fit onto our given data quotes in the shared workspace of `Home`,`Data` and `Scratch`. Borgstore is also useful when the output(s) are huge and can quickly take up all the space in the `Data` folder
+
+</details>
+<details>
+
+<summary>I am having trouble accessing the Borgstore and the direcotries in the Command-Line Interface is blanking red?</summary>
+
+If the path displayed is flashing red and user is having issues directly accessing the Borgstore then the soft-links leading to the Borgstore are broken or outdated. It is best to open a ticket to get further assitance. Click [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) to open a ticket.
+
+</details>
