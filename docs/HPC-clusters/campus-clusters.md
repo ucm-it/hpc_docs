@@ -1,7 +1,14 @@
 ---
 title: Campus Clusters
 hide_title: true
+sidebar_class_name: tutorialSidebar
 sidebar_position: 1
+image: imgs/hpc_cartoon.png
+showLastUpdateAuthor: true
+showLastUpdateTime: true
+last_update:
+  date: 1/1/2000
+  author: Yue Yu
 ---
 
 import Tag from '@site/src/components/Tag';
