@@ -3,7 +3,7 @@ title: Running Jupyter on Pinnacles
 sidebar_position: 1
 ---
 
-## Interactive jobs on cluster <!-- {docsify-ignore} -->
+## Interactive jobs on cluster 
 Interactive job will directly put you onto a compute node where you can use the compute node resources to test out a smaller program before scaling it up. View the [Interactive Job Tutorial Here](interact_job.md "Interactive session") 
 
 After being placed on the desired node type, we can run jupyter on the compute node. 
@@ -23,8 +23,9 @@ After being placed on the desired node type, we can run jupyter on the compute n
   ```bash
   ssh -N -f -L 8889:mrcdg01.cluster:8889 UCMID@login.rc.ucmerced.edu  
   ```
-  !> Note: you need to replace the mrcdg01 and UCMID to the assigned node from step 2 and your own NetID
-
+:::note
+User must replace the mrcdg01 and UCMID to the assigned node from step 2 and your own NetID
+:::
 4. Now open a web browser, copy and paste the URL from step 4. You will be able to access the jupyter notebook there. 
    
 :::warning
