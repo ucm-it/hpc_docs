@@ -2,7 +2,7 @@
 title: Campus Clusters
 hide_title: true
 sidebar_class_name: tutorialSidebar
-sidebar_position: 1
+sidebar_position: 2
 image: imgs/hpc_cartoon.png
 showLastUpdateAuthor: true
 showLastUpdateTime: true

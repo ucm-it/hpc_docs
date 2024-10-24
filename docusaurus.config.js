@@ -99,6 +99,7 @@ const config = {
             position: 'left',
             label: 'HPC Cluster',
           },
+          {to: '/hpc_qa.md', label: 'HPC Q&A', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/amirayuyue/hpc_doc_new',
