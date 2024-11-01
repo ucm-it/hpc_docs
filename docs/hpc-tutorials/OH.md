@@ -38,7 +38,7 @@ Request Services & Contact Us - [here](https://ucmerced.service-now.com/serviceh
 Reset Password & Login Video Below!
 
 <p align='center'>
-<iframe width="560" height="560" src="https://www.youtube.com/embed/8BHeIofP0ik?si=OWwBIvoRbCkDBLqm&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="680" height="680" src="https://www.youtube.com/embed/8BHeIofP0ik?si=OWwBIvoRbCkDBLqm&rel=0" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 
 
@@ -46,7 +46,7 @@ Reset Password & Login Video Below!
 ## Remote transfer files using `scp` command <!-- {docsify-ignore} -->
 Watch the video below!
 <p align='center'>
-<iframe width="560" height="560" src="https://www.youtube.com/embed/G6DNWqHFC7A?si=mUyddWUx9rXQuvl4&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="680" height="680" src="https://www.youtube.com/embed/G6DNWqHFC7A?si=mUyddWUx9rXQuvl4&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 
 
