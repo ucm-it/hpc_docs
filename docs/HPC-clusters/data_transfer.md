@@ -41,9 +41,16 @@ scp [options] user@login.rc.ucmerced.edu:/remote/file.txt /local/directory
 ```
 
 #### Remote transfer files using `scp` command 
-<p align='center'>
-<iframe width="560" height="560" src="https://www.youtube.com/embed/G6DNWqHFC7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</p>
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/G6DNWqHFC7A"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
 
 
 ### `rsync` Command 

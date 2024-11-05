@@ -24,34 +24,46 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
 
   <TabItem value="Pinnacles" label="Pinnacles" default>
     ```bash
-        #!/bin/bash
-        #SBATCH --nodes=1    # request only 1 node
-        #SBATCH --partition test      # this job will be submitted to test queue
-        #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
-        #SBATCH --time=0-00:15:00 # 15 minute
-        #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
-        #SBATCH --output=my_%j.stdout    # standard output will be redirected to this file
-        # #SBATCH --constraint=bigmem   #uncomment this line if you need the access to the bigmem node for Pinnacles
-        # #SBATCH --constraint=gpu #uncomment this line if you need the access to GPU
-        # #SBATCH --gres=gpu:2   #uncomment this line if you need GPU access (2 GPUs)
-        #SBATCH --job-name=my_job    # this is your job’s name
-        ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
-        ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
-        #SBATCH --export=ALL
+    #!/bin/bash
+    #SBATCH --nodes=1    # request only 1 node
+    #SBATCH --partition test      # this job will be submitted to test queue
+    #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
+    #SBATCH --time=0-00:15:00 # 15 minute
+    #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
+    #SBATCH --output=my_%j.stdout    # standard output will be redirected to this file
+    # #SBATCH --constraint=bigmem   #uncomment this line if you need the access to the bigmem node for Pinnacles
+    # #SBATCH --constraint=gpu #uncomment this line if you need the access to GPU
+    # #SBATCH --gres=gpu:2   #uncomment this line if you need GPU access (2 GPUs)
+    #SBATCH --job-name=my_job    # this is your job’s name
+    ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
+    ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
+    #SBATCH --export=ALL
     ```
      </TabItem>
 
     <TabItem value="MERCED" label="MERCED">
 
       ```bash
-      Come back to rewritten MERCED Script
+      #!/bin/bash
+      #SBATCH --nodes=1    # request only 1 node
+      #SBATCH --partition test      # this job will be submitted to test queue
+      #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
+      #SBATCH --time=0-00:15:00 # 15 minute
+      #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
+      #SBATCH --output=my_%j.stdout # standard output will be redirected to this file
+      # #SBATCH --constraint=bigmem#uncomment this line if you need the access to the bigmem node for MERCED
+      #SBATCH --job-name=my_job    # this is your job’s name
+      ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
+      ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
+      #SBATCH -M merced
+      #SBATCH --export=ALL
       ```
     </TabItem>
 
     </Tabs>
 
 
-Note that for both MERCED and Pinnacles CPUs hyper-threading are turned off.  
+Note that for both MERCED and Pinnacles CPUs **hyper-threading** is turned off.  
 > If you want to assess how busy the cluster is, please use the following
 Use `sinfo` to see the nodes state and check how many nodes are being allocated (alloc) or how many nodes are available (idle)
 > If you want to estimate the job starting time 
