@@ -70,7 +70,9 @@ To view the current permissions of a given file or directory use:
 
 Example output with a directory: 
 
-    ddrwxr-xr-x 20 guest015 ucm_test 8192 Sep  6 09:47 test_dir/
+```bash
+ddrwxr-xr-x 20 guest015 ucm_test 8192 Sep  6 09:47 test_dir/
+```
 
 > In the output above the user has read, write and executable access. The group has read and executable access. Everyon else on the cluster has read and executable access. 
 </details>
@@ -84,6 +86,7 @@ The permissions will be shown in an order of user, then group and then other(eve
 The command `chmod -R  u=rwx,g=---, o=--- permissions/` will be executed and will update the permissions of the group and everyone else so they will not have read, write or execute access of the directory, `permissions/`. 
 <details>
 <summary> Example Output </summary>
+
 To view the changes and ensure they are accurate run the command `ls -ld` 
 
 The output should look similar to this:
@@ -149,6 +152,7 @@ chmod <123> <file>
 
 <details>
 <summary> Breakdown of octal format </summary>
+
 Where:
 
 1 represents user (owner) permissions in octal format.
@@ -175,9 +179,10 @@ chmod 754 filename.txt
 #Sets group to have r and x permissions ==> 5
 #Sets others to r ==> 4
 ```
-Sample output of before and after ofchanging permissions: 
+Sample output of before and after of changing permissions: 
 <details>
-<summary>Sample output </summary>
+<summary> Sample output </summary>
+
 `drwxr----- 2 <user> <group> 10 Jul 28 14:47 permissions/`
 
 Sample Output after changing permissions: 

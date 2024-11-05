@@ -83,6 +83,8 @@ The `sacct` displays accounting data for all jobs in the cluster queue or recent
 Example of `sacct -e`
 <details>
   <summary>Click to see the full ouput list </summary>
+  
+  ```bash
     Account             AdminComment        AllocCPUS           AllocNodes 
     AllocTRES           AssocID             AveCPU              AveCPUFreq 
     AveDiskRead         AveDiskWrite        AvePages            AveRSS
@@ -111,6 +113,7 @@ Example of `sacct -e`
     TRESUsageOutMinNode TRESUsageOutMinTask TRESUsageOutTot     UID
     User                UserCPU             WCKey               WCKeyID
     WorkDir
+    ```
   </details>
 
 Below are defintions of some important fields from the above list that are helpful when troubleshooting or debugging. 
@@ -169,41 +172,46 @@ Below is an example of using scontrol to get insight about an example job. An ex
 
 <details>
     <summary> Sample Output </summary>
-        UserId=guest001 GroupId=****** MCS_label=N/A
-        Priority=4294341021 Nice=0 Account=project_**** QOS=normal
-        JobState=RUNNING Reason=None Dependency=(null)
-        Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
-        RunTime=00:02:33 TimeLimit=00:15:00 TimeMin=N/A
-        SubmitTime=2023-07-19T12:50:52 EligibleTime=2023-07-19T12:50:52
-        AccrueTime=2023-07-19T12:50:52
-        StartTime=2023-07-19T12:50:53 EndTime=2023-07-19T13:05:53 Deadline=N/A
-        SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-07-19T12:50:53 Scheduler=Main
-        Partition=test AllocNode:Sid=10.1.2.252:279163
-        ReqNodeList=(null) ExcNodeList=(null)
-        NodeList=hmnode003
-        BatchHost=hmnode003
-        NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-        TRES=cpu=1,mem=1M,node=1,billing=1
-        Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
-        MinCPUsNode=1 MinMemoryNode=1M MinTmpDiskNode=0
-        Features=(null) DelayBoot=00:00:00
-        OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-        Command=/home/******/testoom/job.bat
-        WorkDir=/home/******/testoom
-        StdErr=/home/******/testoom/Appout.qlog
-        StdIn=/dev/null
-        StdOut=/home/******/testoom/Appout.qlog
-        Power=
+   :::info 
+    Astericks are only in the above sample output to protect user information. 
+    :::
+
+
+
+    ```bash
+    UserId=guest001 GroupId=****** MCS_label=N/A
+    Priority=4294341021 Nice=0 Account=project_**** QOS=normal
+    JobState=RUNNING Reason=None Dependency=(null)
+    Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+    RunTime=00:02:33 TimeLimit=00:15:00 TimeMin=N/A
+    SubmitTime=2023-07-19T12:50:52 EligibleTime=2023-07-19T12:50:52
+    AccrueTime=2023-07-19T12:50:52
+    StartTime=2023-07-19T12:50:53 EndTime=2023-07-19T13:05:53 Deadline=N/A
+    SuspendTime=None SecsPreSuspend=0 LastSchedEval=2023-07-19T12:50:53 Scheduler=Main
+    Partition=test AllocNode:Sid=10.1.2.252:279163
+    ReqNodeList=(null) ExcNodeList=(null)
+    NodeList=hmnode003
+    BatchHost=hmnode003
+    NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+    TRES=cpu=1,mem=1M,node=1,billing=1
+    Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+    MinCPUsNode=1 MinMemoryNode=1M MinTmpDiskNode=0
+    Features=(null) DelayBoot=00:00:00
+    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+    Command=/home/******/testoom/job.bat
+    WorkDir=/home/******/testoom
+    StdErr=/home/******/testoom/Appout.qlog
+    StdIn=/dev/null
+    StdOut=/home/******/testoom/Appout.qlog
+    Power=
+    ```
 </details>
 
-:::info 
-Astericks are only in the above sample output to protect user information. 
-:::
 
-## Common Issues  <!-- {docsify-ignore} -->
+## Common Issues 
 Below are common issues, that can arrise when running jobs on the clusters, and associated troubleshooting methods. 
 
-### Out of Memory Issues <!-- {docsify-ignore} -->
+### Out of Memory Issues 
 Jobs can fail if the memory requested for the job exceeds the actual memory needed for the job to complete successfully.
 It is good practice to always check the job state and exit code with `sacct -j <JobID>`. It can be concluded that a job has had a **OUT_OF_MEMORY** error from reading the job state column and exit code. Furthermore, the output file produced by the failed job should also contain error messages that can be associated with the job running out of memory. 
 
@@ -280,50 +288,65 @@ Using the `sacct` command we see that the job failed because it ran out of memor
 
 Looking through the output of `scontrol` we can see the job state, the state the job was last recorded at before the session was terminated or ended, was `OUT_OF_MEMORY`, the node reason was listed at `OUTofMemory` and the exit code was recorded at, before the job session was terminated, `0:125`. All of these fields are useful and allow for the debugging process to conclude that the job did not succesfully run because of a memory capacity issue. 
 
-### Time-Out Issues <!-- {docsify-ignore} -->
+### Time-Out Issues
 One common issue for jobs failing is if job does not complete in the allocated time. This leads to a **Time-Out** State and a `(TimeLimit)` nodelist reason. The best approach is to increase the time being allocated for the job to run, ensuring that the job does not exceed the partition's max walltime. If the job continues to fail with a **Time-Out** state then it is best to break the job down into smaller jobs,  make it into a job array or change the partition that the job is being placed onto to run and compute. 
 
-Below is a script that will result in a time-out error.
-
-    #!/bin/bash
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=1
-    #SBATCH -p test
-    #SBATCH --mem=1G  #Here is the reason why the job fails
-    #SBATCH --time=0-00:01:00     # 1 mins
-    #SBATCH --output=regular.stdout
-    #SBATCH --job-name=test
-    #SBATCH --export=ALL
 
 
-    echo "Starting Process"
-    sleep 180
-    echo "Ending Process"
+<details>
+<summary> Below is a script that will result in a time-out error. </summary>
+
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -p test
+#SBATCH --mem=1G  #Here is the reason why the job fails
+#SBATCH --time=0-00:01:00     # 1 mins
+#SBATCH --output=regular.stdout
+#SBATCH --job-name=test
+#SBATCH --export=ALL
 
 
-This simple job script is printing out "Starting Process" and then sleeps or waits 180 seconds before again executing the following line of printing out "Ending Process".  After submitting this script using `sbatch` it gets placed on the requested partition and then it begins to run until it hits its max wall time of 1 minute. This job will because the mininimum time needed was 180 seconds as that is the time the job sleeps after running and is the time required at minimum for the job to fully execute. 
+echo "Starting Process"
+sleep 180
+echo "Ending Process"
+```
+This job script prints "Starting Process," then waits for 180 seconds before printing "Ending Process." When submitted with `sbatch`, it is placed in the requested partition but fails because it exceeds the maximum wall time of 1 minute. Since the script requires a minimum of 180 seconds to complete, it needs a longer wall time to run successfully.
 
-Using `sacct -j <jobID> --format=jobid,jobname,reqcpus,reqmem,elapsed,state,exitcode`. We get a result table that shows that the first part timed out and thus resulted in a failed, timedout and cancelled state. 
 
-    JobID           JobName  ReqCPUS     ReqMem    Elapsed      State ExitCode
-    ------------ ---------- -------- ---------- ---------- ---------- --------
-    569330             test        1         1G   00:01:02    TIMEOUT      0:0
-    569330.batch      batch        1              00:01:03  CANCELLED     0:15
-    569330.exte+     extern        1              00:01:02  COMPLETED      0:0
-    569330.0           echo        1              00:00:00  COMPLETED      0:0
-    569330.1          sleep        1              00:01:02  CANCELLED     0:15
+</details>
+
+
+Using `sacct -j <jobID> --format=jobid,jobname,reqcpus,reqmem,elapsed,state,exitcode`, we get a result table that shows that the first part timed out and thus resulted in a failed, timed out and canceled state. 
+<details>
+<summary> `sacct` output </summary>
+
+```bash
+JobID           JobName  ReqCPUS     ReqMem    Elapsed      State ExitCode
+------------ ---------- -------- ---------- ---------- ---------- --------
+569330             test        1         1G   00:01:02    TIMEOUT      0:0
+569330.batch      batch        1              00:01:03  CANCELLED     0:15
+569330.exte+     extern        1              00:01:02  COMPLETED      0:0
+569330.0           echo        1              00:00:00  COMPLETED      0:0
+569330.1          sleep        1              00:01:02  CANCELLED     0:15
+
+```
+</details>
 
 Using the sacct command we see that the job resulted in `TIMEOUT` state which allows us to debug that the issue was an walltime issue issue. This can further be seen as `569330.0` or `echo` on the fourth line shows that echo was completed it was able to execute in the begginging when it printed "Starting Process" but echo was never called again as the job timed-out so the second echo which prints out "Ending Process" was never reached as the job stoped one line before it.  
 
  It always important to note that sometimes a job failing not the result of one issue or error, but a combination of many errors and issues. Furthermore it is best to keep track of jobs before, during and after completion. 
 
 
-## Useful proccess to follow to ensure sucessful completion of jobs <!-- {docsify-ignore} -->
+## Useful proccess to follow to ensure sucessful completion of jobs
 1. Submit the Job
     Submit the above job and see how it runs. To submit the above job, run the following command.
-
+        ```bash
         sbatch script.sh
-        Submitted batch job [JOBID]
+        ```
+        Output:
+        >Submitted batch job [JOBID]
 
 2. Watch Live Status of the Job.
     Use the `watch squeue -u <username>`. Do not include anything past the `@` in the username. Ex. `watch squeue -u guest001`. Empty Version of Live Status is below. 
@@ -336,17 +359,19 @@ Using the sacct command we see that the job resulted in `TIMEOUT` state which al
 3. After the job exits from the queue, run the below sacct command to check the status of the job. 
 `sacct -j <JobID> ` or `scontrol show job <jobid>`
 
-Sacct Command SampleOutput:
+<details>
+<summary> `sacct Command SampleOutput`: </summary>
 
-        JobID    JobName    Elapsed      State ExitCode
-        ------------ ---------- ---------- ---------- --------
-        568963             test        3      1024M                         00:01:10              TIMEOUT      0:0
-        568963.batch      batch        3                12.01M     12.01M   00:01:11            CANCELLED     0:15
-        568963.exte+     extern        3                 0.90M      0.90M   00:01:10            COMPLETED      0:0
-        568963.0           echo        3                 3.30M      3.30M   00:00:00            COMPLETED      0:0
-        568963.1          sleep        3                 3.27M      3.27M   00:01:12            CANCELLED     0:15
+JobID    JobName    Elapsed      State ExitCode
+------------ ---------- ---------- ---------- --------
+568963             test        3      1024M                         00:01:10              TIMEOUT      0:0
+568963.batch      batch        3                12.01M     12.01M   00:01:11            CANCELLED     0:15
+568963.exte+     extern        3                 0.90M      0.90M   00:01:10            COMPLETED      0:0
+568963.0           echo        3                 3.30M      3.30M   00:00:00            COMPLETED      0:0
+568963.1          sleep        3                 3.27M      3.27M   00:01:12            CANCELLED     0:15
 
-## Other Useful Commands  <!-- {docsify-ignore} -->
+</details>
+## Other Useful Commands 
 
 |Command | Use | 
 | -------------| -----------------------|
