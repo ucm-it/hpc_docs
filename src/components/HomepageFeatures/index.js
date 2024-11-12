@@ -8,8 +8,8 @@ const FeatureList = [
     Svg: require('@site/static/img/icon_svg/1.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+       This site is tailored and designed for the UC Merced community that use the HPC clusters.
+       All job scripts and software tutorials are done on the cluster for best experience possible. 
       </>
     ),
   },
@@ -18,8 +18,8 @@ const FeatureList = [
     Svg: require('@site/static/img/icon_svg/2.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        First place to visit for everything HPC and JupyterHub related at UC Merced.
+        Constantly updated with the latest news,information and resources.
       </>
     ),
   },
@@ -28,7 +28,16 @@ const FeatureList = [
     Svg: require('@site/static/img/icon_svg/3.svg').default,
     description: (
       <>
-       insert a Slack Link (maybe a slack icon too)
+       We are a tight knit group of researchers who are passionate about HPC and JupyterHub.
+       We are always looking for new contributors to help us improve our documentation.
+       Join us and chat with us on our{" "}
+       <a href="https://ucmhpcclusters.slack.com" target="_blank" rel="noopener noreferrer">
+         Slack workspace
+       </a> 
+       or open an issue on our{" "}
+       <a href="https://github.com/amirayuyue/hpc_doc_new" target="_blank" rel="noopener noreferrer">
+         GitHub page
+       </a>.
       </>
     ),
   },

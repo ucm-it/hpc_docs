@@ -37,7 +37,7 @@
 a {
   color: var(--ifm-color-primary); /* Adjust the color if needed */
   text-decoration: underline; /* Adds an underline */
-  font-weight: bold; /* Makes the link bold */
+  /* font-weight: bold; Makes the link bold */
   transition: color 0.2s ease-in-out; /* Smooth color transition */
 }
 
