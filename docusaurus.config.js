@@ -145,12 +145,16 @@ const config = {
                 href: 'https://ucmerced.service-now.com/servicehub',
               },
               {
-                label: 'Zoom Office Hours (Every Friday 11:3pm-1pm PT',
+                label: 'Zoom Office Hours (Fridays 11:30pm-1pm PT',
                 href: 'https://ucmerced.zoom.us/j/89487493900',
               },
               {
                 label: 'CIRT UC Merced Home Page',
                 href: 'https://it.ucmerced.edu/CIRT',
+              },
+              {
+                label: 'UC Merced HPC Cluster Slack Workspace',
+                href: 'https://ucmhpcclusters.slack.com',
               },
             ],
           },
