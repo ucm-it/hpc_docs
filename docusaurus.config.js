@@ -112,6 +112,12 @@ const config = {
         items: [
           {
             type: 'docSidebar',
+            sidebarId: 'jupytersidebar',
+            position: 'right',
+            label: 'JupyterHub',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'HPC Cluster',
@@ -132,8 +138,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'HPC Tutorial',
+                to: 'docs/hpcdocs/hpc-tutorials/intro-hpc',
               },
             ],
           },
