@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'UC Merced HPC clusters',
-  tagline: 'Managed by CIRT team',
+  title: 'UC Merced HPC & JupyterHub Documentation',
+  tagline: 'Cyberinfrastructure Research and Technology',
   favicon: 'img/cirt.png',
 
   // Set the production url of your site here
@@ -141,6 +141,15 @@ const config = {
                 label: 'HPC Tutorial',
                 to: 'docs/hpcdocs/hpc-tutorials/intro-hpc',
               },
+              {
+                label: 'HPC Clusters',
+                to: 'docs/hpcdocs/HPC-clusters/campus-clusters/#hpc-clusters',
+              },
+              {
+                label: 'JupyterHub',
+                to: 'docs/jupyter/jupyterhub',
+              }
+
             ],
           },
           {
@@ -178,7 +187,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} University of California, Merced HPC & JupyterHub Documentation, built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} University of California, Merced HPC & JupyterHub Documentation.`,
       },
       prism: {
         theme: prismThemes.github,
