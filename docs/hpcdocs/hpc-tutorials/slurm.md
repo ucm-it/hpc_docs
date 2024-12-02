@@ -34,9 +34,9 @@ Here is an example of using `sbatch` to submit a job file to the job scheduler.
 > `sbatch <batchscript>`
 
 
-:: Tip
+:::tip
 `sbatch` command is different from `SBATCH` directives. A directive is a way of specifiing how the job script should be configured in a certain aspect(i.e. max wall time, max core count, etc.). Visit [this sction](#sbatch-directives-for-job-scripts) for further information on Slurm directives. 
-::
+:::
 
 
 
@@ -58,12 +58,18 @@ The `SBATCH` directives must be used in the following manner for Slurm to proper
 
 Template:
 
+    ```bash
     #SBATCH --[directive]
+    ```
 
 Example: 
 
+    ```bash
     #SBATCH --job-name=EXAMPLEJOB
+    ```
+    ```bash
     #SBATCH --nodes=2
+    ```
 
 #### Common Directives
 
@@ -78,12 +84,14 @@ Example:
 |--output=FILE_NAME | Designates a file to capture the standard output. |
 |--error=FILE_NAME| Specifies a file to capture the standard error output.|
 
-:: Tip
+:::tip
 Please see [directive section](#sbatch-directives-for-job-scripts) for a more complete list. 
-::
+:::
 ### 3) Exporting All of the user's environment for Job: 
 
+    ```bash
     --export=all 
+    ```
 
 This line will tell Slurm to export the current working enviroment to be used on the computing nodes to process the requested instructions. This line is important as it helps ensure consistancy across user's working enviroment and the resources' working enviroment. 
 
@@ -99,7 +107,7 @@ Here is where you can write the commands or instructions to execute the computat
 
 ### Job Examples 
 
-More detailed job examples can be found [here](running_jobs.md)
+More detailed job examples can be found [here](../running-jobs/)
 
 ## Slurm - Job Management 
 

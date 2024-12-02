@@ -19,7 +19,7 @@ const FeatureList = [
     description: (
       <>
         First place to visit for everything HPC and JupyterHub related at UC Merced.
-        Constantly updated with the latest news,information and resources.
+        Constantly updated with the latest news, information and resources.
       </>
     ),
   },
@@ -32,9 +32,10 @@ const FeatureList = [
        We are always looking for new contributors to help us improve our documentation.
        Join us and chat with us on our{" "}
        <a href="https://ucmhpcclusters.slack.com" target="_blank" rel="noopener noreferrer">
-         Slack workspace
+         Slack workspace 
        </a> 
-       or open an issue on our{" "}
+
+        or  open an issue on our {" "}
        <a href="https://github.com/amirayuyue/hpc_doc_new" target="_blank" rel="noopener noreferrer">
          GitHub page
        </a>.

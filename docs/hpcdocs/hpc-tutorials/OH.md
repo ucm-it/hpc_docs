@@ -54,11 +54,11 @@ Watch the video below!
 ## Commonly Asked Questions: 
 >Q: I am new to High-Performance Computing, where do I begin?
 >
->A: It is highly recommended that all HPC users have knowledge of basic linux commands and understanding of how a command line interface works. If users need to brush up on basic linux commands then it is highly recommended that they view the Linux(Unix) carpentry workshops [Here!](software_carpentry.md)   
+>A: It is highly recommended that all HPC users have knowledge of basic linux commands and understanding of how a command line interface works. If users need to brush up on basic linux commands then it is highly recommended that they view the Linux(Unix) carpentry workshops [Here!](/docs/hpc-tutorials/workshops.md)   
 >
->Next step would be to check out the HPC Practice Session Material [Here!](hpc_training.md). Here you can look at the training material that is typically shown in the HPC workshop and even do a self-paced practice session!
+>Next step would be to check out the HPC Practice Session Material [Here!](./intro-hpc.mdx). Here you can look at the training material that is typically shown in the HPC workshop and even do a self-paced practice session!
 >
->Finally it is highly recommended to look over sample job scripts to understand what a job is and what does a job hold. Users can view a sample job script [Here!](running_jobs.md)
+>Finally it is highly recommended to look over sample job scripts to understand what a job is and what does a job hold. Users can view a sample job script [Here!](../running-jobs/)
 
 >Q: How can I view the size of my data on the cluster?
 >
@@ -66,7 +66,7 @@ Watch the video below!
 
 >Q: How to intialzie Conda Enviroment?
 >
->A:Tutorial is listed under "Running jobs" - [Click Here](conda_env.md)
+>A:Tutorial is listed under "Running jobs" - [Click Here](../running-jobs/conda.mdx)
 
 >Q:My GPU node request is not being granted or running?
 >
@@ -92,7 +92,7 @@ No recent office hour questions
 
 >Q: What is the max storage limit of the Data Folder?
 >
->A: The max storage in the data folder is 500 GB. More information about all folders and their max storage sizes can be found [here](central_login.md)!
+>A: The max storage in the data folder is 500 GB. More information about all folders and their max storage sizes can be found [here](../HPC-clusters/campus-clusters.md/#centralized-login)!
 
 >Q:What is the cost of purchasing into Borgstore?
 >
@@ -100,11 +100,11 @@ No recent office hour questions
 
 >Q: I am having issues running R through parallelization on the cluster. 
 >
->A: First test that you are able to run R via a serial job fine. Once you are able to submit a serial R job then scale it up to a parallel computing job. Many times it is the case that `source activate [R-enviroment]` and `Rscript [script]`. For further support check our R documentation found [here](running_R_mpi.md).
+>A: First test that you are able to run R via a serial job fine. Once you are able to submit a serial R job then scale it up to a parallel computing job. Many times it is the case that `source activate [R-enviroment]` and `Rscript [script]`. For further support check our R documentation found [here](../running-jobs/run_r_mpi.mdx).
 
 >Q: How can I edit my file permissions so my group can access the file and its subfolders?
 >
->A: You can use the `chmod` command to assign read/write access to your group and view more information and help here on our [data sharing page](data_share.md)!
+>A: You can use the `chmod` command to assign read/write access to your group and view more information and help here on our [data sharing page](../HPC-clusters/data_sharing.md)!
 
 
 >Q: I need to jobs with data that exceeds the standard storage given in `data` & `scratch` folders, what are the options?
@@ -138,7 +138,7 @@ No recent office hour questions
 
 >Q: I am trying to run a job on the cluster. My data utilizes python dependcies to parse through it and is located on the box cloud. Can my job run sucessfully?
 >
->A: All the files and folders that the cluster needs to access needs to be transfered and present on the cluster. The cluster can not access data stored on a internet or outside cloud storage. Furthermore, to utilize python packages or dependencies one must create a conda enviroment on the cluster. More information about creating an enviroment can be found [here](conda_env.md)
+>A: All the files and folders that the cluster needs to access needs to be transfered and present on the cluster. The cluster can not access data stored on a internet or outside cloud storage. Furthermore, to utilize python packages or dependencies one must create a conda enviroment on the cluster. More information about creating an enviroment can be found [here](../running-jobs/conda.mdx)
 
 >Q: How can I view the size of my data on the cluster?
 >
@@ -171,7 +171,7 @@ No recent office hour questions
 
 >Q: How to intialzie Conda Enviroment?
 >
->A:Tutorial is listed under "Running jobs" - [Click Here](conda_env.md)
+>A:Tutorial is listed under "Running jobs" - [Click Here](../running-jobs/conda.mdx)
 
 >Q:My GPU node request is not being granted or running?
 >
@@ -207,7 +207,7 @@ The command "sinfo" to get information about the GPU nodes and their current usa
 
 > Q: How to use github. 
 >
->A: Github desktop app is strongly recommended. [The HPC Resources Page](software_carpentry.md) has a workshop on Version Control with GIT for git command line general tutorial.  
+>A: Github desktop app is strongly recommended. [The HPC Resources Page](./workshops.md) has a workshop on Version Control with GIT for git command line general tutorial.  
 
 
 >Q: Need help with parallel computing?

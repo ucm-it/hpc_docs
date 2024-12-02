@@ -78,7 +78,7 @@ import TabItem from '@theme/TabItem';
     
     Relative proximity and extent of availability: The Pinnacles cluster is managed by the Office of Information Technology at UC Merced and technical support and training opportunities are available. It is available for all faculty projects at no cost. All above nodes are interconnected via HDR InfiniBand w/ RDMA for fast (100Gbits/s) and low latency (sub ms) data transfer.
 
-    __How to cite__
+   ### __How to cite__
 
     All Pinnacles users must agree to acknowledge the Pinnacles Cluster and the supporting NSF grant (NSF MRI, # 2019144) in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:
 

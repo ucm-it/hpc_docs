@@ -70,7 +70,7 @@ During this maintenance window, CIRT might be slow to respond to service tickets
 
 If you have additional questions, please do not hesitate to reach out to us via CIRT general request [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
-## Introduction to Overleaf Webinar  <!-- {docsify-ignore} -->
+## Introduction to Overleaf Webinar 
 Dear Research Computing Users –
 Sign up for Introduction to Overleaf training here: https://ucm.edu/Intro_to_Overleaf
 Whether you're new to working with LaTeX, Overleaf or both; or just want an insight into the best way to work with your projects in Overleaf, join us for this 60 minute webinar, where we'll cover:
@@ -183,7 +183,7 @@ Other important changes starting **1 February 2023**
   Here you can find older News Notes.
 
 
-## CIRT team will be out of office attending the PEARC conference in Boston, MA from July 10-14 <!-- {docsify-ignore} -->
+## CIRT team will be out of office attending the PEARC conference in Boston, MA from July 10-14 
 
 
 
@@ -197,7 +197,7 @@ Please plan ahead for any support you might need from CIRT!
 
 
 
-## Pinnacles maintenance (06/06/2022-06/07/2022) <!-- {docsify-ignore} -->
+## Pinnacles maintenance (06/06/2022-06/07/2022) 
 
 
 
@@ -229,7 +229,7 @@ CIRT will send an ALL CLEAR email after successful maintenance.
 
 
 
-## CIRT Recharge Center Hiatus Continues 4/25/2022   <!-- {docsify-ignore} -->
+## CIRT Recharge Center Hiatus Continues 4/25/2022   
 
 
 
@@ -267,7 +267,7 @@ However, faculty PIs will NOT be charged for core-hour usage on MERCED until rec
 
 
 
-## do_IRQ messages on MERCED Cluster 02/11/2021  <!-- {docsify-ignore} -->
+## do_IRQ messages on MERCED Cluster 02/11/2021
 
 
 
@@ -291,7 +291,7 @@ Sorry for the inconvenience and thank you for your cooperation.
 
 
 
-## MERCED CLUSTER RECHARGE SERVICES STARTING 1/1/2022  <!-- {docsify-ignore} -->
+## MERCED CLUSTER RECHARGE SERVICES STARTING 1/1/2022 
 
 
 
@@ -339,11 +339,11 @@ However, you can obtain access to other free compute resources such as our new N
 
 
 
-**CLICK [HERE](rechargeFAQs.md) FOR RECHARGE CENTER FAQ **
+**CLICK [HERE](/campus-clusters.md/#hpc-clusters) FOR RECHARGE CENTER FAQ **
 
 
 
-## UNEXPECTED CRASHES ON MERCED CLUSTER (03/26/2021): FIX  <!-- {docsify-ignore} -->
+## UNEXPECTED CRASHES ON MERCED CLUSTER (03/26/2021): FIX
 
 
 
@@ -353,19 +353,19 @@ If you experience any issues, we encourage you to open a ticket to the CIRT team
 
 
 
-## UNEXPECTED CRASHES ON MERCED CLUSTER (03/25/2021): WORKAROUND  <!-- {docsify-ignore} -->
+## UNEXPECTED CRASHES ON MERCED CLUSTER (03/25/2021): WORKAROUND  
 
-CIRT is determining a workaround for the MERCED cluster users while we fully restore services on the head node. JupyterHub access is disabled during this time. We encourage you monitor [GitHub Docs News page](news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
-
-
+CIRT is determining a workaround for the MERCED cluster users while we fully restore services on the head node. JupyterHub access is disabled during this time. We encourage you monitor [GitHub Docs News page](/hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
 
 
 
-CIRT is investigating unexpected crashes on MERCED cluster. Users will not be able to submit jobs until the root cause is diagnosed and resolved. We apologize for any inconvenience. We encourage you monitor [GitHub Docs News page](news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
+
+
+CIRT is investigating unexpected crashes on MERCED cluster. Users will not be able to submit jobs until the root cause is diagnosed and resolved. We apologize for any inconvenience. We encourage you monitor [GitHub Docs News page](/hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
 
 
 
-## MERCED CLUSTER UNEXPECTED REBOOT (03/25/2021)  <!-- {docsify-ignore} -->
+## MERCED CLUSTER UNEXPECTED REBOOT (03/25/2021)
 
 
 
@@ -383,7 +383,7 @@ We encourage you monitor GitHub Docs News page for updates and if you experience
 
 
 
-## MERCED Cluster maintenance 03/02/2021 - 03/04/2021  <!-- {docsify-ignore} -->
+## MERCED Cluster maintenance 03/02/2021 - 03/04/2021
 
 Dear Campus Research Computing Community,
 
@@ -459,7 +459,7 @@ Additional information on RSYNC command [HERE](https://www.computerhope.com/unix
 
 **Where can researchers get the maintenance cycle updates?**
 
-Stay tuned for updates/communications in your email and [GitHub Docs News page](news.md).
+Stay tuned for updates/communications in your email and [GitHub Docs News page](/hpc_news.md)).
 
 Next maintenance communications before the maintenance cycle - **19th Feb, 24th Feb, and 1st March.**
 
