@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'UC Merced HPC & JupyterHub Documentation',
-  tagline: 'Cyberinfrastructure Research and Technology',
+  tagline: 'Cyberinfrastructure and Research Technologies',
   favicon: 'img/cirt.png',
 
   // Set the production url of your site here
@@ -112,15 +112,15 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'jupytersidebar',
-            position: 'right',
-            label: 'JupyterHub',
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'HPC Cluster',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'jupytersidebar',
+            position: 'left',
+            label: 'JupyterHub',
           },
           { to: '/hpc-qa', label: 'HPC Q&A', position: 'left' }, // Update this line
           { to: '/blog', label: 'Blog', position: 'left' },
