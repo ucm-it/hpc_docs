@@ -1,5 +1,5 @@
 ---
-title: SLURM
+title: Slurm
 sidebar_position: 1
 ---
 This page serves as point of introduction to understanding and understanding the best use of Slurm. 
@@ -52,7 +52,7 @@ This line should always be added at the very top of your SBATCH/Slurm script.
 
     !/bin/bash
 
-### 2) `SBATCH` Directives in the Script <!-- {docsify-ignore} -->
+### 2) `SBATCH` Directives in the Script 
 
 The `SBATCH` directives must be used in the following manner for Slurm to properly recognize them: 
 
