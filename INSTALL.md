@@ -3,7 +3,7 @@ This will cover the prequisite knowledge, softwares and tools to successfully ha
 
 ## Prerequisite Tools
 1. Node.js
-   This is the runtime Javascript Enviroment that is used also as our package manager for all javascript packages. Without Node.js, it will not be possible to downlaod a working, local copy of the repository.
+   This is the runtime Javascript Enviroment that is used also as our package manager for all javascript packages. Without Node.js, it will not be possible to downlaod a working, local copy of the repository. The instructions can be followed [here](https://nodejs.org/en/download/package-manager)
 
 ## Prerequisite Javascript Packages
 1. Docusaurus
@@ -39,7 +39,9 @@ This will cover the prequisite knowledge, softwares and tools to successfully ha
 
   ## Running a Local Build
   Once the project has been sucessfully forked and the required dependencies are installed, you can now try to do the following commands whenever. 
-  1. `npm run build`
-  2. `npm run serve`
-  3. `npm run start`
-  
+  1. `npm run build` - Recompiles and builds a static version that can be deployed anywhere like github pages. 
+This command is important to run if you are making many pages or docs under the `static` folder, as these docs do not get compiled with `serve`. 
+
+
+  2. `npm run serve` - Starts the deployment server(local), it will watch over the files and update the site in real-time when changes are made. 
+  3. `npm run start`- Similar to `npm run start` except it deploys unoptimized builds, which can lead to broken sites. 
