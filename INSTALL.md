@@ -8,7 +8,7 @@ This will cover the prequisite knowledge, softwares and tools to successfully ha
 ## Prerequisite Javascript Packages
 1. Docusaurus
    - This is the documentation framework that the site is built on.
-   = Typically if one executes `npm install docusaurus` the associated dependencies(listed below) will also download.
+   - Typically if one executes `npm install docusaurus` the associated dependencies(listed below) will also download.
   ```bash
   ├── @docusaurus/core@3.5.2
   ├── @docusaurus/module-type-aliases@3.5.2
@@ -30,3 +30,16 @@ This will cover the prequisite knowledge, softwares and tools to successfully ha
   ├── react@18.3.1
   └── remark-mdx@3.1.0
   ```
+  :::warning
+  Some of these packages may need to be installed explicitly via `npm install`. Double check to see if your installed packages align with the stated packages above. 
+  ::: 
+
+  ## Forking the project
+  Instructions on how to fork the project can be seen at [FORKING.md](/FORKING.md)
+
+  ## Running a Local Build
+  Once the project has been sucessfully forked and the required dependencies are installed, you can now try to do the following commands whenever. 
+  1. `npm run build`
+  2. `npm run serve`
+  3. `npm run start`
+  
