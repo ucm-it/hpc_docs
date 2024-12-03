@@ -54,7 +54,7 @@ scp [options] user@login.rc.ucmerced.edu:/remote/file.txt /local/directory
 
 
 ### `rsync` Command 
-The `rsync` command is similar to `scp` as it also copies files or directories locally or over a network. However, it employs a special transfer algorithm and a few optimizations tools to make the operation a lot faster. If the `rync` command is given the `-a` option it will copy the exact same access privileges, this is called mirroring. Usage of the `rsync` command is great when transferring larger files and directories. There are cases where the use of `rysnc` over `scp` can result in quicker transfer times as `rsync`uses an algorithm to minimize the amount of data transferred by only transferring the portions of files that have been modified.
+The `rsync` command is similar to `scp` as it also copies files or directories locally or over a network. However, it employs a special transfer algorithm and a few optimizations tools to make the operation a lot faster. If the `rync` command is given the `-a` option it will copy the exact same access privileges, this is called mirroring. Usage of the `rsync` command is great when transferring larger files and directories. There are cases where the use of `rysnc` over `scp` can result in a quicker transfer times as `rsync`uses an algorithm to minimize the amount of data transferred by only transferring the portions of files that have been modified.
 
 List of options that can be used with `rsync`:
 
@@ -68,7 +68,7 @@ List of options that can be used with `rsync`:
 | -W | copy and paste whole files, rather than only updating the changes of the file|
  
 
-#### Using rsync <!-- {docsify-ignore} -->
+#### Using `rsync`
 To Transfer files from local machine to remote machine the `rsync` command is: 
 ```bash
 rsync [options] local/file/path user@login.rc.ucmerced.edu:/remote/path
