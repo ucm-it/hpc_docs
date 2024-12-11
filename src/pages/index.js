@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="docs/hpcdocs/HPC-clusters/policies">
-            Research Computing Policies - 📀⏱️
+            Research Computing Guidelines - 📀⏱️
           </Link>
         </div>
       </div>

@@ -122,7 +122,6 @@ const config = {
             position: 'left',
             label: 'JupyterHub',
           },
-          { to: '/hpc-qa', label: 'HPC Q&A', position: 'left' }, // Update this line
           { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/amirayuyue/hpc_doc_new',

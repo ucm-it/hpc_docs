@@ -15,6 +15,8 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-link: #0F2D52;
+  --ifm-color-link--hover: #DAA900;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,6 +29,9 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: #f18a00;
+  --ifm-color-link: #1c22d8;
+  --ifm-color-link--hover: #f8fa4f;
+
 }
 /* Ensure that long doc titles wrap down instead of cutting off */
 .docItemContainer h1 {
@@ -36,7 +41,7 @@
 
 a {
   color: var(--ifm-color-primary); /* Adjust the color if needed */
-  text-decoration: underline; /* Adds an underline */
+  /*text-decoration: underline; /* Adds an underline */
   /* font-weight: bold; Makes the link bold */
   transition: color 0.2s ease-in-out; /* Smooth color transition */
 }
@@ -58,3 +63,23 @@ a {
   height: 100%;
   border: 0;
 }
+
+/* The following is to have the links change color on hover */
+a:hover {
+  color: var(--ifm-color-primary-dark); /* Adjust the color if needed */
+  
+}
+/* if on dark-theme the links will be yellow */
+[data-theme='dark'] a:hover {
+  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
+}
+
+/* footer dark theme - href color hoover */
+[style='dark'] .footer a:hover {
+  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
+}
+[style='light'] .footer a:hover {
+  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
+}
+
+
