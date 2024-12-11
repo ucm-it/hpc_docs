@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'The First Spot for HPC Documentation @ UCM',
-    Svg: require('@site/static/img/icon_svg/1.svg').default,
+    Svg: require('@site/static/img/liftup.svg').default,
     description: (
       <>
        This site is tailored and designed for the UC Merced community that use the HPC clusters.
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Centralized Hub for Both Jupyterhub and HPC Clusters',
-    Svg: require('@site/static/img/icon_svg/2.svg').default,
+    Svg: require('@site/static/img/globe.svg').default,
     description: (
       <>
         First place to visit for everything HPC and JupyterHub related at UC Merced.
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'An Open-Source Collaborative Effort',
-    Svg: require('@site/static/img/icon_svg/3.svg').default,
+    Svg: require('@site/static/img/interconnect.svg').default,
     description: (
       <>
        We are a tight knit group of researchers who are passionate about HPC and JupyterHub.
