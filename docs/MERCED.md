@@ -102,15 +102,15 @@ If you still have questions, we have put together a MERCED [FAQ page](merced_FAQ
 
 
 ## How to cite  
-All MERCED users must agree to acknowledge the MERCED Cluster and the
-supporting NSF grant (ACI-1429783) in talks, posters, manuscripts, and
-other forms of dissemination relying on results obtained from time on
-MERCED. An example acknowledgement section is:
-```text
-This research [Part of this research] was conducted using [MERCED cluster (NSF- MRI, #1429783) / Pinnacles
-(NSF MRI, # 2019144) / Science DMZ (NSF- CC* #1659210)] at the Cyberinfrastructure and Research Technologies
-(CIRT) at University of California, Merced.
+All MERCED users must agree to acknowledge the MERCED Cluster and the supporting UC,Merced Office of Information Technology central funded MERCED in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on MERCED. An example acknowledgement section is:
+
 ```
+This research was conducted using MERCED cluster, which is centrally funded 
+by the University of California, Merced, and maintained by the 
+Cyberinfrastructure and Research Technologies (CIRT) team at UC Merced.
+
+```
+
 From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by MERCED users that have included results of calculations on MERCED. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced. 
 
 

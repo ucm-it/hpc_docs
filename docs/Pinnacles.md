@@ -132,14 +132,16 @@ If you still have questions, we have put together a Pinnacles [FAQ page](pinnacl
 
 ## How to cite  
 All Pinnacles users must agree to acknowledge the Pinnacles Cluster and the
-supporting NSF grant (NSF MRI, # 2019144) in talks, posters, manuscripts, and
+supporting NSF grants in talks, posters, manuscripts, and
 other forms of dissemination relying on results obtained from time on
 Pinnacles. An example acknowledgement section is:
 ```text
-This research [Part of this research] was conducted using Pinnacles
-(NSF MRI, # 2019144) at the Cyberinfrastructure and Research Technologies
-(CIRT) at University of California, Merced.
+This research was conducted using Pinnacles, supported in part by the NSF MRI 
+grant (#2019144) and the CENVAL-ARC grant funded through the NSF CC* 
+program (award #2346744). Pinnacles is managed by the Cyberinfrastructure and 
+Research Technologies (CIRT) at the University of California, Merced.
 ```
+
 From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by Pinnacles users that have included results of calculations on Pinnacles. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced. 
 
 
