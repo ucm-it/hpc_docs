@@ -38,23 +38,3 @@ Rscript Some_R_script.R
 Assuming that you name the above script `my_Rjob.sub` you would submit it to the queue by running `sbatch my_Rjob.sub`. You can check the status of your job using `squeue -u <username>`.
   
 
-## Running R across multiple nodes <!-- {docsify-ignore} -->
-
-When running R over multiple nodes we recommend using doMPI instead of doParallel, and starting your R process with `mpiexec -np <number of cored> Rscript myrscript.R`
-
-```bash
-#!/bin/bash
-#SBATCH --partition=test  ## queue based on wall-clock time limitation.
-#SBATCH --nodes=1 ## or "-N". Min noumber of nodes.
-#SBATCH --ntasks=56 ## Max. tasks per node (number of cores).
-##
-#SBATCH --job-name=myjob ## Name of Job in queue (Replace 'myjob')
-#SBATCH --mail-user=<myemail@example.com> ## (Replace <email address>)
-#SBATCH --mail-type=ALL
-module load openmpi #the default one is the openmpi/4.1.4-gcc-12.2.0
-module load anaconda3
-source activate my-R
-## Replace 'my_example_code.R' file
-mpiexec -np 56 Rscript my_example_code.R
-```
-
