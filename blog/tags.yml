@@ -13,7 +13,17 @@ docusaurus:
   permalink: /docusaurus
   description: Docusaurus tag description
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+HPC: 
+  label: HPC
+  permalink: /HPC
+  description: Anything and Everything Related to High Performance Computing
+
+Deep Learning: 
+  label: Deep Learning
+  permalink: /Deep-Learning
+  description: News and updates related to deep learning
+
+GPU: 
+  label: GPU
+  permalink: /GPU
+  description: Anything and Everything Related to GPU

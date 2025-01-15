@@ -82,4 +82,9 @@ a:hover {
   color: var(--ifm-color-primary-light); /* Adjust the color if needed */
 }
 
+/* Change the href color */
+a[href^="http"]:not(footer a) {
+  color: #27a9cd; /* Adjust the color if needed */
+}
+
 
