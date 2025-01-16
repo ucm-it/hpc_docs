@@ -16,7 +16,7 @@ Under the condo model, PIs use equipment purchase funds to buy compute nodes (CP
 Participation in the program runs the duration of the node's warranty coverage (~ 3 years).
 
 ### Pinnacles is a Condo Model Cluster
-To increase the longevity and computing resources available to the campus, Pinnacles has adopted a condo model structure. We welcome campus partners and PIs to consult with us and potentially collaborate to stregthen their computing resources and the Pinnacles cluster. 
+To increase the longevity and computing resources available to the campus, Pinnacles has adopted a condo model structure. We welcome campus partners and PIs to consult with us and potentially collaborate to strengthen their computing resources and the Pinnacles cluster. 
 
 :::note
 When contributing to the Pinnacles cluster, PIs and their group members **will have highest priority for accessing their purchased computing resources**.
@@ -31,7 +31,8 @@ PIs can seek purchasing computing resources that are compatible with the Pinnacl
 
 The following tables summarize the CPU and GPU computing resources that are available for purchase in the Pinnacles condo program. 
 
-## Compute Resources compatible with Pinnacles Cluster and associated costs.
+## Hardware Compatibility and Costs for Pinnacles Cluster
+
 
 <Tabs>
   

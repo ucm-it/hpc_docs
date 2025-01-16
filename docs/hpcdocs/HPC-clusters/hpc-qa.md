@@ -1,5 +1,5 @@
 ---
-title: HPC Questions and Answers @ UCM 
+title: HPC Questions and Answers
 ---
 
 ## General HPC Questions

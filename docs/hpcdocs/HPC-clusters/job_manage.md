@@ -11,7 +11,9 @@ import Admonition from '@theme/Admonition';
 Presented here are helpful tools and methods to manage  Slurm jobs, find detailed information of a job like memory usage, CPUs, and how to use job statistics/information to troubleshoot any job failure.
 
 ## Checking the use of a mixed-state node.
-A mixed state node is a node that is not being fully utilized, i.e. their resources are not fully allocated. 
+A mixed state node is a node that is not being fully utilized, i.e. their resources are not fully allocated.
+
+
 Execute the following script on the login node to get detailed information about memory and cpu core availabilty on every currently, mixed-state node on Pinnacles.
 
 Execute the script via the command: 
@@ -35,7 +37,7 @@ Flags can be used together in the same line for example: `squeue -M merced --me 
 :::
 
 ## Job State 
-Job states are the current state of the jobs that were submitted. Some important state codes that are useful are given below: 
+Job states represent the current state of submitted jobs. Below are the most commonly encountered state codes and their meanings:
 
 | State Codes | Meaning | 
 | -------- | --------------------| 
@@ -151,6 +153,8 @@ By default, sacct -j [jobid] displays basic job information such as job ID, job 
 For debugging that requires more in-depth analysis and information adding the option `--format=<Field>` will show additional information that can be more useful for debugging bigger issues. Below is an example with the use of `--format=<Field`.
 
 Using sacct -j [jobid] --format=jobid,jobname,reqcpus,reqmem,averss,maxrss,elapsed,state,exitcode, you can gain more detailed insights into job performance and failures.
+
+```
 ```
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
@@ -175,8 +179,6 @@ Below is an example of using scontrol to get insight about an example job. An ex
    :::info 
     Astericks are only in the above sample output to protect user information. 
     :::
-
-
 
     ```bash
     UserId=guest001 GroupId=****** MCS_label=N/A
@@ -209,7 +211,8 @@ Below is an example of using scontrol to get insight about an example job. An ex
 
 
 ## Common Issues 
-Below are common issues, that can arrise when running jobs on the clusters, and associated troubleshooting methods. 
+
+Below are common issues, that can arise when running jobs on the clusters, and associated troubleshooting methods. 
 
 ### Out of Memory Issues 
 Jobs can fail if the memory requested for the job exceeds the actual memory needed for the job to complete successfully.
@@ -222,7 +225,7 @@ Below is a job script that will result in an out of memory error.
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --partition test
-#SBATCH --mem=1M # This is where the issue arrises
+#SBATCH --mem=1M # This is where the issue arises
 #SBATCH --time=0-00:15:00 # 15 minute
 #SBATCH --output=oomout.qlog
 #SBATCH --job-name=testjob
@@ -244,7 +247,7 @@ my_list = [i for i in range(1000000)]
 print(my_list)
 ```
 
- Check the status of the job using `sacct -j <jobid>` the follwing is produced: 
+ Check the job's status using sacct -j <jobid>. The following output is produced: 
 ```
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
@@ -255,9 +258,10 @@ JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed    
 
 Using the `sacct` command we see that the job failed because it ran out of memory. This is inferred through the state: `OUT_OF_MEMORY` and the exit code of `0:125` which correlates with an Out of Memory exit status or the reason why the job session was terminated. 
 
-  It is possible to use `scontrol show job <sampleid>` to debug the error(s) that occured in our job.  
+It is possible to use `scontrol show job <sampleid>` to debug the error(s) that occured in our job.  
 
 ```
+
    JobId=569966 JobName=testjob
    UserId=**** GroupId=**** MCS_label=N/A
    Priority=4294340955 Nice=0 Account=**** QOS=normal
@@ -288,9 +292,9 @@ Using the `sacct` command we see that the job failed because it ran out of memor
 
 Looking through the output of `scontrol` we can see the job state, the state the job was last recorded at before the session was terminated or ended, was `OUT_OF_MEMORY`, the node reason was listed at `OUTofMemory` and the exit code was recorded at, before the job session was terminated, `0:125`. All of these fields are useful and allow for the debugging process to conclude that the job did not succesfully run because of a memory capacity issue. 
 
-### Time-Out Issues
-One common issue for jobs failing is if job does not complete in the allocated time. This leads to a **Time-Out** State and a `(TimeLimit)` nodelist reason. The best approach is to increase the time being allocated for the job to run, ensuring that the job does not exceed the partition's max walltime. If the job continues to fail with a **Time-Out** state then it is best to break the job down into smaller jobs,  make it into a job array or change the partition that the job is being placed onto to run and compute. 
+### Time out issues
 
+One common issue for jobs failing is if job does not complete in the allocated time. This leads to a **Time-Out** State and a `(TimeLimit)` nodelist reason. Jobs that do not finish within their allocated time result in a timeout. Increase the wall time or split the job into smaller tasks.
 
 
 <details>
@@ -371,9 +375,10 @@ JobID    JobName    Elapsed      State ExitCode
 568963.1          sleep        3                 3.27M      3.27M   00:01:12            CANCELLED     0:15
 
 </details>
+
 ## Other Useful Commands 
 
 |Command | Use | 
 | -------------| -----------------------|
 | scancel [jobid] or skill [jobid] | These commands will kill the specified job in it's current process and state. | 
-| seff [jobid] |  This command can be used to find the job efficiency report for the job(s) after it has completed and exited from the queue. Some information in the report are: State, CPU & Memory Utilized, CPU & Memory Efficiency. If the command ussed while the job is still in the R(Running) state, this might report incorrect information.
+| seff [jobid] |  This command can be used to find the job efficiency report for the job(s) after it has completed and exited from the queue. Some information in the report are: State, CPU & Memory Utilized, CPU & Memory Efficiency. If the command used while the job is still in the R(Running) state, this might report incorrect information.
