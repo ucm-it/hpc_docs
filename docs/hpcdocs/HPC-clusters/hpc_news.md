@@ -7,7 +7,7 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## HPC clusters maintenance (Sep. 23 - 27th, 2024
+## HPC clusters maintenance (Sep. 23 - 27th, 2024)
 HPC clusters MERCED and Pinnacles will be under a maintenance for critical maintenance and for installing hardware from 6am Sep. 23 - 5pm Sep. 27, 2024.
 During this time, users will not be able to:
 - Login to the clusters and access their data

@@ -1705,6 +1705,42 @@
     mark.js "^8.11.1"
     tslib "^2.4.0"
 
+"@fullcalendar/core@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/core/-/core-6.1.15.tgz"
+  integrity sha512-BuX7o6ALpLb84cMw1FCB9/cSgF4JbVO894cjJZ6kP74jzbUZNjtwffwRdA+Id8rrLjT30d/7TrkW90k4zbXB5Q==
+  dependencies:
+    preact "~10.12.1"
+
+"@fullcalendar/daygrid@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/daygrid/-/daygrid-6.1.15.tgz"
+  integrity sha512-j8tL0HhfiVsdtOCLfzK2J0RtSkiad3BYYemwQKq512cx6btz6ZZ2RNc/hVnIxluuWFyvx5sXZwoeTJsFSFTEFA==
+
+"@fullcalendar/interaction@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/interaction/-/interaction-6.1.15.tgz"
+  integrity sha512-DOTSkofizM7QItjgu7W68TvKKvN9PSEEvDJceyMbQDvlXHa7pm/WAVtAc6xSDZ9xmB1QramYoWGLHkCYbTW1rQ==
+
+"@fullcalendar/list@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/list/-/list-6.1.15.tgz"
+  integrity sha512-U1bce04tYDwkFnuVImJSy2XalYIIQr6YusOWRPM/5ivHcJh67Gm8CIMSWpi3KdRSNKFkqBxLPkfZGBMaOcJYug==
+
+"@fullcalendar/multimonth@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/multimonth/-/multimonth-6.1.15.tgz"
+  integrity sha512-sEZY6jbOYkeF9TwhUldG+UUVv+hiPlGkS8zZEgPR7ypcjhipyA03c5rPjx7N6huOHqh6lCMH59zlohLooQRlaw==
+  dependencies:
+    "@fullcalendar/daygrid" "~6.1.15"
+
+"@fullcalendar/timegrid@~6.1.15":
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/@fullcalendar/timegrid/-/timegrid-6.1.15.tgz"
+  integrity sha512-61ORr3A148RtxQ2FNG7JKvacyA/TEVZ7z6I+3E9Oeu3dqTf6M928bFcpehRTIK6zIA6Yifs7BeWHgOE9dFnpbw==
+  dependencies:
+    "@fullcalendar/daygrid" "~6.1.15"
+
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
@@ -5665,6 +5701,18 @@ fsevents@~2.3.2:
   resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
+fullcalendar@^6.1.15:
+  version "6.1.15"
+  resolved "https://registry.npmjs.org/fullcalendar/-/fullcalendar-6.1.15.tgz"
+  integrity sha512-CFnh1yswjRh9puJVDk8VGwTlyZ6eXxr4qLI7QCA0+bozyAm+BluP1US5mOtgk0gEq23nQxGSNDoBvAraz++saQ==
+  dependencies:
+    "@fullcalendar/core" "~6.1.15"
+    "@fullcalendar/daygrid" "~6.1.15"
+    "@fullcalendar/interaction" "~6.1.15"
+    "@fullcalendar/list" "~6.1.15"
+    "@fullcalendar/multimonth" "~6.1.15"
+    "@fullcalendar/timegrid" "~6.1.15"
+
 function-bind@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz"
@@ -9504,6 +9552,11 @@ postcss-zindex@^6.0.2:
     nanoid "^3.3.7"
     picocolors "^1.1.0"
     source-map-js "^1.2.1"
+
+preact@~10.12.1:
+  version "10.12.1"
+  resolved "https://registry.npmjs.org/preact/-/preact-10.12.1.tgz"
+  integrity sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==
 
 pretty-error@^4.0.0:
   version "4.0.0"

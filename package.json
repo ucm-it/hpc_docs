@@ -23,6 +23,7 @@
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf/renderer": "^4.0.0",
     "clsx": "^2.0.0",
+    "fullcalendar": "^6.1.15",
     "pdfjs-dist": "^3.11.174",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",

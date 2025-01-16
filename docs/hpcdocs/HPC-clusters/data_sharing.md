@@ -179,7 +179,7 @@ chmod 754 filename.txt
 #Sets group to have r and x permissions ==> 5
 #Sets others to r ==> 4
 ```
-Sample output of before and after of changing permissions: 
+Sample output of before and after from changing permissions: 
 <details>
 <summary> Sample output </summary>
 

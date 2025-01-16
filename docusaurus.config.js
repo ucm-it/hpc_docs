@@ -128,6 +128,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {to: '/cal', label: 'Calendar', position: 'right'},
         ],
       },      
       footer: {
