@@ -87,7 +87,7 @@ CIRT will give the PI two options:
 1. CIRT Keeps the node(s) and merge to public partition
 
     PI-owned queues will cease to exist and and the nodes will be merged into general, public partition(s).
-    CIRT will take the ownership of the nodes and take responsibility for the maintance and housing of the node post-warranty. CIRT will also reserve the right to retire the node(s).
+    CIRT will take the ownership of the nodes and take responsibility for the maintenance and housing of the node post-warranty. CIRT will also reserve the right to retire the node(s).
    
 2. CIRT returns the node to the PI
 
@@ -121,5 +121,5 @@ Here is a table of departments that have contributed nodes to the Pinnacles clus
 | Center for Cellular and Biomolecular Machines | grp.ccbm |
 | Physics | dept.physics |
 
-## Joining the condo program 
+## Joining the Condo Program 
 Please reach out to CIRT to schedule a consultation via [ServiceNow](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)

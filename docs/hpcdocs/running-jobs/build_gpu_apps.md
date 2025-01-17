@@ -76,7 +76,7 @@ For the following demonstration of how to install a GPU-Supported application we
 
 `Kokkos` makes use of the `cmake` system for building of the software. 
 
-### Now to complete the building and installation of `Kokkos`:
+### Example: Installation and Building of `Kokkos`:
 
 1. Clone the repository to the desired location via: `git clone https://github.com/kokkos/kokkos`
 
@@ -96,10 +96,10 @@ For the following demonstration of how to install a GPU-Supported application we
 In following the line above, ensure to change the build location and install prefix to use your building and install location. 
 ::
 
-8. Now we execute the cmake build line to build the header files:   `cmake --build kokkos_build/`
+8. Execute the cmake build line to build the header files:   `cmake --build kokkos_build/`
 
 
-9. Finally execute the install line to have these header files be installed into the `kokkos_build` and to be available in our install location (Example -  `~/.local/` ) folder via:   `cmake --install kokkos_build/`
+9. Execute the install line to have these header files be installed into the `kokkos_build` and to be available in our install location (Example -  `~/.local/` ) folder via:   `cmake --install kokkos_build/`
 
 If the build and installation were successful, `Kokkos` header files should be found in the installation location denoted in step one. 
 
