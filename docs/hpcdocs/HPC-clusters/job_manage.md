@@ -115,8 +115,8 @@ Example of `sacct -e`
     TRESUsageOutMinNode TRESUsageOutMinTask TRESUsageOutTot     UID
     User                UserCPU             WCKey               WCKeyID
     WorkDir
-    ```
-  </details>
+  ``` 
+</details>
 
 Below are defintions of some important fields from the above list that are helpful when troubleshooting or debugging. 
 
@@ -155,12 +155,13 @@ For debugging that requires more in-depth analysis and information adding the op
 Using sacct -j [jobid] --format=jobid,jobname,reqcpus,reqmem,averss,maxrss,elapsed,state,exitcode, you can gain more detailed insights into job performance and failures.
 
 ```
-```
+
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
 569966          testjob        1         1M                         00:00:06        OUT_OF_MEMORY    0:125
 569966.batch      batch        1                 1312K      1312K   00:00:06        OUT_OF_MEMORY    0:125
 569966.exte+     extern        1                  916K       916K   00:00:06            COMPLETED      0:0
+
 ```
 
 Refer to the above table for details about each field's purpose and how it aids in diagnosing job failures. By adding more fields with `--format=`, you can perform deeper analysis on when, how, and why a job failed or ran into issues; significantly speeding up the debugging process.
@@ -245,15 +246,18 @@ import os
 my_list = [i for i in range(1000000)]
 
 print(my_list)
+
 ```
 
- Check the job's status using sacct -j <jobid>. The following output is produced: 
+Check the job's status using sacct -j jobid. The following output is produced: 
+
 ```
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
 569966          testjob        1         1M                         00:00:06        OUT_OF_MEMORY    0:125
 569966.batch      batch        1                 1312K      1312K   00:00:06        OUT_OF_MEMORY    0:125
 569966.exte+     extern        1                  916K       916K   00:00:06            COMPLETED      0:0
+
 ```
 
 Using the `sacct` command we see that the job failed because it ran out of memory. This is inferred through the state: `OUT_OF_MEMORY` and the exit code of `0:125` which correlates with an Out of Memory exit status or the reason why the job session was terminated. 
@@ -288,6 +292,7 @@ It is possible to use `scontrol show job <sampleid>` to debug the error(s) that 
    StdIn=/dev/null
    StdOut=/scratch/****/python_OOO/oomout.qlog
    Power=
+
 ```
 
 Looking through the output of `scontrol` we can see the job state, the state the job was last recorded at before the session was terminated or ended, was `OUT_OF_MEMORY`, the node reason was listed at `OUTofMemory` and the exit code was recorded at, before the job session was terminated, `0:125`. All of these fields are useful and allow for the debugging process to conclude that the job did not succesfully run because of a memory capacity issue. 
