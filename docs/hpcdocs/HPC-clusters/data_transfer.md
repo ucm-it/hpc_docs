@@ -132,7 +132,7 @@ Once downloaded the extension mentioned above, you will see a new icon on the le
  ![Image of VSCode Signin Prompt](imgs/VSCode%20Remote%20SigninPrompt.png "Sign in Prompt")
 
 
-3. Once the credential is typed in, there will be a prompt to where to store the host information, select the second option. 
+3. Once credential is typed in, there will be a prompt for where to store the host information, select the second option. 
 
 4. Now there will be a prompt to enter a password, this is the password used to sign into the cluster. 
 

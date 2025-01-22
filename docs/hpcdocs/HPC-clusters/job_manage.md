@@ -176,10 +176,11 @@ Use `scontrol` with the follwing syntax to retrieve useful information about the
 Below is an example of using scontrol to get insight about an example job. An example job is running and has not yet terminated. It is shown as `JobState=RUNNING Reason=NONE` & `ExitCod=0:0`. 
 
 <details>
-    <summary> Sample Output </summary>
-   :::info 
-    Astericks are only in the above sample output to protect user information. 
-    :::
+  <summary> Sample Output </summary>
+   
+  :::info 
+  Astericks are only in the above sample output to protect user information. 
+  :::
 
     ```bash
     UserId=guest001 GroupId=****** MCS_label=N/A
@@ -208,7 +209,8 @@ Below is an example of using scontrol to get insight about an example job. An ex
     StdOut=/home/******/testoom/Appout.qlog
     Power=
     ```
-</details>
+
+  </details>
 
 
 ## Common Issues 

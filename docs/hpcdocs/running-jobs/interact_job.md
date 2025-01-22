@@ -48,7 +48,7 @@ salloc --partition=gpu --nodes=1 --gres=gpu:2 --time=00:15:00
 salloc --partition=bigmem --nodes=1 --ntasks-per-node=1 --constraint=bigmem --time=00:15:00
 ```
 ## Entering the Interactive Compute Node 
-To enter the interactive session: the `srun` command will initiate the job step under the allocated job with the provided job id.
+To enter the interactive session: the `srun` command will initiate the job step under the allocated job with the provided Job ID.
 `srun` command template:
 
 ```bash
