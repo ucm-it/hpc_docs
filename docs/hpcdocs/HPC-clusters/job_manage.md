@@ -1,6 +1,7 @@
 ---
 title: Job Management 
 sidebar_position: 3
+custom_edit_url: null
 ---
 import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
@@ -57,7 +58,7 @@ Job states represent the current state of submitted jobs. Below are the most com
 
 NodeList(Reason) helps to find on which nodes the job is currently running on. Also, in the case of PD Job state, this field will give more information about the reason why the job is in pending state. Below is a table that shows common Nodelist(reasons) and their meanings. 
 
-| (Reason) | Meaning | 
+| Reason | Meaning | 
 | ---------- | ---------------| 
 | (Resources) |  Job is waiting for resources to become available |
 | (TimeLimit) | Job has hit it's max time limit for execution |
@@ -140,13 +141,15 @@ Here is one use of `sacct` with the follwing syntax to retrieve useful informati
 `sacct -j <jobid>`
 
 This will provide similar information with the same fields as shown below about the specified job: 
+```
 
-    JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
-    ------------ ---------- ---------- ---------- ---------- ---------- --------
-    569893         javatest       test project_u+          1 OUT_OF_ME+    0:125
-    569893.batch      batch            project_u+          1 OUT_OF_ME+    0:125
-    569893.exte+     extern            project_u+          1  COMPLETED      0:0
+  JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
+  ------------ ---------- ---------- ---------- ---------- ---------- --------
+  569893         javatest       test project_u+          1 OUT_OF_ME+    0:125
+  569893.batch      batch            project_u+          1 OUT_OF_ME+    0:125
+  569893.exte+     extern            project_u+          1  COMPLETED      0:0
 
+```
 
 By default, sacct -j [jobid] displays basic job information such as job ID, job name, partition, allocated CPUs, state, and exit code. This is helpful for debugging job failures. In the example, the "javatest" job ran in the test partition with 1 CPU but ended with OUT_OF_ME+, indicating an incomplete message due to truncation. The exit code 0:125 confirms the job ran out of memory.
 
@@ -350,7 +353,7 @@ Using the sacct command we see that the job resulted in `TIMEOUT` state which al
  It always important to note that sometimes a job failing not the result of one issue or error, but a combination of many errors and issues. Furthermore it is best to keep track of jobs before, during and after completion. 
 
 
-## Useful proccess to follow to ensure sucessful completion of jobs
+## Proccess to ensure sucessful completion of jobs
 1. Submit the Job
     Submit the above job and see how it runs. To submit the above job, run the following command.
         ```bash
