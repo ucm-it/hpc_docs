@@ -10,6 +10,8 @@ This is a random markdown draft to demonstrate the capabilities of markdown form
 - [Links](https://www.example.com): Use `[text](URL)` for hyperlinks.
 - Images: Use `![alt text](image URL)` for images.
 
+![alt test](../hpcdocs/HPC-clusters/imgs/Filezilla_queue.png)
+
 ## Code Block
 ```python
 def hello_world():
