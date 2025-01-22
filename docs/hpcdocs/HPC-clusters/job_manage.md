@@ -115,7 +115,8 @@ Example of `sacct -e`
     TRESUsageOutMinNode TRESUsageOutMinTask TRESUsageOutTot     UID
     User                UserCPU             WCKey               WCKeyID
     WorkDir
-    ```
+  ```
+
   </details>
 
 Below are defintions of some important fields from the above list that are helpful when troubleshooting or debugging. 
@@ -154,7 +155,7 @@ For debugging that requires more in-depth analysis and information adding the op
 
 Using sacct -j [jobid] --format=jobid,jobname,reqcpus,reqmem,averss,maxrss,elapsed,state,exitcode, you can gain more detailed insights into job performance and failures.
 
-```
+
 ```
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
@@ -175,10 +176,11 @@ Use `scontrol` with the follwing syntax to retrieve useful information about the
 Below is an example of using scontrol to get insight about an example job. An example job is running and has not yet terminated. It is shown as `JobState=RUNNING Reason=NONE` & `ExitCod=0:0`. 
 
 <details>
-    <summary> Sample Output </summary>
-   :::info 
-    Astericks are only in the above sample output to protect user information. 
-    :::
+  <summary> Sample Output </summary>
+   
+  :::info 
+  Astericks are only in the above sample output to protect user information. 
+  :::
 
     ```bash
     UserId=guest001 GroupId=****** MCS_label=N/A
@@ -207,7 +209,8 @@ Below is an example of using scontrol to get insight about an example job. An ex
     StdOut=/home/******/testoom/Appout.qlog
     Power=
     ```
-</details>
+
+  </details>
 
 
 ## Common Issues 
@@ -247,7 +250,7 @@ my_list = [i for i in range(1000000)]
 print(my_list)
 ```
 
- Check the job's status using sacct -j <jobid>. The following output is produced: 
+ Check the job's status using sacct -j [jobid]. The following output is produced: 
 ```
 JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed                State ExitCode
 ------------ ---------- -------- ---------- ---------- ---------- ---------- -------------------- --------
