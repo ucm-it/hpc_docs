@@ -18,7 +18,7 @@ The faculties plan to include the budget for CIRT-managed charged services in th
 
 Bring your laptop, your code and your questions to the clinic and get expert help, right on the spot. Experienced graduate students are encouraged to come help your peers by mentoring them in HPC tips and tricks. Faculty are also welcome to join. Among others, Yue Yu (Sr. Research Computing Facilitator) will be available to meet with and help members of the campus research computing community at these sessions.
 
-**Click [Here](README.md) for Office Hour Location and Time**
+**Click [Here](../hpc-tutorials/OH.md#hpc-office-hour-qa) for Office Hour Location and Time**
 
 
 
@@ -117,6 +117,6 @@ You can send a request to the CIRT team at cirt@ucmerced.edu to gather informati
 
 Jobs can be running unusually slow for many reasons that can be relating to the about number of tasks asigned to the job, number of nodes, and the memory being allocated to the job. These three factors are just a few common factors that can be leading to an unusually slow job, and all of these are dependent on what is being computed(i.e. a parralel python script or a simple list of unix commands). It is important to understand what the code is  anticpated to execute and how that will be done with the resources you are requesting. This will allow for the user to better less/more computing resources to get the computations/calculations done in an effecient manner. 
 
-To get information about troubleshooting a job failing with errors visit our [Job Management Page](Manage_job.md)
+To get information about troubleshooting a job failing with errors visit our [Job Management Page](../HPC-clusters/job_manage.md)
 
 To cancel a job: `scancel <jobid>` or `skill <jobid>`
