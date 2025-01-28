@@ -1,4 +1,9 @@
+---
+title: JupyterHub FAQ's
 
+sidebar_position: 11
+
+---
 # Troubleshooting nbgitpuller
 
 You may run into different types of errors when you are using the JupyterHub or Jupyter notebooks. The majority of errors come from a few common causes and can be solved using the following methods.
@@ -42,3 +47,28 @@ Here is the steps required to rename the folder!
 
 
 The best advice, however, is to avoid making changes to assignments once they've been released to students if at all possible.
+
+### How can I view all the attributes or methods available for an object in Python in the Jupyterhub? <!-- {docsify-ignore} -->
+
+To explore all the available attributes or methods of an object in Python within a JupyterHub environment, follow these steps:
+ - a. **Import the Module**:Start by importing the module that contains the object you're interested in. For example, to work with the math module, you would import it with:
+ - b. **Use the Tab Key for Auto-completion**: Type the name of the module or object followed by a period (.) in a new cell or the same cell. Then, press the "Tab" key on your          keyboard.
+ 
+ ![output_area](../hpcdocs/HPC-clusters/imgs/quick_hacks1.png)
+ 
+### How do I ensure Plotly charts render correctly in Jupyterhub? <!-- {docsify-ignore} -->
+
+Ensure that you include this line in your notebook for Plotly to function properly. Referring to the documentation at 
+[Plotly Renderers](https://plotly.com/python/renderers/), there are two methods to achieve this:
+
+Import the `io` method from Plotly in your import statement: `import plotly.io as pio`, and specify the desired renderer using `pio.renderers.default = "iframe"`. 
+   
+   
+```python
+   import plotly.io as pio
+   pio.renderers.default = "iframe" 
+   
+```
+Alternatively, directly specify the renderer in the fig.show() method by using fig.show(renderer='iframe').
+
+
