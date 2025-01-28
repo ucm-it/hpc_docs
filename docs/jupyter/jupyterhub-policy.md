@@ -1,4 +1,7 @@
-## Acceptable user policy for JupyterHub managed by CIRT <!-- {docsify-ignore} -->
+---
+title: University Policies and JupyterHub Guidelines
+sidebar_position: 1
+---
 
 ### University policies <!-- {docsify-ignore} -->
 
