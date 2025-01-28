@@ -1,4 +1,10 @@
-## Creating assignments - Using ottergrader
+---
+title: Creating assignments - Using ottergrader
+
+sidebar_position: 8
+---
+
+<!-- ## Creating assignments - Using ottergrader -->
 
 [Otter Grader](https://otter-grader.readthedocs.io/en/latest/) is a light-weight, modular open-source autograder developed by the Data Science Education Program at UC Berkeley. It is designed to grade Python and R assignments for classes at any scale by abstracting away the autograding internals in a way that is compatible with any instructor’s assignment distribution and collection pipeline.
 
@@ -19,7 +25,6 @@ Before Creating assignments using otter-grader let’s understand the important 
 In addition to various command line arguments discussed below, Otter Assign also allows you to specify various assignment generation arguments in an assignment config cell. These are very similar to the question config cells described in the next section. Assignment config, included by convention as the first cell of the notebook, places YAML-formatted configurations in a **raw cell** that begins with the comment **# ASSIGNMENT CONFIG.**
 
 - Example
-
 ```
 # ASSIGNMENT CONFIG
 
@@ -38,7 +43,6 @@ In addition to various command line arguments discussed below, Otter Assign also
   pagebreaks: true
 
   zips: false
-
  ```
 
 For more information about **# ASSIGNMENT CONFIG** please refer the [documentation](https://otter-grader.readthedocs.io/en/v4.4.1/otter_assign/v1/notebook_format.html).
@@ -100,7 +104,6 @@ def sieve(n):
 ### Test Cases Format <!-- {docsify-ignore} -->
 
 After the solution cell comes zero or more test cells, denoted by a beginning # BEGIN TESTS annotation, finishing with an ending # END TESTS annotation, and between these two lines functions that test the code. These functions’ names begin with test\_ and are marked as # HIDDEN if appropriate. The # IGNORE lines provide funcationality for the grader to call the test funcions appropriately.
-
 ```
 # BEGIN TESTS
 
@@ -119,38 +122,37 @@ def test_higher_primes(sieve):
 test_higher_primes(sieve)  # IGNORE
 # END TESTS
 # END QUESTION
-
 ```
 
 
-- To Understand more about Test Cases, Please refer this section from the documentation [TEST CASES](https://otter-grader.readthedocs.io/en/latest/test_files/python_format.html#sample-test)
-- These cells will have their outputs parsed by otter-grader to generate the otter-formatted test files needed for autograding. The otter-grader docs [tutorial](https://otter-grader.readthedocs.io/en/latest/tutorial.html) describes how to call otter-grader to parse the notebook.
-- Once you have run otter-grader, you’re ready to distribute your assignment to students! The student subdirectory of your output directory will contain the version of the notebook for students (with solutions removed and only public tests) and the autograder subdirectory the version *with* solutions and hidden tests.
-- For more information, check out the [otter-grader documentation](https://otter-grader.readthedocs.io/en/v4.4.1/).
+- To Understand more about Test Cases,Please refer this section from the documentation [TEST CASES](https://otter-grader.readthedocs.io/en/latest/test_files/python_format.html#sample-test)
+- These cells will have their outputs parsed by otter-grader to generate the otter-formatted test files needed for autograding. The otter-grader docs [tutorial](https://otter-grader.readthedocs.io/en/latest/tutorial.html) describes how to call otter-grader to parse the notebook.
+- Once you have run otter-grader, you’re ready to distribute your assignment to students! The studentsubdirectoy of your output directory will contain the version of the notebook for students (with solutions removed and only public tests) and the autograder subdirectory the version *with* solutions and hidden tests.
+- For more information, check out the [otter-grader documentation](https://otter-grader.readthedocs.io/en/v4.4.1/).
 
-The following Screenshot will give a clear understanding of above syntax for creating questions, solutions and test cases
+The following Screenshot will give a clear understading of above syntax for creating questions,solutions and test cases
 
-!![](../hpcdocs/HPC-clusters/imgs/otterq&a007.png)
+![](../hpcdocs/HPC-clusters/imgs/otterq&a007.png)
 
 ### Assignment examples <!-- {docsify-ignore} -->
 
-- To see the full-fledged, Please refer to this Jupyter notebooks
+- To see the full-fledged, Please refer to this Jupyternotebooks
 - [Sample Notebook1](https://github.com/SaiUCM/Jupyterhub_Docs_Instructor/blob/main/Notebook1.ipynb),
 - [Sample Notebook2](https://github.com/SaiUCM/Jupyterhub_Docs_Instructor/blob/main/Notebook2.ipynb)
-- To understand more about creating questions, Please refer to this section in the document [Autograded Questions](https://otter-grader.readthedocs.io/en/latest/otter_assign/notebook_format.html#autograded-questions).
+- To understand more about creating questions, Please refer to this section in the document [Autograded Questions](https://otter-grader.readthedocs.io/en/latest/otter_assign/notebook_format.html#autograded-questions).
 
 ## otter-assign 
 
-Once after creating the Source Notebook using otter-grader we need to generate a Student facing notebook where students can complete the assignment. To generate Student facing notebook use the command “**otter assign**“ 
+Once after creating the Source Notebook using otter-grader we need to generate a Student facing notebook where students can complete the assignment. To generate Student facing notebook use the command “**otter assign**“ 
 
-```command : otter assign demo.ipynb dist ```
+```command : otter assign demo.ipynb dist ```
 
-Now let’s break down the command. It has 3 sections as highlighted above in the command
+Now let’s break down the command. It has 3 sections as highlighted above in the command
 
-**otter assign** -→ command to create the student facing notebook and a **Autograder zipfile** which can be used to grade the student submissions automatically using Gradescope.
+**otter assign** -→ command to create the student facing notebook and a **Autograder zipfile** which can be used to grade the student submissions automatically using Gradescope.
 
-**demo.ipynb** -→ It is the source notebook that instructors created using otter-grader library, Just like the one mentioned above in Creating Questions section
+**demo.ipynb** -→ It is the source notebook that instructors created using otter-grader library ,Just like the one mentioned above in Creating Questions section
 
-**dist** → It is name of the folder where it can have both student facing Jupyter notebook which will be shared to students. The name of the folder can be anything.
+**dist** → It is name of the folder where it can have both student facing Jupyter notebook which will be shared to students.The name of the folder can be anything.
 
-For more information about otter-assign, Please refer this [section](https://otter-grader.readthedocs.io/en/latest/tutorial.html#otter-assign) in otter-grader documentation
+For more information about otter-assign,Please refer this [section](https://otter-grader.readthedocs.io/en/latest/tutorial.html#otter-assign) in otter-grader documentation
