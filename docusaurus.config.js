@@ -13,14 +13,14 @@ const config = {
   favicon: 'img/cirt.png',
 
   // Set the production url of your site here
-  url: 'https://amirayuyue.github.io',
+  url: 'https://ucm-it.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/hpc_docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'amirayuyue', // Usually your GitHub org/user name.
+  organizationName: 'ucm-it', // Usually your GitHub org/user name.
   projectName: 'hpc_doc_new', // Usually your repo name.
 
   onBrokenLinks: 'warn',
@@ -61,7 +61,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/amirayuyue/hpc_doc_new',
+            'https://github.com/ucm-it/hpc_doc_new',
         },
         blog: {
           showReadingTime: true,
@@ -121,7 +121,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/amirayuyue/hpc_doc_new',
+            href: 'https://github.com/ucm-it/hpc_doc_new',
             label: 'GitHub',
             position: 'right',
           },
@@ -178,7 +178,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/amirayuyue/hpc_doc_new',
+                href: 'https://github.com/ucm-it/hpc_doc_new',
               },
             ],
           },
