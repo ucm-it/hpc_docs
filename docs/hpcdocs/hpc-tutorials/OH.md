@@ -54,11 +54,11 @@ Watch the video below!
 ## Commonly Asked Questions: 
 >Q: I am new to High-Performance Computing, where do I begin?
 >
->A: It is highly recommended that all HPC users have knowledge of basic linux commands and understanding of how a command line interface works. If users need to brush up on basic linux commands then it is highly recommended that they view the Linux(Unix) carpentry workshops [Here!](/docs/hpc-tutorials/workshops.md)   
+>A: It is highly recommended that all HPC users have knowledge of basic linux commands and understanding of how a command line interface works. If users need to brush up on basic linux commands then it is highly recommended that they view the Linux(Unix) carpentry workshops [Here!](./workshops.md)   
 >
 >Next step would be to check out the HPC Practice Session Material [Here!](./intro-hpc.mdx). Here you can look at the training material that is typically shown in the HPC workshop and even do a self-paced practice session!
 >
->Finally it is highly recommended to look over sample job scripts to understand what a job is and what does a job hold. Users can view a sample job script [Here!](../running-jobs/)
+>Finally it is highly recommended to look over sample job scripts to understand what a job is and what does a job hold. Users can view a sample job script [Here!](../running-jobs/.)
 
 >Q: How can I view the size of my data on the cluster?
 >
@@ -92,7 +92,7 @@ No recent office hour questions
 
 >Q: What is the max storage limit of the Data Folder?
 >
->A: The max storage in the data folder is 500 GB. More information about all folders and their max storage sizes can be found [here](../HPC-clusters/campus-clusters.md/#centralized-login)!
+>A: The max storage in the data folder is 500 GB. More information about all folders and their max storage sizes can be found [here](../HPC-clusters/campus-clusters.md#centralized-login)!
 
 >Q:What is the cost of purchasing into Borgstore?
 >

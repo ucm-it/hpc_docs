@@ -21,7 +21,7 @@ Basic Slurm Commands to interact via the command line interface with the queuein
 |------------|-------------------------------|----------------------------------------------------------|
 | `sbatch`   | `sbatch <jobname>`             | Submit a batch script to Slurm for processing.           |
 | `squeue`   | `squeue --me`                   | Show information about your job(s) in the queue. The command when run without the `--me` flag, shows all jobs in the queue. |
-| `srun`     | `srun <option>`  | Please see our example [here](interact_job.md) for using srun in interactive session.|
+| `srun`     | `srun <option>`  | Please see our example [here](../running-jobs/interact_job.md) for using `srun` in interactive session.|
 | `skill/scancel` | `scancel <job-id>`        | End or cancel a queued job.|
 | `sinfo`    | `sinfo`                       | Get information about the resources on available nodes that make up the HPC cluster. |
 

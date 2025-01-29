@@ -110,7 +110,7 @@ Register here: https://ucm.edu/Intro_to_Overleaf
 
   
 
-  Contact [CIRT](cirt@ucmerced.edu)
+  Contact CIRT via `cirt@ucmerced.edu` or by opening a [support ticket](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)
 
 
 
@@ -339,7 +339,7 @@ However, you can obtain access to other free compute resources such as our new N
 
 
 
-**CLICK [HERE](/campus-clusters.md/#hpc-clusters) FOR RECHARGE CENTER FAQ **
+**CLICK [HERE](./campus-clusters.md#hpc-clusters) FOR RECHARGE CENTER FAQ **
 
 
 
@@ -355,13 +355,13 @@ If you experience any issues, we encourage you to open a ticket to the CIRT team
 
 ## UNEXPECTED CRASHES ON MERCED CLUSTER (03/25/2021): WORKAROUND  
 
-CIRT is determining a workaround for the MERCED cluster users while we fully restore services on the head node. JupyterHub access is disabled during this time. We encourage you monitor [GitHub Docs News page](/hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
+CIRT is determining a workaround for the MERCED cluster users while we fully restore services on the head node. JupyterHub access is disabled during this time. We encourage you monitor [GitHub Docs News page](./hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
 
 
 
 
 
-CIRT is investigating unexpected crashes on MERCED cluster. Users will not be able to submit jobs until the root cause is diagnosed and resolved. We apologize for any inconvenience. We encourage you monitor [GitHub Docs News page](/hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
+CIRT is investigating unexpected crashes on MERCED cluster. Users will not be able to submit jobs until the root cause is diagnosed and resolved. We apologize for any inconvenience. We encourage you monitor [GitHub Docs News page](./hpc_news.md) for updates and if you experience any issues, open a ticket to the CIRT team [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). 
 
 
 
@@ -459,7 +459,7 @@ Additional information on RSYNC command [HERE](https://www.computerhope.com/unix
 
 **Where can researchers get the maintenance cycle updates?**
 
-Stay tuned for updates/communications in your email and [GitHub Docs News page](/hpc_news.md)).
+Stay tuned for updates/communications in your email and [GitHub Docs News page](./hpc_news.md)).
 
 Next maintenance communications before the maintenance cycle - **19th Feb, 24th Feb, and 1st March.**
 
