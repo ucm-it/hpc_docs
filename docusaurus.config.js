@@ -141,7 +141,7 @@ const config = {
               },
               {
                 label: 'JupyterHub',
-                to: 'docs/jupyter/jupyterhub',
+                to: 'docs/jupyter',
               }
 
             ],
