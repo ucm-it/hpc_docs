@@ -1,6 +1,6 @@
 ---
 title: HPC Cluster News
-sidebar_position: 6
+sidebar_position: 3
 ---
 
 import Tag from '@site/src/components/Tag';
