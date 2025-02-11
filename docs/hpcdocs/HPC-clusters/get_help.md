@@ -1,6 +1,6 @@
 ---
 title: HPC Support
-sidebar_position: 5
+sidebar_position: 3
 ---
 import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';

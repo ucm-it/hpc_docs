@@ -1,5 +1,7 @@
 ---
 title: HPC Questions and Answers
+sidebar_position: 3
+
 ---
 
 ## General HPC Questions

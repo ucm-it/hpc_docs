@@ -1,6 +1,6 @@
 ---
-title: Running Common Applications
-sidebar_position: 3
+title: Running Quantum Expresso
+sidebar_position: 1
 ---
 
 import Tag from '@site/src/components/Tag';

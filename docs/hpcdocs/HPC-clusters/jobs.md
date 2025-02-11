@@ -1,13 +1,17 @@
 ---
-title: Running Jobs
+title: Quick Start - Running Jobs
 hide_title: true
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+:::info
+To find more tailored and thorough, software-specific guides please visit our [Running Jobs](../running-jobs/)
+:::
 
 ## Running Jobs on Clusters
 
