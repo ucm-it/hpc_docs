@@ -14,7 +14,7 @@ import Admonition from '@theme/Admonition';
 There are two methods of requesting HPC support: 
 1. Attending Office Hours 
     - Office Hours is a good starting point for more generalized and simple questions.
-    - Information about office hours location, schedule and Q/A can be found [here](https://ucm-it.github.io/hpc_docs/#/office_hour)! 
+    - Information about office hours location, schedule and Q/A can be found [here](../hpc-tutorials/OH.md)! 
 2. Submitting a ticket via ServiceHub
     - Main method of recieving support, here all questions and issues can be submitted and will be handled by the CIRT team. Typical response times are 3-5 business days. 
     - Central Hub for submitting a ticket [link!](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)

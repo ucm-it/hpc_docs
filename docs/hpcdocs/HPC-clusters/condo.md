@@ -1,5 +1,5 @@
 ---
-title: Condo Model and Cluster Structure
+title: Condo and Cluster Structure
 sidebar_position: 3
 ---
 

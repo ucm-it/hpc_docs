@@ -87,7 +87,7 @@ Filezilla is a computer application with a GUI interface that allows for easy tr
 #### Configuring and Using FileZilla 
 
 
-1. Download FileZilla from the following site: [click here](https://filezilla-project.org/download.php )
+1. Download FileZilla from the following site: [click here](https://filezilla-project.org/download.php)
 2. Once downloaded, open the application and accept all necessary options for FileZilla to properly function. 
 
 3. Fill in the according information in the respective boxes as noted by the numbers they are listed by
