@@ -34,7 +34,7 @@ It is highly recommended that new HPC users familiarize themselves with the term
 | Parallel | Parallel processing is a type of process that multiple tasks run at the same time across __many__ nodes( or cpu processors).|
 | MPI | MPI ( Message Passing Interface) a standard that describes how information should be passed between nodes and tasks. MPI is a standard, not an implementation. MPI is best used on HPC architectures optimized for parallel computing, such as those with multi-threaded CPUs. Currently the CPUs on Merced and Pinnacles do not have multithreading activated. |
 
-### Understanding a Serial vs Parallel Job 
+### Understanding Serial vs Parallel Job 
 The choice between serial and parallel job design and implementation is critical to the speed and efficiency of the job. Below is a table that covers each job type and its respective use cases and advantages.
 
 | Type | Use Cases | Advantages | 
