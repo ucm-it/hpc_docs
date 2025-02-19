@@ -120,6 +120,7 @@ const config = {
             label: 'JupyterHub',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          {to: '/serve', label: 'Calendar', position: 'right'},
           {
             href: 'https://github.com/ucm-it/hpc_doc_new',
             label: 'GitHub',
