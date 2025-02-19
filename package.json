@@ -25,6 +25,7 @@
     "clsx": "^2.0.0",
     "docusaurus": "^1.14.7",
     "fullcalendar": "^6.1.15",
+    "lucide-react": "^0.475.0",
     "pdfjs-dist": "^3.11.174",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
