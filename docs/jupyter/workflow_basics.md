@@ -19,9 +19,9 @@ Select the server that best suits your needs by clicking on the corresponding op
 
 #### Start Server: <!-- {docsify-ignore} -->
 
-Once you've made your selection, click on the option to start the server. This will initiate the server and provide you with access to the chosen environment. 
+Once you've made your selection, Choose the appropriate amount of RAM based on your assignment or task.click on the option to start the server. This will initiate the server and provide you with access to the chosen environment. 
 
-![](../hpcdocs/HPC-clusters/imgs/startserver.png)
+![](../hpcdocs/HPC-clusters/imgs/server_resources.png)
 <!-- <div align="center" style="width: 100%;">
   <img src="./imgs/stratserver.png" alt="startserver.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </div> -->
