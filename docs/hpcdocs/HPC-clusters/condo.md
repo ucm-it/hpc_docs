@@ -59,7 +59,7 @@ The following tables summarize the CPU and GPU computing resources that are avai
     :::
   </TabItem>
 
-   <TabItem value="Associated Costs" label="Associated Costs">
+   <TabItem value="CIRT Costs" label="CIRT Costs">
     Below is a table with associated tasks/items and their costs. 
 
     | Service | Unit | UC Rate |
