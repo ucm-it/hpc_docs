@@ -1,6 +1,6 @@
 ---
 title: Data Transferring
-sidebar_position: 3
+sidebar_position: 8
 ---
 This page presents ways to transfer and share data with other users on the HPC clusters. Note that the word "group" on this page always refers to Unix groups.
 

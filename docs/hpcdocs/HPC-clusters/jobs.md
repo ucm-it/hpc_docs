@@ -1,7 +1,7 @@
 ---
 title: Quick Start - Running Jobs
 hide_title: true
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Tag from '@site/src/components/Tag';
