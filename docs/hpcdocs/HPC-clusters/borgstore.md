@@ -1,7 +1,7 @@
 ---
 title: Borgstore
 hide_title: false
-sidebar_position: 6
+sidebar_position: 3
 showLastUpdateAuthor: true
 showLastUpdateTime: true
 last_update:

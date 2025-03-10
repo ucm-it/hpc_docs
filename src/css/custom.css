@@ -87,4 +87,20 @@ a[href^="http"]:not(footer a) {
   color: #27a9cd; /* Adjust the color if needed */
 }
 
+/* Add outlines to tabs */
+.tabs-container {
+  border: 3px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  margin-bottom: var(--ifm-spacing-vertical);
+}
 
+/* Style the tab content area */
+.tabs__content {
+  border-top: 3px solid var(--ifm-color-emphasis-300);
+  padding: 1rem;
+}
+
+/* Style the active tab */
+.tabs__item--active {
+  border-bottom: 5px solid var(--ifm-tabs-color-active);
+}

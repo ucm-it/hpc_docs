@@ -2,7 +2,7 @@
 title: HPC Campus Clusters
 hide_title: false
 sidebar_class_name: tutorialSidebar
-sidebar_position: 3
+sidebar_position: 2
 image: imgs/hpc_cartoon.png
 showLastUpdateAuthor: true
 showLastUpdateTime: true
@@ -147,7 +147,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 
   
-  <TabItem value="MERCED Hardware" label="Merced Hardware" default>
+  <TabItem value="MERCED Hardware" label="Merced Hardware Overview" default>
   
   MERCED hosts 66 CPU compute nodes including 25 high memory nodes. Please be aware that
   the nodes among MERCED cluster are multigenerational, meaning that the CPU
