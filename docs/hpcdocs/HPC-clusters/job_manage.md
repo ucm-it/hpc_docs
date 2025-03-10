@@ -1,6 +1,6 @@
 ---
 title: Job Management 
-sidebar_position: 5
+sidebar_position: 4
 custom_edit_url: null
 ---
 import Tag from '@site/src/components/Tag';
@@ -8,8 +8,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-# Job Management 
-Presented here are helpful tools and methods to manage  Slurm jobs, find detailed information of a job like memory usage, CPUs, and how to use job statistics/information to troubleshoot any job failure.
+:::info
+This page presents  helpful tools and methods to manage Slurm jobs, find detailed information of a job like memory usage, CPUs, and how to use job statistics/information to troubleshoot any job failure.
+:::
 
 ## Checking the use of a mixed-state node.
 A mixed state node is a node that is not being fully utilized, i.e. their resources are not fully allocated.

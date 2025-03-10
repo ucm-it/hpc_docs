@@ -1,6 +1,6 @@
 ---
 title: Quick Start - Running Jobs
-hide_title: true
+hide_title: false
 sidebar_position: 4
 ---
 
@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 
 :::info
+This page presents a high walk-through of submitting jobs on the UC Merced Clusters. 
+
 To find more tailored and thorough, software-specific guides please visit our [Running Jobs](../running-jobs/)
 :::
 

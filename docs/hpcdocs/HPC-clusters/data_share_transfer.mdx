@@ -1,0 +1,453 @@
+---
+title: Data Transfer and Sharing
+sidebar_position: 4
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+#### Quick Summary
+:::info
+This page presents information on data transferring and sharing best practices. 
+This page aims to offer in-depth advice and tutorials relating to transferring data and sharing data with others on the clusters. 
+:::
+
+## Data Sharing
+
+### Unix Permissions
+Every file and directory has read, write and execute permissions associated with it. 
+These permissions dictate what and who has access to the file or directory and what level of access it has. 
+The owner is you, the group is the group(Unix) you are associated with, and `other` is every other user outside the Unix group. 
+
+| Permission | Meaning | Meaning for directories | 
+| -------------------- | ---------------- | ----------------- |
+| read (r)	 | Contents of file can be viewed and displayed | Contents of directory can be listed and viewed|
+| write (w) | File can be modified or deleted | Files can be created in or deleted from directory | 
+| execute (x) | File can be run like a program | Directory can be entered (i.e., the cd command works) |
+
+There are also octal or numerical counterparts to the above permissions. The numbers are added together to achieve the same effect as using any combination of the letters. 
+
+| Permission | Meaning | Meaning for directories | 
+| -------------------- | ---------------- | ----------------- |
+| 4 | Contents of file can be viewed and displayed | Contents of directory can be listed and viewed|
+| 2 | File can be modified or deleted | Files can be created in or deleted from directory | 
+| 1 | File can be run like a program | Directory can be entered (i.e., the cd command works) |
+
+### Unix Special Permissions
+Special permissions make up the fourth access level in addition to user, group, and other. Special permissions allow for additional privileges over the standard permissions. There are special permissions option for **user**,**group** and **other** options. 
+
+<Tabs>
+  <TabItem value="User ID" label="User Special Permission (SUID)">
+
+    **User ID (SUID)**
+    
+    This special permission has a single function:
+    - A file with SUID always executes as the user who owns the file, regardless of who runs the command
+    - Identified by an 's' instead of 'x' in the user executable bit (e.g., `rws-`)
+    
+    Example use case: Allows regular users to run specific programs with elevated privileges.
+    
+  </TabItem>
+
+  <TabItem value="Group ID" label="Group Special Permission (SGID)">
+    
+    **Group ID (SGID)**
+    
+    This special permission affects group-level access:
+    - On files: Allows execution with the permissions of the file's group
+    - On directories: New files inherit the directory's group ownership
+    
+    Example use case: Ensures consistent permissions for collaborative projects without manual permission changes.
+  
+  </TabItem>
+</Tabs>
+
+### `chmod` Command
+:::info
+The `chmod` command allows the user to change the access mode of a file or directory.
+:::
+
+>To change the access of a file: 
+```bash
+chmod <usertype>=<permission> file
+```
+>To change the access of a directory: 
+```bash
+chmod -R <usertype>=<permission> directory
+```
+>`usertype` is a variable that represents different inputs:
+
+| usertype | meaning | 
+| -------------- | --------------|
+| u | represents the user |
+| g | represents the group | 
+| o | represents other | 
+
+
+
+<Tabs>
+  
+  <TabItem value="User ID" label="Setting User Owner ID">
+   The special permission for the user access level has a single function: A file with SUID always executes as the user who owns the file, regardless of the user passing the command.
+
+    To locate the state of this special permission, look for an ‘s’ instead of an ‘x’ in the executable bit of the file permissions.
+
+  </TabItem>
+
+  <TabItem value="Group ID" label="Setting Group User ID">
+    This special permission has functions to change how directories and/or files are accessed from a group level. 
+    1. If set on a file, it allows the file to be executed as the group that owns the file.
+
+    2. If set on a directory, any files created in the directory will have their group ownership set to that of the directory owner.
+
+    The use of special permissions at the group level are  helpful for groups who constantly collaborate and share directories and files among each other. The use of this level of special permissions also ensures that all following-created files and sub-directories are shared with the group as well without having to redo and edit sharing permissions.   
+  </TabItem>
+</Tabs>
+
+<details>
+<summary> Listing Permissions </summary> 
+### Example of Changing the Permissions
+
+The command `chmod -R u=rwx,g=---, o=--- permissions/` will update the permissions so that only the user has full access (read, write, execute) to the `permissions/` directory, while the group and everyone else will have no access.
+</details>
+
+<details>
+<summary>View Example Output</summary>
+
+To verify the changes, run `ls -ld`:
+
+```bash
+drwx------ 2 <user> <group> 10 Jul 28 14:47 permissions/ 
+```
+
+The first `rwx` shows the user has full access, while the dashes indicate that group and everyone else have no access.
+</details>
+
+## Understanding Permissions
+
+<details>
+<summary>Permission Formats & Using chmod</summary>
+
+You can modify permissions using the `chmod` command in two formats:
+
+### 1. Symbolic Format
+
+```bash
+chmod g=<permissions> <file>
+```
+
+Where:
+- `g=<permissions>` specifies group permissions using `r` (read), `w` (write), `x` (execute)
+- `<file>` is the target file
+
+Example:
+```bash
+# Add read and write permissions for the group
+chmod g+rw filename.txt
+```
+
+### 2. Numeric (Octal) Format
+
+```bash
+chmod <123> <file>
+```
+
+Where the three digits represent:
+1. User (owner) permissions
+2. Group permissions
+3. Other (everyone else) permissions
+
+Each position uses these values (add them together):
+- 4 = read (r)
+- 2 = write (w)
+- 1 = execute (x)
+
+Example:
+```bash
+chmod 754 filename.txt
+# User: rwx (7), Group: r-x (5), Others: r-- (4)
+```
+
+</details>
+
+## Access Control Lists (ACL)
+
+Access control lists allow for more fine-grained permissions beyond standard Unix permissions, enabling you to grant access to specific users outside your group.
+
+<details>
+<summary>Using setfacl Command</summary>
+
+The `setfacl` command modifies access control lists for files and directories.
+
+Basic Syntax:
+```bash
+setfacl [-options] [-x or -m] [file or directory]
+```
+
+Common Options:
+| Option | Description |
+|--------|-------------|
+| `-m` | Modify ACL entries |
+| `-x` | Remove ACL entries |
+| `-R` | Apply recursively to all files and directories |
+| `--test` | Test mode (show result without applying changes) |
+
+Examples:
+
+```bash
+# Give a specific user read access to a file
+setfacl -m u:username:r filename
+
+# Remove all ACL entries for a file
+setfacl -b filename
+```
+
+</details>
+
+<details>
+<summary>Using getfacl Command</summary>
+
+The `getfacl` command displays the current ACL for files and directories.
+
+Basic Syntax:
+```bash
+# For a file
+getfacl <filename>
+
+# For a directory and its contents
+getfacl -R <directoryname>/
+```
+
+Common Options:
+| Option | Description |
+|--------|-------------|
+| `--access` | Display file access control list |
+| `-d, --default` | Display default access control list |
+| `-R, --recursive` | Apply to all files and directories recursively |
+
+Sample Output:
+```bash
+# file: temppar/
+# owner: user49
+# group: user49
+user::rwx
+group::r-x
+other::r-x
+```
+
+To identify directories vs. files:
+- Directories have a trailing `/` after their name
+- Directories typically appear first in the output
+</details>
+
+### Example: Granting Access to a Specific User
+
+<details>
+<summary>Step-by-Step Example</summary>
+
+1. First, check current permissions:
+   ```bash
+   getfacl testmod.txt
+   ```
+   
+   Output:
+   ```bash
+   # file: testmod.txt
+   # owner: user49
+   # group: testgroup
+   user::rw-
+   group::r--
+   other::r--
+   ```
+
+2. Grant read and write access to a specific user:
+   ```bash
+   setfacl -m u:test001:rw testmod.txt
+   ```
+
+3. Verify the new permissions:
+   ```bash
+   getfacl testmod.txt
+   ```
+   
+   Output:
+   ```bash
+   # file: testmod.txt
+   # owner: owner49
+   # group: group44139
+   user::rw-
+   user:test001:rw-
+   group::r--
+   mask::r--
+   other::r--
+   ```
+
+The output shows that `test001` now has read and write access to the file.
+</details>
+
+
+## Data Transfer
+Most casual and regular amounts of data transferring can be done through the `rc` login node, by pointing your transfer tool to `login.rc.ucmerced.edu` and can be done via one of the methods shown below. 
+
+However, for transferring large amounts of data, FIONAs with dedicated bandwidths can be used for scheduled, unattended data transfers. If you are looking to complete a Big Data transfer, please submit a general research request [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+
+### `scp` Command
+### The `scp` Command
+
+`scp` provides straightforward two-way data transfer:
+
+- Ideal for transferring separate, unrelated files
+- Best suited for simple, small, or compressed files
+- Lacks safeguards against data loss or corruption
+
+List of relevant options that can be used with SCP: 
+
+| Option | Use |
+|---------------|--------------------------|
+| -C | Compress data before transfering | 
+| -p	| Save the original file's modification/access times, and modes |
+| -r | Copy recursively; used to copy and transfer directories. |
+| -v | Verbose, display the operation's execution step by step |
+
+
+Below are two examples using `scp`, one example of transferring data from remote machine to local machine, one example of transferring data from local to remote machine.
+
+<Tabs>
+  <TabItem value="local-to-remote" label="Local to Remote">
+    ```bash
+    scp [options] /path/to/file user@login.rc.ucmerced.edu:/remote/path
+    ```
+:::warning 
+Execute this command from the directory containing your file, or specify the full path.
+:::
+  </TabItem>
+  <TabItem value="remote-to-local" label="Remote to Local">
+    ```bash
+    scp [options] user@login.rc.ucmerced.edu:/remote/file.txt /local/directory
+    ```
+:::warning 
+Execute this command on your local machine, specifying the remote file path.
+:::
+  </TabItem>
+</Tabs>
+
+#### Remote transfer files using `scp` command 
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/G6DNWqHFC7A"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+
+
+### `rsync` Command 
+
+`rsync` copies files or directories locally or over networks like `scp`, but with significant speed advantages:
+
+- Uses a specialized algorithm that only transfers modified portions of files
+- Particularly effective for transferring large files and directories
+- Often achieves faster transfer times than `scp` by minimizing data transfer
+
+
+List of options that can be used with `rsync`:
+
+| Option | Use |
+|---------------|--------------------------|
+| -a | Copy same access privileges |
+| -v, --verbose	| Verbose, display the operation’s execution step by step| 
+| -r |  Copy recursively; used to copy and transfer directories.|
+| -u | skip updating files that are newer on the receiving end |
+| -n | perform a trial run with no changes made |
+| -W | copy and paste whole files, rather than only updating the changes of the file|
+ 
+
+<Tabs>
+  <TabItem value="local-to-remote" label="Local to Remote">
+    ```bash
+    rsync [options] /local/file/path user@login.rc.ucmerced.edu:/remote/path
+    ```
+    
+    **Example with options:**
+    ```bash
+    rsync -avz ~/data_project/ user123@login.rc.ucmerced.edu:/home/user123/data_project
+    ```
+  </TabItem>
+
+  <TabItem value="remote-to-local" label="Remote to Local">
+    ```bash
+    rsync [options] user@login.rc.ucmerced.edu:/remote/path /local/path
+    ```
+    
+    **Example with options:**
+    ```bash
+    rsync -avzP user123@login.rc.ucmerced.edu:/home/user123/results/ ~/local_results
+    ```
+    
+    :::warning
+    Execute this command on your local machine, specifying the remote file path.
+    :::
+  </TabItem>
+</Tabs>
+### Using FileZilla
+<details>
+<summary>Click here to view how to use Filezilla for data transferring</summary>
+
+Filezilla is a computer application with a GUI interface that allows for easy transfer how lots of files and folders from the local machine to a remote machine(i.e. the Pinnacles and MERCED cluster)
+
+#### Configuring and Using FileZilla 
+
+
+1. Download FileZilla from the following site: [click here](https://filezilla-project.org/download.php)
+2. Once downloaded, open the application and accept all necessary options for FileZilla to properly function. 
+
+3. Fill in the according information in the respective boxes as noted by the numbers they are listed by
+![Image of Filezilla](imgs/Filezilla_start_annotated.png "Filezilla Blank Start")
+   1. In the `Host` box, enter: sftp://login.rc.ucmerced.edu
+   2. In username, enter your username, that is the part of the remote cluster login before the **@** 
+                
+                Ex. If username is guest123@login.rc.ucmerced.edu, enter guest123
+   3. Enter password to log into cluster
+   4. This is the area where you will see your **local** files and folders, you can edit the scope by changing the directory in the `Local site:` box.
+ 4. Now you can click `Quickconnect` in the upper left side of the menu 
+
+ Once you have the correct files selected on  the local or remote machine, simply drag and drop the files to the other side.
+ 
+  Another way to transfer files/folders: right click on all the folders/files to add them to file queue or immediete transfer via the `Upload` button 
+
+ ![Image of Filezilla](imgs/Filezilla_queue.png "Filezilla right-click options")
+
+</details>
+
+### Using VSCode to Transfer Data
+
+<details>
+<summary>Click here to learn how to use VSCode to transfer data</summary>
+
+For users who use VSCode to edit and manipulate files, there is a helpful extension that can be downloaded from the VSCode store: ```Remote - SSH```. [Link](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) that can be accessed via web
+
+####  Walkthrough on connecting to ```rc.login.ucmerced.edu``` via VSCode 
+
+Once downloaded the extension mentioned above, you will see a new icon on the left sidebar of VSCode. 
+
+
+ ![Image of VSCode Sidebar](imgs/VSCodeSidebarIcon.png "Sidebar")
+
+
+
+
+1. Next, click on ```+``` to add a new SSH connection
+
+2. A new prompt will come up to enter the the complete ssh login. An example of a proper ssh login for VSCode is ```ssh exampleUser@login.rc.ucmerced.edu```. Where ```exampleUser``` will be replaced by a proper username. 
+
+ ![Image of VSCode Signin Prompt](imgs/VSCode%20Remote%20SigninPrompt.png "Sign in Prompt")
+
+
+3. Once credential is typed in, there will be a prompt for where to store the host information, select the second option. 
+
+4. Now there will be a prompt to enter a password, this is the password used to sign into the cluster. 
+
+5. Finally, you will have access to open and manipulate any folder and file on the cluster via VSCode. There is also a built-in terminal which allows for submission of jobs and other manipulations to be done in the VSCode application. 
+</details>

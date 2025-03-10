@@ -1,6 +1,6 @@
 ---
 title: Condo and Cluster Structure
-sidebar_position: 7
+sidebar_position: 3
 ---
 
 import Tag from '@site/src/components/Tag';
