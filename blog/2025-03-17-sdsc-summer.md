@@ -1,5 +1,5 @@
 ---
-title: NERSC Summer School
+title: Applications open for two of SDSC's Summer Institutes
 authors: [Yue Yu]
 ---
 
