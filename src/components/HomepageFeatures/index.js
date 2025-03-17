@@ -12,6 +12,7 @@ const FeatureList = [
        All job scripts and software tutorials are done on the cluster for best experience possible. 
       </>
     ),
+    //link: '/docs/hpcdocs/HPC-clusters/campus-clusters#hpc-clusters', // Update these links to your actual pages
   },
   {
     title: 'Centralized Hub for Both Jupyterhub and HPC Clusters',
@@ -22,6 +23,7 @@ const FeatureList = [
         Constantly updated with the latest news, information and resources.
       </>
     ),
+    //link: '../../../docs/jupyter/', // Update these links to your actual pages
   },
   {
     title: 'An Open-Source Collaborative Effort',
@@ -41,14 +43,17 @@ const FeatureList = [
        </a>.
       </>
     ),
+    link: 'https://ucmhpcclusters.slack.com/',
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, link}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <a href={link}>
+          <Svg className={styles.featureSvg} role="img" />
+        </a>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
