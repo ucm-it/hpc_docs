@@ -112,6 +112,8 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'HPC Cluster',
+            sidebarCollapsed: false,
+   
           },
           {
             type: 'docSidebar',

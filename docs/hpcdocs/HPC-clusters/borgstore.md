@@ -4,6 +4,7 @@ hide_title: false
 sidebar_position: 3
 showLastUpdateAuthor: true
 showLastUpdateTime: true
+description: "Borgstore: storage center and process for researchers."
 last_update:
   date: 2/27/2025
   author: Yue Yu
