@@ -14,6 +14,13 @@ last_update:
 import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+:::info
+This page presents an overview of the High-Performance Computing Clusters at UC Merced.
+
+As well as how to get access, logging in, file system, resource breakdown.
+
+:::
+
 
 > Currently, UC, Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
