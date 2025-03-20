@@ -113,11 +113,6 @@ More detailed job examples can be found [here](../running-jobs/)
 
 Job management is critical before running or scaling jobs and computations within a HPC enviroment. We have created a manual page that can be found [ADDBACK MANAGEMENT LINK]. The documentation goes over common Slurm commands that help debug job errors and overall performance using `sacct` and `scontrol`. 
 
-
-## Job Arrays 
-
-Job arrays offer a mechanism for submitting and managing collections of similar jobs quickly and easily that utliizes only one job script. Job arrays are great at "automating" a repetetive job script that each time may only have input changes. Click [add back link] for the job array
-
 ## SBATCH Directives for Job Scripts 
 
 | Directives      | Description   |
