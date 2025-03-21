@@ -4,10 +4,16 @@ hide_title: false
 sidebar_position: 3
 showLastUpdateAuthor: true
 showLastUpdateTime: true
+description: "Borgstore: storage center and process for researchers."
 last_update:
   date: 2/27/2025
   author: Yue Yu
 ---
+
+:::info
+This page presents information and purchasing process for Borgstore, the on-campus data-storage center available for researchers.  
+:::
+
 ## Borgstore (BeeGFS)
 
 Borgstore is UC Merced's on campus data-storage center and is available for research PI to purchase. Borgstore is used for store active,research-related data and has the use capacity of 480 terrabytes.
