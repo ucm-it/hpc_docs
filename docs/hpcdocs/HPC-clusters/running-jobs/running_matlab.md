@@ -1,6 +1,6 @@
 ---
 title: Running Matlab
-sidebar_position: 1
+sidebar_position: 4
 ---
 ## Running Matlab on the clusters 
 After logging into the clusters, users can check and load Matlab versions currently available by running the following code. For more information on modules, check [here](../HPC-clusters/campus-clusters.md/#global-modules-on-pinnacles-and-merced).

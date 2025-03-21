@@ -1,6 +1,7 @@
 ---
 title: Running Quantum Expresso
 sidebar_position: 1
+unlisted: true
 ---
 
 import Tag from '@site/src/components/Tag';
