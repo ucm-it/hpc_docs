@@ -1,6 +1,6 @@
 ---
 title: Running Jupyter on Pinnacles
-sidebar_position: 1
+sidebar_position: 4
 ---
 
 ## Interactive jobs on cluster 

@@ -1,6 +1,6 @@
 ---
 title: Building and Compiling GPU based Softwares and Applications
-sidebar_position: 1
+sidebar_position: 5
 ---
 Many applications require to be built with GPU support, such as Kokkos, LAMMPS, deep learning frameworks, etc. This page will showcase how to install and build GPU-supported softwares/applications. 
 

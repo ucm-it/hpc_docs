@@ -1,6 +1,6 @@
 ---
 title: Running Interactive Jobs
-sidebar_position: 1
+sidebar_position: 4
 ---
 # Interactive Jobs
 Interactive jobs are a useful way to debug and test code with small sample inputs before submitting a scaled up input in a batch job. Interactive jobs allows users to allocate resources and work on a node directly, seeing any errors or outputs in real-time as the program builds, compiles and executes.
