@@ -158,7 +158,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   <TabItem value="MERCED Hardware" label="Merced Hardware Overview" default>
   
   MERCED hosts 66 CPU compute nodes including 25 high memory nodes. Please be aware that
-  the nodes among MERCED cluster are multigenerational, meaning that the CPU
+  the nodes among MERCED cluster are multi-generational, meaning that the CPU
   processors from different nodes are having different features, the table shows below
   listed detailed node information. Users may experience relative big
   performance variations when running the same jobs on different nodes.
@@ -237,7 +237,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   ![Image of MERCED Selection](imgs/RequestAccountMERCED.png "Selecting MERCED")
   5. Because MERCED is a Recharge Cluster, please attach a valid COA number. Without a COA number, the account request will be denied. 
   ![Image of COA Input](imgs/RequestAccountMERCEDCOA.png "COA Input")
-  6. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
+  6. Add any other additional comments or information, you believe will be helpful for the requesting an account process. 
   7. Click `Request Service`
   ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
   
@@ -317,7 +317,7 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
   |cenvalarc.gpu|3 day| 1 day| 2 nodes| 4|
 
   :::tip
-  `short` queue is the default queue for all jobs submitted without specifiying which queue job must run on
+  `short` queue is the default queue for all jobs submitted without specifying which queue job must run on
 
   ^test queue has access to all node types use constraints to test on specific types. Ex:
   ```bash
@@ -356,7 +356,7 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
 
 ## Global Modules on Pinnacles and MERCED
 
-Pinnacles and MERCED already come with a collection of global modules or softwares that do not need to be individually installed by the user. The modele system allows for the *loading* and *unloading* of a specific module. Users will make use of `avail`, `load`, `list`, `unload`, and `swap`. A table describing each of these Modules options is given below.
+Pinnacles and MERCED already come with a collection of global modules or softwares that do not need to be individually installed by the user. The module system allows for the *loading* and *unloading* of a specific module. Users will make use of `avail`, `load`, `list`, `unload`, and `swap`. A table describing each of these Modules options is given below.
 
 :::tip
 A complete guide to using modules can be found via `man module`. 

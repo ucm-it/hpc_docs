@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-
+import link from '@docusaurus/Link';
 const FeatureList = [
   {
     title: 'The First Spot for HPC Documentation @ UCM',
@@ -12,7 +12,7 @@ const FeatureList = [
        All job scripts and software tutorials are done on the cluster for best experience possible. 
       </>
     ),
-    //link: '/docs/hpcdocs/HPC-clusters/campus-clusters#hpc-clusters', // Update these links to your actual pages
+    link: 'docs/category/HPC-clusters',
   },
   {
     title: 'Centralized Hub for Both Jupyterhub and HPC Clusters',
@@ -23,7 +23,7 @@ const FeatureList = [
         Constantly updated with the latest news, information and resources.
       </>
     ),
-    //link: '../../../docs/jupyter/', // Update these links to your actual pages
+    link: 'docs/jupyter/jupyterhub-policy', 
   },
   {
     title: 'An Open-Source Collaborative Effort',

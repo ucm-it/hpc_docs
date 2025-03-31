@@ -8,7 +8,7 @@ The showcase will utilize the application, Kokkos, as our example application.
 
 ## Allocating and Placement on a GPU Node 
 
-The first step will be allocating a GPU node to be able to copile with GPU(CUDA) support. 
+The first step will be allocating a GPU node to be able to compile with GPU(CUDA) support. 
 
 GPU nodes can be allocated via test partition (1 Hour Max TimeLimit) or via the `gpu` partition.
 

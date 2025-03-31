@@ -16,7 +16,7 @@ This page presents  helpful tools and methods to manage Slurm jobs, find detaile
 A mixed state node is a node that is not being fully utilized, i.e. their resources are not fully allocated.
 
 
-Execute the following script on the login node to get detailed information about memory and cpu core availabilty on every currently, mixed-state node on Pinnacles.
+Execute the following script on the login node to get detailed information about memory and cpu core availability on every currently, mixed-state node on Pinnacles.
 
 Execute the script via the command: 
 `node_resource_status.sh`
@@ -30,7 +30,7 @@ Execute the script via the command:
 | -------------| -----------------------|
 | `-M merced ` | Shows all currently submitted jobs on MERCED |
 |  `--me ` | Shows all currently jobs submitted by user |
-| `--r` or `-array ` | Shows job arrays sumitted onto cluster |
+| `--r` or `-array ` | Shows job arrays submitted onto cluster |
 | `--start` | Shows rough estimate of when jobs for specified user will begin, based off real-time state of the scheduler and jobs queued. Not always accurate estimates. |
 
 
@@ -48,7 +48,7 @@ Job states represent the current state of submitted jobs. Below are the most com
 | CF | Job is resources allocated and now booting up| 
  CD | Job has been completed |
 | CA | Job has been cancelled explicitly | 
-| CG | Job is in the process of completting and is deallocating the resources | 
+| CG | Job is in the process of completing and is deallocating the resources | 
 | F | Job exited with Failure, a non-zero exit code is presented | 
 | OOM | Node are out of memory | 
 | S | Job has been suspended |
@@ -63,14 +63,14 @@ NodeList(Reason) helps to find on which nodes the job is currently running on. A
 | ---------- | ---------------| 
 | (Resources) |  Job is waiting for resources to become available |
 | (TimeLimit) | Job has hit it's max time limit for execution |
-| (ReqNodeNotAvail) | The requested node is not curretly available | 
+| (ReqNodeNotAvail) | The requested node is not currently available | 
 | (Nodes required for job are DOWN, DRAINED or reserved for jobs in higher priority partitions) | Job is not available |
 |(Priority) | One or more higher priority jobs exist for this partition or advanced reservation. | 
 | (QoSJobLimit) | The job's QOS has reached its maximum job count |
 | QOSResourceLimit | The job's QOS has reached some resource limit | 
 
 ##  `sacct` command  
-The `sacct` displays accounting data for all jobs in the cluster queue or recent history. By default, the `sacct` command diplays JobId, JobName, Partition, Account, AllocCPUS, State and ExitCode. Below are useful options that can be added to get more specific information but all options for `sacct ` can be found through executing `sacct -e` or `sacct -h`.
+The `sacct` displays accounting data for all jobs in the cluster queue or recent history. By default, the `sacct` command displays JobId, JobName, Partition, Account, AllocCPUS, State and ExitCode. Below are useful options that can be added to get more specific information but all options for `sacct ` can be found through executing `sacct -e` or `sacct -h`.
 
 | Option | Meaning | 
 | ---------------- | ---------------| 
@@ -81,7 +81,7 @@ The `sacct` displays accounting data for all jobs in the cluster queue or recent
 | -X, --allocations | Only show statistics relevant to the job allocation itself |
 | -v, --verbose|  Primarily for debugging purposes, report the state of various variables during processing. |
 | --name=[jobname_list] | Display jobs that have any of these name(s).|
-| --state=[state_list] | Displays states depending on which state was asked to be displayed and thier associated exit code. |
+| --state=[state_list] | Displays states depending on which state was asked to be displayed and their associated exit code. |
 
 
 Example of `sacct -e`
@@ -138,7 +138,7 @@ Below are defintions of some important fields from the above list that are helpf
 | ExitCode | Exit code returned by the job. |
 
 
-Here is one use of `sacct` with the follwing syntax to retrieve useful information about the specified job:
+Here is one use of `sacct` with the following syntax to retrieve useful information about the specified job:
 `sacct -j <jobid>`
 
 This will provide similar information with the same fields as shown below about the specified job: 
@@ -268,7 +268,7 @@ JobID           JobName  ReqCPUS     ReqMem     AveRSS     MaxRSS    Elapsed    
 
 Using the `sacct` command we see that the job failed because it ran out of memory. This is inferred through the state: `OUT_OF_MEMORY` and the exit code of `0:125` which correlates with an Out of Memory exit status or the reason why the job session was terminated. 
 
-It is possible to use `scontrol show job <sampleid>` to debug the error(s) that occured in our job.  
+It is possible to use `scontrol show job <sampleid>` to debug the error(s) that occurred in our job.  
 
 ```
 
