@@ -9,3 +9,11 @@
   height: 200px;
   width: 200px;
 }
+.featureSvg:hover {
+  transform: scale(1.25);
+  transition: transform 0.3s ease;
+}
+.featureSvg:hover path {
+  fill: var(--ifm-color-primary);
+  transition: fill 0.3s ease;
+}

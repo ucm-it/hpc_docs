@@ -34,7 +34,7 @@ Thank you for your understanding and cooperation
 ## COMPLETED: HPC cluster maintenance - 1/16/24  
 The MERCED and Pinnacles clusters are back online. The CIRT team has completed several updates, including security advisories, bug fixes, and product enhancements. Upgrades encompassed storage server firmware, storage chassis firmware, IB and Data network expansion, and nodes' BIO and BMC firmware. Currently, the default CUDA version for GPU nodes (gnode) is 12.3.
 
-  Please feel free to resum
+  Please feel free to resume
 
 ## CIRT Winter Break Availbility  
 

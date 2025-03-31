@@ -1,6 +1,6 @@
 ---
 title: Running R (with MPI)
-sidebar_position: 1
+sidebar_position: 2
 unlisted: true
 ---
 import Tag from '@site/src/components/Tag';
@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-## Create a virtual environment and install R<!-- {docsify-ignore} -->
+## Create a virtual environment and install R 
 ```R
 module load anaconda3
 conda create -n my-R -c r    #creates a virtual environment named my-R and installs R with some common packages
@@ -29,7 +29,7 @@ conda install r-<your_package> #use the conda to install packages is the recomme
     ```bash
     #!/bin/bash
     #SBATCH --partition=test  ## queue based on wall-clock time limitation.
-    #SBATCH --nodes=1 ## or "-N". Min noumber of nodes.
+    #SBATCH --nodes=1 ## or "-N". Min number of nodes.
     #SBATCH --ntasks=1 ## Max. tasks per node (number of cores).
     ##
     #SBATCH --job-name=myjob ## Name of Job in queue (Replace 'myjob')
@@ -53,7 +53,7 @@ conda install r-<your_package> #use the conda to install packages is the recomme
 
     **Line 6**: This loads the anaconda module which is required to activate your R virtual environment.
 
-    **Line 7**: Activates a virtual environment call my-R, that have been previosuly created.
+    **Line 7**: Activates a virtual environment call my-R, that have been previously created.
 
     **Line 8**: This line is actually running the R script. RScript is recommended over R CMD BATCH.
 
@@ -65,7 +65,7 @@ conda install r-<your_package> #use the conda to install packages is the recomme
  
 </Tabs>
 
-## Running R across multiple nodes <!-- {docsify-ignore} -->
+## Running R across multiple nodes 
 
 When running R over multiple nodes we recommend using doMPI instead of doParallel, and starting your R process with `mpiexec -np <number of cored> Rscript myrscript.R`
 
