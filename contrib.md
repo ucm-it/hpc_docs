@@ -1,9 +1,10 @@
 # How to Contribute to the HPC Docs
 
 ## Pull Request Process
-This section presumes you have read through "Creating Fork page" and you have a fundamental understanding of GIT
+This section presumes you have read through [Creating Fork page](./FORKING.md) and you have a basic understanding of GIT
 1. Commit your change to your local checkout on your computer
-	1. **Note:** It is imperative that you write your commit message to be as concise **and** descriptive as possibly. For ideas please refer to the # 50/72 Rule for GIT Messages. [[https://www.midori-global.com/blog/2018/04/02/git-50-72-rule#:~:text=The%20rule%20is%20simple%3A,them%20(This%20part%20is%20optional.]](link)
+	1. **Note:** It is imperative that you write your commit message to be as concise **and** descriptive as possibly. For ideas please refer to the # 50/72 Rule for GIT Messages. [Link](https://www.midori-global.com/blog/2018/04/02/git-50-72-rule#:~:text=The%20rule%20is%20simple%3A,them%20(This%20part%20is%20optional.))
+
 	2. Ensure to Sync your Github fork remote with the main HPC Docs Repo. 
 	3. Git fetch the changes onto your local checkout. 
 		1. **Note to only** Git Pull if necessary. 

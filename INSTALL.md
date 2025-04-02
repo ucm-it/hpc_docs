@@ -1,4 +1,4 @@
-# How to install the Documenation project
+# How to install the Documentation project
 This will cover the prequisite knowledge, softwares and tools to successfully have a local copy of the documentation site. 
 
 ## Prerequisite Tools
@@ -38,8 +38,8 @@ This will cover the prequisite knowledge, softwares and tools to successfully ha
   Instructions on how to fork the project can be seen at [FORKING.md](/FORKING.md)
 
   ## Running a Local Build
-  Once the project has been sucessfully forked and the required dependencies are installed, you can now try to do the following commands whenever. 
-  1. `npm run build` - Recompiles and builds a static version that can be deployed anywhere like github pages. 
+  Once the project has been successfully forked and the required dependencies are installed, you can now try to do the following commands whenever. 
+  1. `npm run build` - Recompile and builds a static version that can be deployed anywhere like github pages. 
 This command is important to run if you are making many pages or docs under the `static` folder, as these docs do not get compiled with `serve`. 
 
 
