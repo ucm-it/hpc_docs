@@ -7,6 +7,11 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+## HPC CENVAL-ARC symposium (Mar. 7th 2025)
+The University of California, Merced invites you to the 2025 Central Valley Accessible Research and Computational Hub (CENVAL-ARC) Symposium, proudly sponsored by the National Science Foundation’s Campus Cyberinfrastructure (CC) program*.
+https://cenval-arc.ucmerced.edu/
+
 ## HPC clusters maintenance (Sep. 23 - 27th, 2024)
 HPC clusters MERCED and Pinnacles will be under a maintenance for critical maintenance and for installing hardware from 6am Sep. 23 - 5pm Sep. 27, 2024.
 During this time, users will not be able to:
