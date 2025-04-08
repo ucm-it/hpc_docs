@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'UC Merced HPC & JupyterHub Documentation',
   tagline: 'Cyberinfrastructure and Research Technologies',
-  favicon: 'img/cirt.png',
+  favicon: 'img/CIRT.png',
 
   // Set the production url of your site here
   url: 'https://ucm-it.github.io',
