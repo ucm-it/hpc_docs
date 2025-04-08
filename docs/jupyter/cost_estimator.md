@@ -17,9 +17,11 @@ JupyterHub is an open source service that creates on-demand cloud-based Jupyter 
 | **Kubernetes-based** | • UC Merced's JupyterHub<br/>• Self-Hosted JupyterHub |
 | **Single VM** | • The Littlest JupyterHub |
 
-## ☁️ UC Merced JupyterHub
+## ☁️ Kubernetes-based JupyterHub ☁️
 
-UC Merced's existing JupyterHub runs on cloud infrastructure, providing a robust Kubernetes-based setup with scalability and stability for classroom use.
+Integrating JupyterHub with a Kubernetes engine allows for a robust and scalable version of JupyterHub, which gives the ability to deploy containerized environments while not being tied to any one cloud provider. Due to the customizability and scale it provides, the setup and maintenance for this option is the most complicated, taking longer to deploy.
+
+See the comparison table below for a side-by-side comparison of UC Merced JupyterHub and Self-hosted JupyterHub:
 
 
 ### 📊 Comparison: UC Merced JupyterHub vs. Self-Hosted JupyterHub
@@ -27,15 +29,15 @@ UC Merced's existing JupyterHub runs on cloud infrastructure, providing a robust
 | **Aspect**                 | **UC Merced JupyterHub**                                           | **Self-Hosted JupyterHub**                                                      |
 |---------------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | 💸 **Cost**               | ❌ No Cost – Free for faculty and students                         | 💸 Cost borne by the user (compute, storage, network)                            |
-| 👨‍🔧 **Management**       | ✅ Professionally managed by UC Merced experts                      | 🧑‍💻 Requires dedicated personnel for support and monitoring                     |
-| 🛡️ **Maintenance**        | ✅ Updates and security handled by the UC Merced team               | 🔧 Full responsibility for updates, patches, and backups                         |
+| 👨‍🔧 **Management**       | ✅ Professionally managed by CIRT Team - OIT Dept, UC Merced        | 🧑‍💻 Requires individuals to manage their own infrastructure                     |
+| 🛡️ **Maintenance**        | ✅ Updates and security handled by CIRT Team - OIT Dept, UC Merced  | 🔧 Individuals must handle all updates, patches, and backups                     |
 | 🌐 **Cloud Provider Choice** | 🚫 Fixed (Managed by UC Merced infrastructure)                    | 🌐 Knowledge on AWS is mandatory
 | 🧑‍🏫 **Ease of Use**       | ✅ Easy – No installation or setup required                         | ⚠️ Requires setup and environment configuration                                 |
 | 📘 **Technical Expertise** | 🚫 Minimal – Ready-to-use environment                              | 📘 High – Knowledge of Kubernetes, DevOps needed                                 |
 | 🧩 **Customization**       | 🧩 Some flexibility with package requests and extensions            | 🎨 Full customization of software and infrastructure                             |
 
 
-> **Note:** The self-hosted JupyterHub requires additional IT support costs not reflected above. For a true comparison, factor in approximately 0.5-1 FTE of cloud engineering expertise.
+> ⚠️ **IMPORTANT COST CONSIDERATION:** The self-hosted option requires dedicated IT specialists not reflected in this calculation. When comparing costs, you must factor in approximately 1-1.25 FTE of specialized expertise across cloud engineering, DevOps, and system administration. This team must continuously monitor and maintain the infrastructure. In contrast, the UC Merced JupyterHub is readily available and managed by the CIRT team.
 
 ---
 
