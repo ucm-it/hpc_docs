@@ -219,9 +219,19 @@ export default function JupyterCostCalculator() {
           </div>
         </div>
         
-        <div style={{marginTop: '1rem', fontSize: '0.75rem', color: '#64748b'}}>
-          <strong>Note:</strong> The self-hosted option requires additional IT staff costs not reflected above.
-          For a true comparison, factor in approximately 0.25-0.5 FTE of cloud engineering expertise.
+        <div style={{
+          marginTop: '1rem', 
+          padding: '0.75rem',
+          backgroundColor: '#fff7ed',
+          border: '1px solid #fdba74',
+          borderRadius: '6px',
+          borderLeft: '3px solid #f97316',
+          color: '#9a3412',
+          fontSize: '0.8rem',
+          fontWeight: '500'
+        }}>
+          <strong>⚠️ HIDDEN COST ALERT:</strong> Self-hosted JupyterHub requires dedicated IT specialists 
+          with AWS cloud engineering, DevOps, and system administration skills (1-1.25 FTE) not shown in these figures.
         </div>
       </div>
     );
@@ -479,7 +489,7 @@ export default function JupyterCostCalculator() {
       <div style={styles.calculatorGrid}>
         {/* Self-hosted Cloud Form */}
         <div style={styles.formContainer}>
-          <h4 style={styles.formTitle}>Self-Hosted Cloud</h4>
+          <h4 style={styles.formTitle}>Self-Hosted JupyterHub</h4>
           
           <div style={styles.formGroup}>
             <Tooltip text="The type of VM instance used to run JupyterHub. Different types offer varying combinations of CPU and memory.">
@@ -638,7 +648,7 @@ export default function JupyterCostCalculator() {
           <div style={styles.resultsGrid}>
             {/* Self-hosted Results */}
             <div style={styles.resultsContainer}>
-              <div style={styles.resultsTitle}>Self-Hosted Cloud Costs</div>
+              <div style={styles.resultsTitle}>Self-Hosted JupyterHub Costs</div>
               
               <div style={styles.resultLine}>
                 <Tooltip text="Active pods are calculated as 25% of total users, representing the typical concurrent usage pattern.">
@@ -734,10 +744,27 @@ export default function JupyterCostCalculator() {
               <li><strong>Node Requirements:</strong> Calculated based on total memory needs and chosen node type</li>
               <li><strong>Total Cost:</strong> Includes both infrastructure costs and service fees (for 2i2c option)</li>
             </ul>
-            <p style={{marginTop: '0.75rem', fontStyle: 'italic'}}>
-              Note: The self-hosted option requires additional IT personnel costs not reflected in this calculation.
-              Factor in approximately 0.25-0.5 FTE of cloud engineering expertise for a true cost comparison.
-            </p>
+            <div style={{
+              marginTop: '1.25rem',
+              padding: '1rem',
+              backgroundColor: '#fffbeb',
+              border: '1px solid #fbbf24',
+              borderRadius: '8px',
+              borderLeft: '4px solid #f59e0b',
+              color: '#92400e',
+              fontWeight: '500'
+            }}>
+              <div style={{fontSize: '1rem', fontWeight: '700', marginBottom: '0.5rem', display: 'flex', alignItems: 'center'}}>
+                <span style={{marginRight: '0.5rem'}}>⚠️</span> IMPORTANT COST CONSIDERATION
+              </div>
+              <p style={{margin: 0}}>
+                The self-hosted option requires <strong>dedicated IT specialists</strong> not reflected in this calculation.
+                When comparing costs, you must factor in approximately <strong>1-1.25 FTE</strong> of specialized expertise 
+                across cloud engineering, DevOps, and system administration. This team must continuously monitor and maintain 
+                the infrastructure. This significant hidden cost makes UC Merced JupyterHub service substantially more 
+                cost-effective when factoring in total cost of ownership.
+              </p>
+            </div>
           </div>
         </div>
       )}

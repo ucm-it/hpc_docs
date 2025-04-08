@@ -12,38 +12,30 @@ JupyterHub is an open source service that creates on-demand cloud-based Jupyter 
 
 ## 🚀 JupyterHub Deployment Options
 
-There are different approaches to deploying JupyterHub:
+| Deployment Type | Available Options |
+|----------------|-------------------|
+| **Kubernetes-based** | • UC Merced's JupyterHub<br/>• Self-Hosted JupyterHub |
+| **Single VM** | • The Littlest JupyterHub |
 
-### JupyterHub using Kubernetes
-- UC Merced's JupyterHub Service  
-- Self-Hosted JupyterHub  
-
-### The Littlest JupyterHub
-
-## ☁️ UC Merced JupyterHub Service
+## ☁️ UC Merced JupyterHub
 
 UC Merced's existing JupyterHub runs on cloud infrastructure, providing a robust Kubernetes-based setup with scalability and stability for classroom use.
 
----
 
-### ✅ Benefits of the UC Merced JupyterHub
+### 📊 Comparison: UC Merced JupyterHub vs. Self-Hosted JupyterHub
 
-- ❌ **No Cost | 💸 Completely Free** – No cost for UC Merced faculty and students. No cloud billing or hidden charges.  
-- 🛠️ **Professional Management** – Maintained by experts in JupyterHub deployment  
-- 📦 **Kubernetes-based** – Provides container isolation and efficient resource usage  
-- 📈 **Scalable** – Automatically adjusts resources based on demand  
-- 🧩 **Customizable** – Supports custom environments and extensions  
-- 💰 **Cost-effective** – Optimized for efficient resource use  
+| **Aspect**                 | **UC Merced JupyterHub**                                           | **Self-Hosted JupyterHub**                                                      |
+|---------------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| 💸 **Cost**               | ❌ No Cost – Free for faculty and students                         | 💸 Cost borne by the user (compute, storage, network)                            |
+| 👨‍🔧 **Management**       | ✅ Professionally managed by UC Merced experts                      | 🧑‍💻 Requires dedicated personnel for support and monitoring                     |
+| 🛡️ **Maintenance**        | ✅ Updates and security handled by the UC Merced team               | 🔧 Full responsibility for updates, patches, and backups                         |
+| 🌐 **Cloud Provider Choice** | 🚫 Fixed (Managed by UC Merced infrastructure)                    | 🌐 Knowledge on AWS is mandatory
+| 🧑‍🏫 **Ease of Use**       | ✅ Easy – No installation or setup required                         | ⚠️ Requires setup and environment configuration                                 |
+| 📘 **Technical Expertise** | 🚫 Minimal – Ready-to-use environment                              | 📘 High – Knowledge of Kubernetes, DevOps needed                                 |
+| 🧩 **Customization**       | 🧩 Some flexibility with package requests and extensions            | 🎨 Full customization of software and infrastructure                             |
 
-### 💸 Cloud-Based JupyterHub Costs
 
-When deploying JupyterHub on external cloud providers, costs typically include:
-
-1. ⚙️ **Compute Resources** – Virtual machines for hosting JupyterHub and user sessions  
-2. 🌐 **Data Transfer** – Usually minimal unless handling large datasets  
-3. 🔁 **Load Balancer** – Required for scalable, production-ready deployments  
-
-> **Note:** The self-hosted option requires additional IT staff costs not reflected above. For a true comparison, factor in approximately 0.25-0.5 FTE of cloud engineering expertise.
+> **Note:** The self-hosted JupyterHub requires additional IT support costs not reflected above. For a true comparison, factor in approximately 0.5-1 FTE of cloud engineering expertise.
 
 ---
 
