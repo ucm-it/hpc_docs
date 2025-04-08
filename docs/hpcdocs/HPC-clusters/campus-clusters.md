@@ -51,6 +51,13 @@ As well as how to get access, logging in, file system, resource breakdown.
     *This research [Part of this research] was conducted using Pinnacles (NSF MRI, # 2019144) at the Cyberinfrastructure and Research Technologies (CIRT) at University of California, Merced.*
 
     From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by Pinnacles users that have included results of calculations on Pinnacles. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced.
+
+  #### `CENVAL-ARC` Node Use on Pinnacles
+     In addition, for those who also use `cenval-arc` nodes, please add the citation below to support NSF grant (#2346744). An example acknowledgement section is: 
+
+      *This research [Part of this research] was conducted using CENVAL-ARC compute resources on the Pinnacles cluster (NSF #2346744) at the Cyberinfrastructure and Research Technologies (CIRT) at University of California, Merced.*
+
+
   </TabItem>
 
   <TabItem value="MERCED" label="MERCED" default>
@@ -231,7 +238,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   2. Click `Request Service`
   ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
   3. Begin to populate all the required information. 
-      1. At the question regardig PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+      1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
       ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
   4. For selecting the system, from the drop-down, click `merced.ucmerced.edu (Recharge Cluster)`
   ![Image of MERCED Selection](imgs/RequestAccountMERCED.png "Selecting MERCED")
