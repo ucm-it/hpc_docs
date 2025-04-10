@@ -7,26 +7,44 @@ import JupyterCostCalculator from '@site/src/components/JupyterCostCalculator';
 
 # 📊 JupyterHub Cost Estimator
 
-## Overview
-JupyterHub is an open source service that creates on-demand cloud-based Jupyter notebook servers, enabling users to interact remotely with a standardized computing environment through any web browser. This page helps you understand deployment options and estimate costs for different implementation scenarios.
+JupyterHub is an open source service that creates on-demand Jupyter notebook servers, enabling users to interact remotely with a standardized computing environment through any web browser. It's widely used in educational settings, research labs, and data science teams to provide consistent computing environments.
+
+This guide helps faculty, PIs, and instructors understand:
+- The different deployment options available for JupyterHub
+- Estimated costs for cloud-based and on-premises solutions
+- Pros and cons of each approach based on your technical expertise and resources
+- How UC Merced's managed JupyterHub service compares to self-managed options
+
+Whether you're planning to support a single course, a department, or institution-wide deployment, this calculator will help you make informed decisions about the most cost-effective approach for your specific needs.
+
+> **Important Note:** This JupyterHub cost estimator is specifically designed for those who want to use/deploy JupyterHub for teaching and instruction purposes, not for research purposes. The resource calculations and cost estimates are optimized for classroom and educational scenarios.
 
 ## 🚀 JupyterHub Deployment Options
 
 | Deployment Type | Available Options |
 |----------------|-------------------|
-| **Kubernetes-based** | • UC Merced's JupyterHub<br/>• Self-Hosted JupyterHub |
+| **Kubernetes-based** | • UC Merced's JupyterHub<br/>• Faculty or Department Hosted JupyterHub |
 | **Single VM** | • The Littlest JupyterHub |
 
 ## ☁️ Kubernetes-based JupyterHub ☁️
 
-Integrating JupyterHub with a Kubernetes engine allows for a robust and scalable version of JupyterHub, which gives the ability to deploy containerized environments while not being tied to any one cloud provider. Due to the customizability and scale it provides, the setup and maintenance for this option is the most complicated, taking longer to deploy.
+Integrating JupyterHub with Kubernetes creates a robust, highly scalable platform capable of serving hundreds or thousands of users. This approach uses Kubernetes (an open-source container orchestration system) to manage computational resources dynamically, scaling up or down based on demand. It's the preferred solution for institution-wide deployments.
 
-See the comparison table below for a side-by-side comparison of UC Merced JupyterHub and Self-hosted JupyterHub:
+### Key Benefits of Kubernetes-based JupyterHub:
+- **Scalability**: Handles large numbers of concurrent users efficiently
+- **Resource Efficiency**: Dynamically allocates computing resources as needed
+- **Reliability**: Provides high availability through redundancy
+- **Standardization**: Creates consistent environments across all users
+- **Isolation**: Ensures security through containerization
+
+However, this approach requires significant technical expertise in cloud infrastructure, containerization, and DevOps practices.
+
+See the comparison table below for a side-by-side comparison of UC Merced JupyterHub and Faculty or Department Hosted JupyterHub:
 
 
-### 📊 Comparison: UC Merced JupyterHub vs. Self-Hosted JupyterHub
+### 📊 Comparison: UC Merced JupyterHub vs. Faculty or Department Hosted JupyterHub
 
-| **Aspect**                 | **UC Merced JupyterHub**                                           | **Self-Hosted JupyterHub**                                                      |
+| **Aspect**                 | **UC Merced JupyterHub**                                           | **Faculty or Department Hosted JupyterHub**                                                      |
 |---------------------------|---------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | 💸 **Cost**               | ❌ No Cost – Free for faculty and students                         | 💸 Cost borne by the user (compute, storage, network)                            |
 | 👨‍🔧 **Management**       | ✅ Professionally managed by CIRT Team - OIT Dept, UC Merced        | 🧑‍💻 Requires individuals to manage their own infrastructure                     |
@@ -37,13 +55,13 @@ See the comparison table below for a side-by-side comparison of UC Merced Jupyte
 | 🧩 **Customization**       | 🧩 Some flexibility with package requests and extensions            | 🎨 Full customization of software and infrastructure                             |
 
 
-> ⚠️ **IMPORTANT COST CONSIDERATION:** The self-hosted option requires dedicated IT specialists not reflected in this calculation. When comparing costs, you must factor in approximately 1-1.25 FTE of specialized expertise across cloud engineering, DevOps, and system administration. This team must continuously monitor and maintain the infrastructure. In contrast, the UC Merced JupyterHub is readily available and managed by the CIRT team.
+> ⚠️ **IMPORTANT COST CONSIDERATION:** The Faculty or Department Hosted JupyterHub option requires dedicated IT specialists not reflected in this calculation. When comparing costs, you must factor in approximately 1-1.25 FTE of specialized expertise across cloud engineering, DevOps, and system administration. This team must continuously monitor and maintain the infrastructure. In contrast, the UC Merced JupyterHub is readily available and managed by the CIRT team.
 
 ---
 
 ## 📊 Cost Comparison Calculator
 
-To compare between the **UC Merced JupyterHub service** and a **self-deployed cloud-based JupyterHub**, please refer to the cost estimation section and the calculator below. This tool allows you to estimate and compare both options side by side based on your specific class size and usage needs.
+To compare between the **UC Merced JupyterHub service** and a **Faculty or Department Hosted JupyterHub**, please refer to the cost estimation section and the calculator below. This tool allows you to estimate and compare both options side by side based on your specific class size and usage needs.
 
 ### 🧮 Calculation Method
 
@@ -63,7 +81,19 @@ The calculator uses the following methodology to estimate resource needs:
 
 <JupyterCostCalculator />
 
-## 📦 The Littlest JupyterHub
+## 📦 The Littlest JupyterHub: Simpler On-Premises Option
+
+If you're a faculty member, PI, or researcher who wants to run JupyterHub on your own infrastructure without the complexity of Kubernetes, The Littlest JupyterHub (TLJH) provides an excellent alternative. TLJH is designed to run on a single machine (either a virtual machine or physical server) and is much simpler to set up and maintain than Kubernetes-based solutions.
+
+### When to Choose TLJH:
+- You have existing VM or physical server resources available
+- You need a solution for a smaller user base (typically up to 100 users)
+- Your team has basic system administration skills but limited cloud/DevOps expertise
+- You prefer to keep your computational resources on-premises
+- You want a simpler setup and maintenance process
+
+### Getting Started with TLJH:
+Complete installation instructions can be found in the [official documentation](https://tljh.jupyter.org/en/latest/). The installation process is straightforward and can typically be completed in under an hour with basic Linux administration skills.
 
 In order to describe the costs of each option accurately, there are three dimensions of the set-up that must be considered: the allotment of memory/RAM, CPU usage, and disk space that each user would need. In that way, varying class sizes and needs differentiate the amount of resources given to each cost dimension. Four major options are outlined in the following chart to determine the allocation of resources across those three types: small classes (~30-50 students), average-sized classes (~80-100 students), and large classes (~100-400+). The following formulas for each of these three dimensions are widely applicable across different scenarios for The Littlest JupyterHub (TLJH):
 
