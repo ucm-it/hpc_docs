@@ -117,7 +117,7 @@ You can send a request to the CIRT team at cirt@ucmerced.edu to gather informati
 
 > __My Jobs are running unusually slow, failing with errors, I need to cancel a currently running job__
 
-Jobs can be running unusually slow for many reasons that can be relating to the about number of tasks assigned to the job, number of nodes, and the memory being allocated to the job. These three factors are just a few common factors that can be leading to an unusually slow job, and all of these are dependent on what is being computed(i.e. a parallel python script or a simple list of unix commands). It is important to understand what the code is  anticipated to execute and how that will be done with the resources you are requesting. This will allow for the user to better less/more computing resources to get the computations/calculations done in an effecient manner. 
+Jobs can be running unusually slow for many reasons that can be relating to the about number of tasks assigned to the job, number of nodes, and the memory being allocated to the job. These three factors are just a few common factors that can be leading to an unusually slow job, and all of these are dependent on what is being computed(i.e. a parallel python script or a simple list of unix commands). It is important to understand what the code is  anticipated to execute and how that will be done with the resources you are requesting. This will allow for the user to better less/more computing resources to get the computations/calculations done in an efficient manner. 
 
 To get information about troubleshooting a job failing with errors visit our [Job Management Page](../HPC-clusters/job_manage.md)
 

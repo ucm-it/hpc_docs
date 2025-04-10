@@ -16,7 +16,7 @@ There are two methods of requesting HPC support:
     - Office Hours is a good starting point for more generalized and simple questions.
     - Information about office hours location, schedule and Q/A can be found [here](../hpc-tutorials/OH.md)! 
 2. Submitting a ticket via ServiceHub
-    - Main method of recieving support, here all questions and issues can be submitted and will be handled by the CIRT team. Typical response times are 3-5 business days. 
+    - Main method of receiving support, here all questions and issues can be submitted and will be handled by the CIRT team. Typical response times are 3-5 business days. 
     - Central Hub for submitting a ticket [link!](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)
 
 :::info
@@ -24,10 +24,10 @@ Note: Please do not try to directly contact CIRT Staff for Assistance. Requests 
 ::: 
 
 ### Writing a Good Request via a Ticket 
-Here are steps and tips on how to write a good request via a ticket when requesting support from CIRT. It is important to remember that submitting a ticket is the main method users can recieve support from CIRT. CIRT is a small team so when requesting support please allow 3-5 business days to recieve a response from us. 
+Here are steps and tips on how to write a good request via a ticket when requesting support from CIRT. It is important to remember that submitting a ticket is the main method users can receive support from CIRT. CIRT is a small team so when requesting support please allow 3-5 business days to receive a response from us. 
 
 <details>
-<summary> Click here to view a list of tips for submitting effective support requets </summary>
+<summary> Click here to view a list of tips for submitting effective support request </summary>
 1. Users should use the central Ticket hub to submit all tickets. 
 
     Click [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) to access the page. 
@@ -39,7 +39,7 @@ Here are steps and tips on how to write a good request via a ticket when request
         - Mention the cluster you were working on and the working directory.
 3. Describe Your Current Environment
 
-    - Are you running custom-compiled code? Which modules are loaded? Are you running software that was self-downloaded? Custom Conda Enviroment? 
+    - Are you running custom-compiled code? Which modules are loaded? Are you running software that was self-downloaded? Custom Conda Environment? 
     
     Providing this context allows us to best recreate your issue and helps to quickly diagnose the problem.
 

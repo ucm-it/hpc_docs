@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`UC Merced HPC & JupyterHub Documentation`}
-      description="Description will go into a meta tag in <head />">
+      description="HPC & JupyterHub Documentation @ UC Merced">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
