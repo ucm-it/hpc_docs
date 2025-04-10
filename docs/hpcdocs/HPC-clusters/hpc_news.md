@@ -1,6 +1,9 @@
 ---
 title: HPC Cluster News
 sidebar_position: 6
+last_update:
+  date: 4/10/2025
+  author: Yue Yu
 ---
 
 import Tag from '@site/src/components/Tag';
@@ -9,10 +12,14 @@ import TabItem from '@theme/TabItem';
 
 
 ## HPC CENVAL-ARC symposium (Mar. 7th 2025)
+_posted on: 03/01/2025_
+
 The University of California, Merced invites you to the 2025 Central Valley Accessible Research and Computational Hub (CENVAL-ARC) Symposium, proudly sponsored by the National Science Foundation’s Campus Cyberinfrastructure (CC) program*.
 https://cenval-arc.ucmerced.edu/
 
 ## HPC clusters maintenance (Sep. 23 - 27th, 2024)
+_posted on: 09/02/2024_
+
 HPC clusters MERCED and Pinnacles will be under a maintenance for critical maintenance and for installing hardware from 6am Sep. 23 - 5pm Sep. 27, 2024.
 During this time, users will not be able to:
 - Login to the clusters and access their data
@@ -26,6 +33,8 @@ During this maintenance, CIRT team along with cluster vendors will perform the f
 - Regular maintenance
 
 ## Emergency Maintenance Notification for MERCED and Pinnacles HPC Clusters  - 06/17/2024 
+_posted on: 06/02/2024_
+
 We are writing to inform you of emergency fire management system maintenance scheduled by Facilities on Monday, June 17th, from 1:00 PM through 1:30 PM that will impact the MERCED and Pinnacles HPC clusters.
 
 During the maintenance window, the clusters will be offline to ensure the safety and integrity of our systems. Any jobs running or scheduled to run during this period will be lost.
@@ -37,9 +46,15 @@ For up-to-date information on the status of the clusters during this maintenance
 Thank you for your understanding and cooperation
 
 ## COMPLETED: HPC cluster maintenance - 1/16/24  
+_posted on 01/16/2024_
+
 The MERCED and Pinnacles clusters are back online. The CIRT team has completed several updates, including security advisories, bug fixes, and product enhancements. Upgrades encompassed storage server firmware, storage chassis firmware, IB and Data network expansion, and nodes' BIO and BMC firmware. Currently, the default CUDA version for GPU nodes (gnode) is 12.3.
 
   Please feel free to resume
+
+
+{/* 
+This is hidden material
 
 ## CIRT Winter Break Availbility  
 
@@ -119,7 +134,7 @@ Register here: https://ucm.edu/Intro_to_Overleaf
 
 
 
-## Upcoming MERCED cluster maintenance and changes to CIRT services 11/15/2022  <!-- {docsify-ignore} -->
+## Upcoming MERCED cluster maintenance and changes to CIRT services 11/15/2022  
 
 MERCED Cluster Downtime
 
@@ -156,6 +171,8 @@ MERCED Cluster will be offline starting 6:30 am on 01/09/2023 until 5 pm on 01/3
 
 
 <ins>Why:</ins> During this period, CIRT will make a number of critical hardware, software, firmware updates to the cluster.
+
+
 
 
 
@@ -490,3 +507,5 @@ CIRT Team
 
 
 </details>
+
+*/}
