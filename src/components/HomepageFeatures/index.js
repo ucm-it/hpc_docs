@@ -33,7 +33,7 @@ const FeatureList = [
        We are a tight knit group of researchers who are passionate about HPC and JupyterHub.
        We are always looking for new contributors to help us improve our documentation.
        Join us and chat with us on our{" "}
-       <a href="https://ucmhpcclusters.slack.com" target="_blank" rel="noopener noreferrer">
+       <a href="https://ucmhpcclusters.slack.com/signup#/domain-signup" target="_blank" rel="noopener noreferrer">
              Slack workspace 
        </a> {" "}
 
