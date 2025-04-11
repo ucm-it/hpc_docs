@@ -9,6 +9,8 @@ import JupyterCostCalculator from '@site/src/components/JupyterCostCalculator';
 
 JupyterHub is an open source service that creates on-demand Jupyter notebook servers, enabling users to interact remotely with a standardized computing environment through any web browser. It's widely used in educational settings, research labs, and data science teams to provide consistent computing environments.
 
+## 🎯 Guide for Faculty, PIs, and Instructors
+
 This guide helps faculty, PIs, and instructors understand:
 - The different deployment options available for JupyterHub
 - Estimated costs for cloud-based and on-premises solutions
@@ -21,10 +23,21 @@ Whether you're planning to support a single course, a department, or institution
 
 ## 🚀 JupyterHub Deployment Options
 
+<div className="row">
+<div className="col col--2">
+</div>
+<div className="col col--8">
+
 | Deployment Type | Available Options |
 |----------------|-------------------|
 | **Kubernetes-based** | • UC Merced's JupyterHub<br/>• Faculty or Department Hosted JupyterHub |
 | **Single VM** | • The Littlest JupyterHub |
+
+</div>
+<div className="col col--2">
+</div>
+</div>
+
 
 ## ☁️ Kubernetes-based JupyterHub ☁️
 
