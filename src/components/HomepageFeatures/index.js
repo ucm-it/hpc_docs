@@ -43,7 +43,7 @@ const FeatureList = [
        </a>.
       </>
     ),
-    link: 'https://ucmhpcclusters.slack.com/',
+    link: 'https://ucmhpcclusters.slack.com/signup#/domain-signup',
   },
 ];
 
