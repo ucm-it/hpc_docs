@@ -256,32 +256,9 @@ As well as how to get access, logging in, file system, resource breakdown.
 ## Centralized login
 
 ### Open OnDemand Login - Approach 1
-Starting in late April/early May, users will be able to access Pinnacles and MERCED cluster via web-based GUI, Open OnDemand.
+Starting in late April/early May, users will be able to access Pinnacles and MERCED cluster via web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
 
-##### (Login & Dashboard)
-
-URL: https://ondemand.rc.ucmerced.edu
-Open OnDemand (OOD) is a web front‑end that lets you interact with both the Pinnacles and MERCED clusters without touching the command line. It allows for the upload of files, launching of a shell, launch Jupyter Lab or VS Code, monitor jobs, and even check your disk usage, all from a browser.
-
-1. Sign‑in
-Point your browser to the URL above.
-
-Authenticate with your UCM Single‑Sign‑On (SSO) credentials.
-
-After a brief redirect you’ll land on the Dashboard (see screenshot).
-
-| Area             | What you’ll see                                                                                               | Why it matters                                                                                                   |
-|------------------|----------------------|-------------------------------------|
-| **Top Nav Bar**  | **Files**, **Clusters**, **Interactive Apps**, search bar, signed in user | Jump straight to file browsing, Job Composer, or launch an interactive app (Jupyter, VS Code, desktop, MATLAB). |
-| **Announcements**| Campus‑ or RC‑wide notices (e.g., downtime, workshops, call‑for‑posters) | Check here first for maintenance windows or new software modules.|
-| **Recent Jobs**  | Last few Slurm jobs you submitted, with states and exit codes | One‑click drill‑down to view output, error files, or re‑submit.|
-| **Storage**      | `scratch` and `data` bars showing GB used / quota (bar turns red near limit)| Clean up before you hit 100 %; `scratch` is purged periodically.|
-| **System Status**| Node availability for each partition; utilization gauge  | Decide which partition to target (`pi.*`, `gpu`, etc.) to avoid long queues.|
-
-
-
-
-Hover over a gauge to see exact usage; the bar turns red above 90 %.
+For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
 ### Login nodes
 The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles and MERCED are accessed via a `centralized login`. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
 
