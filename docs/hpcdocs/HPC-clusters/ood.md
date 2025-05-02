@@ -53,10 +53,15 @@ For users logging into for the first time, please sign in via the terminal, show
 ## Showcase: Launching Jupyterhub
 
 ![Jupyter](./imgs/ood_jupyter_setup.png)
-Jupyter is one supported that is via interactive session where the user can try run Python code with different custom and personalized Anaconda enviroments interactively and not have worry about setting up SLURM submission scripts and get results back in real time. 
+Jupyter is one supported that is via interactive session where the user can try run Python code with different custom and personalized Anaconda environments interactively and not have worry about setting up SLURM submission scripts and get results back in real time. 
 
-
+:::warning
+Ensure to end the interactive session by clicking `Delete`. Example Screenshot is below
+[Example Output](./imgs/OOD_Delete_Int_job.png)
+Once the job is done it will enter the `Complete` state. 
 ## Showcase: Launching Matlab
 Matlab is one supported that is via interactive session where the user can try run matlab code interactively and not have worry about setting up SLURM submission scripts and get results back in real time. 
+
+
 
 ![Matlab Launch Process](./imgs/ood_matlab_setup.png)
