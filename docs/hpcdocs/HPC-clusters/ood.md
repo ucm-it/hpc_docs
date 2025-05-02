@@ -33,7 +33,7 @@ Open OnDemand (OOD) is a web front‑end that lets you interact with both the *
 For users logging into for the first time, please sign in via the terminal, showcased here, to properly reset the default password. 
 :::
 
-[OOD Login page](./imgs/ood_login_page.png)
+![OOD Login page](./imgs/ood_login_page.png)
 
 ## Home Page 
 
@@ -57,8 +57,11 @@ Jupyter is one supported that is via interactive session where the user can try 
 
 :::warning
 Ensure to end the interactive session by clicking `Delete`. Example Screenshot is below
-[Example Output](./imgs/OOD_Delete_Int_job.png)
+![Example Output](./imgs/OOD_Delete_Int_job.png)
 Once the job is done it will enter the `Complete` state. 
+:::
+
+
 ## Showcase: Launching Matlab
 Matlab is one supported that is via interactive session where the user can try run matlab code interactively and not have worry about setting up SLURM submission scripts and get results back in real time. 
 
