@@ -7,7 +7,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-
+#### Quick Summary
+:::info
+This page presents information on Open OnDemand Use and Best Practices 
+This page aims to offer in-depth walkthrough and tutorials relating to the use Open OnDemand for the MERCED and Pinancles Cluster
+:::
 
 
 ## How To Request Support and Assistance
