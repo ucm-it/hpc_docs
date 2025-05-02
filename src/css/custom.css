@@ -31,7 +31,6 @@
   --docusaurus-highlighted-code-line-bg: #f18a00;
   --ifm-color-link: #1c22d8;
   --ifm-color-link--hover: #f8fa4f;
-
 }
 /* Ensure that long doc titles wrap down instead of cutting off */
 .docItemContainer h1 {
@@ -92,8 +91,34 @@ a[href^="http"]:not(footer a) {
   border: 3px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
   margin-bottom: var(--ifm-spacing-vertical);
+  padding: var(--ifm-spacing-horizontal);
+  background-color: var(--ifm-color-emphasis-100);
+  box-shadow: var(--ifm-box-shadow);
+  transition: box-shadow 0.3s ease; /* Smooth transition */
 }
-
+/*Make the tab titles bold and larger */
+.tabs__item {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+/* CSS to display tabs side by side */
+.tabs__item {
+  display: inline-block;
+  margin-right: 1rem; /* Space between tabs */
+}
+/* Change the background color of tabs on hover */
+.tabs__item:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  box-shadow: var(--ifm-box-shadow);
+}
+/* Change the background color of tabs when active */
+.tabs__item--active {
+  background-color: var(--ifm-color-emphasis-300);
+  box-shadow: var(--ifm-box-shadow);
+}
 /* Style the tab content area */
 .tabs__content {
   border-top: 3px solid var(--ifm-color-emphasis-300);
