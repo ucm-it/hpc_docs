@@ -85,7 +85,7 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 
 Job arrays allows users to run jobs at the same time or have the results of the previous job output to be used as input for the next job. While the output capacity from a job array is immense, the job configurations are the same for all jobs to be run in the job array. 
 
-The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and is different for each partition.< RETURN HERE TO ATTACH PARTITIONS>
+The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md/#queue-information)
 
 ## Job Array Scripting
 <Tabs>
@@ -93,43 +93,88 @@ The max number of jobs that can run at the same time is determined by the maximu
   <TabItem value="Job Array Sample Script" label="Job Array Sample Script" default>
     ```bash
     #!/bin/bash
-    #SBATCH --nodes=1  #asked for 1 node
-    #SBATCH --ntasks=1 #asked for 1 cores
-    #SBATCH --partition medium  #this job will submit to medium partition
-    #SBATCH --array=1-5
-    #SBATCH --mem=1G  #this job is asked for 1G of total memory, use 0 if you want to use entire node memory
-    #SBATCH --time=0-00:15:00 # 15 minutes
-    #SBATCH --output=test_%A_%a.qlog  #the output information will put into test_$SLURM_ARRAY_JOB_ID_$SLURM_ARRAY_TASK_ID.qlog file
-    #SBATCH --job-name=test1  #the job name
-    #SBATCH --export=ALL
-    whoami
+    #SBATCH --job-name=combo_job_array   # job name
+    #SBATCH --output=logs/%x_%A_%a.out     # STDOUT log → logs/combo_model_array_<JOBID>_<TASKID>.out
+    #SBATCH --partition=test             # partition name
+    #SBATCH --nodes=1                      # one node per task
+    #SBATCH --ntasks=5                     # one task per job
+    #SBATCH --mem=3G                       # 2 GB RAM
+    #SBATCH --time=0-00:15:00              # 15 min max
+    #SBATCH --array=1-5                    # array tasks 1–5
+
+    MODEL=(test_model1.py test_model2.py test_model3.py test_model4.py test_model5.py)
+    INPUTS=(input1.csv input2.csv input3.csv input4.csv input5.csv)
+
+    # --- Get zero-based index
+    IDX=$((SLURM_ARRAY_TASK_ID - 1))
+
+    # Now we select corresponding script and input
+    SCRIPT=${MODEL[$IDX]}
+    INPUT=${INPUTS[$IDX]}
+
+    # --- Log that will get piped to output file
+    echo "----------------------------------------"
+    echo " Job:     $SLURM_JOB_NAME"
+    echo " Task:    $SLURM_ARRAY_TASK_ID / $SLURM_ARRAY_TASK_COUNT"
+    echo " Script:  $SCRIPT"
+    echo " Input:   $INPUT"
+    echo " Host:    $(hostname)"
+    echo " Started: $(date)"
+    echo "----------------------------------------"
+
+    # --- Load environment and run
     module load anaconda3
-    # This job will use one python input but takes different argument each time per job array
-    python3 python_test_array.py $SLURM_ARRAY_TASK_ID
+    python "$SCRIPT" --input "$INPUT"
     ```
   </TabItem>
 </Tabs>
 
 ### Submitting and Managing Job Arrays
 
-When submitting a job array there will be a new argument, ` --array=x-y`. The task id,`x` represents the starting index, and  the task id `y` represents the last index - 1. The complete line to submit the array job will look similar to `#SBATCH --array=x-y myjob.file`. Where `myjob.file` will be replaced by the name of your job script. 
+When submitting a SLURM job array, you use the --array=x-y option to define the range of task indices. Here, x represents the starting index, and y is the inclusive ending index. Each task in the array will run as a separate job with a unique task ID. The job script will typically include this line:
+
+```
+#SBATCH --array=x-y
+```
+
+You can also submit a job array directly from the command line by specifying the script name after the array declaration:
+
+```
+sbatch --array=1-5 myjob.sh # This would create 5 tasks with array IDs from 1 through 5.
+```
+
 
 The Task ID range specification arguments can also be configured to:
 
-1. Submit a job array with specified-comma separated index values. Ex. `#SBATCH --array=6,36,1296`. (6, 36 1296): total of 3 jobs.
-2. Submit a job array with index values incrementing by 1. Ex. `#SBATCH --array=x-y` Range from 1-10; total of 10 jobs. 
-3. Submit a job array with index values that have a step or parse value that does not equal 1. Ex. `#SBATCH --array=45-90:15`. Range from index 45-90, with an step of 15 (45,60,75,90). Total of 4 jobs to be ran. 
+1. Submit a job array with specified-comma separated index values. The below example will only tasks with IDs 6, 36, and 1296 (3 total tasks).
+
+```shell 
+#SBATCH --array=6,36,1296
+```
+
+2. Consecutive range - Submit an array of tasks with IDs in a continuous range. The below example runs 10 jobs with task IDs from 1 to 10 inclusive.
+
+```shell 
+#SBATCH --array=1-10
+```
+
+
+3. Stepped range - Run tasks at specific intervals within a range. The example runs tasks with IDs 45, 60, 75, and 90 (4 total jobs). The number after the colon (:) is the step size.
+
+```shell 
+#SBATCH --array=45-90:15
+```
 
 ### Job Dependencies in Job Arrays
-Jobs that depend on outputs of previous jobs of a job array or on the output of a whole job array after it is completed must declare itself as dependent using `#SBATCH --depend=<Flag>:[jobid][IndexRange] <jobscript.file>` after the independent job array has been submitted to the scheduler. 
+Jobs that depend on the output of other job arrays can specify dependencies using the --dependency flag after the initial array has been submitted.
 
 Below are flags that can be used to help declare the dependency of certain job(s) in the job array submission line after the first job array has been submitted to the scheduler. 
 
-|Command | USE |
-| --------| --------------- |
-| after  | Flag is satisfied after all tasks in the job array start. | 
-| afterany | Flag is satisfied after all tasks in the job array complete.|
-| aftercorr | Satisfied after the corresponding task ID in the specified job has completed successfully | 
-| afterok  | Flag is satisfied after all tasks in the job array complete successfully | 
-| afternotok | Flag satisfied after all tasks in the job array complete with at least one tasks not completing successfully. | 
 
+| Flag         | Meaning                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| `after`      | Job will start **after all listed jobs have started**                                    |
+| `afterany`   | Job will start **after all listed jobs have finished**, regardless of success or failure |
+| `afterok`    | Job will start **only if all listed jobs complete successfully**                         |
+| `afternotok` | Job will start **if any listed job fails**                                               |
+| `aftercorr`  | Job **array** starts when the **corresponding task ID** in the other job array succeeds  |

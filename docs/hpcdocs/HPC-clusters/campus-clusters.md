@@ -28,7 +28,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
 <Tabs>
   
-  <TabItem value="Pinnacles" label="Pinnacles">
+  <TabItem value="Pinnacles" label="Pinnacles" default>
     :::note 
     The NSF-MRI funded Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster runs with the [RedHat](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs.The Pinnacles cluster is equipped with the latest generation Intel Xeon Gold 6330 CPUs and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. It operates on the RedHat operating system.
     :::
@@ -60,7 +60,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
   </TabItem>
 
-  <TabItem value="MERCED" label="MERCED" default>
+  <TabItem value="MERCED" label="MERCED" >
      :::note
       The MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. The MERCED cluster runs with the [Rocky (8.10)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
      :::
@@ -116,7 +116,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
 <Tabs>
 
-  <TabItem value="Pinnacles Hardware" label="Pinnacles Hardware Overview">
+  <TabItem value="Pinnacles Hardware" label="Pinnacles Hardware Overview" default>
     
   Compute nodes: Compute nodes are where actual jobs run. There are three types of compute nodes on Pinnacles.
   * 48 Regular memory (RM) CPU nodes with 256GB RAM
@@ -162,7 +162,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   </TabItem>
 
   
-  <TabItem value="MERCED Hardware" label="Merced Hardware Overview" default>
+  <TabItem value="MERCED Hardware" label="Merced Hardware Overview">
   
   MERCED hosts 66 CPU compute nodes including 25 high memory nodes. Please be aware that
   the nodes among MERCED cluster are multi-generational, meaning that the CPU
@@ -255,7 +255,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
 ## Centralized login
 
-### Open OnDemand Login - Approach 1
+### Open OnDemand Login 
 Starting in late April/early May, users will be able to access Pinnacles and MERCED cluster via web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
 
 For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
@@ -264,7 +264,7 @@ The standard method for connecting to a remote machine is through Secure Shell (
 
 Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
 
-### Connect to the clusters - Approach 2 
+### Connect to the clusters 
 On Mac and Linux you can use the built-in terminal application; on Windows you can use [MobaXterm](https://mobaxterm.mobatek.net/) to open a terminal, and type the following command, but replace `<username>` to your UCMID.
 ```shell
 ssh <username>@login.rc.ucmerced.edu
@@ -468,6 +468,7 @@ A complete guide to using modules can be found via `man module`.
 
  
 </Tabs>
+
 ### Checking disk quota and usage
 To look at your current usage amounts of `HOME`, `data` or `scratch` use the following command
 ```shell
