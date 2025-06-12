@@ -16,7 +16,7 @@ This page aims to offer in-depth walkthrough and tutorials relating to the use O
 We are happy to introduce Open OnDemand support for the MERCED and Pinnacles Clusters!
 
 ## Accessing OOD 
-To acccess Open OnDemand please access using the following link: (https://ondemand.rc.ucmerced.edu/)[https://ondemand.rc.ucmerced.edu/]
+To acccess Open OnDemand please access using the following link: [https://ondemand.rc.ucmerced.edu](https://ondemand.rc.ucmerced.edu)
 
 The Login page will require you to authenticate with your username and password that were given to the user by the CIRT team. Typically the username will be the same as your UCM NetID, but the password will be a password that you chose. 
 
