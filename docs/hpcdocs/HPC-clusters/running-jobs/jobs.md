@@ -44,6 +44,8 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
     ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
     ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
     #SBATCH --export=ALL
+
+    # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
     ```
      </TabItem>
 
@@ -63,6 +65,8 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
       ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
       #SBATCH -M merced
       #SBATCH --export=ALL
+      # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
+
       ```
     </TabItem>
 
