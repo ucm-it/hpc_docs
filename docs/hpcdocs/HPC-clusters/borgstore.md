@@ -27,9 +27,9 @@ Borgstore does not do data backups. Users are responsible for ensuring they have
 :::
 ### Request Borgstore
 Borgstore is a purchasable service that can be requested [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). Cost for active data storage is shown below. More information can be found [here](https://it.ucmerced.edu/Research-Computing-Services).
-| Startup funds           |Non-startup funds                                                                               |
-|------------------|------------------|
-| $0.05/GB/year       |   $0.06/GB/year   |
+| billing rate     |
+|-------------------|
+| $0.05/GB/year       |    
 
 ### Accessing Data from Borgstore for a job
 To access data that is located in Borgstore the user must be in the Borgstore folder/directory and must the submit job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the slurm option of `#SBATCH --constraint=ib` should be added to the job script. 

@@ -61,13 +61,12 @@ The following tables summarize the CPU and GPU computing resources that are avai
     :::
   </TabItem>
 
-   <TabItem value="CIRT Costs" label="CIRT Costs">
+   <TabItem value="Costs" label="Costs">
     Below is a table with associated tasks/items and their costs. 
 
     | Service | Unit | UC Rate |
     | --------------------- | ---------------- | -------------- |  
-    | Infrastructure Fee (Racks, cables, switches, initial racking and stacking) | One-time | $250 | 
-    | Annual operations fee (RHEL $185/year/node Clustervisor $150/node Personnel time = $150/node (~2hours)) | Annual| $495| 
+    | Annual operations fee | Annual| $401.00| 
     :::note 
     Costs from the table are estimates. **Final costs and configurations will be shared after consultation.** Annual fees covers labor to maintain the system, utilities, software licenses and other maintenance costs.
     :::
