@@ -10,6 +10,17 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Network Changes May Affect HPC Cluster Access
+_posted on: 06/24/2025_
+
+Ongoing campus network upgrades may impact user access to the HPC cluster. Since June 9, IT has been gradually updating network infrastructure across campus buildings to strengthen cybersecurity. The upgrade schedule by building is available here: https://it.ucmerced.edu/ProtectUs_NAC. Several buildings have already been successfully migrated, with all updates expected to be completed by July 11.
+
+If your building has recently undergone this migration, your device may require updated network configurations to maintain access to campus systems, including the HPC clusters.
+
+To ensure your device is properly configured, please schedule an appointment with the OIT Service Desk.
+
+Important Note for Personal Devices:
+If you're using a personal device, you must connect through the campus VPN to access the cluster—even when connected to the campus LAN.
 
 ## HPC CENVAL-ARC symposium (Mar. 7th 2025)
 _posted on: 03/01/2025_
