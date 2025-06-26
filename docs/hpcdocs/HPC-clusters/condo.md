@@ -122,5 +122,10 @@ Here is a table of departments that have contributed nodes to the Pinnacles clus
 | Center for Cellular and Biomolecular Machines | grp.ccbm |
 | Physics | dept.physics |
 
+## Why should I choose the condo model over my own DIY server?
+
+Below is a summary based on a case study for a PI who built a DIY cluster over condo model
+![condo vs DIY](./imgs/condoVSPI.png)
+
 ## Joining the Condo Program 
 Please reach out to CIRT to schedule a consultation via [ServiceNow](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)
