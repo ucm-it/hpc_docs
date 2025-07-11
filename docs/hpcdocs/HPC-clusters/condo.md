@@ -125,7 +125,16 @@ Here is a table of departments that have contributed nodes to the Pinnacles clus
 ## Why should I choose the condo model over my own DIY server?
 
 Below is a summary based on a case study for a PI who built a DIY cluster over condo model
-![condo vs DIY](./imgs/condoVSPI.png)
+| **Pain Point**                 | **Magnitude**                                | **Consequence**                                                                 |
+|---------------------------------|----------------------------------------------|----------------------------------------------------------------------------------|
+| Compute standstill             | 5+ weeks offline                            | PI: No head/login nodes → entire “cluster” unusable                             |
+| Support drain                  | ≥ 40 hrs CIRT lift-and-shift (~$6k)         | CIRT: Diverts effort from campus-wide projects                                   |
+| Capital outlay                 | ~$60k for servers + IB switch               | PI: One-off expense crowds out grant budget                                      |
+| Facility management burden     | Managed by CIRT                             | PI: Management challenges                                                        |
+| Repair latency                 | 1–2 weeks for out-of-warranty fixes         | PI: Research halted waiting on parts                                             |
+| Admin overload                 | Continuous patching, monitoring, ticket triage | PI becomes full-time sysadmin                                                  |
+| Performance loss               | No InfiniBand; capped at 10 GbE             | 3–5× slower I/O, throttling data-heavy experiments                               |
+
 
 ## Joining the Condo Program 
 Please reach out to CIRT to schedule a consultation via [ServiceNow](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)
