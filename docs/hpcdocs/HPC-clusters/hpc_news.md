@@ -10,6 +10,16 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## CIRT Team Attending PEARC Conference (July 18–25)
+_posted on: 07/11/2025_
+
+As part of our continued involvement in the national research computing community, all members of the CIRT team will be off campus attending the [PEARC Conference](https://pearc.acm.org/pearc25/) in Columbus, Ohio from July 18 to July 25.
+ 
+During this time, response times to support tickets, emails, and general troubleshooting requests may be slower than usual. While we will continue to monitor for critical issues, responses to routine or non-urgent matters may be delayed until the team returns.
+ 
+We appreciate your patience and understanding. If you experience any urgent issues, please submit a ticket via [ServiceHub](https://ucmerced.service-now.com/servicehub), and we will triage it accordingly.
+
+
 ## Network Changes May Affect HPC Cluster Access
 _posted on: 06/24/2025_
 
