@@ -100,7 +100,6 @@ The table below lists the PIs who have contributed nodes to the Pinnacles cluste
 
 | PI | Department |  Queue | 
 | -------------- | ----------------------- | --------------- |
-| Bercem Dutagaci | QSB | pi.bdutagaci |
 | Changho Kim | Applied Math | pi.ckim103 |
 | Henrik Larsson | Chemistry & Biochemistry | pi.larsson |
 | Ashlie Martini | Mechanical Engineering | pi.amartini |
