@@ -10,6 +10,16 @@
   overflow: hidden;
 }
 
+.missionLink a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.missionLink a:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
