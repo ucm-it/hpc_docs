@@ -37,8 +37,9 @@ As well as how to get access, logging in, file system, resource breakdown.
     The NSF-MRI grant number #2019144 funded Pinnacles cluster has the following compute node configurations:
 
     - 40 regular Compute nodes with 2XIntel-28-Core Xeon Gold 6330 2.0GHz - 205W, each with 256GB RAM.
-    - 4 High Memory nodes with 2x Intel 28-Core Xeon Gold 6330 2.0GHz CPUs and 1TB RAM for large memory calculations.
-    - 8 GPU nodes, and each one of the nodes has 2X NVIDIA Tesla A100 PCIe v4 40GB HBM2 Passive Single GPU. 
+    - 8 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 258GB RAM. 
+    - 8 High Memory nodes, 4 nodes are equipped with 2 Intel 28-core Xeon Gold 6330 CPUs running at 2.0 GHz and 1 TB of RAM. The other 4 nodes feature 2 Intel 32-core Xeon Gold 6530 CPUs running at 2.1 GHz and 1 TB of RAM, providing additional processing power for memory-intensive workloads.
+    - 16 GPU nodes, 8 of the nodes are equipped with 2× NVIDIA Tesla A100 PCIe v4 GPUs (40GB HBM2), and the other 8 nodes are equipped with 2× NVIDIA L40S GPUs (48GB GDDR6).
     
     Pinnacles also has ~92TB NFS Fast Scratch Storage space for accessing large data with low latency and 1.5PB of usable long-term storage.
     
