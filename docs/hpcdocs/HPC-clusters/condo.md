@@ -19,7 +19,7 @@ Participation in the program runs the duration of the node's warranty coverage (
 
 ### Pinnacles is a Condo Model Cluster
 
-Please read the lastest [Condo-Node](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) policy for more details. 
+Please read the lastest [Condo-Node policy](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) for more details. 
 
 To increase the longevity and computing resources available to the campus, Pinnacles has adopted a condo model structure. We welcome campus partners and PIs to consult with us and potentially collaborate to strengthen their computing resources and the Pinnacles cluster. 
 
