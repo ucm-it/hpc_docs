@@ -194,7 +194,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   <TabItem value="Pinnacles Account Process" label="Pinnacles Account Process">
   UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs. 
 
-    UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+    UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
   <details>
 
   <summary>Click Here to View a Visual Guide for Creating an Account for Pinnacles</summary>
@@ -203,7 +203,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
   __Requesting Access to Pinnacles Process.__
 
-  1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+  1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
       1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
       2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
   2. Click `Request Service`
@@ -233,7 +233,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
 
   __Requesting Access to MERCED Process.__
-  1. UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
+  1. UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
       1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
       2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
   2. Click `Request Service`
@@ -261,7 +261,7 @@ Starting in late April/early May, users will be able to access Pinnacles and MER
 
 For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
 ### Login nodes
-The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles and MERCED are accessed via a `centralized login`. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
+The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles and MERCED are accessed via a `centralized login`. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
 
 Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
 
