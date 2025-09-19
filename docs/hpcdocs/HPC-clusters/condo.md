@@ -18,6 +18,9 @@ Under the condo model, PIs use equipment purchase funds to buy compute nodes (CP
 Participation in the program runs the duration of the node's warranty coverage (~ 3 years).
 
 ### Pinnacles is a Condo Model Cluster
+
+Please read the lastest [Condo-Node](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) policy for more details. 
+
 To increase the longevity and computing resources available to the campus, Pinnacles has adopted a condo model structure. We welcome campus partners and PIs to consult with us and potentially collaborate to strengthen their computing resources and the Pinnacles cluster. 
 
 :::note
@@ -77,22 +80,13 @@ The following tables summarize the CPU and GPU computing resources that are avai
 
 PIs who contribute to Pinnacles by purchasing their own nodes will receive details about their nodes' warranty.
 
- An HPC cluster node will be considered  beyond its lifetime of maintainability when: 1. the compute node warranty from the HPC cluster vendor has expired, 2. the OS no longer supports the hardware, 3. security updates can no longer be installed on the hardware, or 4. hardware replacements become reasonably difficult to procure. Typically, computing resources come with a warranty of 3 years, though this duration may vary.
-
-
-
-Below are options that CIRT offers to PIs when the nodes beyond its lifetime of maintainability . 
-
-CIRT will give the PI two options: 
-
-1. CIRT Keeps the node(s) and merge to public partition
-
-    PI-owned queues will cease to exist and and the nodes will be merged into general, public partition(s).
-    CIRT will take the ownership of the nodes and take responsibility for the maintenance and housing of the node post-warranty. CIRT will also reserve the right to retire the node(s).
-   
-2. CIRT returns the node to the PI
-
-    CIRT will facilitate the removal of the PI node from the cluster. PIs may incur costs for CIRT's time and effort involved in this process. Once the node is returned, the PI will be solely responsible for it.
+ An HPC cluster node will be considered  beyond its lifetime of maintainability when: 
+ the node is after the expiration of the warranty AND any of the following apply:
+  1. Current cluster OS, scheduler or required security stack cannot support or patch the hardware.
+  2. Necessary replacement parts cannot be ordered within a reasonable procurement window (≤ 60
+calendar days).
+  3. Remediation is not feasible if it would create a disproportionate cost or risk for the whole cluster.
+  4. Keeping the node online measurably degrades overall cluster performance.
 
 
 ## Condo PI-Contributor Highlight 
