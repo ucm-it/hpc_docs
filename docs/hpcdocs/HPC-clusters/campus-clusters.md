@@ -307,7 +307,9 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
 | `data` | 500G   | 512G         |
 | `scratch`  | 500G   | 512G         |
 
-
+:::warning
+The `scratch` folder is purged periodically when the overall system storage reaches 85% of capacity or higher. Please back-up your data to somewhere safe frequently.
+:::
 ## Queue Information
 
 <Tabs>
@@ -520,7 +522,7 @@ Users who submit jobs to MERCED and use the unified storage are expecting slower
 - Data - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles. 
 - Scratch - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles
 
-The `scratch` folder is purged periodically when the overall system storage reaches 85% of capacity or higher. Please back-up your data to somewhere safe frequently.
+
 
 Please avoid writing files directly to `/tmp` on the head node, as this can fill up disk space and cause issues for all users. Instead, use your personal scratch directory for temporary files. Some programs may default to using `/tmp`, so ensure that the appropriate scratch directory is properly configured for your code.
 :::
