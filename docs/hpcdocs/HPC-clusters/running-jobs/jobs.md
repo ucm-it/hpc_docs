@@ -100,8 +100,8 @@ The max number of jobs that can run at the same time is determined by the maximu
     ```bash
     #!/bin/bash
     #SBATCH --job-name=combo_job_array   # job name
-    #SBATCH --output=log%x_%A_%a.out     # stdout
-    #SBATCH --partition=short             # partition name
+    #SBATCH --output=logs/%x_%A_%a.out     # STDOUT log → logs/combo_model_array_<JOBID>_<TASKID>.out
+    #SBATCH --partition=test             # partition name
     #SBATCH --nodes=1                      # one node per task
     #SBATCH --ntasks=5                     # one task per job
     #SBATCH --mem=3G                       # 2 GB RAM
