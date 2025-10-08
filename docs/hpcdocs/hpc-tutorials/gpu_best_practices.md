@@ -36,7 +36,7 @@ Jobs requiring GPU resources should specify:
 - Memory requirements
 - Time allocation considerations
 
-For detailed SLURM GPU directives and submission scripts, please see here <>
+For detailed SLURM GPU directives and submission scripts, please see here 
 
 ## GPU Types
 
