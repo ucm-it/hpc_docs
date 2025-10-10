@@ -1,4 +1,3 @@
-
 ---
 title: Best Practices - GPUs on Pinnacles
 hide_title: false

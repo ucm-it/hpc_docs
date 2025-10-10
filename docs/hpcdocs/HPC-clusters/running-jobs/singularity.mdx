@@ -22,7 +22,9 @@ Prerequisite: Create an account with [Sylabs Cloud](cloud.sylabs.io). This will 
 :::
 ### Steps
 
-1. Create a definition file that contains the instructions to build a configure with the proper packages, softwares and other specs. This `.def` file ending denotes a definition file that singularity interprets as an instruction file.
+1. Execute the following command to load singularity module: `module load singularity`
+
+2. Create a definition file that contains the instructions to build a configure with the proper packages, softwares and other specs. This `.def` file ending denotes a definition file that singularity interprets as an instruction file.
 
     <details>
         <summary> Click Here for File Example</summary>
@@ -84,7 +86,10 @@ It will now begin the process of building the container and it may take a few mi
 
 ## Interacting with Singularity Container
 
-!> All of these commands should still be run on a compute node!
+:::warning
+
+All of these commands should still be run on a compute node!
+:::
 
 ### Running a container
 
