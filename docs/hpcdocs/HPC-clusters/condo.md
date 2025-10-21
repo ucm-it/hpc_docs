@@ -19,7 +19,7 @@ Participation in the program runs the duration of the node's warranty coverage (
 
 ### Pinnacles is a Condo Model Cluster
 
-Please read the lastest [Condo-Node policy](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) for more details. 
+Please read the latest [Condo-Node policy](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) for more details. 
 
 To increase the longevity and computing resources available to the campus, Pinnacles has adopted a condo model structure. We welcome campus partners and PIs to consult with us and potentially collaborate to strengthen their computing resources and the Pinnacles cluster. 
 
@@ -80,7 +80,7 @@ The following tables summarize the CPU and GPU computing resources that are avai
 
 PIs who contribute to Pinnacles by purchasing their own nodes will receive details about their nodes' warranty.
 
- An HPC cluster node will be considered  beyond its lifetime of maintainability when: 
+ An HPC cluster node will be considered beyond its lifetime of maintainability when: 
  the node is after the expiration of the warranty AND any of the following apply:
   1. Current cluster OS, scheduler or required security stack cannot support or patch the hardware.
   2. Necessary replacement parts cannot be ordered within a reasonable procurement window (≤ 60
@@ -100,8 +100,6 @@ The table below lists the PIs who have contributed nodes to the Pinnacles cluste
 | Anna Nierenberg | Physics | pi.anierenberg |
 | Aurora Pribram-Jones | Chemistry & Biochemistry | pi.apribram-jones |
 | David Strubbe | Physics | pi.dstrubbe |
-
-
 
 
 ## Condo Department-level Contributor Highlight
