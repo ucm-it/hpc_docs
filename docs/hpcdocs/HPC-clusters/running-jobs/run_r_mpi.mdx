@@ -9,6 +9,7 @@ import TabItem from '@theme/TabItem';
 
 
 ## Create a virtual environment and install R 
+
 ```R
 module load anaconda3
 conda create -n my-R -c r    #creates a virtual environment named my-R and installs R with some common packages
@@ -18,9 +19,6 @@ conda install r-<your_package> #use the conda to install packages is the recomme
 ```
 
 - The binary version of R in anaconda is just an already compiled version for linux. It should be identical to the version you would compile from source.
-
-
-
 
 
 <Tabs>
@@ -44,7 +42,7 @@ conda install r-<your_package> #use the conda to install packages is the recomme
   
   </TabItem>
   
-  <TabItem value="Explanation" label="SLURM Script Explanation">
+  <TabItem value="Explanation" label="Slurm Script Explanation">
   **Line 1**: Indicates which shell is used to execute the job script. You will likely never need to change this line
 
     **Line 2**: This option indicates which job queue to submit your job to. There are currently three queues available that vary by how many cores you can request and how long the job will run.
@@ -78,7 +76,7 @@ When running R over multiple nodes we recommend using doMPI instead of doParalle
 #SBATCH --job-name=myjob ## Name of Job in queue (Replace 'myjob')
 #SBATCH --mail-user=<myemail@example.com> ## (Replace <email address>)
 #SBATCH --mail-type=ALL
-module load openmpi #the default one is the openmpi/4.1.4-gcc-12.2.0
+module load openmpi 
 module load anaconda3
 source activate my-R
 ## Replace 'my_example_code.R' file
