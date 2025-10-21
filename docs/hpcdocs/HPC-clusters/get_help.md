@@ -9,8 +9,7 @@ import Admonition from '@theme/Admonition';
 
 #### Quick Summary
 :::info
-This page presents information on Open OnDemand Use and Best Practices 
-This page aims to offer in-depth walkthrough and tutorials relating to the use Open OnDemand for the MERCED and Pinancles Cluster
+This page presents: How to seek out support for Pinnacles and MERCED clusters.
 :::
 
 
@@ -75,19 +74,19 @@ It is beneficial to do a quick search with the exact error message or other mess
 <Tabs>
   
   <TabItem value="Bad Example" label="Bad Example" default>
-    
-    ```bash
-    How do I run a parallel script across many nodes?
+    ```txt
+    Running a parallel job across node.
     ```
 
-  
   </TabItem>
   
   <TabItem value="Good Example" label="Good Example">
     
-    ```bash
-    Running a parallel job across node.
+
+    ```txt
+    How do I run a parallel script across many nodes?
     ```
+
   </TabItem>
 
  

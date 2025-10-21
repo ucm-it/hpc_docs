@@ -20,11 +20,16 @@ Borgstore is UC Merced's on campus data-storage center and is available for rese
 
 Borgstore is also made up of a metadata server with a `1U dual Xeon Skylake SP`, `8x 2.5" Hotswap`, `24 DIMM Sockets`, `IPMI`, `dual 10GbE-T base system` and `8x 3.2TB Endurance Data Center PCIe NVMe 2.5`.Solid State Drive metadata storage
 
-Borgstore is now accessible on all nodes (MERCED and Pinnacles) with Infiniband (IB), all of the partitions contain a mixture of nodes of InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the slurm option of #SBATCH --constraint=ib should be added to the job script. Example job script can be found here. More information pertaining to Borgstore can be found here
+Borgstore is accessible on all nodes (Pinnacles and MERCED) with Infiniband (IB), all of the partitions contain a mixture of nodes of InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the slurm option of 
+```shell
+#SBATCH shell--constraint=ib
+```
+should be added to the job script. Example job script can be found [here](./running-jobs/jobs.md).
 
 :::warning
-Borgstore does not do data backups. Users are responsible for ensuring they have backups of thier data and work.
+Borgstore does not do data backups! Users are responsible for ensuring they have backups of their data and work.
 :::
+
 ### Request Borgstore
 Borgstore is a purchasable service that can be requested [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). Cost for active data storage is shown below. More information can be found [here](https://it.ucmerced.edu/Research-Computing-Services).
 | billing rate     |
@@ -32,7 +37,7 @@ Borgstore is a purchasable service that can be requested [here](https://ucmerced
 | $0.05/GB/year       |    
 
 ### Accessing Data from Borgstore for a job
-To access data that is located in Borgstore the user must be in the Borgstore folder/directory and must the submit job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the slurm option of `#SBATCH --constraint=ib` should be added to the job script. 
+To access data that is located in Borgstore the user must be in the Borgstore folder/directory and must the submit job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the Slurm option of `#SBATCH --constraint=ib` should be added to the job script. 
 
 To run an interactive job, the job must also be ran from the borgstore directory.
 
