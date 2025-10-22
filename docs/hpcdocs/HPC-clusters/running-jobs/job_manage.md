@@ -13,7 +13,8 @@ This page presents  helpful tools and methods to manage Slurm jobs, find detaile
 :::
 
 ## Checking the use of a mixed-state node.
-A mixed state node is a node that is not being fully utilized, i.e. their resources are not fully allocated.
+
+> A **mixed state node** is a node that is not being fully utilized, i.e. their resources are not fully allocated.
 
 
 Execute the following script on the login node to get detailed information about memory and cpu core availability on every currently, mixed-state node on Pinnacles.
@@ -120,7 +121,7 @@ Example of `sacct -e`
   ``` 
 </details>
 
-Below are defintions of some important fields from the above list that are helpful when troubleshooting or debugging. 
+Below are definitions of some important fields from the above list that are helpful when troubleshooting or debugging. 
 
 |Field | Use | 
 | -------------| -----------------------|

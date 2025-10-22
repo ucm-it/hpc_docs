@@ -17,9 +17,10 @@ For shorter build times, `test` partition is a good starting point, however for 
 To allocate a gpu node to be used interactively use the following line, `salloc --partition=<queue> --nodes=<#> --gres=gpu:X --time=<time>` where X will be replaced by 1 or 2 to denote how many GPU cards to use. 
 
 More information can be found [here](https://ucm-it.github.io/hpc_docs/#/running_jobs) or for interactive jobs click [here](https://ucm-it.github.io/hpc_docs/#/interact_job)
-:: Tip
+
+:::tip
 Login Nodes Do Not Have GPUs
-::
+:::
 
 
 Once the job has been submitted and the resources have been allocated - 
@@ -61,9 +62,10 @@ Once placed on the GPU node, check the GPU resources on the node you are placed 
     +-----------------------------------------------------------------------------------------+
     ```
 </details>
-:: Warning
+
+:::warning
 If a message stating that `nvidia-smi` command is not returning a similar message as above, open a ticket [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) and state the name of the GPU Node you are working on. 
-::
+:::
 
 ## Installing software/application 
 

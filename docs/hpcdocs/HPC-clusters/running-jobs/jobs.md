@@ -74,15 +74,17 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
 
     </Tabs>
 
-
+:::note
 Note that for both MERCED and Pinnacles CPUs **hyper-threading** is turned off.  
+:::
+
 > If you want to assess how busy the cluster is, please use the following
 Use `sinfo` to see the nodes state and check how many nodes are being allocated (alloc) or how many nodes are available (idle)
 > If you want to estimate the job starting time 
 `sacct -X -j [JOBID] -o start,submit` provides information for job estimated starting time or submitted time
 
 
-## Job Arrays 
+## Job Arrays -- Introduction 
 Job arrays offer a mechanism for submitting and managing collections of similar jobs quickly and easily that utilizes only one job script. Submitting a job array can be useful in many of the following ways: 
 
 1. Having a set of code or program that needs to run many different input variables or files. 
@@ -91,9 +93,11 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 
 Job arrays allows users to run jobs at the same time or have the results of the previous job output to be used as input for the next job. While the output capacity from a job array is immense, the job configurations are the same for all jobs to be run in the job array. 
 
+:::tip
 The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md/#queue-information)
+:::
 
-## Job Array Scripting
+### Job Array Scripting
 <Tabs>
 
   <TabItem value="Job Array Sample Script" label="Job Array Sample Script" default>
@@ -104,9 +108,9 @@ The max number of jobs that can run at the same time is determined by the maximu
     #SBATCH --partition=short             # partition name
     #SBATCH --nodes=1                      # one node per task
     #SBATCH --ntasks=5                     # one task per job
-    #SBATCH --mem=3G                       # 2 GB RAM
+    #SBATCH --mem=3G                       # 3 GB RAM
     #SBATCH --time=0-00:15:00              # 15 min max
-    #SBATCH --array=1-5                    # array tasks 1–5
+    #SBATCH --array=1-5                    # array tasks 1–5 
 
     MODEL=(test_model1.py test_model2.py test_model3.py test_model4.py test_model5.py)
     INPUTS=(input1.csv input2.csv input3.csv input4.csv input5.csv)
@@ -137,15 +141,15 @@ The max number of jobs that can run at the same time is determined by the maximu
 
 ### Submitting and Managing Job Arrays
 
-When submitting a SLURM job array, you use the --array=x-y option to define the range of task indices. Here, x represents the starting index, and y is the inclusive ending index. Each task in the array will run as a separate job with a unique task ID. The job script will typically include this line:
+When submitting a Slurm job array, you use the `--array=x-y` option to define the range of task indices. Here, **x** represents the starting index, and **y** is the inclusive ending index. Each task in the array will run as a separate job with a **unique task ID**. The job script will typically include this line:
 
-```
+```shell
 #SBATCH --array=x-y
 ```
 
 You can also submit a job array directly from the command line by specifying the script name after the array declaration:
 
-```
+```shell
 sbatch --array=1-5 myjob.sh # This would create 5 tasks with array IDs from 1 through 5.
 ```
 
@@ -158,7 +162,7 @@ The Task ID range specification arguments can also be configured to:
 #SBATCH --array=6,36,1296
 ```
 
-2. Consecutive range - Submit an array of tasks with IDs in a continuous range. The below example runs 10 jobs with task IDs from 1 to 10 inclusive.
+2. Consecutive range - submit an array of tasks with IDs in a continuous range. The below example runs 10 jobs with task IDs from 1 to 10 inclusive.
 
 ```shell 
 #SBATCH --array=1-10

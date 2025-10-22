@@ -13,29 +13,42 @@ last_update:
 
 ---
 
-# GPUs on Pinnacles
-
-## Overview
-
+:::info
 This guide provides essential information about GPU resources available on the Pinnacles cluster at UC Merced. GPUs have the potential to enable accelerated performance for machine learning, scientific computing, and data-intensive jobs.
+:::
+
 
 ## Accessing and Running GPU Jobs
 
+:::warning
+GPU usage on Pinnacles is **highly** impacted as of recently. To best accommodate and allow for maximum GPU utilization, please only request what you will be using. CIRT will **end** jobs running on GPU related queues that are not fully utilizing or under utilizing the GPU. 
+:::
+
 ### GPU Allocation
 
-**Users must request GPU resources explicitly in their job submissions using appropriate SLURM directives.** 
-- Example directives.
+> Users must request GPU resources explicitly in their job submissions using the appropriate Slurm directives.
 
 ### Submission Guidelines
 
 Jobs requiring GPU resources should specify:
 
 - Number of GPUs needed
-- GPU type requirements
+- GPU type requirements (Only **Necessary** if running on `test` Partition)
 - Memory requirements
-- Time allocation considerations
 
-For detailed SLURM GPU directives and submission scripts, please see here 
+> Below are some example directives that may be used when preparing Slurm Job Scripts or Interactive Sessions. 
+
+| Directive | Purpose |
+| ------------- | ------------ |
+| --gres=gpu:N | Specify to Slurm you will require use of GPU and how many (1 or 2). | 
+| **Optional Directives Below** | May be used as another layer of control/optimization | 
+| `--constraint=<feature>` | Specify which GPU type (A100, L40s, etc), useful when running on `test` partition | 
+| `--cpus-per-gpu=<N>` | Reserve N CPU Threads per GPU |
+| `--gpus-per-node=<N>` | When performing multinode jobs, specify how many GPUs per node | 
+| `--mem-per-gpu=N` | N (GB\MB) RAM to be proportioned per GPU |
+
+
+For overall Slurm directives and submission scripts, please see [here](../HPC-clusters/running-jobs/jobs.md) 
 
 ## GPU Types
 
@@ -62,16 +75,13 @@ Pinnacles provides access to various GPU models optimized for different computat
 ### Key Considerations
 
 - **Framework Selection**: Choose GPU-optimized frameworks that leverage CUDA
-- **Data Pipeline**: Optimize data loading to maximize data processing
 - **Batch Sizing**: Balance between GPU memory limits and training efficiency
-~~- **Mixed Precision Training**: Utilize tensor cores when available for faster training~~
 
 ### Resource Planning
-
-- Estimate GPU memory requirements based on model architecture
-- Consider multi-GPU strategies for large-scale training
-- Plan for checkpointing and fault tolerance
-- Monitor GPU utilization to optimize resource usage
+- Estimate GPU memory requirements based on model architecture.
+- Consider multi-GPU strategies for large-scale training.
+- Plan for checkpointing for fault tolerance.
+- Monitor GPU utilization to optimize resource usage. Via `nvidia-smi`.
 
 ## Harnessing GPUs for Scientific Computing
 
@@ -88,7 +98,7 @@ GPUs excel in scientific computing applications including:
 
 ### Optimization Strategies
 
-- Identify parallelizable components of algorithms
+- Identify components to parallelize of algorithms or program.
 - Minimize CPU-GPU data transfers
 - Utilize GPU-accelerated libraries when available
 - Consider domain-specific GPU implementations
@@ -113,40 +123,50 @@ The following frameworks are commonly used on Pinnacles GPUs:
 
 ##  Best Practices for Pinnacles
 
-- Share GPUs when possible through efficient job scheduling
+- Share GPUs when possible through efficient job scheduling. Do not reserve/allocate more than the **job** will be anticipated to use.
 - **Right-sizing**: Request only the GPU resources you need
-	- GPU use on Pinnacles is **highly** impacted as of recently. To best accommodate and allow for maximum GPU utilization, please only request what you will be using.
+
 
 ### Job Optimization
 
 - **Profiling**: Use profiling tools to identify bottlenecks
-- **Queue Selection**: Select `gpu` queue for use of A100 GPUs, select `cenvalarc.gpu`
+- **Queue Selection**: Select `gpu` queue for use of A100 GPUs, select `cenvalarc.gpu` for L40s GPUs.
 - **Scheduling**: Consider job dependencies and workflow optimization
  
 ## Additional Resources
 
 ### Zero GPU Utilization
-Below are three common reasons why a user may encounter 0% GPU utilization:
+Below are three common reasons why a user may encounter `0% GPU utilization`:
 
-1. Is your code GPU-enabled? Only codes that have **explicit** GPU support will run successfully on a GPU. Please consult the documentation for your software to find out whether it is suitable for GPU utilization. If your code is not GPU-enabled then please remove the --gres [Slurm directive](https://researchcomputing.princeton.edu/support/knowledge-base/slurm) when submitting jobs.
-2. Ensure software environment is properly configured. In some cases certain libraries must be available for your code to run on GPUs. Ensure that the proper software toolkit/libraries have been `module loaded` if available on the cluster, else ensure you have installed and sourced in your environment. 
-3. Please do not create [salloc](https://researchcomputing.princeton.edu/support/knowledge-base/slurm#salloc) sessions for long periods of time. For example, allocating a GPU for 24 hours is wasteful unless you plan to work intensively during the entire period. For interactive work, please consider using the [MIG GPUs](https://researchcomputing.princeton.edu/systems/della#mig).
+>  Is your code GPU-enabled?
+
+Only codes that have **explicit** GPU support will run successfully on a GPU. Please consult the documentation for your software to find out whether it is suitable for GPU utilization. If your code is not GPU-enabled then please remove the `--gres` and other GPU-related directives before resubmitting the job. 
+
+> Ensure software environment is properly configured. 
+
+In some cases certain libraries have to be available for your code to run on GPUs. Ensure that the proper software toolkit/libraries have been `module loaded` if available on the cluster, else ensure you have installed and sourced in your environment such as conda environments, Spack environments, external source scripts or python environments. 
+
 
 ### Low GPU Utilization: Potential Solutions
 
-If you encounter low GPU utilization (e.g., less than 15%) then please investigate the reasons for the low utilization. Common reasons include:
+If you encounter low GPU utilization (e.g., less than 50%) then please investigate the reasons for the low utilization. Some common reasons are outlined below:
 
-1. Misconfigured application scripts. Be sure to read the documentation of the software to make sure that you are using it properly. This includes creating the appropriate software environment.
-2. Using an A100 GPU when a [MIG GPU](https://researchcomputing.princeton.edu/systems/della#gpus) would be sufficient. Some codes do not have enough work to keep an A100 GPU busy. If you encounter this on the Della cluster then consider using a [MIG GPU](https://researchcomputing.princeton.edu/systems/della#gpus).
-3. Training deep learning models while only using a single CPU-core. Codes such as [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) show performance benefits when multiple CPU-cores are used for the data loading.
-4. Using too many GPUs for a job. You can find the optimal number of GPUs and CPU-cores by performing a [scaling analysis](https://researchcomputing.princeton.edu/support/knowledge-base/scaling-analysis).
-5. Writing job output to the /projects storage system. Actively running jobs should be writing output files to /scratch/gpfs which is a much faster filesystem. See [Data Storage](https://researchcomputing.princeton.edu/support/knowledge-base/data-storage) for more.
+> Misconfigured application scripts. 
+
+Be sure to read the documentation of the software to make sure that you are using it properly. This includes creating the appropriate software environment.
+
+> Training deep learning models while only using a single CPU-cor for dataloading. 
+
+Codes such as [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) show performance benefits when multiple CPU-cores are used for the **data loading**.
+
+> Using too many GPUs for a job. Performing a scaling analysis is useful to identify an ideal middle ground.
+
 
 ### Common Mistakes
 
-The most common mistake is running a CPU-only code on a GPU node. **Only codes that have been explicitly written to run on a GPU can take advantage of a GPU.** Read the documentation for the code that you are using to see if it can use a GPU.
+> The most common mistake is running a CPU-only code on a GPU node. **Only codes that have been explicitly written to run on a GPU can take advantage of a GPU.** Read the documentation for the code that you are using to see if it can use a GPU.
 
-Another common mistake is to run a code that is written to work for a single GPU on multiple GPUs. [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow), for example, will only take advantage of more than one GPU if your script is explicitly written to do so. Note that in all cases, whether your code actually used the GPU or not, your **fairshare** value will be reduced in proportion to the resources you requested in your Slurm script. This means that the [priority](https://researchcomputing.princeton.edu/support/knowledge-base/job-priority) of your next job will be decreased accordingly. Because of this, and to not waste resources, **it is very important to make sure that you only request GPUs when you can efficiently utilize them.**
+>Another common mistake is to run a code that is written to work for a single GPU on multiple GPUs.
 
 ### Documentation and Tutorials
 
