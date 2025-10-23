@@ -4,7 +4,6 @@ hide_title: false
 sidebar_class_name: tutorialSidebar
 sidebar_position: 2
 sidebar_hide: true
-unlisted: true
 showLastUpdateAuthor: true
 showLastUpdateTime: true
 last_update:
@@ -14,14 +13,17 @@ last_update:
 ---
 
 :::info
-This guide provides essential information about GPU resources available on the Pinnacles cluster at UC Merced. GPUs have the potential to enable accelerated performance for machine learning, scientific computing, and data-intensive jobs.
+This guide provides an overview of the GPU resources available on the Pinnacles cluster at UC Merced. GPUs offer accelerated performance for machine learning, scientific computing, and data-intensive workloads.
 :::
 
 
 ## Accessing and Running GPU Jobs
 
 :::warning
-GPU usage on Pinnacles is **highly** impacted as of recently. To best accommodate and allow for maximum GPU utilization, please only request what you will be using. CIRT will **end** jobs running on GPU related queues that are not fully utilizing or under utilizing the GPU. 
+GPU usage on Pinnacles has been extremely **high** recently. To ensure fair access and maximize resource efficiency, please only request the amount of GPU resources you actually need.
+
+Please be aware that CIRT may terminate GPU jobs that are significantly underutilizing or not actively using the GPUs, in order to free resources for other users.
+
 :::
 
 ### GPU Allocation
@@ -30,11 +32,6 @@ GPU usage on Pinnacles is **highly** impacted as of recently. To best accommodat
 
 ### Submission Guidelines
 
-Jobs requiring GPU resources should specify:
-
-- Number of GPUs needed
-- GPU type requirements (Only **Necessary** if running on `test` Partition)
-- Memory requirements
 
 > Below are some example directives that may be used when preparing Slurm Job Scripts or Interactive Sessions. 
 
@@ -66,8 +63,8 @@ Pinnacles provides access to various GPU models optimized for different computat
 
 | GPU  | Technical Notes         | Best Use Cases                                                                 |
 | ---- | ----------------------- | ------------------------------------------------------------------------------ |
-| A100 | High Precision (FP64)   | Data/Computational Intensive workloads that require higher numerical precision |
-| L40s | Lower Precision (FP32), | Machine learning/deep learning training, AI Workloads                          |
+| [A100](https://www.nvidia.com/en-us/data-center/a100/?utm_source=chatgpt.com) | High Precision (FP64)   | Data/Computational Intensive workloads that require higher numerical precision |
+| [L40s](https://www.nvidia.com/en-us/data-center/l40s/?utm_source=chatgpt.com) | Lower Precision (FP32), | Machine learning/deep learning training, AI Workloads                          |
 
 
 ## Harnessing GPUs for Machine Learning
@@ -81,7 +78,10 @@ Pinnacles provides access to various GPU models optimized for different computat
 - Estimate GPU memory requirements based on model architecture.
 - Consider multi-GPU strategies for large-scale training.
 - Plan for checkpointing for fault tolerance.
-- Monitor GPU utilization to optimize resource usage. Via `nvidia-smi`.
+- Monitor GPU utilization to ensure efficient resource usage. After logging into a GPU node, run the following command: 
+ ```
+ nvidia-smi
+ ```
 
 ## Harnessing GPUs for Scientific Computing
 
@@ -131,7 +131,6 @@ The following frameworks are commonly used on Pinnacles GPUs:
 
 - **Profiling**: Use profiling tools to identify bottlenecks
 - **Queue Selection**: Select `gpu` queue for use of A100 GPUs, select `cenvalarc.gpu` for L40s GPUs.
-- **Scheduling**: Consider job dependencies and workflow optimization
  
 ## Additional Resources
 
@@ -144,8 +143,7 @@ Only codes that have **explicit** GPU support will run successfully on a GPU. Pl
 
 > Ensure software environment is properly configured. 
 
-In some cases certain libraries have to be available for your code to run on GPUs. Ensure that the proper software toolkit/libraries have been `module loaded` if available on the cluster, else ensure you have installed and sourced in your environment such as conda environments, Spack environments, external source scripts or python environments. 
-
+In some cases, specific libraries are required for your code to run on GPUs. Make sure the necessary software toolkits or libraries are loaded from the cluster’s available modules. If not available, ensure you have installed and properly sourced them in your own environment.
 
 ### Low GPU Utilization: Potential Solutions
 
@@ -177,6 +175,6 @@ Codes such as [PyTorch](https://researchcomputing.princeton.edu/support/knowled
 - [L40s Tech Report](https://www.nvidia.com/en-us/data-center/a100/)
 ### Support Channels
 
-- HPC Support Ticket System
+- [HPC Support Ticket System](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)
 - [UCM HPC Slack Workspace](https://ucmhpcclusters.slack.com/)
 
