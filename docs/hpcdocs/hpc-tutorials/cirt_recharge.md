@@ -10,3 +10,4 @@ The table below includes CIRT recharge services
 | Enhanced User Support| $98.69/hour    | $108.20/hour    |
 | Research Server colocation | Charge by Service | Charge by Service|
 | Active Data Storage |$0.05/GB/Yr |$0.05/GB/Yr  |
+| Annual cost of condo-nodes  |$495.00/Yr |$495.00/Yr  |
