@@ -3,6 +3,12 @@ title: Getting started about the Campus JupyterHub
 sidebar_position: 2
 ---
 
+import cellsImg from '../hpcdocs/HPC-clusters/imgs/jupyter_cells.png';
+import kernelImg from '../hpcdocs/HPC-clusters/imgs/kernel.png';
+import menubarImg from '../hpcdocs/HPC-clusters/imgs/menubar.png';
+import outputImg from '../hpcdocs/HPC-clusters/imgs/output_area.png';
+
+
 <!-- // ## Getting started about the Campus Jupyterhub -->
 
 ## Pedagogy and Technology
@@ -12,11 +18,11 @@ To ensure our courses are accessible to students of all majors, we aimed to use 
 
 Jupyter Notebook is an open-source web application that allows you to create and share documents that contain **live code**, equations, visualizations, and narrative text. Uses include data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
 
-### The `datascience` Package <!-- {docsify-ignore} -->
+### JupyterHub Packages/Libraries <!-- {docsify-ignore} -->
 
-In addition to the computing infrastructure, another piece of the technology is the [`datascience` package](http://data8.org/datascience/). While traditional libraries such as `pandas` and `matplotlib` are powerful, they are also quite complicated, and the verbose code and documentation can intimidate those who are new to programming. The `datascience` Python package was written for use in Berkeley’s Data Science courses and aims to provide a simple but powerful set of tools for introductory students. Students that are in or have taken Data 8 will be familiar with this package as it is used throughout the course.
+In addition to UC Merced’s JupyterHub computing infrastructure, another key educational component is the integrated Python packages.
+These packages are designed to fit the main use cases for most students. We have libraries perfect for STEM majors including Pandas, Numpy, MatPlotLib, SciPy, Scikit-learn, pytorch, Jupyter's incorporated packages, etc. A core component of the JupyterLab is the ease of access and instantaneous set-up, with the ability to boot up and environment and starting coding without waiting! This package set focuses on students' needs and accessibility, while prioritizing efficiency as well. If these libraries and packages do not fit your needs we have the [Pre-installed Packages and Libraries Page ](/docs/jupyter/packages) which lists all the major packages and more general information. 
 
-The package contains useful functionality for investigating and graphically displaying data. One key component of the `datascience` package is the `Tables` abstraction, which is similar to a `pandas` dataframe. The package also contains useful functionality for drawing maps and plotting.
 
 ## Introduction to Jupyter <!-- {docsify-ignore} -->
 
@@ -37,66 +43,97 @@ Jupyter Notebook is an open-source web application that allows you to create and
 
 **Cells:** Notebooks are composed of individual cells that can contain either code, Markdown-formatted text, or raw content. Users can execute code cells and render Markdown cells to produce outputs.<br />
 
+<!-- old image link: 
 ![](../hpcdocs/HPC-clusters/imgs/jupyter_cells.png)
-  
-<!-- <div align="center" style={{ width: '100%' }}>
-  <img 
-    src="![](../hpcdocs/HPC-clusters/imgs/jupyter_cells.png)" 
-    alt="jupyter_cells" 
-    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} 
+ -->
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '1em 0' }}>
+  <img
+    src={cellsImg}
+    alt="Code and Markdown cells in a Jupyter notebook"
+    style={{
+      width: '110%',
+      height: 'auto',
+      objectFit: 'contain',
+      borderRadius: '6px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+    }}
   />
 </div>
-<br /> -->
+
+
 
 **Kernel:** Each notebook is associated with a computational kernel, which is responsible for executing code within the notebook. Different kernels support different programming languages.<br />
 
+<!-- old image link: 
 ![](../hpcdocs/HPC-clusters/imgs/kernel.png)
-<!-- <div align="center" style={{ width: '100%' }}>
-  <img 
-    src="../hpcdocs/HPC-clusters/imgs/kernel.png" 
-    alt="jupyter_cells" 
-    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} 
+ -->
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '1em 0' }}>
+  <img
+    src={kernelImg}
+    alt="JupyterLab Kernel Selection example"
+    style={{
+      width: '60%',
+      height: 'auto',
+      objectFit: 'contain',
+      borderRadius: '6px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+    }}
   />
 </div>
-<br /> -->
 
 **Toolbar:** The toolbar provides quick access to common actions such as running cells, saving the notebook, adding new cells, and changing cell types.<br />
 
+<!-- This image does not need to be resized -->
+
 ![](../hpcdocs/HPC-clusters/imgs/toolbar.png)
-<!-- <div align="center" style={{ width: '100%' }}>
-  <img 
-    src="../hpcdocs/HPC-clusters/imgs/toolbar.png" 
-    alt="jupyter_cells" 
-    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} 
-  />
-</div>
-<br /> -->
+
+
+
 
 
 **Menu Bar:** The menu bar contains various options for manipulating the notebook, managing kernels, and configuring the notebook environment.<br />
 
+
+<!-- old image link: 
 ![](../hpcdocs/HPC-clusters/imgs/menubar.png)
-<!-- <div align="center" style={{ width: '100%' }}>
-  <img 
-    src="../hpcdocs/HPC-clusters/imgs/menubar.png" 
-    alt="jupyter_cells" 
-    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} 
+ -->
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '1em 0' }}>
+  <img
+    src={menubarImg}
+    alt="JupyterLab Menu Bar example"
+    style={{
+      width: '60%',
+      height: 'auto',
+      objectFit: 'contain',
+      borderRadius: '6px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+    }}
   />
 </div>
-<br /> -->
 
 
 **Output Area:** Code cells display their output, including text output, error messages, and visualizations, in the output area directly below the cell.<br />
 
-![](../hpcdocs/HPC-clusters/imgs/output_area.png)
-<!-- <div align="center" style={{ width: '100%' }}>
-  <img 
-    src="../hpcdocs/HPC-clusters/imgs/output_area.png" 
-    alt="jupyter_cells" 
-    style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} 
+
+<!-- old image link
+ ![](../hpcdocs/HPC-clusters/imgs/output_area.png) -->
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '1em 0' }}>
+  <img
+    src={outputImg}
+    alt="Example of code cell output"
+    style={{
+      width: '80%',
+      height: 'auto',
+      objectFit: 'contain',
+      borderRadius: '6px',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+    }}
   />
 </div>
-<br /> -->
 
 **File Format:** Notebooks are saved in a JSON file format with the `.ipynb`
 
