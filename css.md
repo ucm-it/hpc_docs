@@ -28,7 +28,10 @@ The `custom.css` file holds all of the customizations done on the css-side of th
 | `.video-container`        | Responsive video wrapper  | Full-width container with 16:9 aspect ratio             |
 | `.video-container iframe` | Video element positioning | Absolute positioning with full dimensions and no border |
 
-
+5. Customization of the colors for `quote block` and `note` 
+| Selector                  | Purpose                   | Visual Effect                                           |
+| ------------------------- | ------------------------- | ------------------------------------------------------- |
+| `.lockquote`        | make quote purple  | Purple quote block       |
+| `.admonition.note` | make note orange | Orange tint to note blocks |
 ## Link to `custom.css`
 `src/css/custom.css`
-

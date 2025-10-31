@@ -130,4 +130,31 @@ a[href^="http"]:not(footer a) {
   border-bottom: 5px solid var(--ifm-tabs-color-active);
 }
 
+/*Style the blockquotes with a light purple color*/
+blockquote {
+  border-left: 5px solid #9b59b6; /* Light purple color */
+  background-color: #f9f0ff; /* Light purple background */
+  padding: 1rem;
+  margin: 1rem 0;
+}
 
+/* Style the note admonition with an orange color */
+.admonition.note {
+  border-left: 5px solid #dd7825; /* Orange color */
+  background-color: #fff1e6; /* Light orange background */
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.theme-admonition-note {
+  border-color: #dd7825; /* Orange border */
+  background-color: #fff1e6; /* Light orange background */
+}
+
+.theme-admonition-note .admonition-icon svg {
+  fill: #dd7825; /* Orange icon */
+}
+
+.theme-admonition-note .admonition-heading h5 {
+  color: #dd7825; /* Orange heading text */
+}
