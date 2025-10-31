@@ -33,8 +33,5 @@ The `custom.css` file holds all of the customizations done on the css-side of th
 | ------------------------- | ------------------------- | ------------------------------------------------------- |
 | `.lockquote`        | make quote purple  | Purple quote block       |
 | `.admonition.note` | make note orange | Orange tint to note blocks |
-
-
 ## Link to `custom.css`
 `src/css/custom.css`
-
