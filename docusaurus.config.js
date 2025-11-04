@@ -148,7 +148,7 @@ const config = {
               },
               {
                 label: 'JupyterHub',
-                to: 'docs/jupyter',
+                to: 'docs/jupyter/jupyterhub-policy',
               }
 
             ],
