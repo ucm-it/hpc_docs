@@ -10,6 +10,18 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## OS Upgrade Impact: MERCED cluster + BorgStore
+_posted on: 11/07/2025_
+
+In preparation for our upcoming transition to Rocky Linux 9 (EL9), we will begin by upgrading the MERCED cluster. During this upgrade period and until the full migration is completed across both clusters, MERCED will no longer have access to the BorgStore (BeeGFS) filesystem.
+ 
+Effective November 12, any jobs submitted on MERCED that rely on access to BorgStore will NOT run and will fail.
+ 
+The Pinnacles cluster will remain fully operational and will continue to have access to BorgStore throughout this process.
+ 
+Thank you for your understanding and cooperation during this transition.
+ 
+
 ## CIRT Team Attending PEARC Conference (July 18–25)
 _posted on: 07/11/2025_
 
