@@ -136,10 +136,10 @@ As well as how to get access, logging in, file system, resource breakdown.
 
   |     `cenvalarc` CPU node           | `cenvalarc.compute` - CPU Node| `cenvalarc.bigmem` - bigmem node | 
   |:----------------| :---------------- |:----------------- |
-  | Number of nodes | 8 | 4 |
-  | CPU             |  2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W |
+  | Number of nodes | 15 | 4 |
+  | CPU             |  2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W |
   | RAM             |  256GB | 1TB | 
-  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
+  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm). Or 2× 960 GB 2.5″ NVMe PCIe SSDs per node|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
   |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
 
   | `gpu` GPU node     |                                                           |
@@ -149,16 +149,16 @@ As well as how to get access, logging in, file system, resource breakdown.
   | CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
   | RAM          | 256GB                                                     |
   | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
-  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|  
 
   | `cenvalarc.gpu` GPU node     |                                                           |
   |:-------------|:----------------------------------------------------------|
-  | Number       | 8                                                         |
-  | GPU per node | 2x NVIDIA L40S GPUs per node (48GB GDDR6 Passive Dual Slot GPU) |
-  | CPU          | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W             |
-  | RAM          | 256GB                                                     |
-  | Node-local storage          | 1TB M.2 NVMe Data Center Solid State Drive (110mm) |
-  | Network        | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot |
+  | Number       | 12                                                       |
+  | GPU per node | 8 nodes containing 2x NVIDIA L40S GPUs per node (48GB GDDR6 Passive Dual Slot GPU). 4 nodes containing 2× NVIDIA Tesla H200 (141 GB HBM3).|
+  | CPU          | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W (L40s nodes). 2× Intel Xeon 6960P, 72-Core, 2.7 GHz - 500W (H200 Nodes).            |
+  | RAM          | 256GB (L40s Nodes) and 768 GB (H200 Nodes)                                                  |
+  | Node-local storage          | 1TB M.2 NVMe Data Center Solid State Drive (110mm) - L40s Nodes. 2× 960 GB 2.5″ NVMe PCIe SSDs - H200 Nodes. |
+  | Network        | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot -- L40s Node. ConnectX-7, NDR-200 IB, dual-port QSFP112, PCIe 5.0 ×16 -- H200 Node.  |
 
   </TabItem>
 
