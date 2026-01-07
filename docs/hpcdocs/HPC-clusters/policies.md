@@ -25,8 +25,8 @@ import Highlight from '@site/src/components/Highlight';
 1. All Users and PIs requesting an account must have a filled out  export control [form](https://ucmerced.app.box.com/s/e6pmv4cv59tz76aat5re1kzvg23c0s09), as stated before, and follow the steps outlined [here](campus-clusters#how-to-request-an-account). 
 2. Do not share accounts or passwords with others. 
 3. Computing resources cannot be used for commercial, monetary purposes or personal gain. 
-4. Each account is associated with only __one__ Principal Investigator (PI) or group project account. Access to specific queues is determined by the PI’s affiliations and their respective purchased nodes. 
-   
+4. Each account is associated with only __one__ Principal Investigator (PI) or group project account. Access to specific queues is determined by the PI’s affiliations and their respective purchased nodes. Any request to transfer a user to a different project account must be submitted directly by the PI.
+  
 
 ## Cluster jobs Guidelines
 - Definition of a cluster job: Any computing process or program should be submitted via the SLURM job submission process. 
