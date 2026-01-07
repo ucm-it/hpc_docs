@@ -41,24 +41,13 @@ Please be aware that CIRT may terminate GPU jobs that are significantly underuti
 | **Optional Directives Below** | May be used as another layer of control/optimization | 
 | `--constraint=<feature>` | Specify which GPU type (A100, L40s, etc), useful when running on `test` partition | 
 | `--cpus-per-gpu=<N>` | Reserve N CPU Threads per GPU |
-| `--gpus-per-node=<N>` | When performing multinode jobs, specify how many GPUs per node | 
-| `--mem-per-gpu=N` | N (GB\MB) RAM to be proportioned per GPU |
+| `--gpus-per-node=<N>` | Specify how many GPUs per node | 
+| `--mem-per-gpu=N` | N (GB/MB) RAM to be proportioned per GPU |
 
 
-For overall Slurm directives and submission scripts, please see [here](../HPC-clusters/running-jobs/jobs.md) 
+For some general Slurm directives and submission scripts, please see [here](../HPC-clusters/running-jobs/jobs.md) 
 
 ## GPU Types
-
-### Available GPU Architecture
-
-Pinnacles provides access to various GPU models optimized for different computational needs. The cluster includes GPUs suitable for:
-
-- Deep learning and AI workloads
-- Scientific simulations
-- Data analytics and visualization
-- General-purpose GPU computing (GPGPU)
-
-
 #### GPU Comparison Table
 
 | GPU  | Technical Notes         | Best Use Cases                                                                 |
@@ -153,7 +142,7 @@ If you encounter low GPU utilization (e.g., less than 50%) then please investiga
 
 Be sure to read the documentation of the software to make sure that you are using it properly. This includes creating the appropriate software environment.
 
-> Training deep learning models while only using a single CPU-cor for dataloading. 
+> Training deep learning models while only using a single CPU-core for dataloading. 
 
 Codes such as [PyTorch](https://researchcomputing.princeton.edu/support/knowledge-base/pytorch) and [TensorFlow](https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow) show performance benefits when multiple CPU-cores are used for the **data loading**.
 
@@ -164,7 +153,7 @@ Codes such as [PyTorch](https://researchcomputing.princeton.edu/support/knowled
 
 > The most common mistake is running a CPU-only code on a GPU node. **Only codes that have been explicitly written to run on a GPU can take advantage of a GPU.** Read the documentation for the code that you are using to see if it can use a GPU.
 
->Another common mistake is to run a code that is written to work for a single GPU on multiple GPUs.
+> Another common mistake is to run a code that is written to work for a single GPU on multiple GPUs.
 
 ### Documentation and Tutorials
 
