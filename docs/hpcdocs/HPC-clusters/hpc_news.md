@@ -10,6 +10,29 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Registration Now Open: CENVAL-ARC Symposium
+_posted on:01/08/2026_
+
+[Registration](https://forms.office.com/r/dw80GhQ8xK?origin=lprLink) is now open for the 2026 CENVAL-ARC Symposium, to be held in person at UC Merced on March 5–6, 2026, with additional virtual sessions on select topics offered in advance of the in-person event.
+
+The program will include:
+
+March 5: Welcome reception at UC Merced, 5:00–7:00 PM, providing an opportunity to connect with speakers and colleagues.
+March 6: A full day of talks, panels, and discussions focused on advancing research computing and data capacity.
+
+Detailed agenda [here](https://cenval-arc.ucmerced.edu/agenda).
+Sponsored by the NSF Campus Cyberinfrastructure (CC) program, the symposium brings together researchers, faculty, staff, and students from across the region who rely on computational resources beyond their local environments. Attendees will have the opportunity to engage with NSF program officers, learn about high-performance computing (HPC) and cyberinfrastructure solutions, and connect with leaders from the research computing and data (RCD) community.
+
+ Limited financial support is available to assist with travel and accommodation costs.
+
+Please encourage your research groups and colleagues to register early and take advantage of this opportunity.
+
+Register [here](https://forms.office.com/r/dw80GhQ8xK?origin=lprLink)
+
+For more details, visit: cenval-arc.ucmerced.edu
+
+Thank you for helping us spread the word. We look forward to seeing you at CENVAL-ARC 2026.
+
 ## OS Upgrade Impact: MERCED cluster + BorgStore
 _posted on: 11/07/2025_
 
