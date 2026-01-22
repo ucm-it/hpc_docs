@@ -69,6 +69,9 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
       #SBATCH --export=ALL
       # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
 
+      # Make sure when you submit jobs, add "-M merced" too!
+      # for example "sbatch -M merced your_job_script.sh"
+
       ```
     </TabItem>
 
