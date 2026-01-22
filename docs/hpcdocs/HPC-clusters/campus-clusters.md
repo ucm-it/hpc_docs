@@ -136,7 +136,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 
   |     `cenvalarc` CPU node           | `cenvalarc.compute` - CPU Node| `cenvalarc.bigmem` - bigmem node | 
   |:----------------| :---------------- |:----------------- |
-  | Number of nodes | 15 | 4 |
+  | Number of nodes | 9 | 4 |
   | CPU             |  2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W |
   | RAM             |  256GB | 1TB | 
   | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm). Or 2× 960 GB 2.5″ NVMe PCIe SSDs per node|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
