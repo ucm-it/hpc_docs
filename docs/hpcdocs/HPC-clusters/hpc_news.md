@@ -10,6 +10,21 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## HPC Cluster Maintenance & Node Expansion (Feb 2–6)
+_posted on:01/27/2026_
+
+Both the MERCED and Pinnacles clusters will be inaccessible from Monday, February 2nd (8:00am), through Friday, February 6th (5:00pm), for node expansion.
+
+During this scheduled downtime, we will be adding:
+- 5 New CPU Nodes: Dual Intel 32-Core Xeon 6530 processors.
+- 4 New GPU Nodes:  Dual NVIDIA Tesla H200 GPUs.
+
+Impact on Jobs:
+- Submission Limits: Slurm will not accept any jobs with a duration that overlaps the scheduled maintenance window.
+- Job Management: Please ensure all active jobs are managed or completed before the maintenance begins on Monday at 8:00am.
+
+We expect both clusters to be back online and open for submissions by Saturday, February 7th. Thank you for your patience as we work to increase our computational capacity.
+
 ## Registration Now Open: CENVAL-ARC Symposium
 _posted on:01/08/2026_
 
