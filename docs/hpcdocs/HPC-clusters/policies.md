@@ -31,7 +31,7 @@ import Highlight from '@site/src/components/Highlight';
 ## Cluster jobs Guidelines
 - Definition of a cluster job: Any computing process or program should be submitted via the SLURM job submission process. 
 
-1. Cluster jobs must be ran on compute nodes. Running intense processes and any intense programs on login nodes is prohibited, and any jobs/processes that impact the performance or functions of the login nodes or interfere with other users will be terminated and an email will be sent to the user and their PI notifying cluster usage best practices and policy. **CIRT offers “Introduction to HPC” training sessions for new HPC users. Schedule [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)** New Users can also look at the "Introduction to HPC" Training Material [here](../hpc-tutorials/intro-hpc.mdx!
+1. Cluster jobs must be ran on compute nodes. Running intense processes and any intense programs on login nodes is prohibited, and any jobs/processes that impact the performance or functions of the login nodes or interfere with other users will be terminated and an email will be sent to the user and their PI notifying cluster usage best practices and policy. **CIRT offers “Introduction to HPC” training sessions for new HPC users. Schedule [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)** New Users can also look at the "Introduction to HPC" Training Material [here](../hpc-tutorials/intro-hpc.md).
 
 
 ## Quotas and storage Guidelines

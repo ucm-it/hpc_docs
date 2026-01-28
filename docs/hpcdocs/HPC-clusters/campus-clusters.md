@@ -23,7 +23,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 :::
 
 
-> Currently, UC, Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+> Currently, UC Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
 <Tabs>
@@ -37,7 +37,7 @@ As well as how to get access, logging in, file system, resource breakdown.
     The NSF-MRI grant number #2019144 funded Pinnacles cluster has the following compute node configurations:
 
     - 40 regular Compute nodes with 2XIntel-28-Core Xeon Gold 6330 2.0GHz - 205W, each with 256GB RAM.
-    - 8 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 258GB RAM. 
+    - 8 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 256GB RAM. 
     - 8 High Memory nodes, 4 nodes are equipped with 2 Intel 28-core Xeon Gold 6330 CPUs running at 2.0 GHz and 1 TB of RAM. The other 4 nodes feature 2 Intel 32-core Xeon Gold 6530 CPUs running at 2.1 GHz and 1 TB of RAM, providing additional processing power for memory-intensive workloads.
     - 16 GPU nodes, 8 of the nodes are equipped with 2× NVIDIA Tesla A100 PCIe v4 GPUs (40GB HBM2), and the other 8 nodes are equipped with 2× NVIDIA L40S GPUs (48GB GDDR6).
     
@@ -257,7 +257,11 @@ As well as how to get access, logging in, file system, resource breakdown.
 ## Centralized login
 
 ### Open OnDemand Login 
-Starting in late April/early May, users will be able to access Pinnacles and MERCED cluster via web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+For users seeking to access access Pinnacles and MERCED cluster via the web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+
+:::note 
+If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
+:::
 
 For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
 ### Login nodes
@@ -484,9 +488,9 @@ To convert the outputted megabytes to gigabytes = space(MB) divided by 1024
 :::
 
 ### Checking the size of directories and content
-To chek the size of the current directory or any directories in it use the `du` command.
+To check the size of the current directory or any directories in it use the `du` command.
 :::note
-`du` command alone will output all directories, hidden as well, in real time so it will take a few momments to finish. It is recommended to execute the command with some of the following options to make the process more clear and consice.
+`du` command alone will output all directories, hidden as well, in real time so it will take a few moments to finish. It is recommended to execute the command with some of the following options to make the process more clear and concise.
 :::
 
 | Option           |Description                                                                               |

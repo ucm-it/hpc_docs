@@ -23,8 +23,7 @@ The Login page will require you to authenticate with your username and password 
 Open OnDemand is a web front‑end that lets you interact with both the **Pinnacles** and **MERCED** clusters without having to interact with command line. Think of it as an HPC “control center” — upload files, open a shell, launch Jupyter Lab or VS Code, monitor jobs, and even check your disk usage, all from a browser.
 
 ## Logging into the Web GUI
->  **URL:** [https://ondemand.rc.ucmerced.edu](https://ondemand.rc.ucmerced.edu)  
-> **When:** Service goes live in late April / early May 2025.
+>  **URL:** [https://ondemand.rc.ucmerced.edu](https://ondemand.rc.ucmerced.edu) 
 
 :::warning
 For users logging into for the first time, please sign in via the terminal, showcased here, to properly reset the default password. 

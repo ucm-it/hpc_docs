@@ -53,12 +53,12 @@ Yes, please make sure keep the COA# information updated. Each user can also have
 
 > __How do I move Big Data?__
 
-*Visit our [Data Transfer](data_transfer.md) to get more information on transferring Big Data. 
+Visit our [Data Transfer](../HPC-clusters/data_share_transfer.mdx) to get more information on transferring Big Data.
 
 
 >__I want access to free resources. How can I get access to them?__
 
-Remember, if you stay below or at your baseline allocation, you will not incur any fees. However, you can obtain access to other free compute resources such as our new NSF-MRI Pinnacles cluster, and XSEDE resources – and my team can provide consultation for how to access these resources. Schedule a consultation [here](https://arrangr.com/sarvani/rechargemeeting).
+Remember, if you stay below or at your baseline allocation, you will not incur any fees. However, you can obtain access to other free compute resources such as our new NSF-MRI Pinnacles cluster, and XSEDE resources – and my team can provide consultation for how to access these resources. Schedule a consultation [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=aa2d2ee3c34a6e106c5c8dd9d00131c1&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
 
@@ -92,7 +92,7 @@ The UC rate per core-hour is $0.01.
  
 Faculty can request usage information per user whenever they need additional details on an invoice. Additionally, we are happy to provide training to your researchers on how to utilize the FREE Pinnacles resources and estimate the usage costs for jobs running on MERCED cluster.
 
-> __What if I have multiple grant with multiple COAs, can I use all of my COA numbers?__
+> __What if I have multiple grants with multiple COAs, can I use all of my COA numbers?__
 
 Yes, we can set up multiple Slurm accounts so that when users submit jobs to the MERCED cluster, they are required to select a specific account. This ensures that the usage for the project is charged to the designated COA number.
 
@@ -117,8 +117,5 @@ You can send a request to the CIRT team at cirt@ucmerced.edu to gather informati
 
 > __My Jobs are running unusually slow, failing with errors, I need to cancel a currently running job__
 
-Jobs can be running unusually slow for many reasons that can be relating to the about number of tasks assigned to the job, number of nodes, and the memory being allocated to the job. These three factors are just a few common factors that can be leading to an unusually slow job, and all of these are dependent on what is being computed(i.e. a parallel python script or a simple list of unix commands). It is important to understand what the code is  anticipated to execute and how that will be done with the resources you are requesting. This will allow for the user to better less/more computing resources to get the computations/calculations done in an efficient manner. 
-
-To get information about troubleshooting a job failing with errors visit our [Job Management Page](../HPC-clusters/job_manage.md)
-
-To cancel a job: `scancel <jobid>` or `skill <jobid>`
+Jobs can run unusually slowly for many reasons, often due to a mismatch between the workload and requested resources (tasks, nodes, and memory). The right allocation depends on what you’re running (e.g., parallel Python vs. simple Unix commands). Understanding the expected workload helps you request resources more efficiently.
+To get information about troubleshooting a job failing with errors visit our [Job Management Page](../HPC-clusters/running-jobs/job_manage.md)
