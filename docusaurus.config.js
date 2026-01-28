@@ -62,6 +62,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          breadcrumbs: true,
         },
         blog: {
           showReadingTime: true,
@@ -161,7 +162,7 @@ const config = {
                 href: 'https://ucmerced.service-now.com/servicehub',
               },
               {
-                label: 'Zoom Office Hours (Fridays 11:30pm-1pm PT',
+                label: 'Zoom Office Hours (Fridays 11:30am-1pm PT)',
                 href: 'https://ucmerced.zoom.us/j/89487493900',
               },
               {
