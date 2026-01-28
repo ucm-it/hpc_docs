@@ -157,7 +157,7 @@ By default, sacct -j [jobid] displays basic job information such as job ID, job 
 
 For debugging that requires more in-depth analysis and information adding the option `--format=<Field>` will show additional information that can be more useful for debugging bigger issues. Below is an example with the use of `--format=<Field`.
 
-Using sacct -j [jobid] --format=jobid,jobname,reqcpus,reqmem,averss,maxrss,elapsed,state,exitcode, you can gain more detailed insights into job performance and failures.
+Using `sacct -j [jobid] --format=jobid,jobname,reqcpus,reqmem,averss,maxrss,elapsed,state,exitcode` you can gain more detailed insights into job performance and failures.
 
 ```
 

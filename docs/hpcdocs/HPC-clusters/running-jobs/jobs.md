@@ -87,7 +87,7 @@ Use `sinfo` to see the nodes state and check how many nodes are being allocated 
 `sacct -X -j [JOBID] -o start,submit` provides information for job estimated starting time or submitted time
 
 
-## Job Arrays -- Introduction 
+## Introduction to Job Arrays
 Job arrays offer a mechanism for submitting and managing collections of similar jobs quickly and easily that utilizes only one job script. Submitting a job array can be useful in many of the following ways: 
 
 1. Having a set of code or program that needs to run many different input variables or files. 
@@ -179,7 +179,7 @@ The Task ID range specification arguments can also be configured to:
 ```
 
 ### Job Dependencies in Job Arrays
-Jobs that depend on the output of other job arrays can specify dependencies using the --dependency flag after the initial array has been submitted.
+Jobs that depend on the output of other job arrays can specify dependencies using the `--dependency` flag after the initial array has been submitted.
 
 Below are flags that can be used to help declare the dependency of certain job(s) in the job array submission line after the first job array has been submitted to the scheduler. 
 
