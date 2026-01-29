@@ -58,7 +58,7 @@ Visit our [Data Transfer](../HPC-clusters/data_share_transfer.mdx) to get more i
 
 >__I want access to free resources. How can I get access to them?__
 
-Remember, if you stay below or at your baseline allocation, you will not incur any fees. However, you can obtain access to other free compute resources such as our new NSF-MRI Pinnacles cluster, and XSEDE resources – and my team can provide consultation for how to access these resources. Schedule a consultation [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=aa2d2ee3c34a6e106c5c8dd9d00131c1&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+Remember, if you stay below or at your baseline allocation, you will not incur any fees. However, you can obtain access to other free compute resources such as our new NSF-MRI Pinnacles cluster, and ACCESS resources – and my team can provide consultation for how to access these resources. Schedule a consultation [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=aa2d2ee3c34a6e106c5c8dd9d00131c1&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
 
