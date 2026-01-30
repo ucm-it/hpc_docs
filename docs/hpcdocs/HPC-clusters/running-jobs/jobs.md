@@ -97,7 +97,7 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 Job arrays allows users to run jobs at the same time or have the results of the previous job output to be used as input for the next job. While the output capacity from a job array is immense, the job configurations are the same for all jobs to be run in the job array. 
 
 :::tip
-The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md/#queue-information)
+The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md#queue-information)
 :::
 
 ### Job Array Scripting
