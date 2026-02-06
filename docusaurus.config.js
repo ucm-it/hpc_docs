@@ -158,7 +158,7 @@ const config = {
               },
               {
                 label: 'HPC Clusters',
-                to: 'docs/hpcdocs/HPC-clusters/campus-clusters/#hpc-clusters',
+                to: 'docs/hpcdocs/HPC-clusters/campus-clusters',
               },
               {
                 label: 'JupyterHub',

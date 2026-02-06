@@ -45,3 +45,7 @@ AI:
   description: News and updates related to artificial intelligence
 
 
+job:
+  label: Jobs
+  permalink: /jobs
+

@@ -209,7 +209,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   2. Click `Request Service`
   ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
   3. Begin to populate all the required information. 
-      1. At the question regardig PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+      1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
       ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
   4. For selecting the system, from the drop-down, click `pinnacles.ucmerced.edu (Free Cluster)`
   ![Image of Pinnacles Selection](imgs/RequestAccountPinnacles.png "Selecting Pinnacles")
@@ -299,7 +299,7 @@ MobaXterm includes an integrated X11 server, so no additional installation of X1
   - Check the box that says "X11-forwarding". This option enables X11 forwarding for your session
 
 ## File systems and storage
-There are 2 folders (`data` and `scratch`) locate in `HOME` that users will start with.
+There are 2 folders (`data` and `scratch`) located in `HOME` that users will start with.
 
 :::note
 MERCED and Pinnacles have now been merged into a centralized system, allowing them to share the same file systems. We have also increased the quota for the `data`, `scratch`, and `HOME` directories. Please note that there is a 7-day grace period once the soft quota limit is reached.
