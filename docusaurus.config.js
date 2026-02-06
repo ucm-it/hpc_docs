@@ -5,6 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -33,7 +35,12 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      type: 'text/css',
+    },
+  ],
   presets: [
     [
       'classic',
@@ -63,12 +70,17 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           breadcrumbs: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
+            
           },
           // Please change this to your repo.
           // Useful options to enforce blogging best practices
@@ -78,6 +90,7 @@ const config = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
         },
+    
         theme: {
           customCss: './src/css/custom.css',
         },
