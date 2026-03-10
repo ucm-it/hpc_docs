@@ -9,5 +9,5 @@ The table below includes CIRT recharge services
 |MERCED cluster core hour| $0.1/core-hour| $0.2/core-hour     |
 | Enhanced User Support| $98.70/hour    | $108.20/hour    |
 | Research Server colocation | Charge by Service | Charge by Service|
-| Active Data Storage |$0.10/GB/Yr |$0.20/GB/Yr  |
+| Active Data Storage |$0.10/GB/Yr  |--  |
 | Annual cost of condo-nodes  |$495.00/Yr |$495.00/Yr  |
