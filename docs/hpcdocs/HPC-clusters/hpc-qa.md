@@ -88,7 +88,7 @@ The MERCED computational cycle accounting system is based on core-hours, where o
  
 __Total Cost ($) = Number of cores × Job duration in wall clock hours × Billing rate per core-hour__
  
-The UC rate per core-hour is $0.01.
+The UC rate per core-hour is $0.1.
  
 Faculty can request usage information per user whenever they need additional details on an invoice. Additionally, we are happy to provide training to your researchers on how to utilize the FREE Pinnacles resources and estimate the usage costs for jobs running on MERCED cluster.
 
