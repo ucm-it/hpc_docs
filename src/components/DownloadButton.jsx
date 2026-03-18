@@ -1,11 +1,16 @@
 import React from 'react';
 
 export default function DownloadButton({ href, label }) {
+  function handleClick(e) {
+    e.preventDefault();
+    window.open(window.location.origin + href, '_blank');
+  }
+
   return React.createElement(
     'a',
     {
       href: href,
-      download: true,
+      onClick: handleClick,
       style: {
         display: 'inline-block',
         padding: '8px 16px',
@@ -15,8 +20,9 @@ export default function DownloadButton({ href, label }) {
         textDecoration: 'none',
         fontWeight: 'bold',
         marginBottom: '1rem',
+        cursor: 'pointer',
       },
     },
-    '⬇️ ' + label
+    '\u2B07\uFE0F ' + label
   );
 }
