@@ -72,6 +72,15 @@ const config = {
           breadcrumbs: true,
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          lastVersion: 'v1.0.0',
+          versions: {
+            current: {
+              label: 'Next (Unreleased)',
+            },
+            'v1.0.0': {
+              label: 'v1.0.0',
+            },
+          },
         },
         blog: {
           showReadingTime: true,
@@ -136,6 +145,10 @@ const config = {
             sidebarId: 'jupytersidebar',
             position: 'left',
             label: 'JupyterHub',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {to: '/serve', label: 'Calendar', position: 'left'},
