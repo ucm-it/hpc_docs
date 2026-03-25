@@ -89,7 +89,7 @@ As well as how to get access, logging in, file system, resource breakdown.
     Total Cost ($) = # of cores x Duration (wall clock hours) x (cost per core-hour)
     ```
     - A core-hour is a single compute core used for one hour (a core-hour) and 2G of RAM. 
-    - Cost per core-hour is $0.01
+    - Cost per core-hour is $0.1
 
     :::
     __why should I be willing to invest in this?__

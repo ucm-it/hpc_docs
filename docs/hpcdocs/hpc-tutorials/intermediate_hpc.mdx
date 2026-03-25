@@ -20,7 +20,7 @@ This intermediate training is designed for users who are already comfortable wit
 ## Installing packages using conda
 ### Why Use Conda on HPC?
 
-On HPC clusters, you do not have administrator privileges. This means you cannot use sudo apt install or system-wide pip install to add packages. Conda solves this by giving you a fully self-contained environment in your home directory that you control entirely.
+On HPC clusters, you do not have administrator privileges. This means you cannot use `sudo apt install` or system-wide `pip install` to add packages. Conda solves this by giving you a fully self-contained environment in your home directory that you control entirely.
 Benefits of Conda on HPC:
 
 - Install any Python package without admin rights
@@ -34,7 +34,7 @@ We will show you an example of how to insatll a GPU-specific package using conda
 
 Before installing GPU packages, you need to understand that:
 
-- Login nodes do not have GPUs — they are for editing files and submitting jobs only
+- Login nodes do not have GPUs, they are for editing files and submitting jobs only
 - GPU nodes are special compute nodes with NVIDIA GPUs attached
 - GPU packages must be installed on a GPU node so Conda can detect the correct CUDA version
 
