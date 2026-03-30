@@ -72,15 +72,16 @@ const config = {
           breadcrumbs: true,
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          lastVersion: 'v1.0.0',
+          lastVersion: 'current',
           versions: {
-            current: {
-              label: 'Next (Unreleased)',
+          current: {
+          label: 'Current',
             },
             'v1.0.0': {
-              label: 'v1.0.0',
+          label: 'v1.0.0',
             },
           },
+
         },
         blog: {
           showReadingTime: true,
