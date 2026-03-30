@@ -49,3 +49,7 @@ job:
   label: Jobs
   permalink: /jobs
 
+Anton:
+  label: Anton
+  permalink: /anton
+  description: News and opportunities related to Anton supercomputing systems

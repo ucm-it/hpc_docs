@@ -107,7 +107,7 @@ Here is where you can write the commands or instructions to execute the computat
 
 ### Job Examples 
 
-More detailed job examples can be found [here](../running-jobs/)
+More detailed job examples can be found [here](../HPC-clusters/running-jobs/jobs.md)
 
 ## Slurm - Job Management 
 
@@ -157,7 +157,6 @@ When a job scheduled by Slurm starts, it needs to know some information about it
 | `SLURM_SUBMIT_DIR`         | The directory from which SBATCH was invoked. |
 | `SLURM_SUBMIT_HOST`        | The Hostname of the computer from which SBATCH was invoked. |
 | `SLURM_TASK_PID`           | The process ID of the corresponding task. |
-
 
 
 

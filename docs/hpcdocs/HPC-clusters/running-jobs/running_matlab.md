@@ -3,7 +3,7 @@ title: Running Matlab
 sidebar_position: 4
 ---
 ## Running Matlab on the clusters 
-After logging into the clusters, users can check and load Matlab versions currently available by running the following code. For more information on modules, check [here](../campus-clusters.md/).
+After logging into the clusters, users can check and load Matlab versions currently available by running the following code. For more information on modules, check [here](../campus-clusters.md).
 ```
 # check what matlab modules are available for use
 module avail
@@ -80,4 +80,3 @@ matlab -nodisplay -nodesktop -nosplash -logfile /path/to/test_matlab.log < test_
 </details>
 
 Users can supply `-h` parameter to matlab to review all input parameters to matlab command i.e. `matlab -h`.
-

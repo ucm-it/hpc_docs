@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 :::info
 This page presents a high walk-through of submitting jobs on the UC Merced Clusters. 
 
-To find more tailored and thorough, software-specific guides please visit our [Running Jobs](../running-jobs/)
+To find more tailored and thorough, software-specific guides, please see our [interactive jobs guide](./interact_job.md), [Conda environment guide](./conda.mdx), and [R with MPI guide](./run_r_mpi.mdx).
 
 If you’d like more information about the cluster after logging in, simply type `cluster-info` in your terminal
 :::
