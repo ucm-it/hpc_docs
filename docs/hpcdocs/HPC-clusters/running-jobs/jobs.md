@@ -78,9 +78,18 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
     </Tabs>
 
 :::note
-Note that for both MERCED and Pinnacles CPUs **hyper-threading** are turned off. 
+Note that for both MERCED and Pinnacles CPUs **hyper-threading** are turned off.
+:::
 
-If you want to submit jobs to the MERCED cluster, please include `sbatch -M merced` in your submission command.
+### Submitting Your Job Script
+
+Once your job script is ready, submit it with `sbatch`:
+
+- **Pinnacles:** `sbatch myjob.sh`
+- **MERCED:** `sbatch -M merced myjob.sh`
+
+:::warning
+Always include `-M merced` on the command line when submitting to MERCED. Without it, your job will be routed to the default (Pinnacles) cluster instead.
 :::
 
 > If you want to assess how busy the cluster is, please use the following
@@ -155,7 +164,8 @@ When submitting a Slurm job array, you use the `--array=x-y` option to define th
 You can also submit a job array directly from the command line by specifying the script name after the array declaration:
 
 ```shell
-sbatch --array=1-5 myjob.sh # This would create 5 tasks with array IDs from 1 through 5.
+sbatch --array=1-5 myjob.sh             # Pinnacles
+sbatch -M merced --array=1-5 myjob.sh  # MERCED cluster
 ```
 
 
