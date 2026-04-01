@@ -78,7 +78,9 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
     </Tabs>
 
 :::note
-Note that for both MERCED and Pinnacles CPUs **hyper-threading** is turned off.  
+Note that for both MERCED and Pinnacles CPUs **hyper-threading** are turned off. 
+
+If you want to submit jobs to the MERCED cluster, please include `sbatch -M merced` in your submission command.
 :::
 
 > If you want to assess how busy the cluster is, please use the following

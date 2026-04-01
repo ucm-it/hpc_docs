@@ -19,7 +19,7 @@ Basic Slurm Commands to interact via the command line interface with the queuein
 
 | Commands   | Syntax                        | Description                                              |
 |------------|-------------------------------|----------------------------------------------------------|
-| `sbatch`   | `sbatch <jobname>`             | Submit a batch script to Slurm for processing.           |
+| `sbatch`   | `sbatch <jobname>`             | Submit a batch script to Slurm for processing. To submit to the MERCED cluster, use `sbatch -M merced <jobname>`. |
 | `squeue`   | `squeue --me`                   | Show information about your job(s) in the queue. The command when run without the `--me` flag, shows all jobs in the queue. |
 | `srun`     | `srun <option>`  | Please see our example [here](../HPC-clusters/running-jobs/interact_job.md) for using `srun` in interactive session.|
 | `skill/scancel` | `scancel <job-id>`        | End or cancel a queued job.|
@@ -32,6 +32,11 @@ The `sbatch` command is used to submit job scripts to the Slurm scheduler to be 
 Here is an example of using `sbatch` to submit a job file to the job scheduler. 
 
 > `sbatch <batchscript>`
+
+:::note
+To submit jobs to the **MERCED** cluster, add `-M merced` to your command:
+> `sbatch -M merced <batchscript>`
+:::
 
 
 :::tip

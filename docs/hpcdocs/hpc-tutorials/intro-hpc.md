@@ -41,7 +41,8 @@ Remove `#SBATCH --reservation=......` line, when running sample script outside o
 - Now submit `test_1task.sh` script from the serial folder
 
 ``` bash
-sbatch test_1task.sh
+sbatch test_1task.sh          # Pinnacles
+sbatch -M merced test_1task.sh  # MERCED cluster
 squeue --me  #this command is to check your job status
 ```
 
@@ -82,7 +83,8 @@ Toward the bottom of the shell script we now begin the for-loop to run through t
 
 >Now submit this job script.
 ``` 
-sbatch test_2tasks.sh
+sbatch test_2tasks.sh          # Pinnacles
+sbatch -M merced test_2tasks.sh  # MERCED cluster
 squeue --me 
 ```
 Continue to check by using `squeue --me` to see the status of the job submission 
@@ -124,7 +126,7 @@ java App    #This line will execute the java program. Note: Replace 'App' with t
 The name of the sample job script shown above is `javajob.bat`. This file is of Batch script file type. Users can also use `.sub` files to submit jobs.
 
 ### Submit a Java Job <!-- {docsify-ignore} -->
-You can submit a job using `sbatch [Name of Job submission file]`
+You can submit a job using `sbatch [Name of Job submission file]`. If submitting to the MERCED cluster, use `sbatch -M merced [Name of Job submission file]`.
 >Use 'squeue --me' to find key information about the job's state currently. If there is no information being presented then the job is finished.
 
 Let's take a look at the results of the job. If the job was successful you will get two new files under your current directory:
