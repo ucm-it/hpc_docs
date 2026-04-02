@@ -155,7 +155,12 @@ const styles = `
   .hpc-welcome { text-align: center; padding: 8px 0 4px; }
   .hpc-welcome-icon { font-size: 32px; margin-bottom: 8px; }
   .hpc-welcome-title { font-weight: 600; font-size: 14px; color: #1a1a2e; margin: 0 0 4px; }
-  .hpc-welcome-sub { font-size: 12px; color: #6b7280; margin: 0 0 14px; }
+  .hpc-welcome-sub { font-size: 12px; color: #6b7280; margin: 0 0 10px; }
+  .hpc-disclaimer {
+    font-size: 11px; color: #92400e; background: #fffbeb;
+    border: 1px solid #fcd34d; border-radius: 8px;
+    padding: 6px 10px; margin: 0 0 12px; text-align: left; line-height: 1.4;
+  }
   .hpc-suggestions { display: flex; flex-direction: column; gap: 6px; }
   .hpc-suggestion {
     background: white; border: 1px solid #e5e7eb; border-radius: 10px;
@@ -481,6 +486,9 @@ export default function Root({ children }) {
                 <div className="hpc-welcome-icon">🖥️</div>
                 <p className="hpc-welcome-title">How can I help you?</p>
                 <p className="hpc-welcome-sub">Ask anything about the UC Merced HPC cluster</p>
+                <p className="hpc-disclaimer">
+                  ⚠️ Please only ask questions related to UC Merced HPC systems and documentation. Questions outside this scope will not be answered.
+                </p>
                 <div className="hpc-suggestions">
                   {SUGGESTIONS.map(s => (
                     <button key={s} className="hpc-suggestion" onClick={() => send(s)}>{s}</button>
