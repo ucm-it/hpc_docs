@@ -218,14 +218,23 @@ function isTableRow(line) {
   return /^\s*\|.+\|\s*$/.test(line);
 }
 
+function isSepRow(line) {
+  return /^\s*\|[\s|:\-]+\|\s*$/.test(line) &&
+    line.replace(/[|\s]/g, '').replace(/[:\-]/g, '') === '';
+}
+
 function renderTable(lines, key) {
-  const rows = lines
+  // Parse all pipe-rows, skip separator rows for body
+  const allRows = lines
     .filter(l => isTableRow(l))
-    .map(l => l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()));
-  const sepIdx = rows.findIndex(row => row.every(c => /^[-: ]+$/.test(c)));
-  if (sepIdx === -1) return <span key={key}>{lines.join('\n')}</span>;
-  const header = rows[sepIdx - 1];
-  const body = rows.slice(sepIdx + 1);
+    .map(l => ({ sep: isSepRow(l), cells: l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()) }));
+  const sepIdx = allRows.findIndex(r => r.sep);
+  if (sepIdx === -1) {
+    // No separator found — render as plain text
+    return <span key={key}>{lines.join('\n')}</span>;
+  }
+  const header = sepIdx > 0 ? allRows[sepIdx - 1].cells : null;
+  const body = allRows.slice(sepIdx + 1).filter(r => !r.sep).map(r => r.cells);
   return (
     <table key={key} className="hpc-table">
       {header && <thead><tr>{header.map((c, j) => <th key={j}>{inlineRender(c)}</th>)}</tr></thead>}
@@ -248,20 +257,29 @@ function renderText(text, isStreaming) {
       parts.push(<pre key={k++}><code>{codeMatch[2].trim()}</code></pre>);
       continue;
     }
-    // Within non-code segments, detect table rows
     const lines = seg.split('\n');
     let i = 0;
     let textLines = [];
     while (i < lines.length) {
-      if (isTableRow(lines[i])) {
+      // Lookahead: a table block is any run of pipe-rows (including blank lines
+      // between header and separator that the LLM sometimes emits)
+      if (isTableRow(lines[i]) || (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1]))) {
         if (textLines.length) {
           const t = textLines.join('\n');
           if (t.trim()) parts.push(<span key={k++}>{inlineRender(t)}</span>);
           textLines = [];
         }
         const tableLines = [];
-        while (i < lines.length && isTableRow(lines[i])) tableLines.push(lines[i++]);
-        parts.push(renderTable(tableLines, k++));
+        while (i < lines.length) {
+          if (isTableRow(lines[i])) {
+            tableLines.push(lines[i++]);
+          } else if (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1])) {
+            i++; // skip blank line inside a table block
+          } else {
+            break;
+          }
+        }
+        if (tableLines.length) parts.push(renderTable(tableLines, k++));
       } else {
         textLines.push(lines[i++]);
       }
