@@ -266,7 +266,7 @@ function renderText(text, isStreaming) {
       if (isTableRow(lines[i]) || (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1]))) {
         if (textLines.length) {
           const t = textLines.join('\n');
-          if (t.trim()) parts.push(<span key={k++}>{inlineRender(t)}</span>);
+          if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
           textLines = [];
         }
         const tableLines = [];
@@ -286,7 +286,7 @@ function renderText(text, isStreaming) {
     }
     if (textLines.length) {
       const t = textLines.join('\n');
-      if (t.trim()) parts.push(<span key={k++}>{inlineRender(t)}</span>);
+      if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
     }
   }
   return parts;
@@ -298,6 +298,39 @@ function inlineRender(text) {
     if (part.startsWith('**') && part.endsWith('**')) return <strong key={i}>{part.slice(2, -2)}</strong>;
     return part;
   });
+}
+
+function renderBlocks(text, startKey) {
+  const lines = text.split('\n');
+  const out = [];
+  let k = startKey;
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    // Headings
+    const hMatch = line.match(/^(#{1,4})\s+(.+)/);
+    if (hMatch) {
+      const level = hMatch[1].length;
+      const Tag = `h${Math.min(level + 2, 6)}`; // h3->h5 so it fits chat bubble
+      out.push(<Tag key={k++} style={{margin:'6px 0 2px', fontSize: level <= 2 ? '13px' : '12px'}}>{inlineRender(hMatch[2])}</Tag>);
+      i++; continue;
+    }
+    // Bullet lists — collect consecutive bullet lines
+    if (/^\s*[\*\-]\s+/.test(line)) {
+      const items = [];
+      while (i < lines.length && /^\s*[\*\-]\s+/.test(lines[i])) {
+        items.push(lines[i].replace(/^\s*[\*\-]\s+/, ''));
+        i++;
+      }
+      out.push(<ul key={k++} style={{margin:'4px 0', paddingLeft:'18px'}}>{items.map((it, j) => <li key={j}>{inlineRender(it)}</li>)}</ul>);
+      continue;
+    }
+    // Normal text
+    if (line.trim()) out.push(<span key={k++}>{inlineRender(line)}{' '}</span>);
+    else if (out.length) out.push(<br key={k++} />);
+    i++;
+  }
+  return out;
 }
 
 const SUGGESTIONS = [
