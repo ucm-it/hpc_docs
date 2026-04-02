@@ -19,7 +19,11 @@ If you’d like more information about the cluster after logging in, simply type
 
 ## Running Jobs on Clusters
 
-The command `sbatch` is used to submit jobs to the queue. Additional commands to work with and monitor the queue/scheduler are shown in the table below.
+**Submit command by cluster:**
+- **Pinnacles:** `sbatch your_script.sh`
+- **MERCED:** `sbatch -M merced your_script.sh`
+
+The `-M merced` flag on the command line is what routes the job to MERCED. Without it, the job goes to Pinnacles regardless of what is in the script. Additional queue commands are shown below.
 
 
 |Command|Description|
@@ -68,11 +72,14 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
       #SBATCH -M merced
       #SBATCH --export=ALL
       # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
-
-      # Make sure when you submit jobs, add "-M merced" too!
-      # for example "sbatch -M merced your_job_script.sh"
-
       ```
+
+      **Submit this script to MERCED with:**
+      ```bash
+      sbatch -M merced your_script.sh
+      ```
+      The `-M merced` flag on the command line is required to target the MERCED cluster. Do not use plain `sbatch your_script.sh` for MERCED jobs.
+
     </TabItem>
 
     </Tabs>

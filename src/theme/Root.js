@@ -131,6 +131,10 @@ const styles = `
     font-size: 12px; margin: 6px 0 0; line-height: 1.5;
   }
   .hpc-bubble-bot pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+  .hpc-table { border-collapse: collapse; width: 100%; font-size: 12px; margin: 8px 0; display: block; overflow-x: auto; }
+  .hpc-table th, .hpc-table td { border: 1px solid #e5e7eb; padding: 4px 8px; text-align: left; white-space: nowrap; }
+  .hpc-table th { background: #f0f4ff; color: #0043ce; font-weight: 600; }
+  .hpc-table tr:nth-child(even) td { background: #f8f9fb; }
 
   .hpc-cursor {
     display: inline-block; width: 2px; height: 14px;
@@ -210,24 +214,63 @@ const styles = `
   }
 `;
 
+function isTableRow(line) {
+  return /^\s*\|.+\|\s*$/.test(line);
+}
+
+function renderTable(lines, key) {
+  const rows = lines
+    .filter(l => isTableRow(l))
+    .map(l => l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()));
+  const sepIdx = rows.findIndex(row => row.every(c => /^[-: ]+$/.test(c)));
+  if (sepIdx === -1) return <span key={key}>{lines.join('\n')}</span>;
+  const header = rows[sepIdx - 1];
+  const body = rows.slice(sepIdx + 1);
+  return (
+    <table key={key} className="hpc-table">
+      {header && <thead><tr>{header.map((c, j) => <th key={j}>{inlineRender(c)}</th>)}</tr></thead>}
+      <tbody>{body.map((row, i) => <tr key={i}>{row.map((c, j) => <td key={j}>{inlineRender(c)}</td>)}</tr>)}</tbody>
+    </table>
+  );
+}
+
 function renderText(text, isStreaming) {
   if (isStreaming) {
     return [<span key="text">{text}</span>, <span key="cursor" className="hpc-cursor" />];
   }
   const parts = [];
-  let key = 0;
-  const codeBlockRe = /```(\w*)\n?([\s\S]*?)```/g;
-  let lastIndex = 0;
-  let match;
-  codeBlockRe.lastIndex = 0;
-  while ((match = codeBlockRe.exec(text)) !== null) {
-    if (match.index > lastIndex)
-      parts.push(<span key={key++}>{inlineRender(text.slice(lastIndex, match.index))}</span>);
-    parts.push(<pre key={key++}><code>{match[2].trim()}</code></pre>);
-    lastIndex = match.index + match[0].length;
+  let k = 0;
+  // Split on fenced code blocks first
+  const segments = text.split(/(```(?:\w*)\n?[\s\S]*?```)/g);
+  for (const seg of segments) {
+    const codeMatch = seg.match(/^```(\w*)\n?([\s\S]*?)```$/);
+    if (codeMatch) {
+      parts.push(<pre key={k++}><code>{codeMatch[2].trim()}</code></pre>);
+      continue;
+    }
+    // Within non-code segments, detect table rows
+    const lines = seg.split('\n');
+    let i = 0;
+    let textLines = [];
+    while (i < lines.length) {
+      if (isTableRow(lines[i])) {
+        if (textLines.length) {
+          const t = textLines.join('\n');
+          if (t.trim()) parts.push(<span key={k++}>{inlineRender(t)}</span>);
+          textLines = [];
+        }
+        const tableLines = [];
+        while (i < lines.length && isTableRow(lines[i])) tableLines.push(lines[i++]);
+        parts.push(renderTable(tableLines, k++));
+      } else {
+        textLines.push(lines[i++]);
+      }
+    }
+    if (textLines.length) {
+      const t = textLines.join('\n');
+      if (t.trim()) parts.push(<span key={k++}>{inlineRender(t)}</span>);
+    }
   }
-  if (lastIndex < text.length)
-    parts.push(<span key={key++}>{inlineRender(text.slice(lastIndex))}</span>);
   return parts;
 }
 
