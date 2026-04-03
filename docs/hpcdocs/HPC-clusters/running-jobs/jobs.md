@@ -12,14 +12,18 @@ import TabItem from '@theme/TabItem';
 :::info
 This page presents a high walk-through of submitting jobs on the UC Merced Clusters. 
 
-To find more tailored and thorough, software-specific guides please visit our [Running Jobs](../running-jobs/)
+To find more tailored and thorough, software-specific guides, please see our [interactive jobs guide](./interact_job.md), [Conda environment guide](./conda.mdx), and [R with MPI guide](./run_r_mpi.mdx).
 
 If you’d like more information about the cluster after logging in, simply type `cluster-info` in your terminal
 :::
 
 ## Running Jobs on Clusters
 
-The command `sbatch` is used to submit jobs to the queue. Additional commands to work with and monitor the queue/scheduler are shown in the table below.
+**Submit command by cluster:**
+- **Pinnacles:** `sbatch your_script.sh`
+- **MERCED:** `sbatch -M merced your_script.sh`
+
+The `-M merced` flag on the command line is what routes the job to MERCED. Without it, the job goes to Pinnacles regardless of what is in the script. Additional queue commands are shown below.
 
 
 |Command|Description|
@@ -68,14 +72,31 @@ The command `sbatch` is used to submit jobs to the queue. Additional commands to
       #SBATCH -M merced
       #SBATCH --export=ALL
       # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
-
       ```
+
+      **Submit this script to MERCED with:**
+      ```bash
+      sbatch -M merced your_script.sh
+      ```
+      The `-M merced` flag on the command line is required to target the MERCED cluster. Do not use plain `sbatch your_script.sh` for MERCED jobs.
+
     </TabItem>
 
     </Tabs>
 
 :::note
-Note that for both MERCED and Pinnacles CPUs **hyper-threading** is turned off.  
+Note that for both MERCED and Pinnacles CPUs **hyper-threading** are turned off.
+:::
+
+### Submitting Your Job Script
+
+Once your job script is ready, submit it with `sbatch`:
+
+- **Pinnacles:** `sbatch myjob.sh`
+- **MERCED:** `sbatch -M merced myjob.sh`
+
+:::warning
+Always include `-M merced` on the command line when submitting to MERCED. Without it, your job will be routed to the default (Pinnacles) cluster instead.
 :::
 
 > If you want to assess how busy the cluster is, please use the following
@@ -84,7 +105,7 @@ Use `sinfo` to see the nodes state and check how many nodes are being allocated 
 `sacct -X -j [JOBID] -o start,submit` provides information for job estimated starting time or submitted time
 
 
-## Job Arrays -- Introduction 
+## Introduction to Job Arrays
 Job arrays offer a mechanism for submitting and managing collections of similar jobs quickly and easily that utilizes only one job script. Submitting a job array can be useful in many of the following ways: 
 
 1. Having a set of code or program that needs to run many different input variables or files. 
@@ -94,7 +115,7 @@ Job arrays offer a mechanism for submitting and managing collections of similar 
 Job arrays allows users to run jobs at the same time or have the results of the previous job output to be used as input for the next job. While the output capacity from a job array is immense, the job configurations are the same for all jobs to be run in the job array. 
 
 :::tip
-The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md/#queue-information)
+The max number of jobs that can run at the same time is determined by the maximum number of jobs that can run on the selected partition and differ by each partition. More detailed information can be found [here](../campus-clusters.md#queue-information)
 :::
 
 ### Job Array Scripting
@@ -150,7 +171,8 @@ When submitting a Slurm job array, you use the `--array=x-y` option to define th
 You can also submit a job array directly from the command line by specifying the script name after the array declaration:
 
 ```shell
-sbatch --array=1-5 myjob.sh # This would create 5 tasks with array IDs from 1 through 5.
+sbatch --array=1-5 myjob.sh             # Pinnacles
+sbatch -M merced --array=1-5 myjob.sh  # MERCED cluster
 ```
 
 
@@ -176,7 +198,7 @@ The Task ID range specification arguments can also be configured to:
 ```
 
 ### Job Dependencies in Job Arrays
-Jobs that depend on the output of other job arrays can specify dependencies using the --dependency flag after the initial array has been submitted.
+Jobs that depend on the output of other job arrays can specify dependencies using the `--dependency` flag after the initial array has been submitted.
 
 Below are flags that can be used to help declare the dependency of certain job(s) in the job array submission line after the first job array has been submitted to the scheduler. 
 

@@ -23,7 +23,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 :::
 
 
-> Currently, UC, Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+> Currently, UC Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
 <Tabs>
@@ -37,7 +37,7 @@ As well as how to get access, logging in, file system, resource breakdown.
     The NSF-MRI grant number #2019144 funded Pinnacles cluster has the following compute node configurations:
 
     - 40 regular Compute nodes with 2XIntel-28-Core Xeon Gold 6330 2.0GHz - 205W, each with 256GB RAM.
-    - 8 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 258GB RAM. 
+    - 8 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 256GB RAM. 
     - 8 High Memory nodes, 4 nodes are equipped with 2 Intel 28-core Xeon Gold 6330 CPUs running at 2.0 GHz and 1 TB of RAM. The other 4 nodes feature 2 Intel 32-core Xeon Gold 6530 CPUs running at 2.1 GHz and 1 TB of RAM, providing additional processing power for memory-intensive workloads.
     - 16 GPU nodes, 8 of the nodes are equipped with 2× NVIDIA Tesla A100 PCIe v4 GPUs (40GB HBM2), and the other 8 nodes are equipped with 2× NVIDIA L40S GPUs (48GB GDDR6).
     
@@ -83,13 +83,14 @@ As well as how to get access, logging in, file system, resource breakdown.
     Recharge details
     </summary>
 
+
     :::tip
     MERCED recharge calculations
     ```
     Total Cost ($) = # of cores x Duration (wall clock hours) x (cost per core-hour)
     ```
     - A core-hour is a single compute core used for one hour (a core-hour) and 2G of RAM. 
-    - Cost per core-hour is $0.01
+    - Cost per core-hour is $0.1
 
     :::
     __why should I be willing to invest in this?__
@@ -134,13 +135,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   | Node-local storage             | 1TB NVMe Data Center Solid State Drive (SSD) | 1TB NVMe Data Center Solid State Drive (SSD)|
   | Network             | ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot| ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
 
-  |     `cenvalarc` CPU node           | `cenvalarc.compute` - CPU Node| `cenvalarc.bigmem` - bigmem node | 
-  |:----------------| :---------------- |:----------------- |
-  | Number of nodes | 8 | 4 |
-  | CPU             |  2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W |
-  | RAM             |  256GB | 1TB | 
-  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
-  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+
 
   | `gpu` GPU node     |                                                           |
   |:-------------|:----------------------------------------------------------|
@@ -149,17 +144,31 @@ As well as how to get access, logging in, file system, resource breakdown.
   | CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
   | RAM          | 256GB                                                     |
   | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
-  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|  
 
-  | `cenvalarc.gpu` GPU node     |                                                           |
-  |:-------------|:----------------------------------------------------------|
-  | Number       | 8                                                         |
-  | GPU per node | 2x NVIDIA L40S GPUs per node (48GB GDDR6 Passive Dual Slot GPU) |
-  | CPU          | 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W             |
-  | RAM          | 256GB                                                     |
-  | Node-local storage          | 1TB M.2 NVMe Data Center Solid State Drive (110mm) |
-  | Network        | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot |
+| `cenvalarc` CPU Nodes | `cenvalarc.compute` - CPU Node                                                                      | `cenvalarc.bigmem` - bigmem node                                                                   | `OSG`*                                                                                              |
+| -------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Number of nodes      | 9                                                                                                   | 4                                                                                                  | 4                                                                                                   |
+| CPU                  | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W                                                      | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. |
+| RAM                  | 256GB                                                                                               | 1TB                                                                                                | 256GB                                                                                               |
+| Node-local storage   | 1TB M.2 NVMe Data Center Solid State Drive (110mm). Or 2× 960 GB 2.5″ NVMe PCIe SSDs per node       | 1TB M.2 NVMe Data Center Solid State Drive (110mm)                                                 | 1TB M.2 NVMe Data Center Solid State Drive (110mm). Or 2× 960 GB 2.5″ NVMe PCIe SSDs per node       |
+| Network              | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot  | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot | ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot  |
+| Assigned Nodes       | `node[074-076]`,`node[081-086]`                                                                     | `hmnode[007-010]`                                                                                  | `node[077-080]`                                                                                     |
 
+:::note
+`*` OSG Nodes are only accessable via `test` partition. To learn more information about the Open Science Grid (OSG) can be found [here](https://osg-htc.org/).
+:::
+| `cenvalarc.gpu` GPU node | L40S Nodes                                           | H200 w/ NVLINK Nodes                                         |
+| ------------------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Number of nodes          | 8                                                                     | 4                                                                     |
+| GPU per node             | 2× NVIDIA L40S (48GB GDDR6)                                           | 2× NVIDIA H200 NVL (141GB HBM3)                                       |
+| SLURM GRES               | `gpu:l40s:2`                                                          | `gpu:nvidia_h200_nvl:2`                                               |
+| CPU                      | 2× Intel 32-Core Xeon Gold 6530 2.1GHz - 270W                         | 2× Intel 32-Core Xeon Gold 6530 2.1GHz - 270W                         |
+| RAM                      | 256GB                                                                 | 256GB                                                                 |
+| Node-local storage       | 1TB M.2 NVMe Data Center SSD (110mm)                                  | 1TB M.2 NVMe Data Center SSD (110mm)                                  |
+| Network                  | ConnectX-6 VPI, HDR-100 IB (100Gb/s), single-port QSFP56, PCIe3/4 x16 | ConnectX-6 VPI, HDR-100 IB (100Gb/s), single-port QSFP56, PCIe3/4 x16 |
+| constraint               | `--gres=gpu:l40s:<number of gpu>`                                     | `--gres=gpu:nvidia_h200_nvl:<number of gpus>`                         |
+| Assigned Nodes           | `gnode[017-024]`                                                      | `gnode[026-029]`                                                      |
   </TabItem>
 
   
@@ -209,7 +218,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   2. Click `Request Service`
   ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
   3. Begin to populate all the required information. 
-      1. At the question regardig PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+      1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
       ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
   4. For selecting the system, from the drop-down, click `pinnacles.ucmerced.edu (Free Cluster)`
   ![Image of Pinnacles Selection](imgs/RequestAccountPinnacles.png "Selecting Pinnacles")
@@ -257,7 +266,11 @@ As well as how to get access, logging in, file system, resource breakdown.
 ## Centralized login
 
 ### Open OnDemand Login 
-Starting in late April/early May, users will be able to access Pinnacles and MERCED cluster via web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+For users seeking to access access Pinnacles and MERCED cluster via the web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+
+:::note 
+If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
+:::
 
 For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
 ### Login nodes
@@ -295,7 +308,7 @@ MobaXterm includes an integrated X11 server, so no additional installation of X1
   - Check the box that says "X11-forwarding". This option enables X11 forwarding for your session
 
 ## File systems and storage
-There are 2 folders (`data` and `scratch`) locate in `HOME` that users will start with.
+There are 2 folders (`data` and `scratch`) located in `HOME` that users will start with.
 
 :::note
 MERCED and Pinnacles have now been merged into a centralized system, allowing them to share the same file systems. We have also increased the quota for the `data`, `scratch`, and `HOME` directories. Please note that there is a 7-day grace period once the soft quota limit is reached.
@@ -484,9 +497,9 @@ To convert the outputted megabytes to gigabytes = space(MB) divided by 1024
 :::
 
 ### Checking the size of directories and content
-To chek the size of the current directory or any directories in it use the `du` command.
+To check the size of the current directory or any directories in it use the `du` command.
 :::note
-`du` command alone will output all directories, hidden as well, in real time so it will take a few momments to finish. It is recommended to execute the command with some of the following options to make the process more clear and consice.
+`du` command alone will output all directories, hidden as well, in real time so it will take a few moments to finish. It is recommended to execute the command with some of the following options to make the process more clear and concise.
 :::
 
 | Option           |Description                                                                               |

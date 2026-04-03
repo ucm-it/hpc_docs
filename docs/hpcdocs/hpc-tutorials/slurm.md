@@ -19,23 +19,28 @@ Basic Slurm Commands to interact via the command line interface with the queuein
 
 | Commands   | Syntax                        | Description                                              |
 |------------|-------------------------------|----------------------------------------------------------|
-| `sbatch`   | `sbatch <jobname>`             | Submit a batch script to Slurm for processing.           |
+| `sbatch`   | `sbatch <jobname>`             | Submit a batch script to Slurm for processing. To submit to the MERCED cluster, use `sbatch -M merced <jobname>`. |
 | `squeue`   | `squeue --me`                   | Show information about your job(s) in the queue. The command when run without the `--me` flag, shows all jobs in the queue. |
-| `srun`     | `srun <option>`  | Please see our example [here](../running-jobs/interact_job.md) for using `srun` in interactive session.|
+| `srun`     | `srun <option>`  | Please see our example [here](../HPC-clusters/running-jobs/interact_job.md) for using `srun` in interactive session.|
 | `skill/scancel` | `scancel <job-id>`        | End or cancel a queued job.|
 | `sinfo`    | `sinfo`                       | Get information about the resources on available nodes that make up the HPC cluster. |
 
 ## `sbatch` Command 
 
-The `sbatch` command is used to sumbit job scripts to the Slurm scheduler to be placed on the respective queue and to then begin when the requested resources are available. 
+The `sbatch` command is used to submit job scripts to the Slurm scheduler to be placed on the respective queue and to then begin when the requested resources are available. 
 
 Here is an example of using `sbatch` to submit a job file to the job scheduler. 
 
 > `sbatch <batchscript>`
 
+:::note
+To submit jobs to the **MERCED** cluster, add `-M merced` to your command:
+> `sbatch -M merced <batchscript>`
+:::
+
 
 :::tip
-`sbatch` command is different from `SBATCH` directives. A directive is a way of specifiing how the job script should be configured in a certain aspect(i.e. max wall time, max core count, etc.). Visit [this sction](#sbatch-directives-for-job-scripts) for further information on Slurm directives. 
+`sbatch` command is different from `SBATCH` directives. A directive is a way of specifying how the job script should be configured in a certain aspect(i.e. max wall time, max core count, etc.). Visit [this section](#sbatch-directives-for-job-scripts) for further information on Slurm directives. 
 :::
 
 
@@ -93,7 +98,7 @@ Please see [directive section](#sbatch-directives-for-job-scripts) for a more co
     --export=all 
     ```
 
-This line will tell Slurm to export the current working enviroment to be used on the computing nodes to process the requested instructions. This line is important as it helps ensure consistancy across user's working enviroment and the resources' working enviroment. 
+This line will tell Slurm to export the current working environment to be used on the computing nodes to process the requested instructions. This line is important as it helps ensure consistency across user's working environment and the resources' working environment. 
 
 ### 4) Begin to include list of commands/instructions to execute your script.
 
@@ -107,11 +112,11 @@ Here is where you can write the commands or instructions to execute the computat
 
 ### Job Examples 
 
-More detailed job examples can be found [here](../running-jobs/)
+More detailed job examples can be found [here](../HPC-clusters/running-jobs/jobs.md)
 
 ## Slurm - Job Management 
 
-Job management is critical before running or scaling jobs and computations within a HPC enviroment. We have created a manual page that can be found [ADDBACK MANAGEMENT LINK]. The documentation goes over common Slurm commands that help debug job errors and overall performance using `sacct` and `scontrol`. 
+Job management is critical before running or scaling jobs and computations within a HPC environment. We have created a manual page that can be found [here](../HPC-clusters/running-jobs/job_manage.md). The documentation goes over common Slurm commands that help debug job errors and overall performance using `sacct` and `scontrol`. 
 
 ## SBATCH Directives for Job Scripts 
 
@@ -157,7 +162,6 @@ When a job scheduled by Slurm starts, it needs to know some information about it
 | `SLURM_SUBMIT_DIR`         | The directory from which SBATCH was invoked. |
 | `SLURM_SUBMIT_HOST`        | The Hostname of the computer from which SBATCH was invoked. |
 | `SLURM_TASK_PID`           | The process ID of the corresponding task. |
-
 
 
 

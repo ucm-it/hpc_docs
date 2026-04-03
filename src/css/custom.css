@@ -19,7 +19,7 @@
   --ifm-color-link--hover: #DAA900;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Support of General Dark Mode*/
 [data-theme='dark'] {
   --ifm-color-primary: #0091b3;
   --ifm-color-primary-dark: #21af90;
@@ -29,20 +29,19 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: #f18a00;
-  --ifm-color-link: #1c22d8;
+  --ifm-color-link: #6db3f2;
   --ifm-color-link--hover: #f8fa4f;
 }
-/* Ensure that long doc titles wrap down instead of cutting off */
+
+/* Support of long titles performing wrap down instead of cutting off */
 .docItemContainer h1 {
   white-space: normal;
   word-wrap: break-word;
 }
 
 a {
-  color: var(--ifm-color-primary); /* Adjust the color if needed */
-  /*text-decoration: underline; /* Adds an underline */
-  /* font-weight: bold; Makes the link bold */
-  transition: color 0.2s ease-in-out; /* Smooth color transition */
+  color: var(--ifm-color-primary);
+  transition: color 0.2s ease-in-out;
 }
 
 .video-container {
@@ -65,26 +64,88 @@ a {
 
 /* The following is to have the links change color on hover */
 a:hover {
-  color: var(--ifm-color-primary-dark); /* Adjust the color if needed */
-  
+  color: var(--ifm-color-primary-dark);
 }
+
 /* if on dark-theme the links will be yellow */
 [data-theme='dark'] a:hover {
-  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
+  color: var(--ifm-color-primary-light);
 }
 
-/* footer dark theme - href color hoover */
-[style='dark'] .footer a:hover {
-  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
-}
-[style='light'] .footer a:hover {
-  color: var(--ifm-color-primary-light); /* Adjust the color if needed */
+/* footer dark theme - href color hover */
+[data-theme='dark'] .footer a:hover {
+  color: var(--ifm-color-primary-light);
 }
 
-/* Change the href color */
+.footer a:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Change the href color for external links */
 a[href^="http"]:not(footer a) {
-  color: #27a9cd; /* Adjust the color if needed */
+  color: #27a9cd;
 }
+[data-theme='dark'] a[href^="http"]:not(footer a) {
+  color: #5dc8e8;
+}
+
+/* CSS Table Changes to support Zebra Striping for better row tracking */
+table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+/* Dark mode zebra striping */
+[data-theme='dark'] table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] table tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+/* Hover effect for easier row tracking on wide tables */
+table tbody tr:hover {
+  background-color: rgba(15, 45, 82, 0.08); /* Uses primary color hint */
+}
+
+[data-theme='dark'] table tbody tr:hover {
+  background-color: rgba(0, 145, 179, 0.15); /* Uses dark mode primary */
+}
+
+/* Improve table header visibility */
+table thead tr {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+}
+
+table thead th {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+}
+
+[data-theme='dark'] table thead tr {
+  background-color: #1a3a5c;
+}
+
+[data-theme='dark'] table thead th {
+  color: #e0e0e0;
+}
+
+/* Better cell padding for readability */
+table td {
+  padding: 0.6rem 1rem;
+}
+
+/* Add subtle borders between cells */
+table td, table th {
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
 
 /* Add outlines to tabs */
 .tabs-container {
@@ -94,67 +155,160 @@ a[href^="http"]:not(footer a) {
   padding: var(--ifm-spacing-horizontal);
   background-color: var(--ifm-color-emphasis-100);
   box-shadow: var(--ifm-box-shadow);
-  transition: box-shadow 0.3s ease; /* Smooth transition */
+  transition: box-shadow 0.3s ease;
 }
-/*Make the tab titles bold and larger */
+
+/* Make the tab titles bold and larger */
 .tabs__item {
   font-weight: bold;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-/* CSS to display tabs side by side */
-.tabs__item {
+  transition: background-color 0.3s ease;
   display: inline-block;
-  margin-right: 1rem; /* Space between tabs */
+  margin-right: 1rem;
 }
+
 /* Change the background color of tabs on hover */
 .tabs__item:hover {
   background-color: var(--ifm-color-emphasis-200);
   box-shadow: var(--ifm-box-shadow);
 }
+
 /* Change the background color of tabs when active */
 .tabs__item--active {
   background-color: var(--ifm-color-emphasis-300);
   box-shadow: var(--ifm-box-shadow);
+  border-bottom: 5px solid var(--ifm-tabs-color-active);
 }
+
 /* Style the tab content area */
 .tabs__content {
   border-top: 3px solid var(--ifm-color-emphasis-300);
   padding: 1rem;
 }
 
-/* Style the active tab */
-.tabs__item--active {
-  border-bottom: 5px solid var(--ifm-tabs-color-active);
-}
-
-/*Style the blockquotes with a light purple color*/
+/* BlockQuote and Admonitions Changes*/
+/* Light mode - blockquote */
 blockquote {
-  border-left: 5px solid #9b59b6; /* Light purple color */
-  background-color: #f9f0ff; /* Light purple background */
+  border-left: 5px solid #9b59b6;
+  background-color: #f9f0ff;
   padding: 1rem;
   margin: 1rem 0;
 }
 
-/* Style the note admonition with an orange color */
-.admonition.note {
-  border-left: 5px solid #dd7825; /* Orange color */
-  background-color: #fff1e6; /* Light orange background */
-  padding: 1rem;
-  margin: 1rem 0;
-}
-
+/* Light mode - note admonition */
+.admonition.note,
 .theme-admonition-note {
-  border-color: #dd7825; /* Orange border */
-  background-color: #fff1e6; /* Light orange background */
+  border-color: #dd7825;
+  background-color: #fff1e6;
 }
 
 .theme-admonition-note .admonition-icon svg {
-  fill: #dd7825; /* Orange icon */
+  fill: #dd7825;
 }
 
 .theme-admonition-note .admonition-heading h5 {
-  color: #dd7825; /* Orange heading text */
+  color: #dd7825;
+}
+
+/* dark mode for blockquotes and admonitions */
+[data-theme='dark'] blockquote {
+  border-left-color: #bb86fc;
+  background-color: #2d1f3d;
+  color: #e0e0e0;
+}
+
+[data-theme='dark'] .admonition.note,
+[data-theme='dark'] .theme-admonition-note {
+  border-color: #ffb74d;
+  background-color: #3d2a1f;
+}
+
+[data-theme='dark'] .theme-admonition-note .admonition-icon svg {
+  fill: #ffb74d;
+}
+
+[data-theme='dark'] .theme-admonition-note .admonition-heading h5 {
+  color: #ffb74d;
+}
+
+[data-theme='dark'] .theme-admonition-note .admonition-content {
+  color: #e0e0e0;
+}
+
+
+/* Ensure inline code has good contrast in both modes */
+code {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e8e8e8;
+}
+/* But don't apply to code blocks -- 1/27/2026 */
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Table of Contents Customization */
+.table-of-contents {
+  position: sticky;
+  top: 80px; /* Below navbar */
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Highlight current section */
+.table-of-contents__link--active {
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 0.5rem;
+  margin-left: -0.5rem;
+}
+
+/* Show ToC on mobile as collapsible */
+@media (max-width: 996px) {
+  .col--3 {
+    display: block; /* Override hide on mobile */
+  }
+  
+  .table-of-contents {
+    position: relative;
+    top: 0;
+    max-height: none;
+    padding: 1rem;
+    background: var(--ifm-color-emphasis-100);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* Hero Banner Fix*/
+[data-theme='dark'] .hero,
+[data-theme='dark'] .heroBanner,
+[data-theme='dark'] .hero--primary {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Ensure text remains readable */
+[data-theme='dark'] .hero__title,
+[data-theme='dark'] .hero__subtitle {
+  color: #ffffff;
+}
+
+/* Fix button colors in dark mode hero */
+[data-theme='dark'] .hero .button--secondary {
+  background-color: #ffffff;
+  color: #1a1a2e;
+}
+
+[data-theme='dark'] .hero .button--secondary:hover {
+  background-color: #e0e0e0;
 }

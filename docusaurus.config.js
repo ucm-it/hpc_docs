@@ -5,6 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -33,7 +35,12 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      type: 'text/css',
+    },
+  ],
   presets: [
     [
       'classic',
@@ -62,12 +69,28 @@ const config = {
           // Remove this to remove the "edit this page" links.
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
+          breadcrumbs: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          lastVersion: 'current',
+          versions: {
+          current: {
+          label: 'Current',
+            },
+            'v1.0.0': {
+          label: 'v1.0.0',
+            },
+          },
+
         },
         blog: {
           showReadingTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
+            
           },
           // Please change this to your repo.
           // Useful options to enforce blogging best practices
@@ -77,6 +100,7 @@ const config = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
         },
+    
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -123,6 +147,10 @@ const config = {
             position: 'left',
             label: 'JupyterHub',
           },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
           { to: '/blog', label: 'Blog', position: 'left' },
           {to: '/serve', label: 'Calendar', position: 'left'},
           {
@@ -144,7 +172,7 @@ const config = {
               },
               {
                 label: 'HPC Clusters',
-                to: 'docs/hpcdocs/HPC-clusters/campus-clusters/#hpc-clusters',
+                to: 'docs/hpcdocs/HPC-clusters/campus-clusters',
               },
               {
                 label: 'JupyterHub',
@@ -161,7 +189,7 @@ const config = {
                 href: 'https://ucmerced.service-now.com/servicehub',
               },
               {
-                label: 'Zoom Office Hours (Fridays 11:30pm-1pm PT',
+                label: 'Zoom Office Hours (Wednesdays & Thursdays 10am-11am)',
                 href: 'https://ucmerced.zoom.us/j/89487493900',
               },
               {

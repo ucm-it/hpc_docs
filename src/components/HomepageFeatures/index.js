@@ -38,7 +38,7 @@ const FeatureList = [
        </a> {" "}
 
         or  open an issue on our {" "}
-       <a href="https://github.com/amirayuyue/hpc_doc_new" target="_blank" rel="noopener noreferrer">
+       <a href="https://github.com/ucm-it/hpc_docs/issues" target="_blank" rel="noopener noreferrer">
          GitHub page
        </a>.
       </>

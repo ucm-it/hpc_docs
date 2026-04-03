@@ -1,0 +1,465 @@
+---
+title: Intermediate HPC Training
+sidebar_position: 2
+showLastUpdateAuthor: true
+showLastUpdateTime: true
+last_update:
+  date: 01/07/2026
+  author: Yue Yu
+---
+
+# Intermediate High Performance Computing (HPC) training material
+import Tag from '@site/src/components/Tag';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { useEffect } from 'react';
+
+This intermediate training is designed for users who are already comfortable with the Linux command line and basic job submissions but need to optimize their workflows for performance, efficiency, and scalability. This is intended for users who have a material level equivalence of the `Introduction to High Performance Computing` course.
+
+
+## Installing packages using conda
+### Why Use Conda on HPC?
+
+On HPC clusters, you do not have administrator privileges. This means you cannot use `sudo apt install` or system-wide `pip install` to add packages. Conda solves this by giving you a fully self-contained environment in your home directory that you control entirely.
+Benefits of Conda on HPC:
+
+- Install any Python package without admin rights
+- Create isolated environments per project to avoid dependency conflicts
+- Easily reproduce environments across different machines
+- Install GPU-specific packages that link against the correct CUDA version
+
+We will show you an example of how to insatll a GPU-specific package using conda.
+
+### Understanding GPU Nodes on HPC
+
+Before installing GPU packages, you need to understand that:
+
+- Login nodes do not have GPUs, they are for editing files and submitting jobs only
+- GPU nodes are special compute nodes with NVIDIA GPUs attached
+- GPU packages must be installed on a GPU node so Conda can detect the correct CUDA version
+
+:::note 
+Installing a GPU package on a login node may result in a CPU-only build being installed, even if you request GPU support. Always install GPU packages interactively on a GPU node.
+:::
+
+---
+### Step 1: Check Available GPU Partitions
+ 
+Before requesting a GPU node, find out which partitions have GPUs:
+ 
+```bash
+# List all partitions and look for GPU-related ones
+sinfo -o "%P %G %N" | grep -i gpu
+```
+ 
+Example output:
+ 
+```
+test gpu:nvidia_h200_nvl:2 gnode[026-029]
+test gpu:l40s:1 gnode025
+test gpu:a100:2 gnode[001-010]
+gpu gpu:a100:2 gnode[001-008]
+cenvalarc.gpu gpu:nvidia_h200_nvl:2 gnode[026-029]
+```
+
+You can also check what GPU resources are available on GPU partition:
+ 
+```bash
+# Show GPU node details
+sinfo -p gpu --Format=NodeList,Gres,GresUsed,StateCompact
+```
+
+Example output:
+```
+NODELIST                      GRES                GRES_USED           STATE
+gnode[002,006]                gpu:a100:2          gpu:a100:1(IDX:0)   mix
+gnode[003-004]                gpu:a100:2          gpu:a100:2(IDX:0-1) alloc
+gnode[001,005,007-008]        gpu:a100:2          gpu:a100:0(IDX:N/A) idle
+```
+
+### Step 2: Request an Interactive GPU Node
+ 
+To install GPU packages correctly, you need to start an **interactive session** on a GPU node. This gives you a live terminal on the node where GPUs are physically present.
+ 
+```bash
+srun --partition=gpu \
+     --gres=gpu:1 \
+     --ntasks=1 \
+     --cpus-per-task=4 \
+     --mem=8G \
+     --time=01:00:00 \
+     --pty bash
+```
+ 
+#### What each flag means
+ 
+| Flag | Description |
+|------|-------------|
+| `--partition=gpu` | Request the GPU partition (use your cluster's GPU partition name) |
+| `--gres=gpu:1` | Request 1 GPU device |
+| `--ntasks=1` | Run 1 task (one terminal) |
+| `--cpus-per-task=4` | Request 4 CPU cores to pair with the GPU |
+| `--mem=8G` | Request 8GB of RAM |
+| `--time=01:00:00` | Reserve the node for 1 hour (enough time to install packages) |
+| `--pty bash` | Open an interactive bash terminal |
+ 
+Once the session starts, your prompt will change to show you are on a compute node:
+ ```
+[yyu49@gnode002 ~]$
+```
+ 
+#### Verify the GPU is visible
+ 
+Once on the GPU node, confirm you can see the GPU:
+ 
+```bash
+nvidia-smi
+```
+
+Expected output
+```
+Tue Mar 17 14:29:33 2026
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:17:00.0 Off |                    0 |
+| N/A   25C    P0             32W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+```
+
+:::note
+Note the **CUDA Version** shown — you will need this in the next step.
+
+:::
+
+---
+### Step 3: Load the Conda Module
+ 
+On our HPC clusters, Conda is available as a module. Load it before creating any environments:
+ 
+```bash
+module load anaconda3
+
+```
+ 
+Verify Conda is loaded:
+ 
+```bash
+conda --version
+```
+---
+ 
+### Step 4: Create a New Conda Environment
+ 
+Always create a **dedicated environment** for GPU work. This keeps your GPU packages isolated from other projects and avoids version conflicts.
+ 
+```bash
+conda create -n gpu_training python=3.10 -y
+```
+ 
+#### What this does
+ 
+| Part | Explanation |
+|------|-------------|
+| `conda create` | Creates a new environment |
+| `-n gpu_training` | Names the environment `gpu_training` |
+| `python=3.10` | Installs Python 3.10 into the environment |
+| `-y` | Skips the confirmation prompt |
+ 
+Activate the new environment:
+ 
+```bash
+source activate gpu_training
+```
+ 
+Your prompt will update to show the active environment:
+ 
+```
+(gpu_training) [yyu49@gnode001 ~]$
+```
+ 
+---
+### Step 5: Install a GPU Package — Numba
+For this training, we will install **Numba**, a lightweight GPU-accelerated Python package. Numba is an excellent choice for training because:
+ 
+- It is small (~400 MB including the CUDA toolkit) compared to PyTorch (~3+ GB) or TensorFlow (~2+ GB)
+- It uses simple Python decorators — no new language to learn
+- It clearly demonstrates the concept of moving computation to the GPU
+- It is widely used in scientific computing
+ 
+#### Install Numba with CUDA support
+ 
+```bash
+conda install -c conda-forge numba cudatoolkit -y
+```
+### What is being installed
+ 
+| Package | Purpose |
+|---------|---------|
+| `numba` | The GPU-accelerated JIT compiler |
+| `cudatoolkit` | NVIDIA CUDA runtime libraries that Numba needs to talk to the GPU |
+
+:::tip
+**Tip:** The `-c conda-forge` flag tells Conda to use the `conda-forge` channel, which has the most up-to-date and compatible builds of these packages.
+:::
+
+---
+
+### Step 6: Verify the GPU Installation
+
+Once installed, verify that Numba can see the GPU:
+
+```bash
+python -c "from numba import cuda; print(cuda.gpus)"
+```
+ 
+Expected output:
+ 
+```
+<Managed Device 0>
+```
+ 
+---
+### Managing Your Conda Environment
+ 
+#### List all your environments
+ 
+```bash
+conda env list
+```
+ 
+#### List packages in active environment
+ 
+```bash
+conda list
+```
+ 
+#### Deactivate an environment
+ 
+```bash
+conda deactivate
+```
+### Remove an environment (to free storage)
+ 
+```bash
+conda env remove -n gpu_training
+```
+:::warning
+Conda environments can use significant disk space. Check your quota regularly with `quota -s` and remove environments you no longer need.
+:::
+
+#### Check how much space an environment uses
+ 
+```bash
+du -sh ~/.conda/envs/gpu_training
+```
+### Common Issues and Solutions
+ 
+| Problem | Likely Cause | Solution |
+|---------|-------------|----------|
+| `No CUDA-capable device found` | Installed on login node, not GPU node | Reinstall inside an interactive GPU session |
+| `conda: command not found` | Module not loaded | Run `module load anaconda3` first |
+| `PackagesNotFoundError` | Wrong channel | Add `-c conda-forge` to your install command |
+| `Disk quota exceeded` | Environment too large | Remove unused environments with `conda env remove` |
+| GPU visible in `nvidia-smi` but not Numba | CUDA version mismatch | Specify `cudatoolkit=XX.X` matching your driver |
+
+import DownloadButton from '@site/src/components/DownloadButton';
+
+## Running Multiple Jobs Without Job Arrays
+### Overview
+
+On the Pinnacles cluster, Quality of Service (QOS) limits restrict the number of jobs a user can have in the queue or running at one time.
+
+Because of this policy, <Tag color="#ff9811">large Slurm job arrays may not be allowed</Tag>. Instead, users should bundle multiple tasks into a single Slurm job and run them inside the job allocation.
+
+This approach is often called task farming.
+
+Benefits:
+
+- avoids hitting queue limits
+- reduces scheduler load
+- improves job throughput for small tasks
+
+When to Use This Method?
+
+This technique works well when running:
+
+- parameter sweeps
+- many short simulations
+- repeated data analysis jobs
+
+Example scenario:
+
+You want to run 20 small serial python simulations, but the cluster allows only 6 jobs per user.
+Instead of submitting 20 jobs, submit one job that runs multiple tasks internally. 
+Download the python file <DownloadButton href="/hpc_docs/files/run_simulation.py" label="Download run_simulation.py" />
+
+
+### Method 1: Background Tasks in a Single Job
+This approach launches several tasks in parallel using background processes.
+
+``` bash
+#!/bin/bash
+#SBATCH --job-name=multi_task
+#SBATCH --partition=test
+#SBATCH --nodes=1
+#SBATCH --ntasks=20
+#SBATCH --time=01:00:00
+#SBATCH --mem=8G
+#SBATCH --output=multi_task_%j.out
+
+module load python
+
+for i in {1..19}; do
+    python run_simulation.py $i &
+done
+
+python run_simulation.py 20
+
+wait
+```
+
+This is a simple way to execute multiple Python jobs within a single job submission. However, this approach may lead to CPU oversubscription, where multiple Python processes run on the same core. This can reduce job efficiency and negatively impact overall performance.
+
+### How This Works
+| Step               | Explanation                               |
+| ------------------ | ----------------------------------------- |
+| loop through tasks | runs simulation with different parameters |
+| `&`                | runs each command in background           |
+| `wait`             | ensures only 6 tasks run simultaneously   |
+
+### Method 2: Using `srun` for Better Resource Control
+A more scheduler-friendly method uses srun to launch task.
+Example Script
+``` bash
+#!/bin/bash
+#SBATCH --job-name=task_farm
+#SBATCH --partition=test
+#SBATCH --ntasks=20
+#SBATCH --time=01:00:00
+#SBATCH --mem=8G
+#SBATCH --output=taskfarm_%j.out
+
+module load python
+
+TASKFILE=tasks.txt
+
+srun bash -c '
+TASK_ID=$SLURM_PROCID
+TOTAL_TASKS=$SLURM_NTASKS
+# sed selects every Nth line from the task file.
+# Each worker receives a different subset of tasks.
+#
+# Example with 4 workers with 10 jobs total:
+# worker0 → lines 1,5,9
+# worker1 → lines 2,6,10
+# worker2 → lines 3,7
+# worker3 → lines 4,8
+# IFS=  disables word splitting so spaces in commands are preserved
+# -r disables backslash interpretation so \n in commands stays literal
+
+sed -n "$((TASK_ID+1))~$TOTAL_TASKS p" '"$TASKFILE"' | while IFS= read -r cmd
+do
+    echo "Task ${TASK_ID} running: $cmd"
+    eval "$cmd"
+done
+'
+```
+
+Create a separate test file called `tasks.txt`
+
+```
+python run_simulation.py 1
+python run_simulation.py 2
+python run_simulation.py 3
+python run_simulation.py 4
+python run_simulation.py 5
+python run_simulation.py 6
+python run_simulation.py 7
+python run_simulation.py 8
+python run_simulation.py 9
+python run_simulation.py 10
+python run_simulation.py 11
+python run_simulation.py 12
+python run_simulation.py 13
+python run_simulation.py 14
+python run_simulation.py 15
+python run_simulation.py 16
+python run_simulation.py 17
+python run_simulation.py 18
+python run_simulation.py 19
+python run_simulation.py 20
+```
+
+### What this does
+- #SBATCH --ntasks=20 requests 20 Slurm tasks, which usually means 20 CPU cores
+- `srun`... is called once
+- Slurm launches 20 worker processes
+- each worker gets a different SLURM_PROCID from 0 to 19
+- sed splits tasks.txt across those 20 workers
+- each worker runs its assigned commands sequentially
+
+
+
+## Finding Your "Sweet Spot": A Guide to HPC Scaling
+One of the most common misconceptions in HPC is that doubling the number of cores will halve the time it takes to finish a job. In reality, efficiency often drops as you scale up. This guide will help you understand how to find the "Sweet Spot"—the point where you get the most science done without wasting cluster resources
+
+### Why "More" is not Always "Faster"
+Every parallel program has two parts:
+
+1. The Parallel Part: Tasks that can be split up (_e.g._, math on different parts of a matrix).
+
+2. The Serial Part: Tasks that must happen one after another (_e.g._, reading an input file, starting the MPI environment, or gathering results).
+
+As you add more cores, the Parallel Part gets faster, but the Serial Part stays the same. Eventually, the time spent on communication between cores (the "overhead") becomes larger than the time spent on actual calculation.
+#### Amdahl's Law
+This law defines the maximum speedup possible. If 10% of your code is serial, your job can never be more than 10x faster, no matter if you use 100 or 1000 cores.
+#### Strong Scaling vs. Weak Scaling
+| Type | What stays the same? |Goal|
+| --- | --- |  ---|
+|Strong Scaling | The total problem size (e.g., 1GB data) |   I want my current job to finish faster| 
+|Weak Scaling | The problem size per core| I want to run a much larger simulation|
+### How to Find the "Sweet Spot" (Step-by-Step)
+
+To find the perfect scaling, you should run a Scaling Study before launching a massive production run.
+
+1. The test run
+   Run the same small test case on different number of cores, for example, 1,2,4,8,16,and 32 cores. Record the "wallclock time" for each
+
+2. Calculate Efficiency 
+   Use this formula below to see how much efficiency you actually get
+   $$
+   Efficiency = \frac{T_{serial}}{N \times T_N} \times 100\%
+   $$
+   - $T_{serial}$: Time taken on 1 core
+   - $T_N$: Time taken on N cores
+  
+  The Rule of Thumb: If your efficiency drops below 70%, you have passed the sweet spot. You are now wasting cluster "Service Units" for very little gain.
+
+### Script Example: Automating a scaling study
+
+```bash
+#!/bin/bash
+# scaling_study.sh
+
+# The problem size remains constant (Strong Scaling)
+for CORES in 1 2 4 8 16 32
+do
+    echo "Submitting job for $CORES cores..."
+    sbatch --ntasks=$CORES --nodes=1 --job-name=scale_$CORES --wrap="time ./my_simulation.sh"
+done
+```
+

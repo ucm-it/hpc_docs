@@ -1,0 +1,10 @@
+name: biotools 
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+ - trinity 
+ - samtools
+ - fastqc
+ - bwa
+ - bbmap 
