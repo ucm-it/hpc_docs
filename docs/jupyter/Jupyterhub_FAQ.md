@@ -62,6 +62,8 @@ Ensure that you include this line in your notebook for Plotly to function proper
 [Plotly Renderers](https://plotly.com/python/renderers/), there are two methods to achieve this:
 
 Import the `io` method from Plotly in your import statement: `import plotly.io as pio`, and specify the desired renderer using `pio.renderers.default = "iframe"`. 
+
+### 
    
    
 ```python

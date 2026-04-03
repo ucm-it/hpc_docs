@@ -7,7 +7,7 @@ sidebar_position: 4
 
 **I am instructor planning to teach using Jupyterhub. How do I onboard myself?**
 
-Dear Instructor, Sharing few logistical information which would make onboarding easy for you.Please follow this documentation to onboard a User to Jupyterhub.
+Dear Instructor, Sharing few logistical information which would make onboarding easy for you. Please follow this documentation to onboard a User to Jupyterhub.
 
 - Documentation: You can also refer to the FAQ section of this support documentation (Curriculum Guide), where we regularly update solutions to some of the reported issues.
  
