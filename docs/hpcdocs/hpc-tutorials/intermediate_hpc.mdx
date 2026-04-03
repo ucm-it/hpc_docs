@@ -13,6 +13,7 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { useEffect } from 'react';
+import DownloadButton from '@site/src/components/DownloadButton';
 
 This intermediate training is designed for users who are already comfortable with the Linux command line and basic job submissions but need to optimize their workflows for performance, efficiency, and scalability. This is intended for users who have a material level equivalence of the `Introduction to High Performance Computing` course.
 
@@ -86,6 +87,41 @@ gnode[003-004]                gpu:a100:2          gpu:a100:2(IDX:0-1) alloc
 gnode[001,005,007-008]        gpu:a100:2          gpu:a100:0(IDX:N/A) idle
 ```
 
+To make it easier to check GPU availability at a glance, you can use the helper script below. It filters for idle or mixed nodes and shows how many GPUs are free on each.
+
+<DownloadButton href="/hpc_docs/files/check_gpu.sh" label="Download check_gpu.sh" />
+
+After downloading, make it executable and run it on Pinnacles:
+
+```bash
+chmod +x check_gpu.sh
+./check_gpu.sh
+```
+
+Example output:
+
+```
+=== Available GPUs on Pinnacles ===
+
+  Partition: test
+  Node: gnode016
+  Type: l40s
+  Free: 4 / 4 GPUs
+  State: idle
+
+  Partition: test
+  Node: gnode014
+  Type: h100
+  Free: 1 / 1 GPUs
+  State: mix
+
+  Partition: gpu
+  Node: gnode[001,005]
+  Type: a100
+  Free: 2 / 2 GPUs
+  State: idle
+```
+
 ### Step 2: Request an Interactive GPU Node
  
 To install GPU packages correctly, you need to start an **interactive session** on a GPU node. This gives you a live terminal on the node where GPUs are physically present.
@@ -99,14 +135,30 @@ srun --partition=gpu \
      --time=01:00:00 \
      --pty bash
 ```
- 
+
+If you want to target a specific node from the `check_gpu.sh` output above, add `--nodelist`:
+
+```bash
+srun --partition=gpu \
+     --nodelist=gnode016 \
+     --gres=gpu:1 \
+     --ntasks=1 \
+     --cpus-per-task=4 \
+     --mem=8G \
+     --time=01:00:00 \
+     --pty bash
+```
+
+Replace `gnode016` with the node name shown under **Node** in the script output, and replace `gpu` with the corresponding **Partition** value.
+
 #### What each flag means
  
 | Flag | Description |
 |------|-------------|
-| `--partition=gpu` | Request the GPU partition (use your cluster's GPU partition name) |
+| `--partition=gpu` | The partition name |
+| `--nodelist=gnode016` | (Optional) Pin to a specific node with available GPUs |
 | `--gres=gpu:1` | Request 1 GPU device |
-| `--ntasks=1` | Run 1 task (one terminal) |
+| `--ntasks=1` | Run 1 task |
 | `--cpus-per-task=4` | Request 4 CPU cores to pair with the GPU |
 | `--mem=8G` | Request 8GB of RAM |
 | `--time=01:00:00` | Reserve the node for 1 hour (enough time to install packages) |
@@ -150,7 +202,7 @@ Tue Mar 17 14:29:33 2026
 ```
 
 :::note
-Note the **CUDA Version** shown — you will need this in the next step.
+Note the **CUDA Version** shown, and you will need this in the next step.
 
 :::
 
@@ -285,7 +337,6 @@ du -sh ~/.conda/envs/gpu_training
 | `Disk quota exceeded` | Environment too large | Remove unused environments with `conda env remove` |
 | GPU visible in `nvidia-smi` but not Numba | CUDA version mismatch | Specify `cudatoolkit=XX.X` matching your driver |
 
-import DownloadButton from '@site/src/components/DownloadButton';
 
 ## Running Multiple Jobs Without Job Arrays
 ### Overview
