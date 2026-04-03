@@ -85,6 +85,8 @@ export default function JupyterCostCalculator() {
   };
 
   const FIXED_BASE_COST_UCMERCED = 1500; // Monthly base cost
+  const FIXED_YEARLY_COST_UCMERCED = 5000; // Annual cost for comparison
+  const FIXED_MONTHLY_COST_UCMERCED = FIXED_YEARLY_COST_UCMERCED / 12; // Monthly cost for comparison
 
   useEffect(() => {
     // Calculate costs on first render and whenever inputs change
@@ -119,7 +121,7 @@ export default function JupyterCostCalculator() {
     
     const i2cHourlyCost = NODE_PRICING[i2cNodeType] / 24;
     const i2cComputeCost = i2cTotalNodes * i2cHourlyCost * i2cHours;
-    const i2cTotal = i2cComputeCost + (FIXED_BASE_COST_UCMERCED / 30); // Monthly cost converted to daily
+    const i2cTotal = i2cComputeCost + (FIXED_MONTHLY_COST_UCMERCED / 30); // Monthly cost converted to daily
 
     setOwnResult({
       activePods: ownActivePods,
@@ -135,7 +137,7 @@ export default function JupyterCostCalculator() {
       recommendedMemory: i2cRecommendedMemory,
       totalNodes: i2cTotalNodes.toFixed(2),
       computeCost: i2cComputeCost.toFixed(2),
-      baseCost: FIXED_BASE_COST_UCMERCED,
+      baseCost: FIXED_MONTHLY_COST_UCMERCED,
       total: i2cTotal.toFixed(2),
       hours: i2cHours
     });

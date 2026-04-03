@@ -36,6 +36,7 @@ import TabItem from '@theme/TabItem';
   | Package | Version |
   |---|---|
   | **Python** | 3.11.8 |
+  | **R**      | 4.3.1  |
 
     </TabItem>
 
@@ -43,19 +44,21 @@ import TabItem from '@theme/TabItem';
 
   | Package | Version |
   |---|---|
-  | **JupyterHub** | 4.1.4 |
-  | **JupyterLab** | 4.1.5 |
-  | **Notebook** | 7.1.2 |
+  | **JupyterHub** | 4.0.2 |
+  | **JupyterLab** | 4.1.4 |
+  | **Notebook** | 7.1.1 |
   | **ipykernel** | 6.29.3 |
   | **jupyter-server** | 2.13.0 |
   | **jupyterlab-git** | 0.50.0 |
   | **nbconvert** | 7.16.6 |
-  | **nbformat** | 5.10.3 |
+  | **nbformat** | 5.10.2 |
   | **jupytext** | 1.17.3 |
   | **ipywidgets** | 8.1.5 |
   | **ipympl** | 0.9.3 |
   | **bash_kernel** | 0.10.0 |
   | **jupyter-resource-usage** | 1.2.0 |
+
+  For a complete list of of all python packages, run `pip list` in a jupyter notebook.
 
     </TabItem>
 
@@ -118,6 +121,39 @@ import TabItem from '@theme/TabItem';
   | **ORC libs** | present |
 
     </TabItem>
+
+    <TabItem value="r" label="R Packages">
+
+  | Package | Version |
+|---|---|
+| **IRkernel** | 1.3.2 |
+| **tidyverse** | 2.0.0 |
+| **dplyr** | 1.1.3 |
+| **tidyr** | 1.3.0 |
+| **ggplot2** | 3.4.4 |
+| **data.table** | 1.14.8 |
+| **readr** | 2.1.4 |
+| **readxl** | 1.4.3 |
+| **stringr** | 1.5.0 |
+| **lubridate** | 1.9.3 |
+| **shiny** | 1.7.5.1 |
+| **DBI** | 1.1.3 |
+| **RSQLite** | 2.3.2 |
+| **RPostgres** | 1.4.6 |
+| **arrow** | 13.0.0.1 |
+| **sf** | 1.0-14 |
+| **terra** | 1.7-55 |
+| **stars** | 0.6-4 |
+| **knitr** | 1.44 |
+| **rmarkdown** | 2.25 |
+| **bookdown** | 0.36 |
+| **blogdown** | 1.18 |
+| **devtools** | 2.4.5 |
+| **reticulate** | 1.34.0 |
+
+For a complete list of installed R packages, run `installed.packages()` in an R notebook or refer to the full package list linked above.
+    </TabItem>
+
   </Tabs>
 
 import CodeBlock from '@theme/CodeBlock';
@@ -127,32 +163,28 @@ import CodeBlock from '@theme/CodeBlock';
 
     <CodeBlock language="text">{`Core
 - Python 3.11.8
+- R 4.3.1
 
 Jupyter Stack
-- JupyterHub 4.1.4
-- JupyterLab 4.1.5
-- Notebook 7.1.2
+- JupyterHub 4.0.2
+- JupyterLab 4.1.4
+- Notebook 7.1.1
 - ipykernel 6.29.3
 - jupyter-server 2.13.0
 - jupyterlab-git 0.50.0
 - nbconvert 7.16.6
-- nbformat 5.10.3
+- nbformat 5.10.2
 - jupytext 1.17.3
 - ipywidgets 8.1.5
-- ipympl 0.9.3
 - bash_kernel 0.10.0
-- jupyter-resource-usage 1.2.0
 
-Data Science & Numerics
+Data Science
 - NumPy 1.26.4
 - SciPy 1.12.0
 - Pandas 2.3.2
-- Bottleneck 1.3.8
-- NumExpr 2.9.0
-- Numba 0.59.1
-- llvmlite 0.42.0
 - Statsmodels 0.14.1
 - SymPy 1.14.0
+- Numba 0.59.1
 
 ML / NLP
 - scikit-learn 1.4.1.post1
@@ -162,25 +194,49 @@ ML / NLP
 - Transformers 4.56.1
 - sentence-transformers 5.1.0
 
-Visualization & Geo
+Visualization
 - Matplotlib 3.8.3
 - Seaborn 0.13.2
 - Plotly 5.19.0
-- Kaleido 1.0.0
 - Altair 5.3.0
 - Bokeh 3.4.0
 - folium 0.20.0
-- branca 0.8.1
 
-Data I/O & Big Data
-- Dask 2024.3.1, distributed 2024.3.1
+Data I/O
+- Dask 2024.3.1
+- distributed 2024.3.1
 - PyArrow 21.0.0
 - OpenPyXL 3.1.2
 - PyTables 3.10.2
 - h5py 3.14.0
 - pypdf 6.0.0
 - python-poppler 0.4.1
-- ORC libs present`}</CodeBlock>
+
+R Packages
+- IRkernel 1.3.2
+- tidyverse 2.0.0
+- dplyr 1.1.3
+- tidyr 1.3.0
+- ggplot2 3.4.4
+- data.table 1.14.8
+- readr 2.1.4
+- readxl 1.4.3
+- stringr 1.5.0
+- lubridate 1.9.3
+- shiny 1.7.5.1
+- DBI 1.1.3
+- RSQLite 2.3.2
+- RPostgres 1.4.6
+- arrow 13.0.0.1
+- sf 1.0-14
+- terra 1.7-55
+- stars 0.6-4
+- knitr 1.44
+- rmarkdown 2.25
+- bookdown 0.36
+- blogdown 1.18
+- devtools 2.4.5
+- reticulate 1.34.0`}</CodeBlock>
 
   </details>
 </details>
