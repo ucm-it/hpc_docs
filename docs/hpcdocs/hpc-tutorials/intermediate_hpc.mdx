@@ -495,11 +495,7 @@ Every parallel program has two parts:
 As you add more cores, the Parallel Part gets faster, but the Serial Part stays the same. Eventually, the time spent on communication between cores (the "overhead") becomes larger than the time spent on actual calculation.
 #### Amdahl's Law
 This law defines the maximum speedup possible. If 10% of your code is serial, your job can never be more than 10x faster, no matter if you use 100 or 1000 cores.
-#### Strong Scaling vs. Weak Scaling
-| Type | What stays the same? |Goal|
-| --- | --- |  ---|
-|Strong Scaling | The total problem size (e.g., 1GB data) |   I want my current job to finish faster| 
-|Weak Scaling | The problem size per core| I want to run a much larger simulation|
+
 ### How to Find the "Sweet Spot" (Step-by-Step)
 
 To find the perfect scaling, you should run a Scaling Study before launching a massive production run.
