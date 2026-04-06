@@ -353,6 +353,15 @@ export default function Root({ children }) {
   const bottomRef = useRef(null);
   const inputRef  = useRef(null);
 
+  // Ping the backend every 25 min to prevent Hugging Face Space from sleeping
+  useEffect(() => {
+    const keepAlive = setInterval(() => {
+      fetch("https://amirayuyue-hpc-docs-chatbot.hf.space/health")
+        .catch(() => {}); // silently ignore errors
+    }, 25 * 60 * 1000);
+    return () => clearInterval(keepAlive);
+  }, []);
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
