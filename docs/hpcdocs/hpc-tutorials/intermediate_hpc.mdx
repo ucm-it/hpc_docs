@@ -399,7 +399,7 @@ This is a simple way to execute multiple Python jobs within a single job submiss
 | ------------------ | ----------------------------------------- |
 | loop through tasks | runs simulation with different parameters |
 | `&`                | runs each command in background           |
-| `wait`             | ensures only 6 tasks run simultaneously   |
+| `wait`             | ensures all tasks complete before exiting   |
 
 ### Method 2: Using `srun` for Better Resource Control
 A more scheduler-friendly method uses srun to launch task.
@@ -438,6 +438,14 @@ do
 done
 '
 ```
+
+| Part | Meaning |
+|------|---------|
+| `IFS=` | Disable word splitting (preserves spaces in commands) |
+| `read -r` | Read one line at a time into variable `cmd` |
+| `eval "$cmd"` | Execute whatever command is in that line |
+
+So if `cmd` = `"python run_simulation.py 5"`, then `eval "$cmd"` runs exactly that.
 
 Create a separate test file called `tasks.txt`
 
