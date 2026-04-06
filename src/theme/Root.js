@@ -340,7 +340,7 @@ function renderBlocks(text, startKey) {
 
 const SUGGESTIONS = [
   "How do I submit a SLURM job?",
-  "How do I check my storage quota?",
+  "How do I check borgstore quota?",
   "How do I run a GPU job?",
   "How do I transfer files to the cluster?",
 ];
