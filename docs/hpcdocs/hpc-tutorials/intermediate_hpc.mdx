@@ -473,11 +473,11 @@ python run_simulation.py 20
 ```
 
 ### What this does
-- #SBATCH --ntasks=20 requests 20 Slurm tasks, which usually means 20 CPU cores
+- `#SBATCH --ntasks=20` requests 20 Slurm tasks, which usually means 20 CPU cores
 - `srun`... is called once
 - Slurm launches 20 worker processes
-- each worker gets a different SLURM_PROCID from 0 to 19
-- sed splits tasks.txt across those 20 workers
+- each worker gets a different `SLURM_PROCID` from 0 to 19
+- `sed` splits `tasks.txt` across those 20 workers
 - each worker runs its assigned commands sequentially
 
 
