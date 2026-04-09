@@ -439,6 +439,7 @@ Example Script
 #!/bin/bash
 #SBATCH --job-name=task_farm
 #SBATCH --partition=test
+#SBATCH --nodes=1
 #SBATCH --ntasks=20
 #SBATCH --time=01:00:00
 #SBATCH --mem=8G
@@ -511,7 +512,113 @@ python run_simulation.py 20
 - `sed` splits `tasks.txt` across those 20 workers
 - each worker runs its assigned commands sequentially
 
+<details>
+<summary><strong>Example: 4 parallel workers, 10 CPUs each, running 20 jobs total</strong></summary>
 
+In this example, you have **20 jobs** to run and want to use **4 workers in parallel**, each using **10 CPU cores**. The 4 workers run simultaneously and divide the 20 jobs evenly — each worker handles 5 jobs sequentially. All 4 workers finish at roughly the same time.
+
+**SLURM script:**
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=task_farm_4workers
+#SBATCH --partition=test
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=10
+#SBATCH --time=02:00:00
+#SBATCH --mem=40G
+#SBATCH --output=taskfarm_%j.out
+
+module load python
+
+TASKFILE=tasks.txt
+
+srun bash -c '
+TASK_ID=$SLURM_PROCID
+TOTAL_TASKS=$SLURM_NTASKS
+
+sed -n "$((TASK_ID+1))~$TOTAL_TASKS p" '"$TASKFILE"' | while IFS= read -r cmd
+do
+    echo "Worker ${TASK_ID} running: $cmd"
+    eval "$cmd"
+done
+'
+```
+
+**`tasks.txt`** (20 jobs total):
+```
+python run_parallel.py 1
+python run_parallel.py 2
+python run_parallel.py 3
+python run_parallel.py 4
+python run_parallel.py 5
+python run_parallel.py 6
+python run_parallel.py 7
+python run_parallel.py 8
+python run_parallel.py 9
+python run_parallel.py 10
+python run_parallel.py 11
+python run_parallel.py 12
+python run_parallel.py 13
+python run_parallel.py 14
+python run_parallel.py 15
+python run_parallel.py 16
+python run_parallel.py 17
+python run_parallel.py 18
+python run_parallel.py 19
+python run_parallel.py 20
+```
+
+:::note
+You don't need to pass the number of workers explicitly — `run_parallel.py` reads `$SLURM_CPUS_PER_TASK` automatically, so it will use all 10 CPUs allocated per task. If you want to override it, you can pass it as a second argument: `python run_parallel.py 1 10`.
+:::
+
+**How the 20 jobs are divided across 4 workers:**
+
+| Worker | `SLURM_PROCID` | Jobs assigned |
+|--------|---------------|---------------|
+| Worker 0 | 0 | job 1, 5, 9, 13, 17 |
+| Worker 1 | 1 | job 2, 6, 10, 14, 18 |
+| Worker 2 | 2 | job 3, 7, 11, 15, 19 |
+| Worker 3 | 3 | job 4, 8, 12, 16, 20 |
+
+Each worker runs its 5 jobs **sequentially**, but all 4 workers run **in parallel** — so all 20 jobs complete in the time it takes to run 5 jobs. To scale this to more jobs, simply add more lines to `tasks.txt`. To add more parallel workers, increase `--ntasks`.
+
+The simulation script used in `tasks.txt` above is a parallel version that uses all 10 CPUs assigned to each worker via Python's `multiprocessing` module. Download it here:
+
+<DownloadButton href="/hpc_docs/files/run_parallel.py" label="Download run_parallel.py" />
+
+</details>
+
+### Checking Available Resources on a Mixed-State Node
+
+A node in `mix` state means it is partially allocated — some CPUs and memory are in use but others are still free. Before submitting a job, you can inspect exactly how many CPUs and how much memory remain available on a specific node using `scontrol`:
+
+```bash
+scontrol show node <nodename>
+```
+
+For example:
+
+```bash
+scontrol show node gnode009
+```
+
+Look for these fields in the output:
+
+| Field | Meaning |
+|-------|---------|
+| `CPUTot` | Total CPUs on the node |
+| `CPUAlloc` | CPUs currently allocated to running jobs |
+| `CPULoad` | Actual CPU load (can differ from allocated) |
+| `RealMemory` | Total memory (MB) on the node |
+| `AllocMem` | Memory currently allocated |
+| `FreeMem` | Memory currently free |
+| `CfgTRES` | Total resources configured on the node |
+| `AllocTRES` | Resources currently allocated |
+
+The free CPUs available for your job is `CPUTot - CPUAlloc`, and the free memory is `RealMemory - AllocMem` (in MB). Make sure your `--ntasks`, `--cpus-per-task`, and `--mem` combination does not exceed what is free on the node.
 
 ## Finding Your "Sweet Spot": A Guide to HPC Scaling
 One of the most common misconceptions in HPC is that doubling the number of cores will halve the time it takes to finish a job. In reality, efficiency often drops as you scale up. This guide will help you understand how to find the "Sweet Spot"—the point where you get the most science done without wasting cluster resources
@@ -549,12 +656,39 @@ To find the perfect scaling, you should run a Scaling Study before launching a m
 ```bash
 #!/bin/bash
 # scaling_study.sh
+# Runs the same job at increasing core counts and prints efficiency for each.
+# Efficiency = (T_serial / (N * T_N)) * 100%
 
-# The problem size remains constant (Strong Scaling)
+RESULTS_FILE="scaling_results.txt"
+echo "Cores | Time (s) | Efficiency (%)" > $RESULTS_FILE
+echo "------|----------|----------------" >> $RESULTS_FILE
+
+T_SERIAL=""
+
 for CORES in 1 2 4 8 16 32
 do
-    echo "Submitting job for $CORES cores..."
-    sbatch --ntasks=$CORES --nodes=1 --job-name=scale_$CORES --wrap="time ./my_simulation.sh"
+    echo "Running with $CORES cores..."
+
+    START=$(date +%s%N)
+    srun --ntasks=1 --nodes=1 --cpus-per-task=$CORES python run_parallel.py 1 $CORES
+    END=$(date +%s%N)
+
+    # Elapsed time in seconds (floating point)
+    T_N=$(echo "scale=3; ($END - $START) / 1000000000" | bc)
+
+    # Store serial time on first iteration
+    if [ -z "$T_SERIAL" ]; then
+        T_SERIAL=$T_N
+    fi
+
+    # Efficiency = (T_serial / (N * T_N)) * 100
+    EFFICIENCY=$(echo "scale=1; ($T_SERIAL / ($CORES * $T_N)) * 100" | bc)
+
+    echo "$CORES     | $T_N       | $EFFICIENCY%" | tee -a $RESULTS_FILE
 done
+
+echo ""
+echo "=== Scaling Study Complete ==="
+cat $RESULTS_FILE
 ```
 
