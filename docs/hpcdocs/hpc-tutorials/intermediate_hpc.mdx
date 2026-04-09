@@ -91,7 +91,13 @@ To make it easier to check GPU availability at a glance, you can use the helper 
 
 <DownloadButton href="/hpc_docs/files/check_gpu.sh" label="Download check_gpu.sh" />
 
-After downloading, make it executable and run it on Pinnacles:
+Transfer the file to Pinnacles using `scp`:
+
+```bash
+scp check_gpu.sh <username>@login.rc.ucmerced.edu:/your/path
+```
+
+After transferring, make it executable and run it on Pinnacles:
 
 ```bash
 chmod +x check_gpu.sh
@@ -277,6 +283,14 @@ conda install -c conda-forge numba cudatoolkit -y
 **Tip:** The `-c conda-forge` flag tells Conda to use the `conda-forge` channel, which has the most up-to-date and compatible builds of these packages.
 :::
 
+:::warning
+**NumPy version conflict:** `numba` may pull in a version of NumPy that is too new and incompatible. If you see errors like `numpy.ufunc has no attribute...` or similar, pin NumPy to a compatible version:
+
+```bash
+conda install -c conda-forge numba cudatoolkit "numpy<2.0" -y
+```
+:::
+
 ---
 
 ### Step 6: Verify the GPU Installation
@@ -327,6 +341,15 @@ Conda environments can use significant disk space. Check your quota regularly wi
 ```bash
 du -sh ~/.conda/envs/gpu_training
 ```
+
+#### Check overall storage quota
+
+```bash
+quota -s
+```
+
+This shows your current usage and limits for `HOME`, `data`, and `scratch` in a human-readable format.
+
 ### Common Issues and Solutions
  
 | Problem | Likely Cause | Solution |
@@ -346,6 +369,14 @@ On the Pinnacles cluster, Quality of Service (QOS) limits restrict the number of
 Because of this policy, <Tag color="#ff9811">large Slurm job arrays may not be allowed</Tag>. Instead, users should bundle multiple tasks into a single Slurm job and run them inside the job allocation.
 
 This approach is often called task farming.
+
+:::info What is a Job Array?
+A **job array** is a Slurm feature that lets you submit many similar jobs with a single script using the `#SBATCH --array` directive. Each task in the array gets its own `SLURM_ARRAY_TASK_ID`, which you use to vary inputs (e.g. different files, parameters, or seeds). It is the standard way to run many independent jobs on HPC.
+
+However, on Pinnacles the QOS policy limits how many jobs can be in the queue at once, so large arrays may be rejected or held. The task farming approach below is a workaround that achieves the same result within a single job allocation.
+
+See the [Job Arrays section in the Running Jobs guide](/hpc_docs/docs/hpcdocs/HPC-clusters/running-jobs/jobs#introduction-to-job-arrays) for full documentation on how job arrays work.
+:::
 
 Benefits:
 
