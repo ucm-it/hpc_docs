@@ -150,6 +150,10 @@ const styles = `
     font-family: 'JetBrains Mono', monospace; font-size: 10px;
     background: #f0f4ff; color: #0043ce; padding: 2px 7px;
     border-radius: 4px; border: 1px solid #c7d7ff;
+    text-decoration: none; cursor: pointer;
+  }
+  .hpc-source-tag:hover {
+    background: #dce8ff; text-decoration: underline;
   }
 
   .hpc-welcome { text-align: center; padding: 8px 0 4px; }
@@ -517,7 +521,14 @@ export default function Root({ children }) {
                 )}
                 {!m.streaming && m.sources?.length > 0 && (
                   <div className="hpc-sources">
-                    {m.sources.map(s => <span key={s} className="hpc-source-tag">📄 {s}</span>)}
+                    {m.sources.map(url => {
+                      const label = url.replace(/\/$/, '').split('/').pop().replace(/[-_]/g, ' ');
+                      return (
+                        <a key={url} className="hpc-source-tag" href={url} target="_blank" rel="noopener noreferrer">
+                          📄 {label}
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -549,7 +560,7 @@ export default function Root({ children }) {
             </button>
           </div>
 
-          <div className="hpc-footer">powered by RAG · step-3.5-flash · hf.space</div>
+          <div className="hpc-footer">powered by RAG · Groq · hf.space</div>
         </div>
       )}
     </>
