@@ -272,8 +272,14 @@ For users seeking to access access Pinnacles and MERCED cluster via the web-base
 If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
 :::
 
-For users who want a traditional interface experience and `ssh` experience that can still be done as before, using the below method. 
-### Login nodes
+For users who want a traditional terminal experience, SSH login is the standard method to connect to Pinnacles.
+### SSH Login to Pinnacles
+To login to Pinnacles using SSH, open a terminal and run `ssh <username>@login.rc.ucmerced.edu`, replacing `<username>` with your UC Merced NetID (UCMID). The full command is:
+```shell
+ssh <username>@login.rc.ucmerced.edu
+```
+Note: the command starts with `ssh` followed by your username and the hostname `login.rc.ucmerced.edu`.
+
 The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles and MERCED are accessed via a centralized login node at `login.rc.ucmerced.edu`. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
 
 Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
