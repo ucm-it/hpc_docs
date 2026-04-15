@@ -4,7 +4,7 @@ title: Creating Accessible Notebooks
 sidebar_position: 13
 
 ---
-Improving the accessibility of the notebook interface has been a key priority for the DataHub team. This focus stems from the fact that notebooks have presented significant accessibility challenges, including limited compatibility with screen readers and keyboard navigation, difficulties in interpreting content due to color contrast issues, and non-compliance with the [WCAG 2.0 AA standards](https://www.ucop.edu/electronic-accessibility/standards-and-best-practices/levels-of-conformance-a-aa-aaa.html) mandated by the University.
+Improving the accessibility of the notebook interface has been a key priority for the team. This focus comes from the recognition that notebooks present several accessibility challenges, including limited compatibility with screen readers and keyboard navigation, difficulties in interpreting content due to color contrast issues, and a lack of compliance with accessibility standards. [WCAG 2.0 AA standards](https://www.ucop.edu/electronic-accessibility/standards-and-best-practices/levels-of-conformance-a-aa-aaa.html) mandated by the University.
 
 Enhancing the accessibility of the notebook experience involves addressing the following aspects:
 
