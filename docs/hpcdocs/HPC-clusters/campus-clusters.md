@@ -267,7 +267,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 ## Centralized login
 
 ### Open OnDemand Login 
-For users seeking to access access Pinnacles and MERCED cluster via the web-based GUI, Open OnDemand. Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+For users seeking to access access Pinnacles and MERCED cluster via the web-based GUI, [Open OnDemand](https://ondemand.rc.ucmerced.edu/). Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
 
 :::note 
 If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
