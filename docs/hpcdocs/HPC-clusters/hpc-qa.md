@@ -74,6 +74,10 @@ No
 All accounts on Pinnacles cluster need to be associated with that of a UC Merced faculty PI. If your collaborator is a non-UC Merced collaborator, then, they would need a UC Merced NetID to access VPN and login to Pinnacles cluster. Usually, department MSOs provide UC Merced NetIDs for collaborators.
 
 
+>__I am entering the correct password but cannot login to Pinnacles.__
+
+If you have confirmed that your password is correct but are still unable to login, try opening multiple SSH sessions simultaneously. This will cause the system to route your connection to different login nodes. The issue may be caused by one of the login nodes having trouble connecting to the LDAP server — connecting to a different login node will resolve the problem temporarily.
+
 ## MERCED - Questions
 
 >__Are the costs the same regardless of whether we purchased our own nodes or not?__
