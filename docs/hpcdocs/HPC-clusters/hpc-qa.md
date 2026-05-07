@@ -34,6 +34,13 @@ Bring your laptop, your code and your questions to the clinic and get expert hel
 
 * If you still run into errors logging into the cluster, please submit a general research request [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
+>__I am receiving a "Host key change" or "Host key verification failed" error when logging in after the February 2026 maintenance.__
+
+This is expected following the OS upgrade performed during the February 2026 maintenance. The login node host keys changed, so your local SSH client flags the mismatch.
+
+* **Standard login (password-based):** Simply type `yes` (or click "Accept") when prompted to verify and save the new host key.
+* **SSH key users:** You need to remove the old entry from your local `known_hosts` file. Delete or clear the `~/.ssh/known_hosts` file on your local machine and then retry logging in.
+
 > __I am a student in a PI group. How can I request for Pinnacles and/or MERCED  cluster access?__
 
 You can start the [step-1](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) access process, but in order to receive an account, you need approval from a UC Merced PI. Every account on Pinnacles is associated with that of a faculty PI. If you are requesting MERCED cluster access you must attach a valid COA number, to the ticket process, this COA number is usually distributed by the PI. 
