@@ -8,18 +8,9 @@ sidebar_position: 6
 ## Creating assignments
 
 
-#### Choose Server: <!-- {docsify-ignore} -->
+#### Choose & Start Server: <!-- {docsify-ignore} -->
 
-Select the server that best suits your needs by clicking on the corresponding option. For example, you might choose between a Python server and an R server.
-
-![](../hpcdocs/HPC-clusters/imgs/servers.png)
-<!-- <div align="center" style="width: 100%;">
-  <img src="./imgs/servers.png" alt="servers.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div> -->
-
-#### Start Server: <!-- {docsify-ignore} -->
-
-Once you've made your selection, Choose the appropriate amount of RAM based on your assignment or task.click on the option to start the server. This will initiate the server and provide you with access to the chosen environment. 
+Select the server that best suits your needs by clicking on the corresponding option. For example, you might choose between a Python server and an R server.Once you've made your selection, Choose the appropriate amount of RAM based on your assignment or task click on the option to start the server. This will initiate the server and provide you with access to the chosen environment. 
 
 ![](../hpcdocs/HPC-clusters/imgs/server_resources.png)
 <!-- <div align="center" style="width: 100%;">
