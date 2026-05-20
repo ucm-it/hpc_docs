@@ -159,7 +159,7 @@ As well as how to get access, logging in, file system, resource breakdown.
 :::note
 `*` OSG Nodes are only accessable via `test` partition. To learn more information about the Open Science Grid (OSG) can be found [here](https://osg-htc.org/).
 :::
-| `cenvalarc.gpu` GPU node | L40S Nodes                                           | H200 w/ NVLINK Nodes                                         |
+| `cenvalarc.gpu` GPU node | L40S Nodes                                           | H200 Nodes                                                   |
 | ------------------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | Number of nodes          | 8                                                                     | 4                                                                     |
 | GPU per node             | 2× NVIDIA L40S (48GB GDDR6)                                           | 2× NVIDIA H200 NVL (141GB HBM3)                                       |
