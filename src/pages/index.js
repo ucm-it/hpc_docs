@@ -17,7 +17,7 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">Cyberinfrastructure and Research Technologies (CIRT)</p>
         {/* ✅ Plain text with PDF link */}
         <p className={clsx('hero__subtitle', styles.missionLink)}>
         <a href={pdfUrl} target="_blank" rel="noopener noreferrer">

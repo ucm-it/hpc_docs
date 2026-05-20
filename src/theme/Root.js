@@ -163,6 +163,11 @@ const styles = `
   .hpc-disclaimer {
     font-size: 11px; color: #92400e; background: #fffbeb;
     border: 1px solid #fcd34d; border-radius: 8px;
+    padding: 6px 10px; margin: 0 0 8px; text-align: left; line-height: 1.4;
+  }
+  .hpc-disclaimer-privacy {
+    font-size: 11px; color: #991b1b; background: #fff1f2;
+    border: 1px solid #fca5a5; border-radius: 8px;
     padding: 6px 10px; margin: 0 0 12px; text-align: left; line-height: 1.4;
   }
   .hpc-suggestions { display: flex; flex-direction: column; gap: 6px; }
@@ -501,6 +506,9 @@ export default function Root({ children }) {
                 <p className="hpc-welcome-sub">Ask anything about the UC Merced HPC cluster</p>
                 <p className="hpc-disclaimer">
                   ⚠️ Please only ask questions related to UC Merced HPC systems and documentation. Questions outside this scope will not be answered.
+                </p>
+                <p className="hpc-disclaimer-privacy">
+                  🔒 Do not enter any sensitive or personal data. Your inputs are not protected and should not include passwords, private keys, or confidential information.
                 </p>
                 <div className="hpc-suggestions">
                   {SUGGESTIONS.map(s => (
