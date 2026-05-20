@@ -290,6 +290,11 @@ pre code {
 }
 
 
+/* Navbar font size */
+.navbar__link {
+  font-size: 1.25rem;
+}
+
 /* Hero Banner Fix*/
 [data-theme='dark'] .hero,
 [data-theme='dark'] .heroBanner,
