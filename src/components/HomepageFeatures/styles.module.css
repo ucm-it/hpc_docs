@@ -1,17 +1,46 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  justify-content: center;
+  padding: 3rem 0;
   width: 100%;
 }
 
+.featureCardLink,
+.featureCardLink:visited {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  height: 100%;
+}
+
+.featureCard:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+  transform: translateY(-4px);
+}
+
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 160px;
+  width: 160px;
   transition: transform 0.3s ease;
 }
 .featureSvg:hover {
-  transform: scale(1.25);
+  transform: scale(1.2);
 }
 .featureSvg:hover path {
   fill: var(--ifm-color-primary);
@@ -27,10 +56,12 @@
 
 .featureTitle {
   display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 0.75rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .featureTitleLink:hover .featureTitle {
-  transform: scale(1.15);
+  transform: scale(1.1);
   color: var(--ifm-color-primary);
 }

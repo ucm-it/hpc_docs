@@ -290,8 +290,23 @@ pre code {
 }
 
 
-/* Navbar font size */
+/* Navbar font size and hover effect */
 .navbar__link {
+  font-size: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: #DAA900 !important;
+}
+
+.navbar__brand:hover .navbar__title,
+.navbar__brand:hover {
+  color: #DAA900 !important;
+}
+
+.navbar__title {
   font-size: 1.25rem;
 }
 
