@@ -1,13 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const BACKEND_URL = "https://scout-dev.ucmerced.edu/api";
-const API_KEY = "on_swgHEyZZi-ZsD153rVxfB4XVXhhwQsV-IqM9S5l1i8oah22EKwNyTBj3-tLdINSH4TFAg9W0BK5GzRVO3vzh02JFjBa20OlMge2ljNbu2ihWnU0AHJlNhdT9ffxCt6WaH48tD0G6GWdHyzpD2bz1voOfMyI0537zhFbwHkPU61V-O5WzOPiZiy6of9UfasefHGQR3K4ZrJwdjbDGJBgzUXTUu07nxIBcbsZY18DbU36JhZQWJ-IFVySx9PDeF49H";
-const PERSONA_ID = 12;
-
-const HEADERS = {
-  "Content-Type": "application/json",
-  "Authorization": `Bearer ${API_KEY}`,
-};
+const API_URL = "https://amirayuyue-hpc-docs-chatbot.hf.space/chat";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap');
@@ -157,12 +150,10 @@ const styles = `
     font-family: 'JetBrains Mono', monospace; font-size: 10px;
     background: #f0f4ff; color: #0043ce; padding: 2px 7px;
     border-radius: 4px; border: 1px solid #c7d7ff;
+    text-decoration: none; cursor: pointer;
   }
-
-  .hpc-searching {
-    font-size: 11px; color: #6b7280; font-style: italic;
-    font-family: 'JetBrains Mono', monospace;
-    padding: 2px 0;
+  .hpc-source-tag:hover {
+    background: #dce8ff; text-decoration: underline;
   }
 
   .hpc-welcome { text-align: center; padding: 8px 0 4px; }
@@ -247,11 +238,15 @@ function isSepRow(line) {
 }
 
 function renderTable(lines, key) {
+  // Parse all pipe-rows, skip separator rows for body
   const allRows = lines
     .filter(l => isTableRow(l))
     .map(l => ({ sep: isSepRow(l), cells: l.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()) }));
   const sepIdx = allRows.findIndex(r => r.sep);
-  if (sepIdx === -1) return <span key={key}>{lines.join('\n')}</span>;
+  if (sepIdx === -1) {
+    // No separator found — render as plain text
+    return <span key={key}>{lines.join('\n')}</span>;
+  }
   const header = sepIdx > 0 ? allRows[sepIdx - 1].cells : null;
   const body = allRows.slice(sepIdx + 1).filter(r => !r.sep).map(r => r.cells);
   return (
@@ -260,6 +255,55 @@ function renderTable(lines, key) {
       <tbody>{body.map((row, i) => <tr key={i}>{row.map((c, j) => <td key={j}>{inlineRender(c)}</td>)}</tr>)}</tbody>
     </table>
   );
+}
+
+function renderText(text, isStreaming) {
+  if (isStreaming) {
+    return [<span key="text">{text}</span>, <span key="cursor" className="hpc-cursor" />];
+  }
+  const parts = [];
+  let k = 0;
+  // Split on fenced code blocks first
+  const segments = text.split(/(```(?:\w*)\n?[\s\S]*?```)/g);
+  for (const seg of segments) {
+    const codeMatch = seg.match(/^```(\w*)\n?([\s\S]*?)```$/);
+    if (codeMatch) {
+      parts.push(<pre key={k++}><code>{codeMatch[2].trim()}</code></pre>);
+      continue;
+    }
+    const lines = seg.split('\n');
+    let i = 0;
+    let textLines = [];
+    while (i < lines.length) {
+      // Lookahead: a table block is any run of pipe-rows (including blank lines
+      // between header and separator that the LLM sometimes emits)
+      if (isTableRow(lines[i]) || (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1]))) {
+        if (textLines.length) {
+          const t = textLines.join('\n');
+          if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
+          textLines = [];
+        }
+        const tableLines = [];
+        while (i < lines.length) {
+          if (isTableRow(lines[i])) {
+            tableLines.push(lines[i++]);
+          } else if (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1])) {
+            i++; // skip blank line inside a table block
+          } else {
+            break;
+          }
+        }
+        if (tableLines.length) parts.push(renderTable(tableLines, k++));
+      } else {
+        textLines.push(lines[i++]);
+      }
+    }
+    if (textLines.length) {
+      const t = textLines.join('\n');
+      if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
+    }
+  }
+  return parts;
 }
 
 function inlineRender(text) {
@@ -277,13 +321,15 @@ function renderBlocks(text, startKey) {
   let i = 0;
   while (i < lines.length) {
     const line = lines[i];
+    // Headings
     const hMatch = line.match(/^(#{1,4})\s+(.+)/);
     if (hMatch) {
       const level = hMatch[1].length;
-      const Tag = `h${Math.min(level + 2, 6)}`;
+      const Tag = `h${Math.min(level + 2, 6)}`; // h3->h5 so it fits chat bubble
       out.push(<Tag key={k++} style={{margin:'6px 0 2px', fontSize: level <= 2 ? '13px' : '12px'}}>{inlineRender(hMatch[2])}</Tag>);
       i++; continue;
     }
+    // Bullet lists — collect consecutive bullet lines
     if (/^\s*[\*\-]\s+/.test(line)) {
       const items = [];
       while (i < lines.length && /^\s*[\*\-]\s+/.test(lines[i])) {
@@ -293,59 +339,12 @@ function renderBlocks(text, startKey) {
       out.push(<ul key={k++} style={{margin:'4px 0', paddingLeft:'18px'}}>{items.map((it, j) => <li key={j}>{inlineRender(it)}</li>)}</ul>);
       continue;
     }
+    // Normal text
     if (line.trim()) out.push(<span key={k++}>{inlineRender(line)}{' '}</span>);
     else if (out.length) out.push(<br key={k++} />);
     i++;
   }
   return out;
-}
-
-function stripInlineCitations(text) {
-  return text.replace(/\[\[\d+\]\]\([^)]*\)/g, '');
-}
-
-function renderText(text, isStreaming) {
-  const cleaned = stripInlineCitations(text);
-  if (isStreaming) {
-    return [<span key="text">{cleaned}</span>, <span key="cursor" className="hpc-cursor" />];
-  }
-  text = cleaned;
-  const parts = [];
-  let k = 0;
-  const segments = text.split(/(```(?:\w*)\n?[\s\S]*?```)/g);
-  for (const seg of segments) {
-    const codeMatch = seg.match(/^```(\w*)\n?([\s\S]*?)```$/);
-    if (codeMatch) {
-      parts.push(<pre key={k++}><code>{codeMatch[2].trim()}</code></pre>);
-      continue;
-    }
-    const lines = seg.split('\n');
-    let i = 0;
-    let textLines = [];
-    while (i < lines.length) {
-      if (isTableRow(lines[i]) || (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1]))) {
-        if (textLines.length) {
-          const t = textLines.join('\n');
-          if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
-          textLines = [];
-        }
-        const tableLines = [];
-        while (i < lines.length) {
-          if (isTableRow(lines[i])) { tableLines.push(lines[i++]); }
-          else if (lines[i].trim() === '' && i + 1 < lines.length && isTableRow(lines[i + 1])) { i++; }
-          else { break; }
-        }
-        if (tableLines.length) parts.push(renderTable(tableLines, k++));
-      } else {
-        textLines.push(lines[i++]);
-      }
-    }
-    if (textLines.length) {
-      const t = textLines.join('\n');
-      if (t.trim()) { parts.push(...renderBlocks(t, k)); k += 100; }
-    }
-  }
-  return parts;
 }
 
 const SUGGESTIONS = [
@@ -360,56 +359,43 @@ export default function Root({ children }) {
   const [messages, setMessages]   = useState([]);
   const [input, setInput]         = useState("");
   const [loading, setLoading]     = useState(false);
-  const [sessionId, setSessionId] = useState(null);
-  const [parentMsgId, setParentMsgId] = useState(null);
-  const [searching, setSearching] = useState(false);
   const bottomRef = useRef(null);
   const inputRef  = useRef(null);
 
-  // Create a Scout chat session on mount
+  // Ping the backend every 25 min to prevent Hugging Face Space from sleeping
   useEffect(() => {
-    fetch(`${BACKEND_URL}/chat/create-chat-session`, {
-      method: "POST",
-      headers: HEADERS,
-      body: JSON.stringify({ persona_id: PERSONA_ID }),
-    })
-      .then(r => r.json())
-      .then(data => setSessionId(data.chat_session_id))
-      .catch(() => {});
+    const keepAlive = setInterval(() => {
+      fetch("https://amirayuyue-hpc-docs-chatbot.hf.space/health")
+        .catch(() => {}); // silently ignore errors
+    }, 25 * 60 * 1000);
+    return () => clearInterval(keepAlive);
   }, []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, searching]);
+  }, [messages]);
 
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 100);
   }, [open]);
 
   const send = async (text) => {
-    if (!sessionId) return;
     const q = (text || input).trim();
     if (!q || loading) return;
     setInput("");
     setLoading(true);
-    setSearching(false);
 
+    const history = messages.slice(-6).map(m => ({ role: m.role, content: m.content }));
     setMessages(prev => [...prev,
       { role: "user", content: q },
-      { role: "assistant", content: "", citations: [], streaming: true }
+      { role: "assistant", content: "", sources: [], streaming: true }
     ]);
 
     try {
-      const res = await fetch(`${BACKEND_URL}/chat/send-chat-message`, {
+      const res = await fetch(API_URL, {
         method: "POST",
-        headers: HEADERS,
-        body: JSON.stringify({
-          message: q,
-          chat_session_id: sessionId,
-          parent_message_id: parentMsgId,
-          origin: "widget",
-          include_citations: true,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: q, history }),
       });
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -417,11 +403,9 @@ export default function Root({ children }) {
       const reader  = res.body.getReader();
       const decoder = new TextDecoder();
       let buffer = "";
-      let citations = [];
-      let nextParentMsgId = null;
-      let streamDone = false;
+      let sources = [];
 
-      while (!streamDone) {
+      while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
@@ -429,66 +413,39 @@ export default function Root({ children }) {
         buffer = lines.pop();
 
         for (const line of lines) {
-          if (!line.trim()) continue;
+          if (!line.startsWith("data: ")) continue;
           try {
-            const packet = JSON.parse(line);
-            const obj = packet.obj ?? packet;
-
-            if (obj.reserved_assistant_message_id) {
-              nextParentMsgId = obj.reserved_assistant_message_id;
-            }
-
-            if (obj.type === "message_delta" && obj.content) {
-              setSearching(false);
+            const data = JSON.parse(line.slice(6));
+            if (data.token) {
               setMessages(prev => {
                 const updated = [...prev];
                 const last = { ...updated[updated.length - 1] };
-                last.content += obj.content;
+                last.content += data.token;
                 updated[updated.length - 1] = last;
                 return updated;
               });
             }
-
-            if (obj.type === "search_tool_start") {
-              setSearching(true);
-            }
-
-            if (obj.type === "citation_info") {
-              citations.push(obj);
-            }
-
-            if (obj.type === "stop" || obj.type === "overall_stop") {
-              streamDone = true;
-              break;
-            }
-
-            if (obj.type === "error") {
-              throw new Error(obj.exception || "Unknown error");
-            }
-          } catch (e) {
-            if (e.message !== "Unexpected end of JSON input") throw e;
-          }
+            if (data.done) sources = data.sources || [];
+            if (data.error) throw new Error(data.error);
+          } catch {}
         }
       }
 
-      if (nextParentMsgId) setParentMsgId(nextParentMsgId);
-      setSearching(false);
-
+      // Finalize — remove cursor, add sources
       setMessages(prev => {
         const updated = [...prev];
         const last = { ...updated[updated.length - 1] };
         last.streaming = false;
-        last.citations = citations;
+        last.sources = sources;
         updated[updated.length - 1] = last;
         return updated;
       });
 
     } catch (err) {
-      setSearching(false);
       setMessages(prev => {
         const updated = [...prev];
         updated[updated.length - 1] = {
-          role: "assistant", content: `⚠️ ${err.message}`, citations: [], streaming: false,
+          role: "assistant", content: `⚠️ ${err.message}`, sources: [], streaming: false,
         };
         return updated;
       });
@@ -532,7 +489,7 @@ export default function Root({ children }) {
             </div>
             <div className="hpc-header-text">
               <p className="hpc-header-title">HPC Assistant</p>
-              <p className="hpc-header-sub">UC Merced · Scout AI</p>
+              <p className="hpc-header-sub">UC Merced · RAG · 122 doc chunks</p>
             </div>
             <button className="hpc-close-btn" onClick={() => setOpen(false)} aria-label="Close">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
@@ -570,31 +527,20 @@ export default function Root({ children }) {
                 ) : (
                   renderText(m.content, m.streaming)
                 )}
-                {!m.streaming && m.citations?.length > 0 && (
+                {!m.streaming && m.sources?.length > 0 && (
                   <div className="hpc-sources">
-                    {m.citations
-                      .filter(c => !/\/v\d+\.\d+\.\d+\//.test(c.document_id))
-                      .filter((c, i, arr) => arr.findIndex(x => x.document_id === c.document_id) === i)
-                      .map((c, j) => {
-                        const url = c.document_id;
-                        const label = url.replace(/\/$/, '').split('/').pop().replace(/[-_]/g, ' ');
-                        return (
-                          <a key={j} className="hpc-source-tag" href={url} target="_blank" rel="noopener noreferrer">
-                            📄 {label}
-                          </a>
-                        );
-                      })}
+                    {m.sources.map(url => {
+                      const label = url.replace(/\/$/, '').split('/').pop().replace(/[-_]/g, ' ');
+                      return (
+                        <a key={url} className="hpc-source-tag" href={url} target="_blank" rel="noopener noreferrer">
+                          📄 {label}
+                        </a>
+                      );
+                    })}
                   </div>
                 )}
               </div>
             ))}
-
-            {searching && (
-              <div className="hpc-bubble hpc-bubble-bot">
-                <span className="hpc-searching">Searching documentation...</span>
-              </div>
-            )}
-
             <div ref={bottomRef} />
           </div>
 
@@ -622,7 +568,7 @@ export default function Root({ children }) {
             </button>
           </div>
 
-          <div className="hpc-footer">powered by Scout AI · UC Merced</div>
+          <div className="hpc-footer">powered by RAG · Groq · hf.space</div>
         </div>
       )}
     </>
