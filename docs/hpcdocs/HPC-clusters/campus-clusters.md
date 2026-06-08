@@ -338,7 +338,7 @@ Beginning August 2026, CIRT will launch a pilot program to provide additional sc
 Investigators may request additional storage for their research group by submitting a brief justification describing:
 
 * The research project or activity
-* The amount of additional storage requested. Requests up to 4 TB per user within a research group will be reviewed through the standard process. Larger requests require additional justification and will be considered based on demonstrated need, operational feasibility, and available capacity
+* The amount of additional storage requested. Requests up to 4 TB per user within a research group will be reviewed through the standard process.
 * How the storage will support the research effort
 
 Approved allocations will remain in place through July 31, 2027.
