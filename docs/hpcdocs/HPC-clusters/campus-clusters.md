@@ -331,7 +331,7 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
 The `scratch` folder is purged periodically when the overall system storage reaches 85% of capacity or higher. Please back-up your data to somewhere safe frequently.
 :::
 
-### Expanded Scratch Allocation Pilot Program
+### Expanded Scratch or Data Allocation Pilot Program
 
 Beginning August 2026, CIRT will launch a pilot program to provide additional scratch or data storage per user for research projects with demonstrated needs beyond the standard allocation levels.
 
