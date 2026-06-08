@@ -330,6 +330,30 @@ MERCED and Pinnacles have now been merged into a centralized system, allowing th
 :::warning
 The `scratch` folder is purged periodically when the overall system storage reaches 85% of capacity or higher. Please back-up your data to somewhere safe frequently.
 :::
+
+### Expanded Scratch Allocation Pilot Program
+
+Beginning August 2026, CIRT will launch a pilot program to provide additional scratch or data storage per user for research projects with demonstrated needs beyond the standard allocation levels.
+
+Investigators may request additional storage for their research group by submitting a brief justification describing:
+
+* The research project or activity
+* The amount of additional storage requested. Requests up to 4 TB per user within a research group will be reviewed through the standard process. Larger requests require additional justification and will be considered based on demonstrated need, operational feasibility, and available capacity
+* How the storage will support the research effort
+
+Approved allocations will remain in place through July 31, 2027.
+
+Requests should be submitted through the [CIRT Expanded Storage Pilot Program request form](https://forms.office.com/Pages/ResponsePage.aspx?id=o-nf9HjKmEm3p-bQaS6s5pXKK-egH0pAnGIQgF80Rz9UNDVMRFdGRTNENjhOM1VBTDNQUEFTUllCNi4u). To be considered for the initial August 2026 allocation cycle, requests should be submitted through this form by July 1, 2026.
+
+As part of this pilot, CIRT will review utilization, demand, and sustainability of expanded storage allocations. Investigators who continue to require additional storage beyond July 2027 may submit a request for renewal in May 2027 for consideration. As this is a pilot program, renewal is not guaranteed.
+
+Allocation decisions will be based on research need, available capacity, and alignment with the intended use of the storage resources.
+
+:::warning
+Expanded allocations remain subject to all existing storage policies and expectations. Scratch storage is intended for active computational workflows and temporary research data and should not be relied upon for long-term retention, archival purposes, or backup.
+CIRT reserves the right to review, adjust, or discontinue pilot allocations if storage is not being actively used for the stated research purpose, if capacity constraints arise, or as the pilot program evolves.
+:::
+
 ## Queue Information
 
 <Tabs>
