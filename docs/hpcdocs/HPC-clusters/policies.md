@@ -31,7 +31,25 @@ import Highlight from '@site/src/components/Highlight';
 ## Cluster jobs Guidelines
 - Definition of a cluster job: Any computing process or program should be submitted via the SLURM job submission process. 
 
-1. Cluster jobs must be ran on compute nodes. Running intense processes and any intense programs on login nodes is prohibited, and any jobs/processes that impact the performance or functions of the login nodes or interfere with other users will be terminated and an email will be sent to the user and their PI notifying cluster usage best practices and policy. **CIRT offers “Introduction to HPC” training sessions for new HPC users. Schedule [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)** New Users can also look at the "Introduction to HPC" Training Material [here](../hpc-tutorials/intro-hpc.md).
+1. Cluster jobs must be ran on compute nodes. Running intense processes and any intense programs on login nodes is prohibited, and any jobs/processes that impact the performance or functions of the login nodes or interfere with other users will be terminated and an email will be sent to the user and their PI notifying cluster usage best practices and policy. **CIRT offers “Introduction to HPC” training sessions for new HPC users. Schedule [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4)** New Users can also look at the “Introduction to HPC” Training Material [here](../hpc-tutorials/intro-hpc.md).
+
+2. **Prohibition on CPU-Intensive Tasks on Login Nodes (Including AI-Assisted Workflows)**
+
+   Login nodes are __shared entry points__ for all cluster users and are not designed or resourced for computation. Running CPU-intensive or long-running tasks on login nodes is __strictly prohibited__, regardless of how the task was initiated.
+
+   **Users bear full responsibility for all processes executed under their account.** This applies equally whether a task was run manually by the user or was initiated, generated, or automated by an AI tool (e.g., an AI coding assistant, agent, LLM-driven script, or any other automated system). The use of AI to generate or submit commands does __not__ transfer or reduce the user's responsibility for their cluster activity.
+
+   All compute-intensive work (including but not limited to data processing, model training, compilation of large codebases, and batch computations) __must__ be submitted as a SLURM job to the appropriate compute nodes. See [Running Jobs](running-jobs) for guidance on writing and submitting job scripts.
+
+   **Consequences for violations:**
+   - Immediate termination of all offending processes on the login node
+   - User password will be **reset**; the user will be unable to log in until they contact CIRT to acknowledge the policy
+   - Account **suspended for three (3) days**
+   - Notification sent to the user and their PI
+
+   :::warning
+   If you are using an AI assistant or automated tool to interact with the cluster, you are responsible for reviewing every command it runs. Claiming that “the AI did it” is not an accepted justification; the account holder is accountable for all activity under their credentials.
+   :::
 
 
 ## Quotas and storage Guidelines
