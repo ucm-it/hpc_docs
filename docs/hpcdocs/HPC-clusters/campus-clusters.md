@@ -33,23 +33,37 @@ As well as how to get access, logging in, file system, resource breakdown.
     The NSF-MRI funded Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster runs with the [Rocky (8.10)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs.The Pinnacles cluster is equipped with the latest generation Intel Xeon Gold 6330 CPUs and NVIDIA Tesla A100 v4 40GB HBM2 GPUs. 
     :::
     __Facility Statement__
-    
-    The NSF-MRI grant number #2019144 funded Pinnacles cluster has the following compute node configurations:
 
-    - 40 regular Compute nodes with 2XIntel-28-Core Xeon Gold 6330 2.0GHz - 205W, each with 256GB RAM.
-    - 9 regular compute nodes with 2x Intel 32-Core Xeon Gold 6530 2.1GHz - 270W, each with 256GB RAM. 
-    - 8 High Memory nodes, 4 nodes are equipped with 2 Intel 28-core Xeon Gold 6330 CPUs running at 2.0 GHz and 1 TB of RAM. The other 4 nodes feature 2 Intel 32-core Xeon Gold 6530 CPUs running at 2.1 GHz and 1 TB of RAM, providing additional processing power for memory-intensive workloads.
-    - 20 GPU nodes: 8 nodes equipped with 2× NVIDIA Tesla A100 PCIe v4 GPUs (40GB HBM2), 8 nodes equipped with 2× NVIDIA L40S GPUs (48GB GDDR6), and 4 nodes equipped with 2× NVIDIA H200 NVL GPUs (141GB HBM3).
-    
-    Pinnacles also has ~92TB NFS Fast Scratch Storage space for accessing large data with low latency and 1.5PB of usable long-term storage.
-    
-    Relative proximity and extent of availability: The Pinnacles cluster is managed by the Office of Information Technology at UC Merced and technical support and training opportunities are available. It is available for all faculty projects at no cost. All above nodes are interconnected via HDR InfiniBand w/ RDMA for fast (100Gbits/s) and low latency (sub ms) data transfer.
+    UC Merced operates the Pinnacles cluster, a campus high-performance computing environment managed by the Office of Information Technology. Pinnacles supports research computing, AI/ML workflows, data-intensive analysis, training, and regional cyberinfrastructure activities. Technical support, documentation, and training are available through UC Merced Cyberinfrastructure and Research Technologies (CIRT) team.
+
+    The Pinnacles cluster includes:
+
+    - 40 compute nodes, each with 2 × Intel 28-core Xeon Gold 6330 processors and 256 GB RAM;
+    - 9 compute nodes, each with 2 × Intel 32-core Xeon Gold 6530 processors and 256 GB RAM;
+    - 8 high-memory nodes, including 4 nodes with 2 × Intel 28-core Xeon Gold 6330 processors and 1 TB RAM, and 4 nodes with 2 × Intel 32-core Xeon Gold 6530 processors and 1 TB RAM;
+    - 20 GPU nodes, including:
+      - 8 nodes with 2 × NVIDIA A100 PCIe GPUs, 40 GB HBM2 each;
+      - 8 nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each;
+      - 4 nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each.
+
+    Central Valley Accessible Research and Computational Hub (CENVAL-ARC) compute resources, supported by NSF award #2346744, extend UC Merced's regional cyberinfrastructure capacity and support both campus-hosted and Open Science Grid (OSG)-accessible computing. CENVAL-ARC resources installed on the Pinnacles cluster include:
+
+    - 9 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage, configured with either 1 TB M.2 NVMe or 2 × 960 GB NVMe SSDs per node;
+    - 4 high-memory nodes with dual Intel 32-core Xeon Gold 6430 processors, 1 TB RAM, and 1 TB M.2 NVMe local storage per node;
+    - 8 GPU nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each, dual Intel 32-core Xeon Gold 6530 processors, local NVMe storage, and HDR-100 InfiniBand connectivity;
+    - 4 GPU nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each, dual Intel 32-core Xeon Gold 6530 processors, 256 GB RAM, local NVMe storage, and HDR-100 InfiniBand connectivity.
+
+    CENVAL-ARC also provides OSG-accessible resources, including 4 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage.
+
+    Pinnacles provides approximately 92 TB of NFS fast scratch storage and 1.5 PB of usable long-term storage. Compute nodes are interconnected through HDR InfiniBand with RDMA, supporting up to 100 Gb/s low-latency data transfer.
+
+    **Availability and Support:** The Pinnacles cluster is managed by CIRT. General access is available to UC Merced faculty projects at no cost, subject to allocation and scheduling policies. CIRT provides user support, consultation, onboarding, documentation, and training to support effective use of the cluster for research, training, and AI/data-intensive workflows.
 
    ### __How to cite__
 
-    All Pinnacles users must agree to acknowledge the Pinnacles Cluster and the supporting NSF grant (NSF MRI, # 2019144) in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:
+    All Pinnacles users must agree to acknowledge the Pinnacles Cluster in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:
 
-    *This research [Part of this research] was conducted using Pinnacles (NSF MRI, # 2019144) at the Cyberinfrastructure and Research Technologies (CIRT) at University of California, Merced.*
+    *This research [Part of this research] was conducted using the Pinnacles cluster, which is centrally funded by the University of California, Merced, and maintained by the Cyberinfrastructure and Research Technologies (CIRT) team at UC Merced.*
 
     From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by Pinnacles users that have included results of calculations on Pinnacles. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced.
 
@@ -110,7 +124,9 @@ As well as how to get access, logging in, file system, resource breakdown.
      <summary>
       Research Facility
       </summary>
-     The Research Computing Facility, named the Borg Cube, is a 1,448 square foot pre-manufactured, self-contained, fully serviceable data center-style building comprised of two (2) transportable modular containers, one section for electrical distribution and the other to house research computing machines. The design includes three (3) 60-ton Indirect Evaporative Cooling (IEC) mechanical units to be located outside, adjacent to the structure. The Borg Cube houses twenty (20) 19"-24" racks with 51U per rack, totaling 1020U and provides 400kW of N+1 redundant power capacity at the rack bus, providing the ability to provide individual racks with either redundant or non-redundant power supply units. The design includes two (2) 500kVA PDU's each fed from separate sources backed up from dedicated 500kVA UPS which are connected to two (2) 800A rated Starline bus to account for single or dual corded customer connections. An N+1 UPS system will consist of two (2) 500kVA UPS units, each to be equipped with batteries to support its full load for 15 minutes. The mechanical design includes three (3) 60-ton IEC units totaling 633kW of cooling available. This design accounts for an additional unit (N+1), in the case of maintenance or failure of an operating unit. The design technical requirements do not list the requirement for an N+1 mechanical system as this building can be fully supported by two (2) 60-ton units; however, due to the importance of this facility, the third unit exists for operations and maintenance purposes. This approach gives the facility engineers the ability to provide maintenance on a given unit without shutting down the facility and limiting unnecessary down time. A self-contained FM-200 style suppression system along with the required detection devices are provided for fire protection and detection systems. One (1) FM-200 tank is provided for each individual module. A VESDA system is present to detect smoke at its earliest stage and to send a signal to the clean agent suppression panel. Two (2) 1500kva substations based on an N+1 design, are provided to accept separate services. Each substation is provided with a 2000A main breaker, a 1000A breaker for the current facility, and an open space for a future circuit breaker to be used to support a potential future expansion. One of the substations is provided with a 100A breaker for the electrical equipment serving the site loads.
+     UC Merced's research computing infrastructure called the Borg Cube, is a 1,448-square-foot modular, data center-style research computing facility. The facility includes twenty 51U racks, providing up to 1,020U of rack capacity, and 400 kW of N+1 redundant power capacity at the rack bus. The facility is supported by redundant electrical distribution, including two 500 kVA power distribution units, dedicated 500 kVA uninterruptible power supply units, and two 800A Starline busways to support single- and dual-corded equipment.
+
+     The Borg Cube is cooled by three 60-ton indirect evaporative cooling units. Two units are sufficient to support the facility load, while the third provides operational redundancy for maintenance and continuity of service. The facility also includes clean-agent fire suppression, FM-200 tanks for each module, fire detection systems, and a very early smoke detection apparatus (VESDA) system. The facility is designed to support reliable operation of UC Merced's research computing resources and future expansion.
   </details>
   
 
