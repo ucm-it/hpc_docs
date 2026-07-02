@@ -157,7 +157,7 @@ As well as how to get access, logging in, file system, resource breakdown.
   | `gpu` GPU node     |                                                           |
   |:-------------|:----------------------------------------------------------|
   | Number       | 8                                                         |
-  | GPU per node | 2x NVIDIA Tesla A100 PCIe v4 40GB HBM2 Passive Single GPU |
+  | GPU per node | 2× NVIDIA A100 PCIe GPUs, 40 GB HBM2 |
   | CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
   | RAM          | 256GB                                                     |
   | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
