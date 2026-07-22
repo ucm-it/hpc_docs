@@ -13,5 +13,5 @@ The table below includes CIRT recharge services
 | Annual cost of condo-nodes  |$495.00/Yr |$495.00/Yr  |
 
 :::note
-Any new Borgstore storage purchases made between April 1 and June 30, 2026 will incur $0.1/G/year rate from April - June 30, 2026.
+Any new Borgstore storage purchases made between April 1 and June 30, 2026 will incur a $0.1/G/year rate.
 :::
