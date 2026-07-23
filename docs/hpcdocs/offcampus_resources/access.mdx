@@ -3,10 +3,39 @@ title: Additional Computational Resources
 sidebar_position: 1
 ---
 
+Some researchers may have needs that exceed our campus computing capabilities — whether they need more machines to complete a task quickly or more specialized compute nodes (e.g., GPUs). The following external platforms are available to UC Merced researchers.
 
+---
 
+## ACCESS (Advanced Cyberinfrastructure Coordination Ecosystem: Services & Support)
 
-Some researchers may have needs that exceed our campus computing capabilities. They may need more machines to complete a task quickly or they may need more specialized types of computing nodes (e.g. GPU nodes). We have access to both the [San Diego Supercomputing Center (SDSC)](https://www.sdsc.edu/) and the national-level computing resources known as XSEDE now [ACCESS](https://www.access-ci.org/). SDSC and ACCESS offer significant amounts of compute time to researchers interested in trying HPC at large-scales. 
+[ACCESS](https://www.access-ci.org/) is the national-level computing resource program that replaced XSEDE. It provides access to high-performance computing systems at centers including the [San Diego Supercomputing Center (SDSC)](https://www.sdsc.edu/). ACCESS offers significant allocations of compute time to researchers interested in running HPC workloads at large scale.
 
-Here's an example of the current resource provider for ACCESS and the computational resources available for users to apply for.
+Here is an overview of current ACCESS resource providers and available computational resources:
+
 <iframe src="https://drive.google.com/file/d/1-UWj1mQz3kGhrnj9EybDzs-N5HPZk3Fy/preview" width="860" height="580" allow="autoplay"></iframe>
+
+---
+
+## F3i Supercomputing Center
+
+[F3i](https://portal.f3i.org/learn#overview-the-mental-model) is a California nonprofit building computing infrastructure for California's agricultural industry. Their Supercomputing Center provides interactive notebooks, batch jobs, and a shared team filesystem — all running on real GPUs at the Fresno State data center.
+
+F3i runs on Kubernetes within the [National Research Platform (NRP)](https://nationalresearchplatform.org/). You do not need to know Kubernetes or YAML for day-to-day use; the platform is designed so you can get productive without learning cluster internals.
+
+### The Mental Model
+
+Your work lives inside a **Kubernetes namespace** scoped to your team:
+
+- **Team workspace** — everyone you invite shares the same namespace.
+- **Team GPU-hour balance** — a shared pool that anyone in the workspace can draw from; every debit is attributed to the individual who spent it.
+- **Team volume** — a shared persistent filesystem mounted at `/workspace`, visible to every notebook and every batch job in your workspace.
+
+### Two Ways to Work
+
+| Surface | What you do here |
+|---|---|
+| **Browser (JupyterHub)** | Interactive notebooks, dashboard, billing |
+| **F3i API** | Batch jobs, programmatic access, CI/CD pipelines |
+
+To get started, visit the [F3i portal](https://portal.f3i.org/learn#overview-the-mental-model).
