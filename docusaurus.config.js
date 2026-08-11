@@ -97,7 +97,7 @@ const config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-          blogSidebarTitle: 'All posts',
+          blogSidebarTitle: 'Job post',
           blogSidebarCount: 'ALL',
         },
     

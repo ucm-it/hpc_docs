@@ -290,6 +290,17 @@ pre code {
 }
 
 
+/* Blog sidebar - make the active post title match the yellow hover color instead of the default dark navy, since navy is hard to distinguish from the other post titles */
+/* html/body prefix raises specificity above Docusaurus's own equally-!important rule, whose load order otherwise wins the tie */
+html [class*="sidebarItemLinkActive"],
+body [class*="sidebarItemLinkActive"] {
+  color: var(--ifm-color-primary-dark) !important;
+}
+
+[data-theme='dark'] [class*="sidebarItemLinkActive"] {
+  color: var(--ifm-color-primary-light) !important;
+}
+
 /* Navbar font size and hover effect */
 .navbar__link {
   font-size: 1.25rem;
