@@ -410,15 +410,12 @@ CIRT reserves the right to review, adjust, or discontinue pilot allocations if s
    MERCED is the **Recharge** Cluster.
   | Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
   | -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
-  | bigmem | 5 days | 1 hr | 2 nodes | 6 | 
-  | test^ | 1 hour | 5 min. | 2 nodes | 1 |
-  | *compute | 5 days | 1 hr | 2 nodes | 6 | 
+  | bigmem | 30 days | 1 hr | No limit | No limit | 
+  | *compute | 30 days | 1 hr | No limit | No limit | 
 
 
     :::tip
       `#SBATCH -M merced ` must always be used to submit a job to MERCED cluster
-
-      ^ `test` queue has access to all node types use constraints to test on specific types.
 
       `compute` queue is the default queue for all jobs submitted
     :::

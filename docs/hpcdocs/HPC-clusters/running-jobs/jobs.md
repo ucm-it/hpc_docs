@@ -59,7 +59,7 @@ The `-M merced` flag on the command line is what routes the job to MERCED. Witho
       ```bash
       #!/bin/bash
       #SBATCH --nodes=1    # request only 1 node
-      #SBATCH --partition test      # this job will be submitted to test queue
+      #SBATCH --partition compute      # this job will be submitted to compute queue (MERCED only offers compute and bigmem)
       #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
       #SBATCH --time=0-00:15:00 # 15 minute
       #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
