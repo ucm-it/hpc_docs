@@ -10,7 +10,7 @@ Zoom URL:https://ucmerced.zoom.us/j/89487493900; password:895006
 
 
 ## First-time user log in to HPC tutorial 
-Below is a tutorial for first-time users on how to log in to HPC cluster. The tutorial used Pinnacles as an example. If users still cannot login after watching the tutorial, feel free to open a a general consultationt ticket - Follow the steps below. 
+Below is a tutorial for first-time users on how to log in to HPC cluster. The tutorial used Pinnacles as an example. If users still cannot login after watching the tutorial, feel free to open a a general consultationt ticket.
 
 ### Mac users: use the built-in terminal
 
