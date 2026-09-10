@@ -12,18 +12,24 @@ Zoom URL:https://ucmerced.zoom.us/j/89487493900; password:895006
 ## First-time user log in to HPC tutorial 
 Below is a tutorial for first-time users on how to log in to HPC cluster. The tutorial used Pinnacles as an example. If users still cannot login after watching the tutorial, feel free to open a a general consultationt ticket - Follow the steps below. 
 
-Steps on requesting support with resetting password if users still having issues logging in after following tutorial video:
-1. Go to CyberInfrastrucre & Research Technologies Service Now page. [Click Here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+### Mac users: use the built-in terminal
 
-2. At the bottom of the page there will be a "Request Service" button, click the button. 
+You can find the built-in terminal using `cmd+space` then type `terminal`, then the terminal will pop up.
 
-3. Login with your UCM NetID and Password if prompted to do so. 
+### Windows users: downloading a terminal (MobaXterm)
 
-4. You will be promted with a new page that will require you to put in information including a description of the assistance you are requesting. In this case it will be resetting of password, so in the description state that you are requesting help with resetting of Remote Cluster password. 
+For Windows users who would like to download a terminal, we recommend using MobaXterm.
 
-5. When all the required fields are completed you can submit the ServiceNow Request to receive assistance on resetting password!
+1. Go to the [MobaXterm website](https://mobaxterm.mobatek.net/) and click **Download**. The free version should work - you can download the **Portable** version.
+2. Once the download is complete, open MobaXterm.
+3. Click **Session** in the top-left corner - a new window will pop up.
+4. Click **SSH** in the top-left corner of that window.
+5. Enter the following:
+   - Remote host: `login.rc.ucmerced.edu`
+   - Username: your UCM NetID
+6. Click **OK**. You will then be asked to enter your password. For your first time logging in, use the initial password that was sent to you. **Do not save this password**, since you will be changing it right after.
 
-Request Services & Contact Us - [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+After logging in, it will ask you to change your password. **Current password** is the initial password we sent you. After that, you will be asked to change your password - this time you need to type your new password twice.
 
 Reset Password & Login Video Below!
 
