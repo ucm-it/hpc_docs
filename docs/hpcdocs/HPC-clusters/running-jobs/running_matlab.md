@@ -2,7 +2,7 @@
 title: Running Matlab
 sidebar_position: 4
 ---
-## Running Matlab on the clusters 
+## Running Matlab on the Pinnacles Cluster 
 After logging into the clusters, users can check and load Matlab versions currently available by running the following code. For more information on modules, check [here](../campus-clusters.md).
 ```
 # check what matlab modules are available for use
@@ -25,15 +25,15 @@ To exit an interactive Matlab session, enter `quit` or its equivalent `exit`, wh
 
 ### Running interacive session on a compute node
 
-User can also request compute node resource for running interactive jobs, the example command below is asking for 1 core from 1 node on MERCED using the `compute` partition for 15 mins. 
+User can also request compute node resource for running interactive jobs, the example command below is asking for 1 core from 1 node using the `short` partition for 15 mins. 
 ```
-salloc -M merced --partition=compute --nodes=1 --ntasks-per-node=1 --time=00:15:00
+salloc --partition=short --nodes=1 --ntasks-per-node=1 --time=00:15:00
 ```
 After running the above command, `SLURM` will allocate a suitable resource for you with a JobID. For example:
 ```
 salloc: Granted job allocation 2423487
 salloc: Waiting for resource configuration
-salloc: Nodes mrcd114 are ready for job
+salloc: Nodes node033 are ready for job
 ```
 
 Then user can use the following command to go to the allocated node with the assigned JobID.
@@ -49,7 +49,7 @@ To exit the allocated node, type `exit` , and then it lead you back to the login
 
 ### Running Matlab jobs
 
-Users can also run their Matlab script as a job on MERCED. Here is the `SLURM` submission file template for running various Matlab commands as jobs.
+Users can also run their Matlab script as a job. Here is the `SLURM` submission file template for running various Matlab commands as jobs.
 <details>
 <summary> Example Job Script for running Matlab </summary>
 
@@ -57,9 +57,8 @@ Users can also run their Matlab script as a job on MERCED. Here is the `SLURM` s
 #! /bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --ntasks=10    # users could ask a max of 20 or 24 cores per node depending on MERCED hardware configuration
-#SBATCH -p compute
-#SBATCH -M merced #This line is needed if running on Merced Cluster
+#SBATCH --ntasks=10    # users could ask a max of 20 or 24 cores per node depending on cluster hardware configuration
+#SBATCH -p short
 #SBATCH --mem=0  #This will use entire node memory
 #SBATCH --time=0-00:15:00     # 15 minutes
 #SBATCH --output=regular.stdout

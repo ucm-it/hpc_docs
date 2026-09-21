@@ -16,109 +16,58 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 :::info
-This page presents an overview of the High-Performance Computing Clusters at UC Merced.
+This page presents an overview of the High-Performance Computing Cluster at UC Merced.
 
 As well as how to get access, logging in, file system, resource breakdown.
 
 :::
 
 
-> Currently, UC Merced has two clusters on site. They are maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
+> UC Merced operates a high-performance computing cluster on site. It is maintained by the [CIRT](https://it.ucmerced.edu/Research-Computing-People) team. If you have any questions, feel free to contact us [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
 
-<Tabs>
-  
-  <TabItem value="Pinnacles" label="Pinnacles" default>
-    :::note 
-    The Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster runs with the [Rocky (9.8)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs.
-    :::
-    __Facility Statement__
+:::note 
+The Pinnacles cluster located in the server facility (see Research Facility below) is available for all faculty projects at <Tag color="#008000">NO COST</Tag>! The Pinnacles cluster runs with the [Rocky (9.8)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs.
+:::
+__Facility Statement__
 
-    UC Merced operates the Pinnacles cluster, a campus high-performance computing environment managed by the Office of Information Technology. Pinnacles supports research computing, AI/ML workflows, data-intensive analysis, training, and regional cyberinfrastructure activities. Technical support, documentation, and training are available through UC Merced Cyberinfrastructure and Research Technologies (CIRT) team.
+UC Merced operates the Pinnacles cluster, a campus high-performance computing environment managed by the Office of Information Technology. Pinnacles supports research computing, AI/ML workflows, data-intensive analysis, training, and regional cyberinfrastructure activities. Technical support, documentation, and training are available through UC Merced Cyberinfrastructure and Research Technologies (CIRT) team.
 
-    The Pinnacles cluster includes:
+The Pinnacles cluster includes:
 
-    - 40 compute nodes, each with 2 × Intel 28-core Xeon Gold 6330 processors and 256 GB RAM;
-    - 9 compute nodes, each with 2 × Intel 32-core Xeon Gold 6530 processors and 256 GB RAM;
-    - 8 high-memory nodes, including 4 nodes with 2 × Intel 28-core Xeon Gold 6330 processors and 1 TB RAM, and 4 nodes with 2 × Intel 32-core Xeon Gold 6530 processors and 1 TB RAM;
-    - 20 GPU nodes, including:
-      - 8 nodes with 2 × NVIDIA A100 PCIe GPUs, 40 GB HBM2 each;
-      - 8 nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each;
-      - 4 nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each.
+- 40 compute nodes, each with 2 × Intel 28-core Xeon Gold 6330 processors and 256 GB RAM;
+- 9 compute nodes, each with 2 × Intel 32-core Xeon Gold 6530 processors and 256 GB RAM;
+- 8 high-memory nodes, including 4 nodes with 2 × Intel 28-core Xeon Gold 6330 processors and 1 TB RAM, and 4 nodes with 2 × Intel 32-core Xeon Gold 6530 processors and 1 TB RAM;
+- 20 GPU nodes, including:
+  - 8 nodes with 2 × NVIDIA A100 PCIe GPUs, 40 GB HBM2 each;
+  - 8 nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each;
+  - 4 nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each.
 
-    Central Valley Accessible Research and Computational Hub (CENVAL-ARC) compute resources, supported by NSF award #2346744, extend UC Merced's regional cyberinfrastructure capacity and support both campus-hosted and Open Science Grid (OSG)-accessible computing. CENVAL-ARC resources installed on the Pinnacles cluster include:
+Central Valley Accessible Research and Computational Hub (CENVAL-ARC) compute resources, supported by NSF award #2346744, extend UC Merced's regional cyberinfrastructure capacity and support both campus-hosted and Open Science Grid (OSG)-accessible computing. CENVAL-ARC resources installed on the Pinnacles cluster include:
 
-    - 9 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage, configured with either 1 TB M.2 NVMe or 2 × 960 GB NVMe SSDs per node;
-    - 4 high-memory nodes with dual Intel 32-core Xeon Gold 6430 processors, 1 TB RAM, and 1 TB M.2 NVMe local storage per node;
-    - 8 GPU nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each, dual Intel 32-core Xeon Gold 6530 processors, local NVMe storage, and HDR-100 InfiniBand connectivity;
-    - 4 GPU nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each, dual Intel 32-core Xeon Gold 6530 processors, 256 GB RAM, local NVMe storage, and HDR-100 InfiniBand connectivity.
+- 9 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage, configured with either 1 TB M.2 NVMe or 2 × 960 GB NVMe SSDs per node;
+- 4 high-memory nodes with dual Intel 32-core Xeon Gold 6430 processors, 1 TB RAM, and 1 TB M.2 NVMe local storage per node;
+- 8 GPU nodes with 2 × NVIDIA L40S GPUs, 48 GB GDDR6 each, dual Intel 32-core Xeon Gold 6530 processors, local NVMe storage, and HDR-100 InfiniBand connectivity;
+- 4 GPU nodes with 2 × NVIDIA H200 NVL GPUs, 141 GB HBM3 each, dual Intel 32-core Xeon Gold 6530 processors, 256 GB RAM, local NVMe storage, and HDR-100 InfiniBand connectivity.
 
-    CENVAL-ARC also provides OSG-accessible resources, including 4 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage.
+CENVAL-ARC also provides OSG-accessible resources, including 4 compute nodes with dual Intel 32-core Xeon Gold 6430 or 6530 processors, 256 GB RAM, and local NVMe storage.
 
-    Pinnacles provides approximately 92 TB of NFS fast scratch storage and 1.5 PB of usable long-term storage. Compute nodes are interconnected through HDR InfiniBand with RDMA, supporting up to 100 Gb/s low-latency data transfer.
+Pinnacles provides approximately 92 TB of NFS fast scratch storage and 1.5 PB of usable long-term storage. Compute nodes are interconnected through HDR InfiniBand with RDMA, supporting up to 100 Gb/s low-latency data transfer.
 
-    **Availability and Support:** The Pinnacles cluster is managed by CIRT. General access is available to UC Merced faculty projects at no cost, subject to allocation and scheduling policies. CIRT provides user support, consultation, onboarding, documentation, and training to support effective use of the cluster for research, training, and AI/data-intensive workflows.
+**Availability and Support:** The Pinnacles cluster is managed by CIRT. General access is available to UC Merced faculty projects at no cost, subject to allocation and scheduling policies. CIRT provides user support, consultation, onboarding, documentation, and training to support effective use of the cluster for research, training, and AI/data-intensive workflows.
 
-   ### __How to cite__
+### __How to cite__
 
-    All Pinnacles users must agree to acknowledge the Pinnacles Cluster in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:
+All Pinnacles users must agree to acknowledge the Pinnacles Cluster in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:
 
-    *This research [Part of this research] was conducted using the Pinnacles cluster, which is centrally funded by the University of California, Merced, and maintained by the Cyberinfrastructure and Research Technologies (CIRT) team at UC Merced.*
+*This research [Part of this research] was conducted using the Pinnacles cluster, which is centrally funded by the University of California, Merced, and maintained by the Cyberinfrastructure and Research Technologies (CIRT) team at UC Merced.*
 
-    From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by Pinnacles users that have included results of calculations on Pinnacles. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced.
+From time to time the Committee on Research Computing (CoRC) may request a report of publications and presentations authored by Pinnacles users that have included results of calculations on Pinnacles. This information may be used by CoRC in advertising and report documents, future proposals, and/or other materials related to research computing at UC Merced.
 
-  #### `CENVAL-ARC` Node Use on Pinnacles
-     In addition, for those who also use `cenval-arc` nodes, please add the citation below to support NSF grant (#2346744). An example acknowledgement section is: 
+#### `CENVAL-ARC` Node Use on Pinnacles
+In addition, for those who also use `cenval-arc` nodes, please add the citation below to support NSF grant (#2346744). An example acknowledgement section is: 
 
-      *This research [Part of this research] was conducted using CENVAL-ARC compute resources on the Pinnacles cluster (NSF #2346744) at the Cyberinfrastructure and Research Technologies (CIRT) at University of California, Merced.*
-
-
-  </TabItem>
-
-  <TabItem value="MERCED" label="MERCED" >
-     :::note
-      The MERCED (Multi-Environment Research Computer for Exploration and Discovery) Cluster is a 1,872-core, Linux-based high-performance computing system. The MERCED cluster runs with the [Rocky (9.8)](https://rockylinux.org/) operating system, and employs the [Slurm](https://slurm.schedmd.com/) job scheduler and queueing system to manage job runs. MERCED operates on a <Tag color="#3399ff">Recharge</Tag> model, meaning users are billed per core-hour of usage. Further details on the recharge process can be found below. To apply for a MERCED account, users must have a Chart of Account (COA) number ready.
-     :::
-    __Facility Statement__
-      
-      MERCED is a general-purpose computing cluster located in the server facility (see Research Facility below). The cluster consists of a login node, 65 compute nodes, and 15 high memory nodes. Total CPU-core counts is 1872.
-
-    __How to cite__
-
-    All MERCED users must agree to acknowledge the MERCED Cluster and the supporting UC,Merced Office of Information Technology central funded MERCED in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on MERCED. An example acknowledgement section is:
-    
-    
-    *This research [Part of this research] was conducted using MERCED cluster, which is centrally funded by the University of California, Merced, and maintained by the Cyberinfrastructure and Research Technologies (CIRT) team at UC Merced.*
-    
-
-  <details>
-
-    <summary>
-    Recharge details
-    </summary>
-
-
-    :::tip
-    MERCED recharge calculations
-    ```
-    Total Cost ($) = # of cores x Duration (wall clock hours) x (cost per core-hour)
-    ```
-    - A core-hour is a single compute core used for one hour (a core-hour) and 2G of RAM. 
-    - Cost per core-hour is $0.1
-
-    :::
-    __why should I be willing to invest in this?__
-      - 🔴 The MERCED cluster offers unlimited wall clock time, allowing users to run significantly longer jobs without time constraints. 
-      - 🟢 The MERCED queue is less crowded, allowing jobs to be picked up with shorter waiting times.
-      - 🟡 All recharge funds will go toward cluster maintenance, including network switch replacements and hardware upkeep. The CIRT team will not profit from these contributions.
-
-  </details>
-
-  
-  </TabItem>
-
- 
-</Tabs>
+*This research [Part of this research] was conducted using CENVAL-ARC compute resources on the Pinnacles cluster (NSF #2346744) at the Cyberinfrastructure and Research Technologies (CIRT) at University of California, Merced.*
 
 <details>
      <summary>
@@ -130,40 +79,36 @@ As well as how to get access, logging in, file system, resource breakdown.
   </details>
   
 
-## Cluster Hardware Configuration
+## Pinnacles Cluster Hardware Configuration
 
-<Tabs>
+Compute nodes: Compute nodes are where actual jobs run. There are three types of compute nodes on Pinnacles.
+* 49 Regular memory (RM) CPU nodes with 256GB RAM
+* 8 Big memory CPU nodes (bigmem) with 1TB RAM
+* 20 GPU Nodes 
+  - 8 GPU nodes with NVIDIA A100 GPUs
+  - 8 GPU nodes with NVIDIA L40S GPUs
+  - 4 GPU nodes with NVIDIA H200 NVL GPUs
 
-  <TabItem value="Pinnacles Hardware" label="Pinnacles Hardware Overview" default>
-    
-  Compute nodes: Compute nodes are where actual jobs run. There are three types of compute nodes on Pinnacles.
-  * 49 Regular memory (RM) CPU nodes with 256GB RAM
-  * 8 Big memory CPU nodes (bigmem) with 1TB RAM
-  * 20 GPU Nodes 
-    - 8 GPU nodes with NVIDIA A100 GPUs
-    - 8 GPU nodes with NVIDIA L40S GPUs
-    - 4 GPU nodes with NVIDIA H200 NVL GPUs
-
-  |     CPU node            | RM node                        | bigmem node            |
-  |:----------------|:-------------------------------|:-------------------------------| 
-  | Number of nodes | 40                             | 4                              | 
-  | CPU             | 2 Intel 28 core Xeon Gold 6330 | 2 Intel 28 core Xeon Gold 6330 | 
-  | RAM             | 256GB | 1TB| 
-  | Node-local storage             | 1TB NVMe Data Center Solid State Drive (SSD) | 1TB NVMe Data Center Solid State Drive (SSD)|
-  | Network             | ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot| ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
+|     CPU node            | RM node                        | bigmem node            |
+|:----------------|:-------------------------------|:-------------------------------| 
+| Number of nodes | 40                             | 4                              | 
+| CPU             | 2 Intel 28 core Xeon Gold 6330 | 2 Intel 28 core Xeon Gold 6330 | 
+| RAM             | 256GB | 1TB| 
+| Node-local storage             | 1TB NVMe Data Center Solid State Drive (SSD) | 1TB NVMe Data Center Solid State Drive (SSD)|
+| Network             | ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot| ConnectX-6 VPI adapter card, HDR 100 InfiniBand (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|
 
 
 
-  | `gpu` GPU node     |                                                           |
-  |:-------------|:----------------------------------------------------------|
-  | Number       | 8                                                         |
-  | GPU per node | 2× NVIDIA A100 PCIe GPUs, 40 GB HBM2 |
-  | CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
-  | RAM          | 256GB                                                     |
-  | Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
-  |Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|  
+| `gpu` GPU node     |                                                           |
+|:-------------|:----------------------------------------------------------|
+| Number       | 8                                                         |
+| GPU per node | 2× NVIDIA A100 PCIe GPUs, 40 GB HBM2 |
+| CPU          | 2x Intel 28-Core Xeon Gold 6330                           |
+| RAM          | 256GB                                                     |
+| Node-local storage|1TB M.2 NVMe Data Center Solid State Drive (110mm)|
+|Network|ConnectX-6 VPI adapter card, HDR-100 IB (100Gb/s) and 100GbE, single-port QSFP56, PCIe3/4 x16 Slot|  
 
-| `cenvalarc` CPU Nodes | `cenvalarc.compute` - CPU Node                                                                      | `cenvalarc.bigmem` - bigmem node                                                                   | `OSG`*                                                                                              |
+| `cenvalarc` CPU Nodes | `cenvalarc.compute` - CPU Node                                                                      | `cenvalarc.bigmem` - bigmem node                                                                   | `OSG`*                                                                                              |
 | -------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Number of nodes      | 9                                                                                                   | 4                                                                                                  | 4                                                                                                   |
 | CPU                  | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W                                                      | 2x Intel 32-Core Xeon Gold 6430 2.1GHz - 270W. Or 2× Intel Xeon Gold 6530, 32-Core, 2.3 GHz, 225 W. |
@@ -186,104 +131,39 @@ As well as how to get access, logging in, file system, resource breakdown.
 | Network                  | ConnectX-6 VPI, HDR-100 IB (100Gb/s), single-port QSFP56, PCIe3/4 x16 | ConnectX-6 VPI, HDR-100 IB (100Gb/s), single-port QSFP56, PCIe3/4 x16 |
 | constraint               | `--gres=gpu:l40s:<number of gpu>`                                     | `--gres=gpu:nvidia_h200_nvl:<number of gpus>`                         |
 | Assigned Nodes           | `gnode[017-024]`                                                      | `gnode[026-029]`                                                      |
-  </TabItem>
 
-  
-  <TabItem value="MERCED Hardware" label="Merced Hardware Overview">
-  
-  MERCED hosts 66 CPU compute nodes including 25 high memory nodes. Please be aware that
-  the nodes among MERCED cluster are multi-generational, meaning that the CPU
-  processors from different nodes are having different features, the table shows below
-  listed detailed node information. Users may experience relative big
-  performance variations when running the same jobs on different nodes.
+## How to Request a Pinnacles Account 
 
-  The table below listed all MERCED cluster CPU compute nodes features, and their
-  processors generations.
+UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs. 
 
-  | Nodes        | feature                                                    | RAM   | Total cores per nodes | InfiniBand (IB) |
-  |--------------|------------------------------------------------------------|-------|-----------------------|----------------|
-  | 33-43        | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 128GB | 24                    | yes            |
-  | 44           | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 112GB | 24                    | yes            |
-  | 45-60        | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 257GB | 24                    | yes            |
-  | 61-72        | Broadwell,avx2,E5-2650_v4,local scratch 447GB              | 257GB | 24                    | yes            |
-  | 73-76, 79-88 | Broadwell,avx2,E5-2650_v4,local scratch 932GB              | 128GB | 24                    | yes            |
-  | 77           | Broadwell,avx2,E5-2650_v4,no local scratch                 | 128GB | 24                    | yes            |
-  | 89-104       | Skylake,sse4.2,avx,avx2,avx512,Gold_6130, no local scratch | 191GB | 32                    | yes            |
-  | 105-114       | cascadelake,sse4.2,avx,avx2,avx512,Gold_6230, no local scratch | 191GB | 40                    | yes            |  
-  </TabItem>
-  
-</Tabs>
+UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
+<details>
 
-## How to Request an Account 
-
-<Tabs>
-  <TabItem value="Pinnacles Account Process" label="Pinnacles Account Process">
-  UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs. 
-
-    UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
-  <details>
-
-  <summary>Click Here to View a Visual Guide for Creating an Account for Pinnacles</summary>
+<summary>Click Here to View a Visual Guide for Creating an Account for Pinnacles</summary>
 
 
 
-  __Requesting Access to Pinnacles Process.__
+__Requesting Access to Pinnacles Process.__
 
-  1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
-      1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
-      2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
-  2. Click `Request Service`
-  ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
-  3. Begin to populate all the required information. 
-      1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
-      ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
-  4. For selecting the system, from the drop-down, click `pinnacles.ucmerced.edu (Free Cluster)`
-  ![Image of Pinnacles Selection](imgs/RequestAccountPinnacles.png "Selecting Pinnacles")
-  5. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
-  6. Click `Request Service`
-  ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
+1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
+    1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
+    2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
+2. Click `Request Service`
+![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
+3. Begin to populate all the required information. 
+    1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
+    ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
+4. For selecting the system, from the drop-down, click `pinnacles.ucmerced.edu (Free Cluster)`
+![Image of Pinnacles Selection](imgs/RequestAccountPinnacles.png "Selecting Pinnacles")
+5. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
+6. Click `Request Service`
+![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
 </details>
-</TabItem>
 
-  <TabItem value="MERCED Account Process" label="MERCED Account Process">
-
-  UC Merced Faculty Principal Investigators (PIs) can request access to MERCED cluster. All student user accounts on MERCED cluster must associate with UC Merced PIs.   UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=643ea9ff1b67a0543a003112cd4bcba3&form_id=280d8bb04f72f6006137d0af0310c7b0).
-
-  :::note
-  MERCED is a recharge cluster, and will require all accounts to have an associated COA Number submitted at time of account request. 
-  :::
-
-  <details>
-
-  <summary>Click Here to View a Visual Guide for Creating an Account for MERCED</summary>
-
-
-  __Requesting Access to MERCED Process.__
-  1. UC Merced Principal Investigators (PIs) or other researchers request MERCED account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
-      1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
-      2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
-  2. Click `Request Service`
-  ![Image of Request Service](imgs/RequestAccountpt2.png "Request Account Button")
-  3. Begin to populate all the required information. 
-      1. At the question regarding PI Status. Typically only Professors are PIs, their students and post-docs would select `No` at this question. 
-      ![Image of PI Selection](imgs/RequestAccountpt2PI.png "PI Selection")
-  4. For selecting the system, from the drop-down, click `merced.ucmerced.edu (Recharge Cluster)`
-  ![Image of MERCED Selection](imgs/RequestAccountMERCED.png "Selecting MERCED")
-  5. Because MERCED is a Recharge Cluster, please attach a valid COA number. Without a COA number, the account request will be denied. 
-  ![Image of COA Input](imgs/RequestAccountMERCEDCOA.png "COA Input")
-  6. Add any other additional comments or information, you believe will be helpful for the requesting an account process. 
-  7. Click `Request Service`
-  ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
-  
-  </details>
-  </TabItem>
-
-</Tabs>
-
-## Centralized login
+## Pinnacles Centralized Login
 
 ### Open OnDemand Login 
-For users seeking to access access Pinnacles and MERCED cluster via the web-based GUI, [Open OnDemand](https://ondemand.rc.ucmerced.edu/). Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
+For users seeking to access Pinnacles cluster via the web-based GUI, [Open OnDemand](https://ondemand.rc.ucmerced.edu/). Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
 
 :::note 
 If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
@@ -297,11 +177,11 @@ ssh <username>@login.rc.ucmerced.edu
 ```
 Note: the command starts with `ssh` followed by your username and the hostname `login.rc.ucmerced.edu`.
 
-The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles and MERCED are accessed via a centralized login node at `login.rc.ucmerced.edu`. This means that once a user logs into one of the login nodes, they will be able to access both the MERCED and Pinnacles clusters. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus. However, to access the MERCED cluster, users must provide a __COA__ account number and enter the number during the MERCED account application process.
+The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles is accessed via a centralized login node at `login.rc.ucmerced.edu`. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus.
 
 Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
 
-### Connect to the clusters 
+### Connect to the Pinnacles Cluster 
 On Mac and Linux you can use the built-in terminal application; on Windows you can use [MobaXterm](https://mobaxterm.mobatek.net/) to open a terminal, and type the following command, but replace `<username>` to your UCMID.
 ```shell
 ssh <username>@login.rc.ucmerced.edu
@@ -330,11 +210,11 @@ MobaXterm includes an integrated X11 server, so no additional installation of X1
   - Ensure the "Specify username" box is checked, then enter your username for the remote server
   - Check the box that says "X11-forwarding". This option enables X11 forwarding for your session
 
-## File systems and storage
+## Pinnacles File Systems and Storage
 There are 2 folders (`data` and `scratch`) located in `HOME` that users will start with.
 
 :::note
-MERCED and Pinnacles have now been merged into a centralized system, allowing them to share the same file systems. We have also increased the quota for the `data`, `scratch`, and `HOME` directories. Please note that there is a 7-day grace period once the soft quota limit is reached.
+We have increased the quota for the `data`, `scratch`, and `HOME` directories. Please note that there is a 7-day grace period once the soft quota limit is reached.
 :::
 
 | Folder       | soft quota  | hard quota     |
@@ -370,65 +250,38 @@ Expanded allocations remain subject to all existing storage policies and expecta
 CIRT reserves the right to review, adjust, or discontinue pilot allocations if storage is not being actively used for the stated research purpose, if capacity constraints arise, or as the pilot program evolves.
 :::
 
-## Queue Information
+## Pinnacles Queue Information
 
-<Tabs>
-  
-  <TabItem value="Pinnacles Queue Information" label="Pinnacles Queue Information" default>
-    
+Pinnacles Cluster is the default cluster that is free and accessible to all users and has 6 public queues. 
 
-  Pinnacles Cluster is the default cluster that is free and accessible to all users and has 6 public queues. 
+| Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
+| -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
+| ^test | 1 hour | 5 min. | 2 nodes | 1 |
+| bigmem | 3 days | 1 hrs | 2 nodes | 2 | 
+| gpu | 3 days | 1 hrs | 2 nodes | 4 | 
+| *short | 6 hours | 1 hrs | 4 nodes | 12 |
+| medium | 1 day | 6 hrs | 4 nodes | 6 |
+| long | 3 days | 1 day |  4 nodes | 3 | 
+|cenvalarc.compute|3 day| 1 day| 4 nodes| 3|
+|cenvalarc.bigmem|3 day| 1 day| 2 nodes| 2|
+|cenvalarc.gpu|3 day| 1 day| 2 nodes| 4|
 
-  | Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
-  | -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
-  | ^test | 1 hour | 5 min. | 2 nodes | 1 |
-  | bigmem | 3 days | 1 hrs | 2 nodes | 2 | 
-  | gpu | 3 days | 1 hrs | 2 nodes | 4 | 
-  | *short | 6 hours | 1 hrs | 4 nodes | 12 |
-  | medium | 1 day | 6 hrs | 4 nodes | 6 |
-  | long | 3 days | 1 day |  4 nodes | 3 | 
-  |cenvalarc.compute|3 day| 1 day| 4 nodes| 3|
-  |cenvalarc.bigmem|3 day| 1 day| 2 nodes| 2|
-  |cenvalarc.gpu|3 day| 1 day| 2 nodes| 4|
+:::tip
+`short` queue is the default queue for all jobs submitted without specifying which queue job must run on
 
-  :::tip
-  `short` queue is the default queue for all jobs submitted without specifying which queue job must run on
+^test queue has access to all node types use constraints to test on specific types. Ex:
+```bash
+ #SBATCH --constraint=gpu,bigmem
+```
+Access to GPUs also requires 
+```bash
+#SBATCH --gres=gpu:X
+```
+:::
 
-  ^test queue has access to all node types use constraints to test on specific types. Ex:
-  ```bash
-   #SBATCH --constraint=gpu,bigmem
-  ```
-  Access to GPUs also requires 
-  ```bash
-  #SBATCH --gres=gpu:X
-  ```
-  :::
-  
-  </TabItem>
-  
-  <TabItem value="MERCED Queue Information" label="MERCED Queue Information">
-   MERCED is the **Recharge** Cluster.
-  | Public Queues(Available to all users)| Max Wall Time | Default Time | Max Nodes per Job | Max # of jobs that can be submitted | 
-  | -------------------------------------|---------------|--------------|-------------------|-------------------------------------|
-  | bigmem | 30 days | 1 hr | No limit | No limit | 
-  | *compute | 30 days | 1 hr | No limit | No limit | 
+## Global Modules on Pinnacles
 
-
-    :::tip
-      `#SBATCH -M merced ` must always be used to submit a job to MERCED cluster
-
-      `compute` queue is the default queue for all jobs submitted
-    :::
-
-  </TabItem>
-
-
- 
-</Tabs>
-
-## Global Modules on Pinnacles and MERCED
-
-Pinnacles and MERCED already come with a collection of global modules or softwares that do not need to be individually installed by the user. The module system allows for the *loading* and *unloading* of a specific module. Users will make use of `avail`, `load`, `list`, `unload`, and `swap`. A table describing each of these Modules options is given below.
+Pinnacles already comes with a collection of global modules or softwares that do not need to be individually installed by the user. The module system allows for the *loading* and *unloading* of a specific module. Users will make use of `avail`, `load`, `list`, `unload`, and `swap`. A table describing each of these Modules options is given below.
 
 :::tip
 A complete guide to using modules can be found via `man module`. 
@@ -442,15 +295,10 @@ A complete guide to using modules can be found via `man module`.
 | `module unload <mod_name>`    | This command unloads  the environment corresponding to \<mod_name>                     |
 | `module swap <mod_1> <mod_2>` | This command unloads the environment corresponding to \<mod_1> and loads to \<mod_2>   |
 
-
-
-<Tabs>
-  
-  <TabItem value="Pinnacles and MERCED Global Modules" label="Pinnacles and MERCED Global Modules" default>
-  <details>
-  <summary> Click Here to Expand to View the List. </summary>
-    ```bash
-       admin/0.0.1                            gaussian/gdv-20170407-i10+             mpfr/4.2.0                               r-biobase/2.50.0
+<details>
+<summary> Click Here to Expand to View the List. </summary>
+```bash
+   admin/0.0.1                            gaussian/gdv-20170407-i10+             mpfr/4.2.0                               r-biobase/2.50.0
    amber/20-devel                         gaussian/gdv-20210302-j15       (D)    mpich/3.4.2-gcc-8.4.1                    r-ctc/1.64.0
    amber/20                        (D)    gcc/8.5.0                              mpich/3.4.2-intel-2021.4.0               r-deseq2/1.30.0
    anaconda3/2021.05                      gcc/11.2.0                             mpich/3.4.2-nvidiahpc-21.9-0      (D)    r-edger/3.32.1
@@ -503,31 +351,14 @@ A complete guide to using modules can be found via `man module`.
    gaussian/g09-d01                       minimap2/2.14                          r-ape/5.4-1                              xcrysden/1.6.2
    gaussian/g16-b01                       molden/6.7                             r-argparse/2.0.3
 
-  Where:
-   D:  Default Module
+Where:
+ D:  Default Module
 
 
 
-    ```
+```
 
-  </details>
-  </TabItem>
-  
-  <TabItem value="MERCED Only Modules" label="MERCED Only Modules">
-    ```bash
-       berkeleygw/3.0.1-intel-mvapich2    berkeleygw/4.0-mvapich2-oneapi (D)    
-       bwa-mem2/2.2.1    openmpi/4.0-merced-test   
-      user-modules
-
-      Where:
-      D:  Default Module
-    ```
-
-  </TabItem>
-
-
- 
-</Tabs>
+</details>
 
 ### Checking disk quota and usage
 To look at your current usage amounts of `HOME`, `data` or `scratch` use the following command
@@ -573,18 +404,8 @@ du -h -s <directory name>
 </TabItem>
 </Tabs>
 
-:::warning
-Users who submit jobs to MERCED and use the unified storage are expecting slower network communications. 
-- Home - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles. 
-- Data - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles. 
-- Scratch - Shared over 10G network from Pinnacles to Merced, connected over IB on pinnacles
-
-
-
 Please avoid writing files directly to `/tmp` on the head node, as this can fill up disk space and cause issues for all users. Instead, use your personal scratch directory for temporary files. Some programs may default to using `/tmp`, so ensure that the appropriate scratch directory is properly configured for your code.
-:::
 
 :::note
 Disclaimer: Users are responsible for backing up all data stored on the clusters and are fully accountable for its availability. CIRT is not liable for any data loss in the event of accidents
 :::
-

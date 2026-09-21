@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 ## HPC Cluster Maintenance & Node Expansion (Feb 2–6)
 _posted on:01/27/2026_
 
-Both the MERCED and Pinnacles clusters will be inaccessible from Monday, February 2nd (8:00am), through Friday, February 6th (5:00pm), for node expansion.
+The Pinnacles cluster will be inaccessible from Monday, February 2nd (8:00am), through Friday, February 6th (5:00pm), for node expansion.
 
 During this scheduled downtime, we will be adding:
 - 5 New CPU Nodes: Dual Intel 32-Core Xeon 6530 processors.
@@ -23,7 +23,7 @@ Impact on Jobs:
 - Submission Limits: Slurm will not accept any jobs with a duration that overlaps the scheduled maintenance window.
 - Job Management: Please ensure all active jobs are managed or completed before the maintenance begins on Monday at 8:00am.
 
-We expect both clusters to be back online and open for submissions by Saturday, February 7th. Thank you for your patience as we work to increase our computational capacity.
+We expect the cluster to be back online and open for submissions by Saturday, February 7th. Thank you for your patience as we work to increase our computational capacity.
 
 ## Registration Now Open: CENVAL-ARC Symposium
 _posted on:01/08/2026_
@@ -47,18 +47,6 @@ Register [here](https://forms.office.com/r/dw80GhQ8xK?origin=lprLink)
 For more details, visit: cenval-arc.ucmerced.edu
 
 Thank you for helping us spread the word. We look forward to seeing you at CENVAL-ARC 2026.
-
-## OS Upgrade Impact: MERCED cluster + BorgStore
-_posted on: 11/07/2025_
-
-In preparation for our upcoming transition to Rocky Linux 9 (EL9), we will begin by upgrading the MERCED cluster. During this upgrade period and until the full migration is completed across both clusters, MERCED will no longer have access to the BorgStore (BeeGFS) filesystem.
- 
-Effective November 12, any jobs submitted on MERCED that rely on access to BorgStore will NOT run and will fail.
- 
-The Pinnacles cluster will remain fully operational and will continue to have access to BorgStore throughout this process.
- 
-Thank you for your understanding and cooperation during this transition.
- 
 
 ## CIRT Team Attending PEARC Conference (July 18–25)
 _posted on: 07/11/2025_
@@ -91,7 +79,7 @@ https://cenval-arc.ucmerced.edu/
 ## HPC clusters maintenance (Sep. 23 - 27th, 2024)
 _posted on: 09/02/2024_
 
-HPC clusters MERCED and Pinnacles will be under a maintenance for critical maintenance and for installing hardware from 6am Sep. 23 - 5pm Sep. 27, 2024.
+The Pinnacles HPC cluster will be under maintenance for critical maintenance and for installing hardware from 6am Sep. 23 - 5pm Sep. 27, 2024.
 During this time, users will not be able to:
 - Login to the clusters and access their data
 - Run jobs on the cluster
@@ -103,23 +91,23 @@ During this maintenance, CIRT team along with cluster vendors will perform the f
 - Upgrading Slurm version
 - Regular maintenance
 
-## Emergency Maintenance Notification for MERCED and Pinnacles HPC Clusters  - 06/17/2024 
+## Emergency Maintenance Notification for the Pinnacles HPC Cluster - 06/17/2024 
 _posted on: 06/02/2024_
 
-We are writing to inform you of emergency fire management system maintenance scheduled by Facilities on Monday, June 17th, from 1:00 PM through 1:30 PM that will impact the MERCED and Pinnacles HPC clusters.
+We are writing to inform you of emergency fire management system maintenance scheduled by Facilities on Monday, June 17th, from 1:00 PM through 1:30 PM that will impact the Pinnacles HPC cluster.
 
-During the maintenance window, the clusters will be offline to ensure the safety and integrity of our systems. Any jobs running or scheduled to run during this period will be lost.
+During the maintenance window, the cluster will be offline to ensure the safety and integrity of our systems. Any jobs running or scheduled to run during this period will be lost.
 
 Please plan accordingly if you have any critical tasks requiring cluster access during this time.
 
-For up-to-date information on the status of the clusters during this maintenance, please visit status.ucmerced.edu. We anticipate that the clusters will be back online before the end of the business day.
+For up-to-date information on the status of the cluster during this maintenance, please visit status.ucmerced.edu. We anticipate that the cluster will be back online before the end of the business day.
 
 Thank you for your understanding and cooperation
 
 ## COMPLETED: HPC cluster maintenance - 1/16/24  
 _posted on 01/16/2024_
 
-The MERCED and Pinnacles clusters are back online. The CIRT team has completed several updates, including security advisories, bug fixes, and product enhancements. Upgrades encompassed storage server firmware, storage chassis firmware, IB and Data network expansion, and nodes' BIO and BMC firmware. Currently, the default CUDA version for GPU nodes (gnode) is 12.3.
+The Pinnacles cluster is back online. The CIRT team has completed several updates, including security advisories, bug fixes, and product enhancements. Upgrades encompassed storage server firmware, storage chassis firmware, IB and Data network expansion, and nodes' BIO and BMC firmware. Currently, the default CUDA version for GPU nodes (gnode) is 12.3.
 
   Please feel free to resume
 

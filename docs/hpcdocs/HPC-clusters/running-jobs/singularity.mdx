@@ -3,10 +3,10 @@ title: Containerization for HPC
 sidebar_position: 5
 ---
 
-# Containers on Pinnacles and MERCED
-Pinnacles and MERCED **do not** support Docker images or containers due to security reasons. 
+# Containers on Pinnacles
+Pinnacles **does not** support Docker images or containers due to security reasons. 
 Singularity is an open source container platform that is designed for HPC environments. 
-## Using Singularity with the Clusters
+## Using Singularity on the Pinnacles Cluster
 Singularity can be a useful software when you need to have multiple software packages 
 and configurations made and distributed for other users to use and collaborate on.
 
@@ -16,7 +16,7 @@ configuration and other distribution issues.
 This enhances convenience in sharing and ensures portability, enabling the immediate 
 execution of software "out of the box" within the container.
 
-## Building a Container for use on the Clusters
+## Building a Container for use on Pinnacles
 :::warning
 Prerequisite: Create an account with [Sylabs Cloud](https://cloud.sylabs.io). This will allow us to create singularity images remotely. Furthermore users can also build definition files of images for other collaborators to access via the cloud. 
 :::
@@ -56,7 +56,7 @@ Prerequisite: Create an account with [Sylabs Cloud](https://cloud.sylabs.io). Th
     :::danger
     All of the following commands must be run on a compute node as they are resource-intensive.
     :::
-    Because users of Pinnacles and MERCED do not have sudo access, user must create their containers on Singularity's cloud base for all public containers. Refer to prerequisite material to ensure creation and access to [Sylab Cloud](https://cloud.sylabs.io/dashboard). 
+    Because users of Pinnacles do not have sudo access, user must create their containers on Singularity's cloud base for all public containers. Refer to prerequisite material to ensure creation and access to [Sylab Cloud](https://cloud.sylabs.io/dashboard). 
 
 3. Run the command ```bash singularity remote login ```. 
 

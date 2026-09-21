@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Running Quantum ESPRESSO
-[Quantum ESPRESSO](https://www.quantum-espresso.org/) is a group of codes that is used to compute the microscopic properties of materials and molecules at the atomic levels using density functional theory. The core codes of Quantum ESPRESSO are parallelizable and require large amounts of memory making them the perfect candidates for high performance computing. This article is written to understanding the nuances of using Quantum ESPRESSO on Pinnacles and MERCED. To follow a tutorial on Quantum ESPRESSO, follow one of the links on this [page](https://www.quantum-espresso.org/tutorials/).
+[Quantum ESPRESSO](https://www.quantum-espresso.org/) is a group of codes that is used to compute the microscopic properties of materials and molecules at the atomic levels using density functional theory. The core codes of Quantum ESPRESSO are parallelizable and require large amounts of memory making them the perfect candidates for high performance computing. This article is written to understanding the nuances of using Quantum ESPRESSO on Pinnacles. To follow a tutorial on Quantum ESPRESSO, follow one of the links on this [page](https://www.quantum-espresso.org/tutorials/).
 
 ### Job Script for Bilayer MoS₂
 Below is an example job script and input file for running pw.x on bilayer MoS₂. Refer to the Quantum ESPRESSO documentation for details on pw.x input parameters.

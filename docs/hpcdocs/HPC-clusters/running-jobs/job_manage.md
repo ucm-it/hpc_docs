@@ -29,14 +29,13 @@ Execute the script via the command:
 
 |Command_Option | Use | 
 | -------------| -----------------------|
-| `-M merced ` | Shows all currently submitted jobs on MERCED |
 |  `--me ` | Shows all currently jobs submitted by user |
 | `--r` or `-array ` | Shows job arrays submitted onto cluster |
 | `--start` | Shows rough estimate of when jobs for specified user will begin, based off real-time state of the scheduler and jobs queued. Not always accurate estimates. |
 
 
 :::tip
-Flags can be used together in the same line for example: `squeue -M merced --me --start`
+Flags can be used together in the same line for example: `squeue --me --start`
 :::
 
 ## Job State 

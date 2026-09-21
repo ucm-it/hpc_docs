@@ -20,7 +20,7 @@ Borgstore is UC Merced's on campus data-storage center and is available for rese
 
 Borgstore is also made up of a metadata server with a `1U dual Xeon Skylake SP`, `8x 2.5" Hotswap`, `24 DIMM Sockets`, `IPMI`, `dual 10GbE-T base system` and `8x 3.2TB Endurance Data Center PCIe NVMe 2.5`.Solid State Drive metadata storage
 
-Borgstore is accessible on all nodes (Pinnacles and MERCED) with Infiniband (IB), all of the partitions contain a mixture of nodes of InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the slurm option of 
+Borgstore is accessible on all nodes (Pinnacles) with Infiniband (IB), all of the partitions contain a mixture of nodes of InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the slurm option of 
 ```shell
 #SBATCH shell--constraint=ib
 ```

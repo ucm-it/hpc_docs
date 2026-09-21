@@ -141,7 +141,7 @@ No recent office hour questions
 
 >Q: Does Pinnacles have hyperthreading turned on? 
 >
->A: No, Pinnacles and MERCED currently do not support hyperthreading. 
+>A: No, Pinnacles currently does not support hyperthreading. 
 
 >Q: What is hyperthreading? 
 >
@@ -168,10 +168,6 @@ No recent office hour questions
 >Q: Can I let this folder/file download in the background?
 >
 >Yes users can run the download or transfer of data using `& ` at the end of their command. 
-
->Q: I can not login into the Central Login even though I had an account on Merced Cluster?
->
->A: Submit a password reset to gain access to the central login node. From there all data stored in the home and data folder of the Merced cluster will transfer over to Pinnacles cluster as Merced cluster is recharge model. User must also rebuild any enviroment they had built in Merced in Pinnacles. Pinnacles is the default cluster when users login to through central login. 
 
 >Q: Does Pinnacles have STATA?
 >

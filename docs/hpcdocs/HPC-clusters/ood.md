@@ -8,19 +8,19 @@ showLastUpdateAuthor: true
 #### Quick Summary
 :::info
 This page presents information on Open OnDemand Use and Best Practices 
-This page aims to offer in-depth walkthrough and tutorials relating to the use Open OnDemand for the MERCED and Pinancles Cluster
+This page aims to offer in-depth walkthrough and tutorials relating to the use Open OnDemand for the Pinnacles Cluster
 :::
 
 # Introduction to OOD
 
-We are happy to introduce Open OnDemand (OOD) support for Pinnacles and MERCED Clusters!
+We are happy to introduce Open OnDemand (OOD) support for the Pinnacles Cluster!
 
 ## Accessing OOD 
 To access Open OnDemand please access using the following link: [https://ondemand.rc.ucmerced.edu](https://ondemand.rc.ucmerced.edu)
 
 The Login page will require you to authenticate with your username and password that were given to the user by the CIRT team. Typically the username will be the same as your UCM NetID, but the password will be a password that you chose. 
 
-Open OnDemand is a web front‑end that lets you interact with both the **Pinnacles** and **MERCED** clusters without having to interact with command line. Think of it as an HPC “control center” — upload files, open a shell, launch Jupyter Lab or VS Code, monitor jobs, and even check your disk usage, all from a browser.
+Open OnDemand is a web front‑end that lets you interact with the **Pinnacles** cluster without having to interact with command line. Think of it as an HPC “control center” — upload files, open a shell, launch Jupyter Lab or VS Code, monitor jobs, and even check your disk usage, all from a browser.
 
 ## Logging into the Web GUI
 >  **URL:** [https://ondemand.rc.ucmerced.edu](https://ondemand.rc.ucmerced.edu)  

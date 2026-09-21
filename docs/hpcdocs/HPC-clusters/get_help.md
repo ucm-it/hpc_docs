@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 
 #### Quick Summary
 :::info
-This page presents: How to seek out support for Pinnacles and MERCED clusters.
+This page presents: How to seek out support for the Pinnacles cluster.
 :::
 
 

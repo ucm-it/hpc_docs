@@ -10,19 +10,17 @@ import TabItem from '@theme/TabItem';
 
 
 :::info
-This page presents a high walk-through of submitting jobs on the UC Merced Clusters. 
+This page presents a high walk-through of submitting jobs on the UC Merced Cluster. 
 
 To find more tailored and thorough, software-specific guides, please see our [interactive jobs guide](./interact_job.md), [Conda environment guide](./conda.mdx), and [R with MPI guide](./run_r_mpi.mdx).
 
 :::
 
-## Running Jobs on Clusters
+## Running Jobs on the Pinnacles Cluster
 
-**Submit command by cluster:**
-- **Pinnacles:** `sbatch your_script.sh`
-- **MERCED:** `sbatch -M merced your_script.sh`
+**Submit command:** `sbatch your_script.sh`
 
-The `-M merced` flag on the command line is what routes the job to MERCED. Without it, the job goes to Pinnacles regardless of what is in the script. Additional queue commands are shown below.
+Additional queue commands are shown below.
 
 
 |Command|Description|
@@ -31,72 +29,32 @@ The `-M merced` flag on the command line is what routes the job to MERCED. Witho
 |sinfo|reports the state of partitions and nodes managed by Slurm|
 |scancel|used to cancel a pending or running job or job step. It can also be used to send an arbitrary signal to all processes associated with a running job or job step.|
 
-<Tabs>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1    # request only 1 node
+#SBATCH --partition test      # this job will be submitted to test queue
+#SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
+#SBATCH --time=0-00:15:00 # 15 minute
+#SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
+#SBATCH --output=my_%j.stdout    # standard output will be redirected to this file
+# #SBATCH --constraint=bigmem   #uncomment this line if you need the access to the bigmem node for Pinnacles
+# #SBATCH --constraint=gpu #uncomment this line if you need the access to GPU
+# #SBATCH --gres=gpu:2   #uncomment this line if you need GPU access (2 GPUs)
+#SBATCH --job-name=my_job    # this is your job’s name
+##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
+##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
+#SBATCH --export=ALL
 
-  <TabItem value="Pinnacles" label="Pinnacles" default>
-    ```bash
-    #!/bin/bash
-    #SBATCH --nodes=1    # request only 1 node
-    #SBATCH --partition test      # this job will be submitted to test queue
-    #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
-    #SBATCH --time=0-00:15:00 # 15 minute
-    #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
-    #SBATCH --output=my_%j.stdout    # standard output will be redirected to this file
-    # #SBATCH --constraint=bigmem   #uncomment this line if you need the access to the bigmem node for Pinnacles
-    # #SBATCH --constraint=gpu #uncomment this line if you need the access to GPU
-    # #SBATCH --gres=gpu:2   #uncomment this line if you need GPU access (2 GPUs)
-    #SBATCH --job-name=my_job    # this is your job’s name
-    ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
-    ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
-    #SBATCH --export=ALL
-
-    # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
-    ```
-     </TabItem>
-
-    <TabItem value="MERCED" label="MERCED">
-
-      ```bash
-      #!/bin/bash
-      #SBATCH --nodes=1    # request only 1 node
-      #SBATCH --partition compute      # this job will be submitted to compute queue (MERCED only offers compute and bigmem)
-      #SBATCH --mem=96G #this job is asked for 96G of total memory, use 0 if you want to use entire node memory
-      #SBATCH --time=0-00:15:00 # 15 minute
-      #SBATCH --ntasks-per-node=56 # this job requests for 56 cores on a node
-      #SBATCH --output=my_%j.stdout # standard output will be redirected to this file
-      # #SBATCH --constraint=bigmem#uncomment this line if you need the access to the bigmem node for MERCED
-      #SBATCH --job-name=my_job    # this is your job’s name
-      ##SBATCH --mail-user=UCMercedNetID@ucmerced.edu  
-      ##SBATCH --mail-type=ALL  #uncomment the first two lines if you want to receive     the email notifications
-      #SBATCH -M merced
-      #SBATCH --export=ALL
-      # Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
-      ```
-
-      **Submit this script to MERCED with:**
-      ```bash
-      sbatch -M merced your_script.sh
-      ```
-      The `-M merced` flag on the command line is required to target the MERCED cluster. Do not use plain `sbatch your_script.sh` for MERCED jobs.
-
-    </TabItem>
-
-    </Tabs>
+# Please avoid using the ampersand (&) with "srun" if you intend to run processes in the background.
+```
 
 :::note
-Note that for both MERCED and Pinnacles CPUs **hyper-threading** are turned off.
+Note that Pinnacles CPUs have **hyper-threading** turned off.
 :::
 
 ### Submitting Your Job Script
 
-Once your job script is ready, submit it with `sbatch`:
-
-- **Pinnacles:** `sbatch myjob.sh`
-- **MERCED:** `sbatch -M merced myjob.sh`
-
-:::warning
-Always include `-M merced` on the command line when submitting to MERCED. Without it, your job will be routed to the default (Pinnacles) cluster instead.
-:::
+Once your job script is ready, submit it with `sbatch myjob.sh`.
 
 > If you want to assess how busy the cluster is, please use the following
 Use `sinfo` to see the nodes state and check how many nodes are being allocated (alloc) or how many nodes are available (idle)
@@ -170,8 +128,7 @@ When submitting a Slurm job array, you use the `--array=x-y` option to define th
 You can also submit a job array directly from the command line by specifying the script name after the array declaration:
 
 ```shell
-sbatch --array=1-5 myjob.sh             # Pinnacles
-sbatch -M merced --array=1-5 myjob.sh  # MERCED cluster
+sbatch --array=1-5 myjob.sh
 ```
 
 
