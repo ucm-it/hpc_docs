@@ -56,6 +56,16 @@ Pinnacles provides approximately 92 TB of NFS fast scratch storage and 1.5 PB of
 
 **Availability and Support:** The Pinnacles cluster is managed by CIRT. General access is available to UC Merced faculty projects at no cost, subject to allocation and scheduling policies. CIRT provides user support, consultation, onboarding, documentation, and training to support effective use of the cluster for research, training, and AI/data-intensive workflows.
 
+## No longer accepting MERCED Cluster account applications
+
+As of 9/28/2026, we are no longer accepting any new account applications for the MERCED Cluster.
+
+If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
+
+Click on [This link](..hpc-tutorials/OH.md) for support information.
+
+Note: Please do not contact CIRT Staff through email to report a problem or to ask a question as requests through this manner will not be answered immediately.
+
 ### __How to cite__
 
 All Pinnacles users must agree to acknowledge the Pinnacles Cluster in talks, posters, manuscripts, and other forms of dissemination relying on results obtained from time on Pinnacles. An example acknowledgement section is:

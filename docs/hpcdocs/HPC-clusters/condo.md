@@ -36,9 +36,9 @@ PIs can seek purchasing computing resources that are compatible with the Pinnacl
 
 The following tables summarize the CPU and GPU computing resources that are available for purchase in the Pinnacles condo program. 
 
-## No longer accepting MERCED Cluster account applications
+## No longer accepting new CONDO Nodes
 
-As of 9/28/2026, we are no longer accepting any new account applications for the MERCED Cluster.
+As of 9/28/2026, we are no longer accepting any new CONDO nodes due to limited power supply and network ports.
 
 If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
 
