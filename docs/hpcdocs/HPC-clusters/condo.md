@@ -36,6 +36,16 @@ PIs can seek purchasing computing resources that are compatible with the Pinnacl
 
 The following tables summarize the CPU and GPU computing resources that are available for purchase in the Pinnacles condo program. 
 
+## No longer accepting MERCED Cluster account applications
+
+As of 9/28/2026, we are no longer accepting any new account applications for the MERCED Cluster.
+
+If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
+
+Click on [This link](..hpc-tutorials/OH.md) for support information.
+
+Note: Please do not contact CIRT Staff through email to report a problem or to ask a question as requests through this manner will not be answered immediately.
+
 ## Hardware Compatibility and Costs for Pinnacles Cluster
 
 
