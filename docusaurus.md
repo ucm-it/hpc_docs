@@ -18,7 +18,7 @@ Docusaurus is a static-site generator that can build single-page applications wi
 There are two things that need to be installed onto your computer before installing Docusaurus.
 
 1. **GIT**
-- You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
+- For Windows users (Instructions for Mac users are at the end of this list), can find the website to install GIT [at this link](https://git-scm.com/install/windows).
 - To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
 - Most of the pre-selected and recommended options can be selected.
 - After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
@@ -27,13 +27,16 @@ There are two things that need to be installed onto your computer before install
 
 - If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 
+- For Mac users, you are going to download a package manager called Homebrew, [link found here](https://brew.sh).
+- Open up your macOS terminal and paste this command:
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- After all prompts and completing installation, close the terminal and open it again. After you do that, paste this command:
+- `brew install git`
+- Once installation is complete, you can type `git` into your terminal to check if GIT-related commands appear. If so, then GIT has been successfully installed.
+
 2. **Node.js**
 - You can find the website to install Node.js [at this link](https://nodejs.org/en/download).
-
-- To install Node.js, download the prebuilt Node.js for your operating system (Windows, Mac) and run it.
-
 - Most of the pre-selected and recommended options can be selected.
-
 - After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
 - `npm`
