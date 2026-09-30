@@ -37,7 +37,7 @@ There are two things that need to be installed onto your computer before install
 
 3. **Node.js**
 - You can find the website to install Node.js [at this link](https://nodejs.org/en/download).
-- For convenience, you can use the prebuilt Node.js installer. Select your operating system (Windows, macOS, Linux, etc) as well as your CPU archiecture (most Windows laptops run x64 and most MacBooks bought past 2020 run ARM64)
+- For convenience, you can use the prebuilt Node.js installer. Select your operating system (Windows, macOS, Linux, etc) as well as your CPU architecture (most Windows laptops run x64 and most MacBooks bought past 2020 run ARM64)
 - Most of the pre-selected and recommended options can be selected.
 - After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
