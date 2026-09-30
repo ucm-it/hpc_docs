@@ -17,7 +17,7 @@ Docusaurus is a static-site generator that can build single-page applications wi
 
 There are two things that need to be installed onto your computer before installing Docusaurus.
 
-1. GIT
+1. **GIT**
 - You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
 - To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
 - Most of the pre-selected and recommended options can be selected.
@@ -27,7 +27,7 @@ There are two things that need to be installed onto your computer before install
 
 - If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 
-2. Node.js
+2. **Node.js**
 - You can find the website to install Node.js [at this link](https://nodejs.org/en/download).
 
 - To install Node.js, download the prebuilt Node.js for your operating system (Windows, Mac) and run it.
@@ -44,38 +44,6 @@ Notes:
 - GIT is a free, open-source distributed version control system designed to track changes in files and coordinate work among multiple people.
 
 - Node.js is a JavaScript runtime environment which will enable you to locally run a copy of the Docusaurus documentation website on your computer.
-
-## Installing GIT
-
-You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
-
-To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
-
-Most of the pre-selected and recommended options can be selected.
-
-After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
-
-```
-git
-```
-
-If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
-
-## Installing Node.js
-
-You can find the website to install Node.js [at this link](https://nodejs.org/en/download).
-
-To install Node.js, download the prebuilt Node.js for your operating system (Windows, Mac) and run it.
-
-Most of the pre-selected and recommended options can be selected.
-
-After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
-
-```
-npm
-```
-
-If a general encyclopedia of npm/Node.js-related commands appear, then you have successfully installed Node.js, and just as important, npm.
 
 ## Installing/Running Docusaurus
 
