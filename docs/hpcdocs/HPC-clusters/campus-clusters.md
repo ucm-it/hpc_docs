@@ -239,6 +239,7 @@ The `scratch` folder is purged periodically when the overall system storage reac
 
 ### Expanded Scratch or Data Allocation Pilot Program
 
+**<u>WARNING: NO LONGER ACCEPTING ANY APPLICATIONS AFTER JULY 1ST, 2026 FOR THIS CURRENT CYCLE.</u>**
 Beginning August 2026, CIRT will launch a pilot program to provide additional scratch or data storage per user for research projects with demonstrated needs beyond the standard allocation levels.
 
 Investigators may request additional storage for their research group by submitting a brief justification describing:
