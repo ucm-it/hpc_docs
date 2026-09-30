@@ -51,7 +51,7 @@ If you need to preview your changes locally, add new pages, or make extensive ch
 
 To clone the HPC documentation repository, first fork the HPC documentation GitHub repository [link right here](https://github.com/ucm-it/hpc_docs).
 
-After that, you need to clone your forked repository, your GitHub link should look like this:
+After forking the repository, you need to clone that forked repository. Your GitHub link should look like this:
 
 ```
 https://github.com/[your-GitHub-username-here]/hpc_docs
