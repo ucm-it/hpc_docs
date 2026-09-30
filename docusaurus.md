@@ -23,7 +23,7 @@ There are two things that need to be installed onto your computer before install
 - Most of the pre-selected and recommended options can be selected.
 - After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
-- 'git'
+- `git`
 
 - If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 
