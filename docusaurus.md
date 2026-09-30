@@ -17,9 +17,25 @@ Docusaurus is a static-site generator that can build single-page applications wi
 
 There are two things that need to be installed onto your computer before installing Docusaurus.
 
-GIT must be installed, which is a free, open-source distributed version control system designed to track changes in files and coordinate work among multiple people.
+1. GIT
+    You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
 
-Node.js, must also be installed, which is a JavaScript runtime environment which will enable you to locally run a copy of the Docusaurus documentation website on your computer.
+To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
+
+Most of the pre-selected and recommended options can be selected.
+
+After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
+
+```
+git
+```
+
+If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
+2. Node.js
+
+GIT is a free, open-source distributed version control system designed to track changes in files and coordinate work among multiple people.
+
+Node.js is a JavaScript runtime environment which will enable you to locally run a copy of the Docusaurus documentation website on your computer.
 
 ## Installing GIT
 
@@ -31,7 +47,9 @@ Most of the pre-selected and recommended options can be selected.
 
 After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
-`git`
+```
+git
+```
 
 If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 
@@ -45,7 +63,9 @@ Most of the pre-selected and recommended options can be selected.
 
 After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
-`npm`
+```
+npm
+```
 
 If a general encyclopedia of npm/Node.js-related commands appear, then you have successfully installed Node.js, and just as important, npm.
 
@@ -59,8 +79,10 @@ After that, you need to clone your forked repository (should look like this - "h
 
 and then type this into your command-line interface or terminal:
 
-`git clone https://github.com/your-GitHub-username-here/hpc_docs
-cd hpc_docs`
+```
+git clone https://github.com/your-GitHub-username-here/hpc_docs
+cd hpc_docs
+```
 
 It is also recommended that you fork the repository, but it isn't crucial.
 
