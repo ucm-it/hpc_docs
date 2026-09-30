@@ -18,19 +18,17 @@ Docusaurus is a static-site generator that can build single-page applications wi
 There are two things that need to be installed onto your computer before installing Docusaurus.
 
 1. GIT
-    You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
+- You can find the website to install GIT [at this link](https://git-scm.com/install/windows).
+- To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
+- Most of the pre-selected and recommended options can be selected.
+- After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
 
-To install GIT, first download the GIT installer for your operating system (Windows, Mac, Linux) and run it.
+- ```
+- git
+- ```
 
-Most of the pre-selected and recommended options can be selected.
+- If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 
-After the installation is complete, open up your terminal, command prompt, or your command-line interface and type:
-
-```
-git
-```
-
-If a general encyclopedia of GIT-related commands appear, then you have successfully installed GIT.
 2. Node.js
 
 GIT is a free, open-source distributed version control system designed to track changes in files and coordinate work among multiple people.
