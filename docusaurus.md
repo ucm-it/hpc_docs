@@ -51,7 +51,11 @@ If you need to preview your changes locally, add new pages, or make extensive ch
 
 To clone the HPC documentation repository, first fork the HPC documentation GitHub repository [link right here](https://github.com/ucm-it/hpc_docs).
 
-After that, you need to clone your forked repository (should look like this - "https://github.com/[your-GitHub-username-here]/hpc_docs")
+After that, you need to clone your forked repository, your GitHub link should look like this:
+
+```
+https://github.com/[your-GitHub-username-here]/hpc_docs
+```
 
 and then type this into your command-line interface or terminal:
 
@@ -60,14 +64,16 @@ git clone https://github.com/your-GitHub-username-here/hpc_docs
 cd hpc_docs
 ```
 
-It is also recommended that you fork the repository, but it isn't crucial.
-
 After you "cd" to "hpc_docs" you must then install Docusaurus dependencies by typing this command into your terminal:
 
-`npm install`
+```
+npm install
+```
 
 After that, you are ready to run a copy of the website locally from your computer with this command:
 
-`npm run start`
+```
+npm run start
+```
 
-After you type that command, you can pat yourself on the back because you have successfully installed Node.js, GIT, and Docusaurus! The website will be ran locally at "http://localhost:3000", after which you can preview and make edits as necessary.
+After you type that command, you can pat yourself on the back because you have successfully installed Node.js, GIT, and Docusaurus! The website will be ran locally at "http://localhost:3000", which should pop-up automatically, after which you can preview and make edits as necessary.
