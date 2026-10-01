@@ -176,11 +176,32 @@ __Requesting Access to Pinnacles Process.__
 For users seeking to access Pinnacles cluster via the web-based GUI, [Open OnDemand](https://ondemand.rc.ucmerced.edu/). Please refer to this page [here](./ood.md) for accessing and making the most of the Open OnDemand Interface. 
 
 :::note 
-If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn).
+If connecting via **SSH** to the clusters from on campus, connect to `eduroam` or `UCM CatNet`. Otherwise, if you are off campus, ensure you are connected to the [Campus VPN](https://library.ucmerced.edu/use/technology/vpn). More detailed instructions are below.
 :::
 
 For users who want a traditional terminal experience, SSH login is the standard method to connect to Pinnacles.
 ### SSH Login to Pinnacles
+
+### UC Merced VPN Installation and Connection Instructions
+The [UC Merced Campus VPN](https://library.ucmerced.edu/use/technology/vpn) must be downloaded if you are off-campus because you won't be able to connect to certain HPC systems without it.
+
+1. To download the VPN, [click right here](vpn.ucmerced.edu) to go the VPN download page. Select your operating system and follow the instructions.
+2. You are going to need your UCM Net ID and password to login.
+3. After logging in, select your operating system, either Mac or Windows to download the VPN software.
+4. After downlaoding the software, launch the installer titled "GlobalProtect64.msi".
+5. After successfully installing, you need to connect to the specific UC Merced VPN address.
+6. For Windows users (Mac users are below), go to your hidden apps tab on the bottom-right of your screen (it looks like a chevron or an arrow pointing up) and click it. There should be a grayed out globe. Open the VPN application.
+7. When you open it, type `vpn.ucmerced.edu`
+8. It is going to ask you to login once more with your SSH.
+9. After that, you are connected to the UC Merced VPN.
+
+1. For macOS users (Windows users are above), at the top-right of your screen, click on the globe icon, which is your VPN program to open ir.
+2. When you open it, type `vpn.ucmerced.edu`
+3. It is going to ask you to login once more with your SSH.
+4. After that, you are connected to the UC Merced VPN.
+
+### Pinnacles Login and Instructions
+
 To login to Pinnacles using SSH, open a terminal and run `ssh <username>@login.rc.ucmerced.edu`, replacing `<username>` with your UC Merced NetID (UCMID). The full command is:
 ```shell
 ssh <username>@login.rc.ucmerced.edu
