@@ -118,4 +118,4 @@ This command is important to run if you are making many pages or docs under the 
 
   2. `npm run serve` - Starts the deployment server(local), it will watch over the files and update the site in real-time when changes are made. 
 
-  3. `npm run start`- Similar to `npm run start` except it deploys unoptimized builds, which can lead to broken sites. 
+  3. `npm run start`- Similar to `npm run build` except it deploys unoptimized builds, which can lead to broken sites. 
