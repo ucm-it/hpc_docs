@@ -182,6 +182,7 @@ If connecting via **SSH** to the clusters from on campus, connect to `eduroam` o
 For users who want a traditional terminal experience, SSH login is the standard method to connect to Pinnacles.
 ### SSH Login to Pinnacles
 
+### UC Merced VPN Installation and Connection Instructions
 The [UC Merced Campus VPN](https://library.ucmerced.edu/use/technology/vpn) must be downloaded if you are off-campus because you won't be able to connect to certain HPC systems without it.
 
 1. To download the VPN, [click right here](vpn.ucmerced.edu) to go the VPN download page. Select your operating system and follow the instructions.
@@ -199,7 +200,7 @@ The [UC Merced Campus VPN](https://library.ucmerced.edu/use/technology/vpn) must
 3. It is going to ask you to login once more with your SSH.
 4. After that, you are connected to the UC Merced VPN.
 
-
+### Pinnacles Login and Instructions
 
 To login to Pinnacles using SSH, open a terminal and run `ssh <username>@login.rc.ucmerced.edu`, replacing `<username>` with your UC Merced NetID (UCMID). The full command is:
 ```shell
