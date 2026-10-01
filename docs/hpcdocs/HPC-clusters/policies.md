@@ -18,6 +18,7 @@ import Highlight from '@site/src/components/Highlight';
 3. The use of the clusters to store, manipulate and/or remotely access classified or improperly obtained data and information is __prohibited__.
 4. Users are not permitted to try and bypass login or gain access to information or usage that is not granted to them. 
 5. Never infringe upon someone else's copyright or plagiarize someone else's intellectual property.  
+6. **Inactive accounts.** Accounts that have not been used on the cluster for one year are considered inactive. CIRT will purge inactive accounts, and will request permission from the user's PI before doing so.
 
 
 
