@@ -27,6 +27,7 @@ import Highlight from '@site/src/components/Highlight';
 2. Do not share accounts or passwords with others. 
 3. Computing resources cannot be used for commercial, monetary purposes or personal gain. 
 4. Each account is associated with only __one__ Principal Investigator (PI) or group project account. Access to specific queues is determined by the PI’s affiliations and their respective purchased nodes. Any request to transfer a user to a different project account must be submitted directly by the PI.
+5. The Pinnacles cluster is for __research purposes only__. Any account application submitted for coursework-related purposes will __not__ be processed.
   
 
 ## Pinnacles Cluster Jobs Guidelines
@@ -59,6 +60,8 @@ import Highlight from '@site/src/components/Highlight';
 2. While CIRT makes great efforts to maintain the availability and integrity of our storage products, users should keep in mind that no data stored on our managed servers has historical backups. Some data servers offer "snapshots" that allow retrieval of changed or deleted data within the snapshot window, but this is not guaranteed. Data on the beegfs based file system does **not** have the capability for snapshots.
 
 3. Scratch folders on the cluster are valid only when `clusterstorage` is less than 80% full, and files will be automatically deleted when `clusterstorage` reaches the 80% space usage. It is recommended that when a batch job has completed, user should transfer the output files to somewhere safe from the `scratch` folder. 
+
+4. **Data retention after account removal.** Once a Pinnacles account is removed, data retention is only valid for **30 days**. Only the `HOME` directory is backed up, and it is only retained for those 30 days. After the 30-day window has passed, the data will __not__ be retained.
 
 
 ## Software and Services
