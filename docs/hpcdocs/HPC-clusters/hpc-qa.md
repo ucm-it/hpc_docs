@@ -11,6 +11,10 @@ sidebar_position: 6
 OIT provides general request services or for assessments for individuals and research groups who wish to deploy research computing and advanced cyberinfrastructure techniques (e.g. high-performance computing, visualization, advanced networking and data collaboration, and advanced technology-enhanced workflow development).
 You can make a General Request/Consultation [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
+> __Can I use HPC for coursework or for a capstone project?🤔__
+
+The Pinnacles and MERCED Cluster is not available for undergraduate or graduate coursework, capstone projects, or any assigned or to be assigned projects. It's intended use is to directly benefit and assist the research being conducted at UC Merced and it is not to be used for coursework of any kind, such as using it to complete assignments or direct use of HPC-Clusters as part of course curriculum.
+
 
 > __How to include CIRT managed charged services into budget statement?__
 
