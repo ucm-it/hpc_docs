@@ -75,6 +75,12 @@ Remember, if you stay below or at your baseline allocation, you will not incur a
 
 ## Pinnacles - Questions
 
+> __How do I request a Pinnacles account or check if I have one?__
+
+You can check if you have a Pinnacles account by submitting a service ticket or attending our office hourse, information found at [this link](https://github.com/ucm-it/hpc_docs/blob/main/docs/hpcdocs/HPC-clusters/get_help.md)!
+
+To request a Pinnacles account, you can click on [this link here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=49cf626bc323cb106c5c8dd9d001313d&form_id=280d8bb04f72f6006137d0af0310c7b0)!
+
 
 > __I am in the process of purchasing a condo-model nodes for Pinnacles, do I have to go through the access process?__
 

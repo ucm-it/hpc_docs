@@ -146,7 +146,7 @@ Compute nodes: Compute nodes are where actual jobs run. There are three types of
 
 UC Merced Faculty Principal Investigators (PIs) can request access to Pinnacles cluster. All student user accounts on Pinnacles cluster must associate with UC Merced PIs. 
 
-UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
+UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=49cf626bc323cb106c5c8dd9d001313d&form_id=280d8bb04f72f6006137d0af0310c7b0).
 <details>
 
 <summary>Click Here to View a Visual Guide for Creating an Account for Pinnacles</summary>
@@ -155,7 +155,7 @@ UC Merced Principal Investigators (PIs) or other researchers request Pinnacles a
 
 __Requesting Access to Pinnacles Process.__
 
-1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0).
+1. UC Merced Principal Investigators (PIs) or other researchers request Pinnacles account [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=49cf626bc323cb106c5c8dd9d001313d&form_id=280d8bb04f72f6006137d0af0310c7b0).
     1. For new account group project applications, PIs please also make sure to complete the export control [form](https://ucmerced.app.box.com/s/zvptfc8adbdzt4xs8kcj73lyretyn692), if the PI has not done one before.
     2. Once the form is completed, please attach the form to the request ticket scene in the following steps.
 2. Click `Request Service`
@@ -208,7 +208,7 @@ ssh <username>@login.rc.ucmerced.edu
 ```
 Note: the command starts with `ssh` followed by your username and the hostname `login.rc.ucmerced.edu`.
 
-The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles is accessed via a centralized login node at `login.rc.ucmerced.edu`. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=bf77e0c193bea614e7fbf3847aba104e&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus.
+The standard method for connecting to a remote machine is through Secure Shell (`ssh`) commands. Pinnacles is accessed via a centralized login node at `login.rc.ucmerced.edu`. Users applying for a Pinnacles account can begin the application process [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=49cf626bc323cb106c5c8dd9d001313d&form_id=280d8bb04f72f6006137d0af0310c7b0), and Pinnacles is __FREE__ to use within the campus.
 
 Currently, we have three login nodes, and users can expect to be connected to either `rclogin01`, `rclogin02`, or `rclogin03`. __Do not run computationally intensive processes on the login nodes.__ These nodes are appropriate for tasks such as file preparation/editing, compiling, simple analyses, and other low-computation activities. For more resource-intensive work, submit jobs to the cluster using the available queue system. Additionally, users can connect to a remote machine using an X-terminal (XQuarz or X11) forwarding (see example command below) to run graphics-based programs like gnuplot, gimp, etc.
 
