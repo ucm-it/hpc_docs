@@ -17,6 +17,10 @@ Under the condo model, PIs use equipment purchase funds to buy compute nodes (CP
 
 Participation in the program runs the duration of the node's warranty coverage (~ 3 years).
 
+### No longer accepting Condo requests
+
+Unfortunately, due to power and space limitations on the server, we are no longer accepting any new Condo additions or requests, such as adding compute nodes to Condo. For more information, please click [this link](docs/hpcdocs/HPC-clusters/hpc-qa.md)
+
 ### Pinnacles is a Condo Model Cluster
 
 Please read the latest [Condo-Node policy](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) for more details. 
