@@ -25,7 +25,7 @@ Within logging into ColdFront (instructions detailed at a later segment), you ma
 3. Common Actions
 * If you ever have trouble finding your Projects or your available Compute and Storage, you can always click the options below "Common Actions" such as the "Manage Projects" option to see your active and inactive projects more easily, or the "Your Access" option, which allows you to see your active compute access and storage more easily. You can always click "Home" to return to the home screen.
 
-![Instructions]([static/img/instructions CF.png](https://github.com/ucm-it/hpc_docs/blob/071fde084d38e307dd8ea1b1c218cf78c2246a06/instructions%20CF.png))
+![Instructions](static/img/instructions CF.png](https://github.com/ucm-it/hpc_docs/blob/071fde084d38e307dd8ea1b1c218cf78c2246a06/instructions%20CF.png)
 
 ## More Options
 
@@ -39,7 +39,7 @@ At the upper-left part of the screen, if you click "Project" it will show a drop
 * The resources option provides you with a view of what compute nodes are being actively used as well as inactive nodes. Additionally, it shows what shared storage nodes are being used as well.
 * You can pick which cluster context is being shown, what nodes does the Pinnacles and MERCED Clusters have/are being used as well as viewing the specific resources/nodes being used under the "Resource" dropdown menu.
 
-![Instructions]([9static/img/Instructions CF 2.png0](https://github.com/ucm-it/hpc_docs/blob/071fde084d38e307dd8ea1b1c218cf78c2246a06/static/img/Instructions%20CF%202.png))
+![Instructions](9static/img/Instructions CF 2.png0](https://github.com/ucm-it/hpc_docs/blob/071fde084d38e307dd8ea1b1c218cf78c2246a06/static/img/Instructions%20CF%202.png)
 
 ## Logging into ColdFront
 
