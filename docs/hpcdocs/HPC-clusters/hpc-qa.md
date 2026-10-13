@@ -95,6 +95,14 @@ All accounts on Pinnacles cluster need to be associated with that of a UC Merced
 
 If you have confirmed that your password is correct but are still unable to login, try opening multiple SSH sessions simultaneously. This will cause the system to route your connection to different login nodes. The issue may be caused by one of the login nodes having trouble connecting to the LDAP server — connecting to a different login node will resolve the problem temporarily.
 
+>__How do I request PI status through ColdFront?__
+
+If you are only a member and not a Principal Instructor, you can request Principal Instructor status through the profile menu:
+
+1. On the upper-right of your screen, your account name will have a dropdown menu. Click it to show that menu.
+2. Once clicked, there should be an option named "User profile."
+3. After clicking on "User profile," your account details are shown and you may request PI status.
+
 ## Job/Software - Questions
 
 > __How do I install software on a CIRT Managed cluster?__
