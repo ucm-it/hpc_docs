@@ -168,6 +168,15 @@ __Requesting Access to Pinnacles Process.__
 5. Add any other additonal comments or information, you believe will be helpful for the requesting an account process. 
 6. Click `Request Service`
 ![Submitting Ticket](imgs/RequestAccount3.png "Submitting Ticket")
+
+__Requesting Access to Pinnacles Process through ColdFront.__
+
+If you are only a member and not a Principal Instructor, you can request Principal Instructor status through the profile menu:
+
+1. On the upper-right of your screen, your account name will have a dropdown menu. Click it to show that menu.
+2. Once clicked, there should be an option named "User profile."
+3. After clicking on "User profile," your account details are shown and you may request PI status.
+
 </details>
 
 ## Pinnacles Centralized Login
