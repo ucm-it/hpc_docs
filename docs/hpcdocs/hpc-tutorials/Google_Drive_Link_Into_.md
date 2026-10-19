@@ -1,0 +1,43 @@
+# Inserting an image into a markdown file using Google Drive.
+
+## Overview
+
+This guide is to assist you with inserting an image into a markdown file using Google Drive. This technique should be used if this makrdown file will not be going onto a GitHub repository, as GitHub repositories can have perma-links, whick can link to an image within the repository.
+
+For the sake of simplicity and familiarity, we will be using Google Drive to upload our image into, make a link, edit that link, so that it would be insertable into a markdown file.
+
+Additionally, to insert an image using a link, the markdown code will look like this:
+
+`![Insert any text here](https://example.com)`
+
+## Instructions
+
+In order to begin you must:
+
+1. Make a Google Drive Folder. ![Google Drive Demo 1](https://drive.google.com/thumbnail?id=1Z35qLz58lLmjWaHjbLCGie1d96xdJ-gr&sz=s4000)
+2. Make that Google Drive Folder public and open to all viewers who have that link.
+- Upload your images into that Google Document.
+- Make sure that your files are public to "Anyone with the link can view" within that Google Document.
+![Google Drive Demo 2](https://drive.google.com/thumbnail?id=1VE72XZw_4z0PCaOQOi1EJbb06hn04nxu&sz=s4000)
+3. Now, you must copy the Google Drive share link 
+- Paste that into an open Tab.
+
+The link should look something akin to :
+
+`drive.google.com/file/string-of-random-letters-and-numbers/view`
+
+When you put this link into `![Insert any text here](https://example.com)`, it will not work. The Google Drive link as it is, is incompatible with markdown. You MUST change the link in order for the image to show.
+
+## Changing The Link
+
+To change the link, you can use a tool that I have found online, linked below:
+
+[MDLink Modifier](https://mdlinks.reess.org).
+
+What it does is that it changes the formatting of formatting or how markdown "views" the link, so that markdown code can read the link and display the code.
+
+All you have to do is paste the Google Link into the "Resource ID or Link" box and press generate markdown link. It will give you a preview of your image and make something that is viewable to markdown.
+
+![Google Drive Demonstration 3](https://drive.google.com/thumbnail?id=12b1hqVgBJvkU5bCZ0Ul5KPxG6xetdYqJ&sz=s4000)
+
+And congratulations! You know how to insert images into a markdown file using Google Drive links. I have used this method for making this markdown file as well.
