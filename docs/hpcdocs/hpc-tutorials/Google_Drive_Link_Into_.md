@@ -14,7 +14,8 @@ Additionally, to insert an image using a link, the markdown code will look like 
 
 In order to begin you must:
 
-1. Make a Google Drive Folder. ![Google Drive Demo 1](https://drive.google.com/thumbnail?id=1Z35qLz58lLmjWaHjbLCGie1d96xdJ-gr&sz=s4000)
+1. Make a Google Drive Folder.
+- ![Google Drive Demo 1](https://drive.google.com/thumbnail?id=1Z35qLz58lLmjWaHjbLCGie1d96xdJ-gr&sz=s4000)
 2. Make that Google Drive Folder public and open to all viewers who have that link.
 - Upload your images into that Google Document.
 - Make sure that your files are public to "Anyone with the link can view" within that Google Document.
