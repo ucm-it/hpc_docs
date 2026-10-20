@@ -13,7 +13,7 @@ You can make a General Request/Consultation [here](https://ucmerced.service-now.
 
 > __Can I use HPC for coursework or for a capstone project?🤔__
 
-The Pinnacles and MERCED Cluster is not available for undergraduate or graduate coursework, capstone projects, or any assigned or to be assigned projects. It's intended use is to directly benefit and assist the research being conducted at UC Merced and it is not to be used for coursework of any kind, such as using it to complete assignments or direct use of HPC-Clusters as part of course curriculum.
+The Pinnacles Cluster is not available for undergraduate or graduate coursework, capstone projects, or any assigned or to be assigned projects. It's intended use is to directly benefit and assist the research being conducted at UC Merced and it is not to be used for coursework of any kind, such as using it to complete assignments or direct use of HPC-Clusters as part of course curriculum.
 
 
 > __How to include CIRT managed charged services into budget statement?__
@@ -71,7 +71,9 @@ Visit our [Data Transfer](../HPC-clusters/data_share_transfer.mdx) to get more i
 
 Remember, if you stay below or at your baseline allocation, you will not incur any fees. However, you can obtain access to other free compute resources such as our new NSF-MRI Pinnacles cluster, and ACCESS resources – and my team can provide consultation for how to access these resources. Schedule a consultation [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=aa2d2ee3c34a6e106c5c8dd9d00131c1&form_id=06da3f8edbfc08103c4d56f3ce9619f4).
 
+> __Where is the MERCED Cluster?__
 
+The MERCED Cluster is being decommissioned. It is no longer in use due to antiquated hardware. If you previously used the MERCED Cluster, sign up or check your Pinnacles account so you can start using the Pinnacles Cluster.
 
 ## Pinnacles - Questions
 
