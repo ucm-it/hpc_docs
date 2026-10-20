@@ -58,7 +58,7 @@ Pinnacles provides approximately 92 TB of NFS fast scratch storage and 1.5 PB of
 
 ## No longer accepting MERCED Cluster account applications
 
-As of 9/28/2026, we are no longer accepting any new account applications for the MERCED Cluster.
+As of 9/28/2026, we are no longer accepting any new account applications for the MERCED Cluster. The MERCED Cluster is offline and currently being decommissioned and is no longer taking any new jobs.
 
 If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
 
