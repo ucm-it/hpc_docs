@@ -41,6 +41,15 @@ To access data that is located in Borgstore the user must be in the Borgstore fo
 
 To run an interactive job, the job must also be ran from the borgstore directory.
 
+### Borgstore Permissions and Access
+
+When it comes to storage access permissions, permission changes are not to be wholly recommended. This is because Borgstore quota can be changed, which may effect billing
+
+For convenience, Principal Investigator's (PI's) are only able to access the group members folders and make edits such as file deletion. But if you are transferring files, only the PI and file owners can do so. So file transfer is recommended over permission changes.
+
+Instructions on file transfers found [here](https://github.com/ucm-it/hpc_docs/blob/main/docs/hpcdocs/HPC-clusters/data_share_transfer.mdx).
+
+
 ### Common questions about Borgstore
 
 <details>
