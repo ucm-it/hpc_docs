@@ -16,7 +16,7 @@ This page presents information and purchasing process for Borgstore, the on-camp
 
 ## Borgstore (BeeGFS)
 
-Borgstore is UC Merced's on-campus data-storage center and is available for research PIs to purchase. Borgstore is used to store active, research-related data and has a usable capacity of 480 terabytes.
+Borgstore is UC Merced's on-campus data-storage center and is available for research PIs to purchase. Borgstore is used to store active, research-related data and has a usable capacity of 480 TB.
 
 Borgstore is also made up of a metadata server with the following configuration:
 
@@ -46,7 +46,9 @@ Borgstore is a purchasable service that can be requested [here](https://ucmerced
 | $51.20/TB/year       |    
 
 ### Accessing Data from Borgstore for a job
-To access data that is located in Borgstore, the user must be in the Borgstore folder/directory and must submit the job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the Slurm option of `#SBATCH --constraint=ib` should be added to the job script. 
+Once a user's PI has purchased Borgstore, a `borgstore` folder will appear under the user's `HOME` directory. This folder is a soft link to the user's purchased Borgstore path, with the full path being `/mnt/borgstore/PI_name/user_folder`.
+
+To access data located in Borgstore, the user must be in this `borgstore` folder and must submit the job to the scheduler from this location. If users want to submit jobs while at the Borgstore folder, the Slurm option `#SBATCH --constraint=ib` should be added to the job script. 
 
 To run an interactive job, the job must also be run from the Borgstore directory.
 
