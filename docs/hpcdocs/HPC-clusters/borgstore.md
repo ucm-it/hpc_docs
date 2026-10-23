@@ -11,7 +11,7 @@ last_update:
 ---
 
 :::info
-This page presents information and purchasing process for Borgstore, the on-campus data-storage center available for researchers.  
+This page presents information and the purchasing process for Borgstore, the on-campus data-storage center that is directly connected to the Pinnacles cluster and available for purchase.  
 :::
 
 ## Borgstore (BeeGFS)
