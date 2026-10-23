@@ -18,7 +18,16 @@ This page presents information and purchasing process for Borgstore, the on-camp
 
 Borgstore is UC Merced's on-campus data-storage center and is available for research PIs to purchase. Borgstore is used to store active, research-related data and has a usable capacity of 480 terabytes.
 
-Borgstore is also made up of a metadata server with a `1U dual Xeon Skylake SP`, `8x 2.5" Hotswap`, `24 DIMM Sockets`, `IPMI`, `dual 10GbE-T base system`, and `8x 3.2TB Endurance Data Center PCIe NVMe 2.5"` Solid State Drives for metadata storage.
+Borgstore is also made up of a metadata server with the following configuration:
+
+| Component          | Specification                                       |
+|--------------------|------------------------------------------------------|
+| Chassis            | 1U dual Xeon Skylake SP                               |
+| Drive bays         | 8x 2.5" Hotswap                                       |
+| Memory             | 24 DIMM Sockets                                       |
+| Management         | IPMI                                                  |
+| Network            | Dual 10GbE-T base system                              |
+| Metadata storage   | 8x 3.2TB Endurance Data Center PCIe NVMe 2.5" Solid State Drives |
 
 Borgstore is accessible on all nodes (Pinnacles) with Infiniband (IB); all of the partitions contain a mixture of nodes with InfiniBand and non-InfiniBand nodes. If users want to submit jobs while at the Borgstore folder, the Slurm option of 
 ```shell
