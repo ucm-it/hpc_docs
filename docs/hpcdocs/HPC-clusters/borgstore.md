@@ -18,6 +18,10 @@ This page presents information and the purchasing process for Borgstore, the on-
 
 Borgstore is UC Merced's on-campus data-storage center and is available for research PIs to purchase. Borgstore is used to store active, research-related data and has a usable capacity of 480 TB.
 
+:::warning
+Borgstore does not do data backups! Users are responsible for ensuring they have backups of their data and work.
+:::
+
 Borgstore is also made up of a metadata server with the following configuration:
 
 | Component          | Specification                                       |
@@ -29,11 +33,7 @@ Borgstore is also made up of a metadata server with the following configuration:
 | Network            | Dual 10GbE-T base system                              |
 | Metadata storage   | 8x 3.2TB Endurance Data Center PCIe NVMe 2.5" Solid State Drives |
 
-Borgstore is accessible from the Pinnacles cluster. Example job script can be found [here](./running-jobs/jobs.md).
-
-:::warning
-Borgstore does not do data backups! Users are responsible for ensuring they have backups of their data and work.
-:::
+Borgstore is accessible from the Pinnacles cluster.
 
 ### Request Borgstore
 Borgstore is a purchasable service that can be requested [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4). Cost for active data storage is shown below. More information can be found [here](https://it.ucmerced.edu/Research-Computing-Services).
@@ -43,8 +43,6 @@ Borgstore is a purchasable service that can be requested [here](https://ucmerced
 
 ### Accessing Data from Borgstore for a job
 Once a user's PI has purchased Borgstore, a `borgstore` folder will appear under the user's `HOME` directory. This folder is a soft link to the user's purchased Borgstore path, with the full path being `/mnt/borgstore/PI_name/user_folder`.
-
-To access data located in Borgstore, the user must be in this `borgstore` folder and must submit the job to the scheduler from this location.
 
 To run an interactive job, the job must also be run from the Borgstore directory.
 
@@ -78,6 +76,6 @@ Borgstore is great for users who must readily access exceedingly large quantitie
 
 <summary>I am having trouble accessing Borgstore, and the directories in the Command-Line Interface are flashing red?</summary>
 
-If the path displayed is flashing red and the user is having issues directly accessing Borgstore, then the soft-links leading to Borgstore are broken or outdated. It is best to open a ticket to get further assistance. Click [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) to open a ticket.
+If the path displayed is flashing red and the user is having issues directly accessing Borgstore, then the soft-links leading to Borgstore are broken or outdated. You can either use the full path instead, `/mnt/borgstore/PI_name/user_folder`, or open a ticket to get further assistance. Click [here](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) to open a ticket.
 
 </details>
