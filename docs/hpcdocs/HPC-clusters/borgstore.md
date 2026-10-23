@@ -54,9 +54,9 @@ To run an interactive job, the job must also be run from the Borgstore directory
 
 ### Borgstore Permissions and Access
 
-When it comes to storage access permissions, permission changes are generally not recommended. This is because the Borgstore quota can be changed, which may affect billing.
+Permission changes are not recommended, especially those related to write access. Any accidental writes to another user's Borgstore folder will affect that Borgstore quota and, because of the resulting quota change, will influence the PI's billing.
 
-For convenience, Principal Investigators (PIs) are only able to access their group members' folders and make edits such as file deletion. But if you are transferring files, only the PI and file owners can do so.
+PIs are allowed to access their group members' folders and perform file management. All usage can be monitored using the command `beegfs-ctl --getquota --gid <gid>`. The `gid` can be obtained from the command `id`, where the Group ID is the `gid`.
 
 Instructions on file transfers can be found [here](https://github.com/ucm-it/hpc_docs/blob/main/docs/hpcdocs/HPC-clusters/data_share_transfer.mdx).
 
