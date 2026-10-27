@@ -16,7 +16,7 @@ This page presents information and purchasing process for Borgstore, the on-camp
 
 ## Borgstore (BeeGFS)
 
-Borgstore is UC Merced's on campus data-storage center and is available for research PI to purchase. Borgstore is used for store active,research-related data and has the use capacity of 480 terrabytes.
+Borgstore is UC Merced's on campus data-storage center and is available for research PI to purchase. Borgstore is used for store active,research-related data and has the use capacity of 480 terabytes.
 
 Borgstore is also made up of a metadata server with a `1U dual Xeon Skylake SP`, `8x 2.5" Hotswap`, `24 DIMM Sockets`, `IPMI`, `dual 10GbE-T base system` and `8x 3.2TB Endurance Data Center PCIe NVMe 2.5`.Solid State Drive metadata storage
 
