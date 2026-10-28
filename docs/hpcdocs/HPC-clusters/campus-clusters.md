@@ -62,7 +62,7 @@ As of 9/28/2026, we are no longer accepting any new account applications for the
 
 If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
 
-Click on [This link](..hpc-tutorials/OH.md) for support information.
+Click on [This link](https://ucmerced.service-now.com/servicehub?id=public_kb_article&sys_id=3c3ee9ff1b67a0543a003112cd4bcb13&form_id=06da3f8edbfc08103c4d56f3ce9619f4) for support information.
 
 Note: Please do not contact CIRT Staff through email to report a problem or to ask a question as requests through this manner will not be answered immediately.
 
