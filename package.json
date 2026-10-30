@@ -52,7 +52,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   },
   "allowScripts": {
     "core-js@2.6.12": true,
