@@ -10,6 +10,15 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## MERCED Cluster Decommissioned
+_posted on: 10/30/2026_
+
+The MERCED cluster has been decommissioned and is no longer accessible.
+
+MERCED and Pinnacles shared the same login node, which remains available for accessing Pinnacles. This change does not affect Pinnacles computing resources or ongoing jobs. Users can continue accessing and using Pinnacles as usual.
+
+If you have any questions, please contact the CIRT team via ServiceNow.
+
 ## HPC Cluster Maintenance & Node Expansion (Feb 2–6)
 _posted on:01/27/2026_
 
