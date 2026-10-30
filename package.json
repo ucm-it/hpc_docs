@@ -23,7 +23,6 @@
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf/renderer": "^4.0.0",
     "clsx": "^2.0.0",
-    "docusaurus": "^1.14.7",
     "fullcalendar": "^6.1.15",
     "lucide-react": "^0.475.0",
     "pdfjs-dist": "^3.11.174",
@@ -32,7 +31,6 @@
     "react-dom": "^18.0.0",
     "react-icons": "^5.3.0",
     "react-pdf": "^9.1.1",
-    "react-pdf-viewer": "^0.1.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "remark-mdx": "^3.1.0"
