@@ -1,3 +1,7 @@
+---
+title: Software Carpentry Lessons
+---
+
 # [Software Carpentry Lessons](https://software-carpentry.org/lessons/)
 
 Software Carpentry is a free learning service which is taught by a trained and badged instructor. There are six lessons in English and three lessons in Spanish
