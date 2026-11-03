@@ -19,11 +19,11 @@ The six lessons in English will cover these topics:
 3. [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation)
 - Python is a common coding language for data science, automation, and scripting - so learning Python will be very useful when it comes to data analysis.
 4. [Plotting and programming with Python](https://swcarpentry.github.io/python-novice-gapminder)
-- This is an introductory for people with very little experience in Python.
+- This introductory will teach variables and assignments, data types and conversion, Python's built in functions and more.
 5. [Programming with R](https://swcarpentry.github.io/r-novice-inflammation/)
-- R, similar to Python, is a coding language that is often used for data analysis.
+- R, similar to Python, is a coding language that is often used for data analysis. R is common for statistical computing, data analysis, and data visyalisaztion.
 6. [R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder) 
-- This is a more in-depth introductory to R.
+- This is a more in-depth introductory to R, using scientific analysis as an example to code with R.
 
 The three lessons in Spanish will cover these topics:
 
