@@ -14,12 +14,10 @@ sidebar_position: 6
 
 1. ColdFront, similar to all UC Merced campus login systems, uses your institutional credentials. You need your UC Merced User ID as well as your password.
 2. Additionally, you must be connected to the UC Merced VPN whether you are on or off campus. Instructions to download and log in to the VPN are found [here](https://github.com/ucm-it/hpc_docs/blob/main/docs/hpcdocs/HPC-clusters/campus-clusters.md) or [here](https://ucm-it.github.io/hpc_docs/docs/hpcdocs/HPC-clusters/campus-clusters#uc-merced-vpn-installation-and-connection-instructions) underneath "UC Merced VPN Installation and Connection Instructions".
-3. After connecting your device to the UC Merced VPN, you may start logging into ColdFront at [this link](coldfront.rc.ucmerced.edu).
+3. After connecting your device to the UC Merced VPN, you may start logging into ColdFront at this address: "https://coldfront.rc.ucmerced.edu"
 4. Sign in with your UC Merced login. It will direct you to "CILogin".
 5. When directed to CILogin, you will need to select University of California - Merced to continue.
 6. After completing these steps, you will have successfully logged into ColdFront.
-
-[Link to UC Merced ColdFront](https://coldfront.rc.ucmerced.edu)
 
 ## Steps to Add a New User to Your Project
 
