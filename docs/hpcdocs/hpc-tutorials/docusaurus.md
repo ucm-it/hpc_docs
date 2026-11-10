@@ -1,6 +1,7 @@
 ---
 title: Downloading and using Docusaurus
 sidebar_position: 3
+Unlisted: True
 ---
 
 import Tag from '@site/src/components/Tag';
