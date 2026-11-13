@@ -17,10 +17,6 @@ Under the condo model, PIs use equipment purchase funds to buy compute nodes (CP
 
 Participation in the program runs the duration of the node's warranty coverage (~ 3 years).
 
-### No longer accepting Condo requests
-
-Unfortunately, due to power and space limitations on the server, we are no longer accepting any new Condo additions or requests, such as adding compute nodes to Condo. For more information, please click [this link](docs/hpcdocs/HPC-clusters/hpc-qa.md)
-
 ### Pinnacles is a Condo Model Cluster
 
 Please read the latest [Condo-Node policy](https://ucmerced.box.com/s/prfo1wfin80l1wz8czo70nwxnmnvxld4) for more details. 
@@ -40,13 +36,13 @@ PIs can seek purchasing computing resources that are compatible with the Pinnacl
 
 The following tables summarize the CPU and GPU computing resources that are available for purchase in the Pinnacles condo program. 
 
-## No longer accepting new CONDO Nodes
+## No longer accepting new CONDO Nodes and requests
 
 As of 9/28/2026, we are no longer accepting any new CONDO nodes due to limited power supply and network ports.
 
 If you wish to learn more, please request support through submitting a service ticket listed below or attend office hours linked below:
 
-Click on [This link](..hpc-tutorials/OH.md) for support information.
+Click on [this link](https://ucm-it.github.io/hpc_docs/docs/hpcdocs/HPC-clusters/get_help) for support information.
 
 Note: Please do not contact CIRT Staff through email to report a problem or to ask a question as requests through this manner will not be answered immediately.
 
