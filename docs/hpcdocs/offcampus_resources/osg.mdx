@@ -55,4 +55,14 @@ Below is a nice table from the OSG website that showcases what kind of work bene
 | Output                        | < 10 GB                           | < 40 GB                      | > 40 GB**                    |
 | Software                      | pre-compiled binaries, containers | Most other than →            | Licensed Software, non-Linux |
 
+## Can you use UC Merced Nodes on OpenScience Grid?
+
+You cannot specifically choose a node that UC Merced has on OpenScience Grid. This is because HTCondor will automatically pick a node out for you according to your parameters. But you can pick out a specific "site" that HTCondor will follow, and that selected site can be UC Merced, but selecting a node that UC Merced has on OSG is not possible. It’s selecting a group of nodes from an institution and campus and HTCondor selects a node - or nodes - to run the job on.
+ 
+You are also not limited to request a specific site. You can also request hardware through "request_cpus", "request_gpus", "request_memory", and "request_disk." Operating system request are also available such as Red Hat Enterprise Linux and Arch for example.
+
+More information can be found here:
+
+[OpenScience Grid, Control Where Your Jobs Run / Job Requirements](https://portal.osg-htc.org/documentation/htc_workloads/specific_resource/requirements/)
+
 ** Courtesy of OSG Website. 
