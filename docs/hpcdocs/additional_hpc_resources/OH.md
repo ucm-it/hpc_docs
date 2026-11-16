@@ -26,7 +26,7 @@ ssh your_UCM_NetID@login.rc.ucmerced.edu
 If it asks whether you are sure you want to continue connecting (since it's your first time connecting to the host), type `y`.
 
 The password will be the initial password we sent you. Once you've typed in the initial password correctly, you will be directed to the login node for a password change process:
-1. It will ask you to enter the **current password** - this is the initial password we sent you.
+1. It will ask you to enter the **current password** - for the current password, you have to type the one you received from us (the initial temporary password), not the new password that you want to change to.
 2. After you've typed the initial password correctly, it will ask you to enter the **new password** - this time you will need to enter a password of your own choosing (you need to enter it twice).
 
 After the new password is accepted, you will automatically be logged out of the cluster. The next time you log in, you will need to use your new password - this completes the initial password change.
@@ -44,7 +44,7 @@ For Windows users who would like to download a terminal, we recommend using Moba
    - Username: your UCM NetID
 6. Click **OK**. You will then be asked to enter your password. For your first time logging in, use the initial password that was sent to you. **Do not save this password**, since you will be changing it right after.
 
-After logging in, it will ask you to change your password. **Current password** is the initial password we sent you. After that, you will be asked to change your password - this time you need to type your new password twice. This completes the initial password change process.
+After logging in, it will ask you to change your password. For the **current password**, you have to type the one you received from us (the initial temporary password), not the new password that you want to change to. After that, you will be asked to change your password - this time you need to type your new password twice. This completes the initial password change process.
 
 Reset Password & Login Video Below!
 
