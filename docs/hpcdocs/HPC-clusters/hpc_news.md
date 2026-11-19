@@ -11,11 +11,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Pinnacles Cluster Maintenance (Jan 18–22)
-_posted on: 11/18/2026_
+_posted on: 11/19/2026_
 
-The Pinnacles cluster will be unavailable for scheduled maintenance from January 18 through January 22, 2027. Users will be unable to log in during this time.
+Dear HPC users,
 
-Please plan to finish all jobs by 6:00 a.m. Pacific time on January 18. Slurm will reject jobs whose requested wall time overlaps the maintenance window.
+The Pinnacles cluster will be unavailable for scheduled maintenance from 6:00 a.m. on Monday, January 18, through 5:00 p.m. on Friday, January 22, 2027 (Pacific time). You will be unable to log in to the cluster during this window.
+
+During the maintenance, we will update the operating system and apply patches on the BorgStore BeeGFS storage system.
+
+Please plan for all jobs to finish by 6:00 a.m. Pacific time on January 18. Slurm will reject jobs whose requested wall time overlaps the maintenance window.
+
+Thank you for planning ahead.
 
 ## MERCED Cluster Decommissioned
 _posted on: 10/30/2026_
