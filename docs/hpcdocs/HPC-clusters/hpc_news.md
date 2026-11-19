@@ -10,6 +10,13 @@ import Tag from '@site/src/components/Tag';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## Pinnacles Cluster Maintenance (Jan 18–22)
+_posted on: 11/18/2026_
+
+The Pinnacles cluster will be unavailable for scheduled maintenance from January 18 through January 22, 2027. Users will be unable to log in during this time.
+
+Please plan to finish all jobs by 6:00 a.m. Pacific time on January 18. Slurm will reject jobs whose requested wall time overlaps the maintenance window.
+
 ## MERCED Cluster Decommissioned
 _posted on: 10/30/2026_
 
